@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IG Publisher build artefacts
+/input-cache
+/output
+/temp
+/template
+/fsh-generated
+.history
+temp.xml
+temp.json
+validation.html
+
+# Beads (mirrored to dolt; local artefacts ignored)
+.beads/
+.dolt/
+*.tgz
+
+# HAPI runtime data
+phase0/hapi-data/
+
+# Raw HemOnc CSV bundle is tracked separately; the unzipped working tree is rebuildable
+hemonckb-raw/additional_tables/

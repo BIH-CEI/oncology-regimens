@@ -1,0 +1,41 @@
+{
+  "resourceType": "Bundle",
+  "id": "phase0-knowledge",
+  "meta": {
+    "lastUpdated": "2026-03-12T00:00:00Z",
+    "source": "https://dataverse.harvard.edu/dataverse/hemonc"
+  },
+  "type": "collection",
+  "timestamp": "2026-03-12T00:00:00Z",
+  "entry": [
+    { "fullUrl": "http://hemonc.org/fhir/CodeSystem/hemonc",
+      "resource": { "resourceType": "CodeSystem", "id": "hemonc",
+                    "_ref": "see CodeSystem-hemonc-fragment.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/CodeSystem/sig-target-type",
+      "resource": { "resourceType": "CodeSystem", "id": "sig-target-type",
+                    "_ref": "see CodeSystem-sig-target-type.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/MedicationKnowledge/hemonc-drug-88-carboplatin",
+      "resource": { "resourceType": "MedicationKnowledge",
+                    "id": "hemonc-drug-88-carboplatin",
+                    "_ref": "see MedicationKnowledge-hemonc-drug-88-carboplatin.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/MedicationKnowledge/hemonc-drug-379-paclitaxel",
+      "resource": { "resourceType": "MedicationKnowledge",
+                    "id": "hemonc-drug-379-paclitaxel",
+                    "_ref": "see MedicationKnowledge-hemonc-drug-379-paclitaxel.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d",
+      "resource": { "resourceType": "ActivityDefinition",
+                    "id": "sig-carboplatin-auc5-d1-q21d",
+                    "_ref": "see ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d",
+      "resource": { "resourceType": "ActivityDefinition",
+                    "id": "sig-paclitaxel-175mgm2-d1-q21d",
+                    "_ref": "see ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/Library/HemOncDoseHelpers",
+      "resource": { "resourceType": "Library", "id": "hemonc-dose-helpers",
+                    "_ref": "see Library-hemonc-dose-helpers.json" } },
+    { "fullUrl": "http://hemonc.org/fhir/PlanDefinition/regimen-2554-variant-144842",
+      "resource": { "resourceType": "PlanDefinition",
+                    "id": "regimen-2554-variant-144842",
+                    "_ref": "see PlanDefinition-regimen-2554-variant-144842.json" } }
+  ]
+}

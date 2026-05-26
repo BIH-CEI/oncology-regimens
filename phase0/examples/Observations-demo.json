@@ -1,0 +1,61 @@
+{
+  "resourceType": "Bundle",
+  "id": "demo-obs-cp-1",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:obs-height",
+      "request": { "method": "POST", "url": "Observation" },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [{ "system": "http://loinc.org", "code": "8302-2",
+                       "display": "Body height" }]
+        },
+        "subject": { "reference": "Patient/demo-cp-1" },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 168, "unit": "cm",
+          "system": "http://unitsofmeasure.org", "code": "cm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-weight",
+      "request": { "method": "POST", "url": "Observation" },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [{ "system": "http://loinc.org", "code": "29463-7",
+                       "display": "Body weight" }]
+        },
+        "subject": { "reference": "Patient/demo-cp-1" },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 72, "unit": "kg",
+          "system": "http://unitsofmeasure.org", "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-creatinine",
+      "request": { "method": "POST", "url": "Observation" },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [{ "system": "http://loinc.org", "code": "2160-0",
+                       "display": "Creatinine [Mass/volume] in Serum or Plasma" }]
+        },
+        "subject": { "reference": "Patient/demo-cp-1" },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 0.9, "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org", "code": "mg/dL"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+services:
+  hapi:
+    # 8.4.0+ ships cqf-fhir Clinical Reasoning; pin a known-good tag once verified
+    image: hapiproject/hapi:latest
+    container_name: oncology-hapi-cr
+    restart: unless-stopped
+    ports:
+      - "8096:8080"
+    environment:
+      # ── core ─────────────────────────────────────────────
+      HAPI_FHIR_FHIR_VERSION: "R4"
+      HAPI_FHIR_SERVER_ADDRESS: "http://localhost:8096/fhir"
+      HAPI_FHIR_DEFAULT_PRETTY_PRINT: "true"
+
+      # ── Clinical Reasoning (PlanDefinition/$apply, ActivityDefinition/$apply) ─
+      HAPI_FHIR_CR_ENABLED: "true"
+      HAPI_FHIR_CR_CARE-GAPS_ENABLED: "true"
+      HAPI_FHIR_CR_CQL_USE_EMBEDDED_LIBRARIES: "true"
+
+      # ── identifier strategy (allow Patient/42, regimen-2554-variant-144842 …) ─
+      HAPI_FHIR_CLIENT_ID_STRATEGY: "ANY"
+
+      # ── search / validation ──────────────────────────────
+      HAPI_FHIR_ALLOW_EXTERNAL_REFERENCES: "true"
+      HAPI_FHIR_ALLOW_PLACEHOLDER_REFERENCES: "true"
+      HAPI_FHIR_VALIDATION_REQUESTS_ENABLED: "false"
+
+      # ── JVM ──────────────────────────────────────────────
+      JAVA_OPTS: "-Xmx2g"
+    volumes:
+      - hapi-data:/data/hapi
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:8080/fhir/metadata >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 90s
+
+volumes:
+  hapi-data:
