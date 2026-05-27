@@ -113,7 +113,10 @@ GROUPS = [
         ("rxnorm_map",              "901",
          "HemOnc ↔ RxNorm crosswalk with semantic type (IN, SCD, …)"),
         ("indications",           "3 549",
-         "FDA/EMA approvals by condition: date, accelerated, withdrawn, biomarker, "
+         "Regulatory approvals by component-within-regimen and condition. "
+         "Six curated regulators: FDA (1 697), EMA (636), PMDA Japan (540), "
+         "MFDS South Korea (293), HC Health Canada (286), NMPA China (97). "
+         "Carries date, accelerated flag, withdrawn flag, biomarker, "
          "prior-therapy, demographics, narrative reason"),
     ]),
     ("Disease conditions", "with eight crosswalks", [
@@ -425,6 +428,22 @@ def build():
             "CQL expressions at the catalog level so downstream CDS Hooks "
             "responses can be biomarker-aware without the calling EHR "
             "encoding the rule itself.", CAPTION),
+        Paragraph(
+            "<b>Note on the absence of EMA rows for FOLFOX4.</b> Oxaliplatin "
+            "(Eloxatin) was EMA-approved in 1999 for metastatic colorectal "
+            "cancer after 5-FU failure and in 2004 for adjuvant CRC, so the "
+            "regimen is in routine use across the EU. The lack of EMA rows "
+            "in HemOnc’s <font face='Courier'>indications.csv</font> for the "
+            "FOLFOX4 regimen reflects two HemOnc-internal curation choices, "
+            "not a regulatory absence: (a) indications are tied to the "
+            "<i>component-within-regimen</i> pair rather than to the drug "
+            "alone, so an EMA approval of oxaliplatin would need explicit "
+            "regulatory language naming FOLFOX4 to land in this row; "
+            "(b) HemOnc’s EMA curation lags its FDA curation overall "
+            "(636 EMA rows vs 1 697 FDA rows table-wide). This IG simply "
+            "projects what HemOnc currently encodes; closing the gap is "
+            "upstream curation work, fileable as a HemOnc Dataverse "
+            "issue.", CAPTION),
         Paragraph("3.4 Supporting studies (selected, by appearance frequency)",
                   H2),
         tbl(
