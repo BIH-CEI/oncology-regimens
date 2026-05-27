@@ -297,6 +297,95 @@ def build():
             ["Table", "Rows", "Adds"], rows,
             col_widths=[4 * cm, 2 * cm, 19.5 * cm]))
         story.append(Spacer(1, 0.2 * cm))
+
+    # 2.1 — exclusions breakdown
+    story += [
+        PageBreak(),
+        Paragraph(
+            "2.1 Editorial scope filter — what HemOnc actually rejects", H2),
+        Paragraph(
+            "Why are there 18 198 publications in <font face='Courier'>"
+            "exclusions.csv</font>? Because HemOnc’s editorial scope is "
+            "deliberately narrow: <b>prospective Phase 3 RCT primary results "
+            "for antineoplastic systemic-therapy regimens in cancer</b>. "
+            "Most of the biomedical oncology literature is not that. The "
+            "reviewed pool is 10 494 inclusions + 18 198 exclusions ≈ "
+            "<b>28 700 publications triaged</b>, with a <b>~37 % acceptance "
+            "rate</b>. The 63 % that don’t pass are not &quot;irrelevant "
+            "studies&quot; — they are reviews, protocols, sub-analyses, "
+            "lower-phase trials, observational studies, economic analyses, "
+            "supportive-care trials and similar genres. Rejecting them is "
+            "what lets HemOnc credibly claim to be a Phase-3-RCT evidence "
+            "base.", BODY),
+        tbl(
+            ["Exclusion reason", "Count", "%", "What is actually being rejected"],
+            [
+                ["Undefined",                          "5 645", "31.0 %",
+                 "Legacy curation rows where the reason field is empty — "
+                 "a curation-debt indicator; the publication was reviewed and "
+                 "rejected, but the rationale wasn’t recorded"],
+                ["Correlative study",                  "3 222", "17.7 %",
+                 "Translational sub-analyses of an already-included trial "
+                 "(biomarker correlatives, tissue panels, exploratory "
+                 "endpoints) — the index trial is in, the side-study is out"],
+                ["Clinical trial protocol",            "1 481", "8.1 %",
+                 "The methods / protocol publication, not the results paper"],
+                ["Review",                             "1 414", "7.8 %",
+                 "Narrative reviews, book chapters — not primary evidence"],
+                ["Subgroup analysis",                  "1 249", "6.9 %",
+                 "Post-hoc subgroup re-analyses of an already-included trial"],
+                ["Retrospective and Observational",      "854", "4.7 %",
+                 "Not prospective — outside the Phase-3-RCT scope"],
+                ["Economic analysis",                    "675", "3.7 %",
+                 "Cost-effectiveness papers; useful science, different scope"],
+                ["Ineligible condition",                 "536", "2.9 %",
+                 "Off-scope condition altogether (non-cancer)"],
+                ["Supportive-therapy-based trial",       "454", "2.5 %",
+                 "Antiemetics, G-CSF, transfusion support — not "
+                 "antineoplastics"],
+                ["Early-Phase RCTs",                     "416", "2.3 %",
+                 "Phase 1, dose-finding, first-in-human — below the "
+                 "Phase-3 evidence bar"],
+                ["Randomized Phase 2",                   "384", "2.1 %",
+                 "Phase 2 RCTs not yet at the Phase 3 evidence level "
+                 "HemOnc requires"],
+                ["Other excluded study designs",         "292", "1.6 %",
+                 "Designs that don’t fit the canonical RCT shape"],
+                ["non-English",                          "259", "1.4 %",
+                 "Language exclusion (full-text not reviewable by the "
+                 "editorial team)"],
+                ["Radiation-therapy-based trial",        "245", "1.3 %",
+                 "Off-modality (radiation, not systemic therapy)"],
+                ["Surgery-based trial",                  "205", "1.1 %",
+                 "Off-modality (surgical interventions)"],
+                ["Pooled analysis",                      "186", "1.0 %",
+                 "Meta-analyses across multiple trials"],
+                ["Real-world data",                      "130", "0.7 %",
+                 "Observational, registry-based"],
+                ["Non-randomized",                       "121", "0.7 %",
+                 "Single-arm or non-randomized comparative"],
+                ["Pharmacometric analysis",               "82", "0.5 %",
+                 "PK/PD modelling, exposure–response analyses"],
+                ["Editorials and commentaries",           "68", "0.4 %",
+                 "Opinion / discussion pieces, not evidence"],
+                ["(tail of long-tail reasons)",          "280", "1.5 %",
+                 "Combined remainder — ~30 smaller-category reasons"],
+            ],
+            col_widths=[5.5 * cm, 2 * cm, 1.6 * cm, 16.4 * cm],
+        ),
+        Paragraph(
+            "<b>Read this table as a feature, not a bug.</b> Each row above "
+            "is a curated editorial-policy choice that someone made and "
+            "recorded. In FHIR terms, every exclusion row becomes a "
+            "<font face='Courier'>Provenance</font> resource attached to the "
+            "rejected reference, with the exclusion reason as a coded "
+            "<font face='Courier'>activity</font> code — making HemOnc’s "
+            "curation policy machine-readable and auditable. The "
+            "<i>Undefined</i> bucket (31 %) is the one real curation-debt "
+            "indicator; flagging it back upstream to HemOnc is exactly the "
+            "kind of round-trip this IG’s cooperation framing supports.",
+            CAPTION),
+    ]
     story.append(PageBreak())
 
     # ── Section 3: FOLFOX4
