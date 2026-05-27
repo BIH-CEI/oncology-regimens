@@ -144,15 +144,10 @@ GROUPS = [
          "Publications HemOnc reviewed and rejected with the reason — bigger "
          "than inclusions, by design"),
     ]),
-    ("Wiki linkage and schema-meta", "supporting structure", [
+    ("Wiki linkage", "backlinks to human-readable content", [
         ("pointers",             "21 935",
          "Versioned URL backlinks to the HemOnc.org wiki Table-of-Contents "
          "(narrative explanations, dose-modification rules)"),
-        ("hemonc_classes",          "148", "Concept class definitions"),
-        ("hemonc_rels",              "95", "Relationship type definitions"),
-        ("canonical.triples",       "220",
-         "Allowed (class₁ — relationship — class₂) combinations — the schema "
-         "constraint"),
     ]),
 ]
 
@@ -198,36 +193,88 @@ def build():
         Paragraph("1. Two layers of HemOnc, only one of them widely known", H1),
         Paragraph(
             "The HemOnc Knowledge Base (HemOncKB) is the canonical oncology "
-            "vocabulary in the OMOP Common Data Model, distributed via "
-            "Athena/OHDSI since 2019 (Warner JL et al., "
-            "<i>J Biomed Inform</i>). What most consumers see is the "
-            "OMOP-format core: three flat triple-shaped tables that list "
-            "concepts, relationships and synonyms. Useful, but intentionally "
-            "limited — OMOP triples cannot represent dosing schedules, "
-            "target-AUC computations, multi-component protocols, or "
-            "evidence-graph relationships. Those live in the eighteen "
-            "<b>additional tables</b> that ship alongside the OMOP core and "
-            "that, until now, have not had a structured machine-readable "
-            "consumer interface. This IG is that consumer interface.",
-            BODY),
+            "vocabulary in the OMOP Common Data Model, distributed via the "
+            "OHDSI Athena terminology service since 2019 (Warner JL et al., "
+            "<i>J Biomed Inform</i>; HemOnc Dataverse). What most consumers "
+            "see is the <b>OMOP core</b> — six tables that follow the OMOP "
+            "vocabulary convention (three flat content tables plus three "
+            "data-model tables that constrain them). The core is what makes "
+            "HemOnc queryable from observational research stacks (OHDSI ATLAS, "
+            "patient-level prediction tooling, the OMOP Common Data Model). "
+            "But OMOP triples cannot represent dosing schedules, target-AUC "
+            "computations, multi-component protocols, or evidence-graph "
+            "relationships — and those live in the <b>16 additional tables</b> "
+            "that ship alongside the OMOP core and that, until now, have not "
+            "had a structured machine-readable consumer interface. This IG "
+            "is that consumer interface.", BODY),
         Spacer(1, 0.3 * cm),
         Paragraph("Two layers, two consumers", H3),
         tbl(
             ["Layer", "Tables", "Rows (snapshot 2026-03-12)",
              "Typical consumer"],
             [
-                ["OMOP core",
+                ["OMOP core (content)",
                  "concept_stage, concept_relationship_stage, "
                  "concept_synonym_stage",
                  "~800 k",
-                 "OHDSI research sites, observational analytics"],
+                 "OHDSI research sites, observational analytics, Athena"],
+                ["OMOP core (data model)",
+                 "hemonc_classes, hemonc_rels, canonical.triples",
+                 "463",
+                 "Validators, schema enforcement, IG authors"],
                 ["Additional tables",
-                 "18 tables across 6 functional groups",
+                 "16 tables across 5 functional groups",
                  "~310 k",
                  "This IG — clinical-ordering, CDS, evidence linkage"],
             ],
-            col_widths=[3.4 * cm, 8.6 * cm, 4 * cm, 9.5 * cm],
+            col_widths=[3.6 * cm, 8.6 * cm, 4 * cm, 9.3 * cm],
         ),
+        Spacer(1, 0.4 * cm),
+        Paragraph("1.1 The OMOP core in detail", H2),
+        Paragraph(
+            "Six tables, all open and already shipped through OHDSI Athena. "
+            "The content trio carries the vocabulary; the data-model trio "
+            "carries the schema that constrains it.",
+            BODY),
+        tbl(
+            ["Table", "Rows", "Role", "What it adds"],
+            [
+                ["concept_stage", "130 335", "Content",
+                 "One row per HemOnc concept (Component, Regimen, Variant, "
+                 "Sig, Study, Reference, Author, …). The vocabulary itself."],
+                ["concept_relationship_stage", "511 782", "Content",
+                 "Typed edges between concepts: 'Has variant', 'Was studied in', "
+                 "'Maps to' (external vocabularies), 'Has cytotox chemo Rx', "
+                 "'Has first author', etc. ~140 distinct relationship types."],
+                ["concept_synonym_stage", "159 534", "Content",
+                 "Alternative names per concept; supports search and "
+                 "string-matching against external text sources."],
+                ["hemonc_classes", "148", "Data model",
+                 "Defines every concept class with description, OMOP domain "
+                 "mapping, primary source table, and deprecation date."],
+                ["hemonc_rels", "95", "Data model",
+                 "Defines every relationship type with heritability flag and "
+                 "deprecation status."],
+                ["canonical.triples", "220", "Data model",
+                 "Allowed (class₁ — relationship — class₂) triples — the "
+                 "schema constraint that turns the triple store into a typed "
+                 "graph (e.g., 'Regimen — Has variant — Regimen Variant')."],
+            ],
+            col_widths=[5 * cm, 2.5 * cm, 2.4 * cm, 15.6 * cm],
+        ),
+        Paragraph(
+            "Top OMOP concept classes by count (from "
+            "<font face='Courier'>concept_stage</font>): Author 53 777, "
+            "PMID 10 227, ReferenceDOI 10 127, Reference 9 320, Study 7 277, "
+            "Regimen Variant 6 847, Brand Name 5 102, Clinical trial ID 4 328, "
+            "Synthetic Regimen 3 461, Regimen 2 872, Regimen Stub 1 676, "
+            "Cycle Sigs 1 317, Component 896, Regimen Class 859, "
+            "Component Class 572, Endpoint 536. The 16 additional tables in "
+            "the next section are the source of much of this content — "
+            "<font face='Courier'>refs.csv</font> generates the Reference "
+            "rows, <font face='Courier'>authors.csv</font> the Author rows, "
+            "<font face='Courier'>variants.csv</font> the Regimen Variant "
+            "rows, and so on.", CAPTION),
         PageBreak(),
     ]
 
@@ -236,7 +283,7 @@ def build():
         Paragraph(
             "2. What the additional tables carry, organized by purpose", H1),
         Paragraph(
-            "The 18 additional tables group into six functional clusters. "
+            "The 16 additional tables group into five functional clusters. "
             "Together they carry the content that makes HemOnc clinically "
             "actionable — not just terminology, but executable protocols "
             "with full provenance.", BODY),
@@ -284,38 +331,77 @@ def build():
             col_widths=[5 * cm, 20.5 * cm],
         ),
         Spacer(1, 0.3 * cm),
+        Paragraph("3.2 Cycle structure", H2),
         Paragraph(
-            "3.2 Per-component sigs (canonical variant 132249, q14d cycle)",
-            H2),
+            "FOLFOX4 is a <b>14-day cycle</b> in which actual drug "
+            "administration is concentrated on days 1 and 2; the patient "
+            "then rests for 12 days before the next cycle begins on day 15. "
+            "In adjuvant colorectal cancer it is given for <b>12 cycles "
+            "(≈6 months)</b>; in the metastatic setting it continues until "
+            "progression or unacceptable toxicity. The notation "
+            "<b>“q14d”</b> means &quot;repeats every 14 days&quot;.",
+            BODY),
+        Paragraph("Day-by-day calendar (one cycle)", H3),
         tbl(
-            ["Component", "Dose", "Route", "Day", "Frequency",
-             "Duration", "Step"],
+            ["Cycle day", "What is administered", "How it is given"],
             [
-                ["Fluorouracil", "400 mg/m²",  "IV", "1, 2", "once per day",
-                 "1 min", "1 of 2 (bolus)"],
-                ["Fluorouracil", "600 mg/m²",  "IV", "1, 2", "continuous",
-                 "22 h",  "2 of 2 (CI)"],
-                ["Leucovorin",   "200 mg/m²",  "IV", "1, 2", "once per day",
-                 "2 h",   "1 of 1"],
-                ["Oxaliplatin",  "85 mg/m²",   "IV", "1",    "once",
-                 "—",     "1 of 1"],
+                ["Day 1",
+                 "Oxaliplatin 85 mg/m², then Leucovorin 200 mg/m², then "
+                 "5-FU 400 mg/m² bolus, then 5-FU 600 mg/m² continuous",
+                 "Sequential same-day infusions: oxaliplatin (2 h) and "
+                 "leucovorin (2 h) given in parallel, then 5-FU bolus push, "
+                 "then 5-FU 600 mg/m² IV continuous over 22 h"],
+                ["Day 2",
+                 "Leucovorin 200 mg/m², then 5-FU 400 mg/m² bolus, then "
+                 "5-FU 600 mg/m² continuous",
+                 "Same as day 1 but without oxaliplatin: leucovorin (2 h), "
+                 "5-FU bolus, then 5-FU 600 mg/m² IV continuous over 22 h"],
+                ["Days 3 – 14", "(rest)", "No drug administration"],
+                ["Day 15 = Day 1 of cycle 2",
+                 "Cycle repeats", "Up to 12 cycles in adjuvant setting"],
             ],
-            col_widths=[3 * cm, 2.6 * cm, 1.6 * cm, 1.6 * cm,
-                        4 * cm, 2.5 * cm, 10.2 * cm],
+            col_widths=[4 * cm, 8 * cm, 13.5 * cm],
+        ),
+        Spacer(1, 0.3 * cm),
+        Paragraph("Underlying sigs (the rows HemOnc actually carries)", H3),
+        tbl(
+            ["Component", "Dose", "Route", "Cycle days",
+             "Frequency / duration", "Step (within day)"],
+            [
+                ["Oxaliplatin",  "85 mg/m²",   "IV", "Day 1",
+                 "Once on the day",            "—"],
+                ["Leucovorin",   "200 mg/m²",  "IV", "Days 1 + 2",
+                 "Once per day, over 2 h",     "—"],
+                ["Fluorouracil", "400 mg/m²",  "IV", "Days 1 + 2",
+                 "Bolus push, ~1 min",         "1 of 2 (bolus first)"],
+                ["Fluorouracil", "600 mg/m²",  "IV", "Days 1 + 2",
+                 "Continuous infusion, 22 h",  "2 of 2 (CI after bolus)"],
+            ],
+            col_widths=[3 * cm, 2.6 * cm, 1.6 * cm, 2.6 * cm,
+                        6 * cm, 9.7 * cm],
         ),
         Paragraph(
-            "Cycle length 14 days. The four sig rows above correspond to "
-            "four FHIR <font face='Courier'>ActivityDefinition</font> "
-            "resources, orchestrated by one "
+            "The two Fluorouracil rows are the same drug given two different "
+            "ways on the same day: first a 400 mg/m² IV bolus push (step 1), "
+            "immediately followed by a 600 mg/m² IV continuous infusion over "
+            "22 hours (step 2). This bolus-then-continuous-infusion pattern "
+            "is characteristic of the &quot;de Gramont&quot; family of "
+            "5-FU regimens, of which FOLFOX4 is one. Each row corresponds to "
+            "one FHIR <font face='Courier'>ActivityDefinition</font> "
+            "resource (<font face='Courier'>kind = MedicationRequest</font>, "
+            "referencing a <font face='Courier'>MedicationKnowledge</font>); "
+            "the four ActivityDefinitions are orchestrated by one "
             "<font face='Courier'>PlanDefinition</font> for the variant. "
-            "Each ActivityDefinition is "
-            "<font face='Courier'>kind = MedicationRequest</font>, "
-            "references a <font face='Courier'>MedicationKnowledge</font> "
-            "by canonical, and carries the dose as "
+            "Each carries the dose as "
             "<font face='Courier'>doseQuantity { value, unit: 'mg/m2', "
-            "system: UCUM }</font>. At <font face='Courier'>$apply</font> "
-            "time the Library’s BSA helper multiplies by the patient’s "
-            "BSA to produce the absolute mg dose.", CAPTION),
+            "system: UCUM }</font>; at "
+            "<font face='Courier'>$apply</font> time the Library’s BSA helper "
+            "multiplies by the patient’s BSA to produce the absolute mg "
+            "dose, while the inter-row sequencing (bolus before CI) is "
+            "expressed via "
+            "<font face='Courier'>PlanDefinition.action.relatedAction</font> "
+            "(<font face='Courier'>relationship = after-start</font>).",
+            CAPTION),
         Paragraph("3.3 Regulatory indications", H2),
         tbl(
             ["Regulator", "Date", "Condition", "Stage", "Prior therapy"],
