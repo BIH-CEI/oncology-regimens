@@ -1,0 +1,55 @@
+name: Cleanup PR Preview
+
+# Removes the preview/pr-<N>/ subtree from gh-pages when a PR is closed.
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:            # share the gh-pages write lock with the deploy jobs
+  group: gh-pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+
+      - name: Remove preview directory
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          PREVIEW_DIR="preview/pr-${PR_NUMBER}"
+          if [ -d "$PREVIEW_DIR" ]; then
+            rm -rf "$PREVIEW_DIR"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            if ! git diff --staged --quiet; then
+              git commit -m "cleanup: remove preview for closed PR #${PR_NUMBER}"
+              git push
+              echo "Removed $PREVIEW_DIR"
+            else
+              echo "Nothing to commit"
+            fi
+          else
+            echo "$PREVIEW_DIR does not exist, nothing to clean"
+          fi
+
+      - name: Update PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          message: |
+            🧹 **IG preview removed**
+
+            The `preview/pr-${{ github.event.pull_request.number }}/` subtree was deleted from the `gh-pages` branch.

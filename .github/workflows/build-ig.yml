@@ -1,0 +1,154 @@
+name: Build IG & Deploy
+
+# Publishes the IG on push to main (→ gh-pages root) and builds a parallel
+# preview IG for every pull request (→ gh-pages /preview/pr-<N>/).
+# Modelled on the BIH-CEI TherapiezieleOnkologie + PCOR-MII pipelines.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write        # push to gh-pages
+  pull-requests: write   # comment preview URL on PRs
+
+# Cancel superseded runs for the same branch/PR, but let independent PRs build in parallel.
+concurrency:
+  group: ig-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Jekyll (IG Publisher narrative rendering)
+        run: gem install jekyll
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi@${{ vars.SUSHI_VERSION || '3.19.0' }}
+
+      - name: Cache FHIR packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.fhir/packages
+          key: fhir-packages-${{ hashFiles('sushi-config.yaml') }}
+          restore-keys: fhir-packages-
+
+      - name: Cache IG Publisher JAR
+        id: cache-publisher
+        uses: actions/cache@v4
+        with:
+          path: input-cache/publisher.jar
+          key: ig-publisher-latest
+
+      - name: Download IG Publisher (on cache miss)
+        if: steps.cache-publisher.outputs.cache-hit != 'true'
+        run: |
+          chmod +x _updatePublisher.sh
+          ./_updatePublisher.sh
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Build IG (HL7 IG Publisher)
+        run: |
+          export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
+          # A draft/experimental IG will report validation errors in qa.html;
+          # those must not block the preview deploy. A missing output/ is a real failure.
+          java -jar input-cache/publisher.jar -ig . -tx http://tx.fhir.org \
+            || echo "::warning::IG Publisher exited non-zero (validation issues) — see qa.html; continuing"
+          test -f output/index.html \
+            || { echo "::error::No IG output produced (output/index.html missing)"; exit 1; }
+
+      - name: Upload built IG
+        uses: actions/upload-artifact@v4
+        with:
+          name: ig-output
+          path: output
+          retention-days: 14
+
+      - name: Upload QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-report
+          path: |
+            output/qa.html
+            output/qa.txt
+          retention-days: 7
+
+  # Push to main → publish to the gh-pages root.
+  deploy-main:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency:            # serialize gh-pages writes across all deploy jobs
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ig-output
+          path: output
+
+      - name: Deploy main to gh-pages root
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
+          keep_files: true          # keep the preview/ subtree next to the root site
+          commit_message: "deploy(main): ${{ github.sha }}"
+
+  # Every PR → build a parallel IG under gh-pages /preview/pr-<N>/.
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ig-output
+          path: output
+
+      - name: Deploy PR preview to gh-pages /preview/pr-N
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
+          destination_dir: preview/pr-${{ github.event.pull_request.number }}
+          keep_files: true
+          commit_message: "deploy(pr-${{ github.event.pull_request.number }}): ${{ github.event.pull_request.head.sha }}"
+
+      - name: Comment preview URL on PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: pr-preview
+          message: |
+            🚀 **IG preview deployed**
+
+            📖 https://bih-cei.github.io/oncology-regimens/preview/pr-${{ github.event.pull_request.number }}/
+            🕐 Commit `${{ github.event.pull_request.head.sha }}` · Run [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            *Removed automatically when this PR is closed.*

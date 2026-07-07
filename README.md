@@ -59,6 +59,22 @@ Expected output: a CarePlan with two contained MedicationRequests —
 (175 mg/m² × 1.85 BSA) — each tagged with a `computed-from-target-*`
 provenance code.
 
+## Continuous integration
+
+Two GitHub Actions workflows (`.github/workflows/`) build the IG with SUSHI +
+the HL7 IG Publisher:
+
+- **`build-ig.yml`** — on **push to `main`** the built IG is published to the
+  `gh-pages` **root** (→ https://bih-cei.github.io/oncology-regimens/). On
+  **every pull request** a parallel IG is built and deployed under
+  `preview/pr-<N>/`, and the preview URL is posted as a PR comment.
+- **`cleanup-preview.yml`** — removes the `preview/pr-<N>/` subtree when the PR
+  is closed.
+
+The build tolerates FHIR validation errors (this IG is `draft`/`experimental`);
+see the uploaded `qa-report` artifact and `qa.html` for details. Preview deploys
+require the PR branch to live in this repo (fork PRs get a read-only token).
+
 ## Cooperation and attribution
 
 See [`input/pagecontent/cooperation.md`](input/pagecontent/cooperation.md)
