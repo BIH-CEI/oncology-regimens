@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="regimen-2554-variant-144842"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">regimen-2554-variant-144842</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-regimen-2554-variant-144842.html">Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d)</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">2026-03-12-0.1.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        Official
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>144842</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        Secondary
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>2554</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d)</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.2.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>clinical-protocol</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-12</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HemOnc FHIR Catalog Working Group</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>One executable variant of the Carboplatin + Paclitaxel regimen (HemOnc cui 2554). Single 21-day cycle pattern repeated 3–6 times: Carboplatin target AUC 5 + Paclitaxel 175 mg/m², both IV on day 1. Sourced from HemOncKB sigs.csv snapshot 2026-03-12 (variant_cui 144842, first reported in the MITO-2 trial). This Phase 0 artifact does not include premedications, dose-modification rules, or hold-for-counts logic — those are deferred to subsequent Library resources.</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
+                    
+                        <tr>
+                            <td>focus</td>
+                            <td/>
+                        </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">DE</td>
+        </tr>
+        
+
+        
+            <tr>
+                <th scope="row"><b>Topic: </b></th>
+                <td style="padding-left: 4px;">treatment</td>
+            </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Related Artifacts: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                
+                <p><b>Dependencies</b></p>
+                <ul>
+                    
+                    <li><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12">http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12</a></li>
+                    
+                </ul>
+                
+                
+                <p><b>Components</b></p>
+                <ul>
+                    
+                    <li><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12">http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12</a></li>
+                    
+                    <li><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12">http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12</a></li>
+                    
+                </ul>
+                
+                
+                <p><b>Derived From</b></p>
+                <ul>
+                    
+                    <li/>
+                    
+                </ul>
+                
+                
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12">http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            <b> 21-day cycle, repeated 3–6 times:</b> Each cycle administers Carboplatin and Paclitaxel on day 1, then a 20-day rest period before the next cycle. HemOnc cyclesigs string: '21-day cycle for 3 to 6 cycles'.
+                            
+                            <br/>
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        <b> Carboplatin AUC 5 IV day 1:</b>
+                                        
+                                        
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12">http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12</a><br/>
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        <b> Paclitaxel 175 mg/m² IV day 1:</b>
+                                        
+                                        
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        <b>Then:</b> <i>Definition:</i> <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12">http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12</a><br/>
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <url value="http://hemonc.org/fhir/PlanDefinition/regimen-2554-variant-144842"/>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hemonc.org/cui"/>
+    <value value="144842"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="http://hemonc.org/regimen-cui"/>
+    <value value="2554"/>
+  </identifier>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="CarboplatinPaclitaxelVariant83"/>
+  <title value="Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d)"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="clinical-protocol"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-03-12"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="One executable variant of the Carboplatin + Paclitaxel regimen (HemOnc cui 2554). Single 21-day cycle pattern repeated 3–6 times: Carboplatin target AUC 5 + Paclitaxel 175 mg/m², both IV on day 1. Sourced from HemOncKB sigs.csv snapshot 2026-03-12 (variant_cui 144842, first reported in the MITO-2 trial). This Phase 0 artifact does not include premedications, dose-modification rules, or hold-for-counts logic — those are deferred to subsequent Library resources."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+        <code value="2554"/>
+        <display value="Carboplatin and Paclitaxel (CP)"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <topic>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/definition-topic"/>
+      <code value="treatment"/>
+    </coding>
+  </topic>
+  <relatedArtifact>
+    <type value="derived-from"/>
+    <label value="HemOncKB Regimen + Variant rows, snapshot 2026-03-12"/>
+    <citation value="HemOnc Dataverse v2.1 (2026-03-12). regimen_cui=2554, variant_cui=144842."/>
+    <url value="https://dataverse.harvard.edu/dataverse/hemonc"/>
+    <document>
+      <url value="https://dataverse.harvard.edu/dataverse/hemonc"/>
+    </document>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="composed-of"/>
+    <resource value="http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="composed-of"/>
+    <resource value="http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <resource value="http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12"/>
+  </relatedArtifact>
+  <library value="http://hemonc.org/fhir/Library/HemOncDoseHelpers|2026-03-12"/>
+  <action id="cycle">
+    <title value="21-day cycle, repeated 3–6 times"/>
+    <description value="Each cycle administers Carboplatin and Paclitaxel on day 1, then a 20-day rest period before the next cycle. HemOnc cyclesigs string: '21-day cycle for 3 to 6 cycles'."/>
+    <timingTiming>
+      <repeat>
+        <count value="3"/>
+        <countMax value="6"/>
+        <frequency value="1"/>
+        <period value="21"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timingTiming>
+    <groupingBehavior value="logical-group"/>
+    <selectionBehavior value="all"/>
+    <action id="carboplatin-d1">
+      <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">
+        <valueInteger value="1"/>
+      </extension>
+      <title value="Carboplatin AUC 5 IV day 1"/>
+      <definitionCanonical value="http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12"/>
+    </action>
+    <action id="paclitaxel-d1">
+      <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">
+        <valueInteger value="1"/>
+      </extension>
+      <title value="Paclitaxel 175 mg/m² IV day 1"/>
+      <relatedAction>
+        <actionId value="carboplatin-d1"/>
+        <relationship value="concurrent-with-start"/>
+      </relatedAction>
+      <definitionCanonical value="http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d|2026-03-12"/>
+    </action>
+  </action>
+</PlanDefinition>

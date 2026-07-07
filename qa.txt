@@ -1,0 +1,111 @@
+HemOncFHIRRegimenCatalog : Validation Results
+=========================================
+
+err = 20, warn = 33, info = 31
+IG Publisher Version: 2.2.10
+Generated Tue Jul 07 16:36:04 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
+ Build Errors : 2 / 6 / 0
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog : 4 / 4 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d : 3 / 4 / 7
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d : 3 / 4 / 6
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-hemonc-fragment : 0 / 2 / 6
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-sig-target-type : 0 / 1 / 2
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/Library-HemOncDoseHelpers : 0 / 0 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel : 3 / 2 / 4
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin : 3 / 4 / 5
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/PlanDefinition-regimen-2554-variant-144842 : 2 / 6 / 4
+</table>
+== n/a ==
+ERROR: ImplementationGuide.definition.parameter[27].value: Supressed messages file not found
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-379-paclitaxel.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-88-carboplatin.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+ERROR: package.tgz: Error converting pacakge to R4B: Error processing package/MedicationKnowledge-hemonc-drug-379-paclitaxel.json: Not a JSON Object: null
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog.json ==
+WARNING: ImplementationGuide.version: The version 2026-03-12-0.1.0 is not a valid semantic version and will not be acceptible to the ci-build, nor will it be a valid vesion in the NPM package system
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog: Unknown Parameters: [apply-status=true]
+INFORMATION: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2].uri: Canonical URL 'http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie' kann nicht aufgelöst werden
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[4].extension[0].value.ofType(string): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[4].extension[0].value.ofType(string): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden)
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[32].extension[0].value.ofType(code): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[32].extension[0].value.ofType(code): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden)
+WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie doesn't point to an actual ImplementationGuide resource
+INFORMATION: Resource: The resource ImplementationGuide/hemonc-fhir-regimen-catalog could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json ==
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.relatedArtifact[0].url: URL-Wert 'https://dataverse.harvard.edu/dataverse/hemonc' löst nicht auf
+ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.product.ofType(Reference): Es konnte kein passendes Profil für MedicationKnowledge/hemonc-drug-88-carboplatin (nach Typ) unter den Auswahlmöglichkeiten [; [http://hl7.org/fhir/StructureDefinition/Medication|4.0.1, http://hl7.org/fhir/StructureDefinition/Substance|4.0.1]] gefunden werden
+ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.product.ofType(Reference): Ungültiger Ressourcen-Zieltyp. Gefunden MedicationKnowledge, aber  einen von ([Medication, Substance]) erwartet
+ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
+WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
+INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
+INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/sig-target-type|2026-03-12-0.1.0
+INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].dose.ofType(Quantity): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: Resource: The resource ActivityDefinition/sig-carboplatin-auc5-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json ==
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.relatedArtifact[0].url: URL-Wert 'https://dataverse.harvard.edu/dataverse/hemonc' löst nicht auf
+ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.product.ofType(Reference): Es konnte kein passendes Profil für MedicationKnowledge/hemonc-drug-379-paclitaxel (nach Typ) unter den Auswahlmöglichkeiten [; [http://hl7.org/fhir/StructureDefinition/Medication|4.0.1, http://hl7.org/fhir/StructureDefinition/Substance|4.0.1]] gefunden werden
+ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.product.ofType(Reference): Ungültiger Ressourcen-Zieltyp. Gefunden MedicationKnowledge, aber  einen von ([Medication, Substance]) erwartet
+ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
+WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
+INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
+INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/sig-target-type|2026-03-12-0.1.0
+INFORMATION: Resource: The resource ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/CodeSystem-hemonc-fragment.json ==
+WARNING: CodeSystem/hemonc: CodeSystem.identifier[0].system: URL-Wert 'https://dataverse.harvard.edu/dataset.xhtml' löst nicht auf
+INFORMATION: CodeSystem/hemonc: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: CodeSystem/hemonc: CodeSystem.property[0]: This property has only a code ('concept-class-id') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+INFORMATION: CodeSystem/hemonc: CodeSystem.property[1]: This property has only a code ('atc') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+INFORMATION: CodeSystem/hemonc: CodeSystem.property[2]: This property has only a code ('rxnorm') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+INFORMATION: CodeSystem/hemonc: CodeSystem.property[3]: This property has only a code ('inn') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
+WARNING: Resource: The resource CodeSystem/hemonc should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/CodeSystem-sig-target-type.json ==
+INFORMATION: CodeSystem/sig-target-type: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: Resource: The resource CodeSystem/sig-target-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/Library-HemOncDoseHelpers.json ==
+INFORMATION: Library/HemOncDoseHelpers: Library.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: Resource: The resource Library/HemOncDoseHelpers could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel.json ==
+ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
+ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12')
+INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12' löst nicht auf
+ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12
+INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
+INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'Taxane' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+== input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin.json ==
+ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
+ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12')
+INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12' löst nicht auf
+ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12
+INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
+INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'PlatinumAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].type.coding[0]: Das CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis ist unbekannt
+INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0].coding[0].code: Unknown Code 'AlkylatingAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+== input/resources/PlanDefinition-regimen-2554-variant-144842.json ==
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/PlanDefinition-regimen-2554-variant-144842.json: Artifact library could not be found so no data requirements were inferred.
+WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.identifier[1].system: URL-Wert 'http://hemonc.org/regimen-cui' löst nicht auf
+INFORMATION: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.relatedArtifact[0].url: URL-Wert 'https://dataverse.harvard.edu/dataverse/hemonc' löst nicht auf
+ERROR: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[0].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
+WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
+ERROR: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[1].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
+WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[1].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
+INFORMATION: Resource: The resource PlanDefinition/regimen-2554-variant-144842 could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)

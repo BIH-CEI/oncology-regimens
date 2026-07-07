@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/sig-target-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "sig-target-type"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem sig-target-type</b></p><a name=\"sig-target-type\"> </a><a name=\"hcsig-target-type\"> </a><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/sig-target-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">target-mg-per-m2<a name=\"sig-target-type-target-mg-per-m2\"> </a></td><td>Target dose expressed in mg/m² (multiply by BSA at $apply)</td><td>The doseQuantity is the literal per-m² target from the protocol. Computed mg = doseQuantity.value × BSA(patient, formula, cap).</td></tr><tr><td style=\"white-space:nowrap\">target-AUC<a name=\"sig-target-type-target-AUC\"> </a></td><td>Carboplatin AUC target (apply Calvert formula)</td><td>The doseQuantity is the target AUC. Computed mg = AUC × (effectiveGFR + 25), where effectiveGFR is min(GFR(patient, formula), GFR-cap).</td></tr><tr><td style=\"white-space:nowrap\">target-mg-per-kg<a name=\"sig-target-type-target-mg-per-kg\"> </a></td><td>Target dose expressed in mg/kg (multiply by weight)</td><td>The doseQuantity is the literal per-kg target. Computed mg = doseQuantity.value × WeightKg(patient).</td></tr><tr><td style=\"white-space:nowrap\">target-absolute-mg<a name=\"sig-target-type-target-absolute-mg\"> </a></td><td>Literal absolute mg dose (no patient-specific computation needed)</td><td>The doseQuantity is the dispensed mg as-is. CQL helpers are not invoked.</td></tr><tr><td style=\"white-space:nowrap\">computed-from-target-AUC<a name=\"sig-target-type-computed-from-target-AUC\"> </a></td><td>Computed mg dose derived from a target-AUC (provenance marker)</td><td>Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply, so the original target paradigm is recoverable from the order.</td></tr><tr><td style=\"white-space:nowrap\">computed-from-target-mg-per-m2<a name=\"sig-target-type-computed-from-target-mg-per-m2\"> </a></td><td>Computed mg dose derived from a per-m² target (provenance marker)</td><td>Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply.</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "http://hemonc.org/fhir/CodeSystem/sig-target-type"] ;
+  fhir:CodeSystem.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:CodeSystem.name [ fhir:value "HemOncSigTargetType"] ;
+  fhir:CodeSystem.title [ fhir:value "HemOnc Sig Dose Target Type"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-03-12"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Small code system distinguishing the *target* expressed by a Sig's doseQuantity from the *computed* mg dose. Used as ActivityDefinition.dosage.doseAndRate.type. A target requires a CQL helper to convert into an administered mg quantity at $apply time."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "target-mg-per-m2" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Target dose expressed in mg/m² (multiply by BSA at $apply)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The doseQuantity is the literal per-m² target from the protocol. Computed mg = doseQuantity.value × BSA(patient, formula, cap)." ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "target-AUC" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Carboplatin AUC target (apply Calvert formula)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The doseQuantity is the target AUC. Computed mg = AUC × (effectiveGFR + 25), where effectiveGFR is min(GFR(patient, formula), GFR-cap)." ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "target-mg-per-kg" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Target dose expressed in mg/kg (multiply by weight)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The doseQuantity is the literal per-kg target. Computed mg = doseQuantity.value × WeightKg(patient)." ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "target-absolute-mg" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Literal absolute mg dose (no patient-specific computation needed)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "The doseQuantity is the dispensed mg as-is. CQL helpers are not invoked." ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "computed-from-target-AUC" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Computed mg dose derived from a target-AUC (provenance marker)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply, so the original target paradigm is recoverable from the order." ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "computed-from-target-mg-per-m2" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Computed mg dose derived from a per-m² target (provenance marker)" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/sig-target-type.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

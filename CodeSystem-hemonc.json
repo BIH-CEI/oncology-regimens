@@ -1,0 +1,162 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "hemonc",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem hemonc</b></p><a name=\"hemonc\"> </a><a name=\"hchemonc\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>concept-class-id</td><td>concept-class-id</td><td>string</td><td>HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)</td></tr><tr><td>atc</td><td>atc</td><td>string</td><td>WHO ATC code</td></tr><tr><td>rxnorm</td><td>rxnorm</td><td>string</td><td>RxNorm IN code (preferred mapping per HemOnc rxnorm_map)</td></tr><tr><td>inn</td><td>inn</td><td>string</td><td>International Nonproprietary Name</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/hemonc</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>concept-class-id</b></td><td><b>atc</b></td><td><b>rxnorm</b></td><td><b>inn</b></td></tr><tr><td style=\"white-space:nowrap\">88<a name=\"hemonc-88\"> </a></td><td>Carboplatin</td><td>Component</td><td>L01XA02</td><td>40048</td><td>carboplatin</td></tr><tr><td style=\"white-space:nowrap\">379<a name=\"hemonc-379\"> </a></td><td>Paclitaxel</td><td>Component</td><td>L01CD01</td><td>56946</td><td>paclitaxel</td></tr><tr><td style=\"white-space:nowrap\">2554<a name=\"hemonc-2554\"> </a></td><td>Carboplatin and Paclitaxel (CP)</td><td>Regimen</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">144842<a name=\"hemonc-144842\"> </a></td><td>Variant #83</td><td>Regimen Variant</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134425<a name=\"hemonc-134425\"> </a></td><td>AUC</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134448<a name=\"hemonc-134448\"> </a></td><td>mg/m^2</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134430<a name=\"hemonc-134430\"> </a></td><td>hour</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134451<a name=\"hemonc-134451\"> </a></td><td>minute</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">44957<a name=\"hemonc-44957\"> </a></td><td>IV</td><td>Route</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">139563<a name=\"hemonc-139563\"> </a></td><td>once</td><td>Frequency</td><td/><td/><td/></tr></table></div>"
+  },
+  "url" : "http://hemonc.org/fhir/CodeSystem/hemonc",
+  "identifier" : [{
+    "system" : "https://dataverse.harvard.edu/dataset.xhtml",
+    "value" : "HemOncKB"
+  }],
+  "version" : "2026-03-12-0.1.0",
+  "name" : "HemOnc",
+  "title" : "HemOnc Ontology (fragment, Phase 0 spike)",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2026-03-12",
+  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "contact" : [{
+    "name" : "HemOnc FHIR Catalog Working Group",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://github.com/thome/oncology-regimens"
+    }]
+  }],
+  "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "copyright" : "© HemOnc.org. Distributed under CC BY 4.0.",
+  "caseSensitive" : true,
+  "content" : "fragment",
+  "property" : [{
+    "code" : "concept-class-id",
+    "description" : "HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)",
+    "type" : "string"
+  },
+  {
+    "code" : "atc",
+    "description" : "WHO ATC code",
+    "type" : "string"
+  },
+  {
+    "code" : "rxnorm",
+    "description" : "RxNorm IN code (preferred mapping per HemOnc rxnorm_map)",
+    "type" : "string"
+  },
+  {
+    "code" : "inn",
+    "description" : "International Nonproprietary Name",
+    "type" : "string"
+  }],
+  "concept" : [{
+    "code" : "88",
+    "display" : "Carboplatin",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Component"
+    },
+    {
+      "code" : "atc",
+      "valueString" : "L01XA02"
+    },
+    {
+      "code" : "rxnorm",
+      "valueString" : "40048"
+    },
+    {
+      "code" : "inn",
+      "valueString" : "carboplatin"
+    }]
+  },
+  {
+    "code" : "379",
+    "display" : "Paclitaxel",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Component"
+    },
+    {
+      "code" : "atc",
+      "valueString" : "L01CD01"
+    },
+    {
+      "code" : "rxnorm",
+      "valueString" : "56946"
+    },
+    {
+      "code" : "inn",
+      "valueString" : "paclitaxel"
+    }]
+  },
+  {
+    "code" : "2554",
+    "display" : "Carboplatin and Paclitaxel (CP)",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen"
+    }]
+  },
+  {
+    "code" : "144842",
+    "display" : "Variant #83",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen Variant"
+    }]
+  },
+  {
+    "code" : "134425",
+    "display" : "AUC",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Unit"
+    }]
+  },
+  {
+    "code" : "134448",
+    "display" : "mg/m^2",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Unit"
+    }]
+  },
+  {
+    "code" : "134430",
+    "display" : "hour",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Unit"
+    }]
+  },
+  {
+    "code" : "134451",
+    "display" : "minute",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Unit"
+    }]
+  },
+  {
+    "code" : "44957",
+    "display" : "IV",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Route"
+    }]
+  },
+  {
+    "code" : "139563",
+    "display" : "once",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Frequency"
+    }]
+  }]
+}

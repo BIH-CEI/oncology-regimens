@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="sig-target-type"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: CodeSystem sig-target-type</b></p><a name="sig-target-type"> </a><a name="hcsig-target-type"> </a><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/sig-target-type</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap">target-mg-per-m2<a name="sig-target-type-target-mg-per-m2"> </a></td><td>Target dose expressed in mg/m² (multiply by BSA at $apply)</td><td>The doseQuantity is the literal per-m² target from the protocol. Computed mg = doseQuantity.value × BSA(patient, formula, cap).</td></tr><tr><td style="white-space:nowrap">target-AUC<a name="sig-target-type-target-AUC"> </a></td><td>Carboplatin AUC target (apply Calvert formula)</td><td>The doseQuantity is the target AUC. Computed mg = AUC × (effectiveGFR + 25), where effectiveGFR is min(GFR(patient, formula), GFR-cap).</td></tr><tr><td style="white-space:nowrap">target-mg-per-kg<a name="sig-target-type-target-mg-per-kg"> </a></td><td>Target dose expressed in mg/kg (multiply by weight)</td><td>The doseQuantity is the literal per-kg target. Computed mg = doseQuantity.value × WeightKg(patient).</td></tr><tr><td style="white-space:nowrap">target-absolute-mg<a name="sig-target-type-target-absolute-mg"> </a></td><td>Literal absolute mg dose (no patient-specific computation needed)</td><td>The doseQuantity is the dispensed mg as-is. CQL helpers are not invoked.</td></tr><tr><td style="white-space:nowrap">computed-from-target-AUC<a name="sig-target-type-computed-from-target-AUC"> </a></td><td>Computed mg dose derived from a target-AUC (provenance marker)</td><td>Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply, so the original target paradigm is recoverable from the order.</td></tr><tr><td style="white-space:nowrap">computed-from-target-mg-per-m2<a name="sig-target-type-computed-from-target-mg-per-m2"> </a></td><td>Computed mg dose derived from a per-m² target (provenance marker)</td><td>Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply.</td></tr></table></div>
+  </text>
+  <url value="http://hemonc.org/fhir/CodeSystem/sig-target-type"/>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="HemOncSigTargetType"/>
+  <title value="HemOnc Sig Dose Target Type"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-03-12"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="Small code system distinguishing the *target* expressed by a Sig's doseQuantity from the *computed* mg dose. Used as ActivityDefinition.dosage.doseAndRate.type. A target requires a CQL helper to convert into an administered mg quantity at $apply time."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="target-mg-per-m2"/>
+    <display value="Target dose expressed in mg/m² (multiply by BSA at $apply)"/>
+    <definition value="The doseQuantity is the literal per-m² target from the protocol. Computed mg = doseQuantity.value × BSA(patient, formula, cap)."/>
+  </concept>
+  <concept>
+    <code value="target-AUC"/>
+    <display value="Carboplatin AUC target (apply Calvert formula)"/>
+    <definition value="The doseQuantity is the target AUC. Computed mg = AUC × (effectiveGFR + 25), where effectiveGFR is min(GFR(patient, formula), GFR-cap)."/>
+  </concept>
+  <concept>
+    <code value="target-mg-per-kg"/>
+    <display value="Target dose expressed in mg/kg (multiply by weight)"/>
+    <definition value="The doseQuantity is the literal per-kg target. Computed mg = doseQuantity.value × WeightKg(patient)."/>
+  </concept>
+  <concept>
+    <code value="target-absolute-mg"/>
+    <display value="Literal absolute mg dose (no patient-specific computation needed)"/>
+    <definition value="The doseQuantity is the dispensed mg as-is. CQL helpers are not invoked."/>
+  </concept>
+  <concept>
+    <code value="computed-from-target-AUC"/>
+    <display value="Computed mg dose derived from a target-AUC (provenance marker)"/>
+    <definition value="Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply, so the original target paradigm is recoverable from the order."/>
+  </concept>
+  <concept>
+    <code value="computed-from-target-mg-per-m2"/>
+    <display value="Computed mg dose derived from a per-m² target (provenance marker)"/>
+    <definition value="Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply."/>
+  </concept>
+</CodeSystem>

@@ -1,0 +1,49 @@
+[{
+  "id" : "sig-carboplatin-auc5-d1-q21d",
+  "type" : "ActivityDefinition",
+  "url" : "http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "CarboplatinAUC5D1Q21D"
+},
+{
+  "id" : "sig-paclitaxel-175mgm2-d1-q21d",
+  "type" : "ActivityDefinition",
+  "url" : "http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "PaclitaxelD1Q21D"
+},
+{
+  "id" : "hemonc",
+  "type" : "CodeSystem",
+  "url" : "http://hemonc.org/fhir/CodeSystem/hemonc",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "HemOnc"
+},
+{
+  "id" : "sig-target-type",
+  "type" : "CodeSystem",
+  "url" : "http://hemonc.org/fhir/CodeSystem/sig-target-type",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "HemOncSigTargetType"
+},
+{
+  "id" : "hemonc-fhir-regimen-catalog",
+  "type" : "ImplementationGuide",
+  "url" : "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "HemOncFHIRRegimenCatalog"
+},
+{
+  "id" : "HemOncDoseHelpers",
+  "type" : "Library",
+  "url" : "http://hemonc.org/fhir/Library/HemOncDoseHelpers",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "HemOncDoseHelpers"
+},
+{
+  "id" : "regimen-2554-variant-144842",
+  "type" : "PlanDefinition",
+  "url" : "http://hemonc.org/fhir/PlanDefinition/regimen-2554-variant-144842",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "CarboplatinPaclitaxelVariant83"
+}]

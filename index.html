@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Home - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"1"}
+    h3,h4,h5,h6{--heading-prefix:"1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols</span>
+            <br/>
+            <span style="display:inline-block;">2026-03-12-0.1.0 - ci-build
+
+
+
+  <img alt="Germany flag" src="assets/images/deu.svg" height="16" title="Germany"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="cooperation.html">Cooperation</a>
+  </li>
+  <li>
+    <a href="disclaimers.html">Disclaimers</a>
+  </li>
+  <li>
+    <a href="versioning.html">Versioning</a>
+  </li>
+  <li>
+    <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="phase0.html">Phase 0 Spike</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Home</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols - Local Development build (v2026-03-12-0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hemonc.org/fhir/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Home</h2>
+  
+
+
+
+
+
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">2026-03-12-0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog|2026-03-12-0.1.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2026-07-07
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">HemOncFHIRRegimenCatalog</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h3 id="hemonc-fhir-regimen-catalog">HemOnc FHIR Regimen Catalog</h3>
+
+<p>A FHIR R4 projection of the <a href="https://hemonc.org">HemOnc Knowledge Base</a> as
+executable knowledge artifacts (<code class="language-plaintext highlighter-rouge">PlanDefinition</code>, <code class="language-plaintext highlighter-rouge">ActivityDefinition</code>,
+<code class="language-plaintext highlighter-rouge">MedicationKnowledge</code>, <code class="language-plaintext highlighter-rouge">Library</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ConceptMap</code>).</p>
+
+<p>This IG provides the <strong>catalog layer</strong> — <em>what to give</em> — that complements
+the MII Onkologie Modul's <strong>recording layer</strong> — <em>what was given</em>. Together
+they close the loop from registry-mandated reporting back to executable
+clinical-decision support, anchored on a single, openly-licenced source of
+truth for oncology regimens.</p>
+
+<p>The IG is published in cooperation with <strong>HemOnc.org</strong>, the <strong>OHDSI</strong>
+oncology community, <strong>HL7 Europe PHOENIX</strong>, and the <strong>MII Onkologie</strong>
+working group. See <a href="cooperation.html">Cooperation, Attribution and Licensing</a>
+for the full provenance and governance story.</p>
+
+<h4 id="status">Status</h4>
+
+<p>This IG is <code class="language-plaintext highlighter-rouge">draft</code> / <code class="language-plaintext highlighter-rouge">experimental</code>. The Phase 0 spike (one regimen,
+Carbo/Paclitaxel Variant #83) is validated end-to-end against the HAPI
+FHIR Clinical Reasoning engine — see <a href="phase0.html">the Phase 0 page</a>.
+Phase 1A (active + strongly-evidenced HemOnc regimens with experimental
+MII Onkologie bindings) is in progress.</p>
+
+<h4 id="read-next">Read next</h4>
+
+<ul>
+  <li><a href="background.html">Background and Scope</a> — what this IG is and isn't</li>
+  <li><a href="cooperation.html">Cooperation, Attribution and Licensing</a> — how the
+catalog is developed and which obligations travel with the content</li>
+  <li><a href="disclaimers.html">Disclaimers and Intended Use</a> — <strong>not a medical
+device; not intended for direct clinical use without validation</strong></li>
+  <li><a href="versioning.html">Versioning Strategy</a> — how snapshots tie back to
+HemOnc and how MII / PHOENIX bindings co-evolve</li>
+  <li><a href="apply-and-cds.html"><code class="language-plaintext highlighter-rouge">$apply</code> and CDS Hooks</a> — the runtime delivery
+model</li>
+  <li><a href="phase0.html">Phase 0 Spike</a> — the end-to-end demonstration</li>
+</ul>
+
+<h4 id="not-a-medical-device">Not a medical device</h4>
+
+<p>The artifacts in this distribution are reference content, not a medical
+device or medical-device software under Regulation (EU) 2017/745 or
+21 U.S.C. § 321(h). No CE marking or FDA clearance has been sought.
+See <a href="disclaimers.html">Disclaimers and Intended Use</a> for the full
+intended-use statement.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

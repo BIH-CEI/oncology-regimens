@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Cooperation, Attribution and Licensing - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols</span>
+            <br/>
+            <span style="display:inline-block;">2026-03-12-0.1.0 - ci-build
+
+
+
+  <img alt="Germany flag" src="assets/images/deu.svg" height="16" title="Germany"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="cooperation.html">Cooperation</a>
+  </li>
+  <li>
+    <a href="disclaimers.html">Disclaimers</a>
+  </li>
+  <li>
+    <a href="versioning.html">Versioning</a>
+  </li>
+  <li>
+    <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="phase0.html">Phase 0 Spike</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Cooperation, Attribution and Licensing</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols - Local Development build (v2026-03-12-0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hemonc.org/fhir/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Cooperation, Attribution and Licensing</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h3 id="cooperation-attribution-and-licensing">Cooperation, Attribution and Licensing</h3>
+
+<p>This Implementation Guide is a FHIR-native projection of the
+<a href="https://hemonc.org">HemOnc Knowledge Base</a> (HemOncKB), the canonical
+oncology vocabulary in the OMOP Common Data Model. The IG is being
+developed in close cooperation with several communities; this page
+records the relationships, the licensing terms that travel with the
+content, and the operational commitments that make the cooperation
+verifiable rather than rhetorical.</p>
+
+<h4 id="cooperation-partners">Cooperation partners</h4>
+
+<ul>
+  <li><strong>HemOnc.org editorial team</strong> — faithful semantic representation of
+regimens, sigs and clinical evidence; alignment on versioning cadence;
+round-tripping of FHIR-discovered ambiguities back into HemOncKB.</li>
+  <li><strong>OHDSI / OMOP Oncology community</strong> — identity parity between the
+OMOP-canonical HemOnc <code class="language-plaintext highlighter-rouge">concept_id</code> and the FHIR artifact, so that
+observational research (OMOP) and clinical workflow (FHIR) operate
+over the same underlying knowledge.</li>
+  <li><strong>HL7 Europe PHOENIX</strong> initiative and the European Common Cancer
+Model (ECCM) — alignment of the catalog layer with the EU patient-data
+layer as ECCM publishes FHIR profiles.</li>
+  <li><strong>Medizininformatik-Initiative Onkologie working group</strong> — a workable
+mapping (experimental) between the German cancer-registry protocol
+codes (<code class="language-plaintext highlighter-rouge">mii-cs-onko-systemische-therapie-protokolle</code>) and this
+clinical-ordering catalog.</li>
+</ul>
+
+<h4 id="operational-commitments">Operational commitments</h4>
+
+<ol>
+  <li><strong>Version lockstep with HemOnc.</strong> Every IG release labels itself
+with the HemOnc snapshot date it was derived from. New HemOnc
+snapshot → new IG version within ≤4 weeks.</li>
+  <li><strong>Upstream issue feedback.</strong> FHIR-discovered inconsistencies in
+HemOncKB are filed as HemOnc Dataverse / repository issues, not
+silently fixed locally. Every PlanDefinition carries a
+<code class="language-plaintext highlighter-rouge">relatedArtifact[type=derived-from]</code> pointing at its source row.</li>
+  <li><strong>OMOP round-trip preservation.</strong> Every PlanDefinition carries the
+HemOnc CUI (which corresponds to an OMOP <code class="language-plaintext highlighter-rouge">concept_code</code>) as a
+<code class="language-plaintext highlighter-rouge">use=secondary</code> identifier, so tooling that round-trips OMOP↔FHIR
+can re-derive the OMOP concept without parsing canonical URLs.</li>
+</ol>
+
+<h4 id="licensing">Licensing</h4>
+
+<p>HemOnc content is distributed under <strong>CC BY 4.0</strong> (<a href="https://pubmed.ncbi.nlm.nih.gov/31238109/">Warner JL et al.,
+2019, J Biomed Inform</a>;
+<a href="https://dataverse.harvard.edu/dataverse/hemonc">HemOnc Dataverse</a>).
+This IG carries the same licence. Attribution must be preserved in any
+downstream incorporation, in line with CC BY 4.0 §3.</p>
+
+<p>Where this IG references other CodeSystems and standards
+(MII Onkologie, RxNorm, SNOMED CT, NCIt, ATC, LOINC), the original
+licensing terms of those resources apply to their respective concepts.</p>
+
+<h4 id="not-derived-from-nccn-or-awmf-guidelines">Not derived from NCCN or AWMF guidelines</h4>
+
+<p>The content of this IG is derived from primary clinical-trial
+publications, drug labels, and the HemOnc Knowledge Base. It is
+<strong>not derived from NCCN Guidelines®, the NCCN Compendium®, NCCN
+Chemotherapy Order Templates™, or AWMF S3-Leitlinien</strong>, and makes no
+claim of compatibility with those products. NCCN and AWMF are
+trademarks of their respective owners.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

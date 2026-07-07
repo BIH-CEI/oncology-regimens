@@ -1,0 +1,22 @@
+Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
+/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog.json	7287	-	0	0	0	0	0	0	12	171	0	0	0	0	1	0	0	1	0	0	72	85	0	0	0	2	0	3
+input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json	4494	5	0	0	3	0	0	0	1	24	0	0	0	0	0	0	0	0	0	0	17	18	0	0	0	1	0	0
+input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json	4033	8	0	0	0	0	0	0	1	11	0	0	0	0	0	0	0	0	0	0	15	12	0	0	0	1	0	0
+input/resources/CodeSystem-hemonc-fragment.json	3356	7	0	0	0	0	0	0	1	11	0	0	0	0	1	0	0	0	0	0	16	74	0	0	0	0	0	0
+input/resources/CodeSystem-sig-target-type.json	2166	3	0	0	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	14	43	0	0	0	1	0	0
+input/resources/Library-HemOncDoseHelpers.json	4497	4	0	0	0	0	0	0	1	913	0	0	0	0	0	0	0	0	0	0	30	11	0	0	0	0	0	0
+input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel.json	1247	9	0	0	0	0	0	0	0	300	0	0	0	0	0	0	0	0	0	0	9	23	0	0	0	0	0	0
+input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin.json	1622	3	0	0	0	0	0	0	1	328	0	0	0	0	0	0	0	1	0	0	12	17	0	0	0	0	0	0
+input/resources/PlanDefinition-regimen-2554-variant-144842.json	4010	4	0	0	0	0	0	0	0	706	0	0	0	0	1	0	0	0	0	0	37	14	0	0	0	1	0	1
+/fsh-generated/includes/menu.xml	1419	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/fsh-generated/includes/fsh-link-references.md	538	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/background.md	3693	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/phase0.md	2902	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/disclaimers.md	2636	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/input/pagecontent/versioning.md	2943	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/index.md	2141	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/cooperation.md	3087	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/input/pagecontent/apply-and-cds.md	2645	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/template/config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+/template/config/_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+/temp/pages/_includes/artifacts.xml	7280	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	0	0	0	0	0	0	0

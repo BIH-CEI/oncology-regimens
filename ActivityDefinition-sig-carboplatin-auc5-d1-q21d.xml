@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+  <id value="sig-carboplatin-auc5-d1-q21d"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b style="color: maroon">Exception generating Narrative: Error @1, 17: Premature ExpressionNode termination at unexpected token &quot;==&quot;</b></p></div>
+  </text>
+  <url value="http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d"/>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hemonc.org/cui"/>
+    <value value="regimen-2554+variant-144842+component-88"/>
+  </identifier>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="CarboplatinAUC5D1Q21D"/>
+  <title value="Carboplatin AUC 5 IV over 30–60 min, day 1, q21d"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2026-03-12"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83 (cui 144842). Carboplatin as primary systemic component, target AUC 5 IV over 30–60 minutes, day 1 of a 21-day cycle, for 3–6 cycles. The declared dose is a target AUC; the dynamicValue invokes the Calvert helper to compute the mg at $apply time using the patient's GFR."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+        <code value="88"/>
+        <display value="Carboplatin"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <relatedArtifact>
+    <type value="derived-from"/>
+    <label value="HemOncKB sigs.csv row, snapshot 2026-03-12"/>
+    <citation value="HemOnc Dataverse v2.1 (2026-03-12). regimen_cui=2554, variant_cui=144842, component_cui=88."/>
+    <url value="https://dataverse.harvard.edu/dataverse/hemonc"/>
+    <document>
+      <url value="https://dataverse.harvard.edu/dataverse/hemonc"/>
+    </document>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="documentation"/>
+    <label value="Calvert et al. 1989, J Clin Oncol 7(11):1748-1756"/>
+    <citation value="Calvert AH, Newell DR, Gumbrell LA, et al. Carboplatin dosage: prospective evaluation of a simple formula based on renal function. J Clin Oncol. 1989;7(11):1748-56."/>
+  </relatedArtifact>
+  <library value="http://hemonc.org/fhir/Library/HemOncDoseHelpers"/>
+  <kind value="MedicationRequest"/>
+  <productReference>
+    <reference value="MedicationKnowledge/hemonc-drug-88-carboplatin"/>
+  </productReference>
+  <dosage>
+    <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">
+      <valueInteger value="1"/>
+    </extension>
+    <sequence value="1"/>
+    <text value="Carboplatin AUC 5 IV over 30–60 minutes on day 1 of a 21-day cycle"/>
+    <patientInstruction value="Dose target is exposure (AUC), not milligrams. Computed mg = 5 × (effective GFR + 25) at $apply time. GFR formula and cap are institution policy."/>
+    <timing>
+      <repeat>
+        <boundsRange>
+          <low>
+            <value value="3"/>
+            <unit value="1"/>
+            <system value="http://unitsofmeasure.org"/>
+          </low>
+          <high>
+            <value value="6"/>
+            <unit value="1"/>
+            <system value="http://unitsofmeasure.org"/>
+          </high>
+        </boundsRange>
+        <duration value="30"/>
+        <durationMax value="60"/>
+        <durationUnit value="min"/>
+        <frequency value="1"/>
+        <period value="21"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timing>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="47625008"/>
+        <display value="Intravenous route"/>
+      </coding>
+    </route>
+    <doseAndRate>
+      <type>
+        <coding>
+          <system value="http://hemonc.org/fhir/CodeSystem/sig-target-type"/>
+          <code value="target-AUC"/>
+        </coding>
+      </type>
+      <doseQuantity>
+        <value value="5"/>
+        <unit value="AUC"/>
+        <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+        <code value="134425"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosage>
+  <dynamicValue>
+    <path value="dosageInstruction[0].doseAndRate[0].doseQuantity.value"/>
+    <expression>
+      <description value="Calvert: targetAUC × (effectiveGFR + 25). Phase 0 hardcodes targetAUC=5, GFR=100; production replaces with patient-derived GFR."/>
+      <language value="text/fhirpath"/>
+      <expression value="5 * (100.0 + 25)"/>
+    </expression>
+  </dynamicValue>
+  <dynamicValue>
+    <path value="dosageInstruction[0].doseAndRate[0].doseQuantity.unit"/>
+    <expression>
+      <language value="text/fhirpath"/>
+      <expression value="'mg'"/>
+    </expression>
+  </dynamicValue>
+  <dynamicValue>
+    <path value="dosageInstruction[0].doseAndRate[0].doseQuantity.system"/>
+    <expression>
+      <language value="text/fhirpath"/>
+      <expression value="'http://unitsofmeasure.org'"/>
+    </expression>
+  </dynamicValue>
+  <dynamicValue>
+    <path value="dosageInstruction[0].doseAndRate[0].doseQuantity.code"/>
+    <expression>
+      <language value="text/fhirpath"/>
+      <expression value="'mg'"/>
+    </expression>
+  </dynamicValue>
+  <dynamicValue>
+    <path value="dosageInstruction[0].doseAndRate[0].type"/>
+    <expression>
+      <language value="text/cql.identifier"/>
+      <expression value="DoseAndRateTypeCarboplatin"/>
+    </expression>
+  </dynamicValue>
+</ActivityDefinition>

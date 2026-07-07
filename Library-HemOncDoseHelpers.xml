@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library xmlns="http://hl7.org/fhir">
+  <id value="HemOncDoseHelpers"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">HemOnc dose-computation helpers (BSA, Calvert)</td>
+        </tr>
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">HemOncDoseHelpers</td>
+        </tr>
+        
+
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">2026-03-12-0.1.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="Library-HemOncDoseHelpers.html">HemOnc dose-computation helpers (BSA, Calvert)</a></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.2.0/CodeSystem-library-type.html">http://terminology.hl7.org/CodeSystem/library-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>logic-library</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2026-03-12</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">HemOnc FHIR Catalog Working Group</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>CQL library providing BSA (Mosteller/Du Bois/Haycock), Cockcroft-Gault GFR, Calvert carboplatin formula, and per-sig dose helpers referenced by ActivityDefinition.dynamicValue. Phase 0 spike — covers paclitaxel and carboplatin only. Institution policy (BSA formula, BSA cap, GFR formula, GFR cap) is set via $apply Parameters.</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
+                    
+                        <tr>
+                            <td>task</td>
+                            <td/>
+                        </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">DE</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+          <th scope="row"><b>Parameters: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Name</b></th><th><b>Type</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>In/Out</b></th></tr>
+              
+                <tr><th>BSAFormula</th><th>string</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>BSACapM2</th><th>decimal</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>GFRFormula</th><th>string</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>CarboGFRCapMlMin</th><th>decimal</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>TargetAUC</th><th>decimal</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>PaclitaxelDoseMgPerM2</th><th>decimal</th><th>0</th><th>1</th><th>In</th></tr>
+              
+                <tr><th>PaclitaxelComputedDose</th><th>Quantity</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+                <tr><th>CarboplatinCalvertDose</th><th>Quantity</th><th>0</th><th>1</th><th>Out</th></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">library HemOncDoseHelpers version '2026-03-12'
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1' called FHIRHelpers
+
+codesystem &quot;SigTargetType&quot;: 'http://hemonc.org/fhir/CodeSystem/sig-target-type'
+
+code &quot;ComputedFromTargetAUC&quot;:     'computed-from-target-AUC'         from &quot;SigTargetType&quot;
+code &quot;ComputedFromTargetMgPerM2&quot;: 'computed-from-target-mg-per-m2'   from &quot;SigTargetType&quot;
+
+// -----------------------------------------------------------------------------
+// Phase 0 status
+// -----------------------------------------------------------------------------
+// The dose-magnitude computations (Mosteller/Du Bois BSA, Cockcroft-Gault,
+// Calvert) are emitted via FHIRPath dynamicValues in the ActivityDefinition
+// resources, because cqf-fhir 8.4.0 has a bug coercing CQL System.Quantity
+// literals into FHIR.SimpleQuantity at dynamicValue assignment time (surfaces
+// as 'Type org.hl7.fhir.r4.model.DateTimeType is not comparable').
+//
+// This library still owns the *coded* provenance markers — those work fine
+// via text/cql.identifier and are referenced from
+// ActivityDefinition.dynamicValue for the doseAndRate[0].type path.
+//
+// Once the cqf-fhir bug is fixed (track upstream), the dose-magnitude
+// expressions move back into this library and gain real BSA/GFR computation
+// from Patient + Observation context.
+// -----------------------------------------------------------------------------
+
+context Patient
+
+define DoseAndRateTypeCarboplatin:
+  Concept { codes: { &quot;ComputedFromTargetAUC&quot; } }
+
+define DoseAndRateTypePaclitaxel:
+  Concept { codes: { &quot;ComputedFromTargetMgPerM2&quot; } }
+</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+    </table>
+</div>
+</div>
+  </text>
+  <url value="http://hemonc.org/fhir/Library/HemOncDoseHelpers"/>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="HemOncDoseHelpers"/>
+  <title value="HemOnc dose-computation helpers (BSA, Calvert)"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+      <code value="logic-library"/>
+    </coding>
+  </type>
+  <date value="2026-03-12"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="CQL library providing BSA (Mosteller/Du Bois/Haycock), Cockcroft-Gault GFR, Calvert carboplatin formula, and per-sig dose helpers referenced by ActivityDefinition.dynamicValue. Phase 0 spike — covers paclitaxel and carboplatin only. Institution policy (BSA formula, BSA cap, GFR formula, GFR cap) is set via $apply Parameters."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/definition-topic"/>
+        <code value="treatment"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <parameter>
+    <name value="BSAFormula"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="BSACapM2"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="decimal"/>
+  </parameter>
+  <parameter>
+    <name value="GFRFormula"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="CarboGFRCapMlMin"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="decimal"/>
+  </parameter>
+  <parameter>
+    <name value="TargetAUC"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="decimal"/>
+  </parameter>
+  <parameter>
+    <name value="PaclitaxelDoseMgPerM2"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="decimal"/>
+  </parameter>
+  <parameter>
+    <name value="PaclitaxelComputedDose"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Quantity"/>
+  </parameter>
+  <parameter>
+    <name value="CarboplatinCalvertDose"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <type value="Quantity"/>
+  </parameter>
+  <content>
+    <contentType value="text/cql"/>
+    <data value="bGlicmFyeSBIZW1PbmNEb3NlSGVscGVycyB2ZXJzaW9uICcyMDI2LTAzLTEyJwoKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScKCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnIGNhbGxlZCBGSElSSGVscGVycwoKY29kZXN5c3RlbSAiU2lnVGFyZ2V0VHlwZSI6ICdodHRwOi8vaGVtb25jLm9yZy9maGlyL0NvZGVTeXN0ZW0vc2lnLXRhcmdldC10eXBlJwoKY29kZSAiQ29tcHV0ZWRGcm9tVGFyZ2V0QVVDIjogICAgICdjb21wdXRlZC1mcm9tLXRhcmdldC1BVUMnICAgICAgICAgZnJvbSAiU2lnVGFyZ2V0VHlwZSIKY29kZSAiQ29tcHV0ZWRGcm9tVGFyZ2V0TWdQZXJNMiI6ICdjb21wdXRlZC1mcm9tLXRhcmdldC1tZy1wZXItbTInICAgZnJvbSAiU2lnVGFyZ2V0VHlwZSIKCi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi8vIFBoYXNlIDAgc3RhdHVzCi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi8vIFRoZSBkb3NlLW1hZ25pdHVkZSBjb21wdXRhdGlvbnMgKE1vc3RlbGxlci9EdSBCb2lzIEJTQSwgQ29ja2Nyb2Z0LUdhdWx0LAovLyBDYWx2ZXJ0KSBhcmUgZW1pdHRlZCB2aWEgRkhJUlBhdGggZHluYW1pY1ZhbHVlcyBpbiB0aGUgQWN0aXZpdHlEZWZpbml0aW9uCi8vIHJlc291cmNlcywgYmVjYXVzZSBjcWYtZmhpciA4LjQuMCBoYXMgYSBidWcgY29lcmNpbmcgQ1FMIFN5c3RlbS5RdWFudGl0eQovLyBsaXRlcmFscyBpbnRvIEZISVIuU2ltcGxlUXVhbnRpdHkgYXQgZHluYW1pY1ZhbHVlIGFzc2lnbm1lbnQgdGltZSAoc3VyZmFjZXMKLy8gYXMgJ1R5cGUgb3JnLmhsNy5maGlyLnI0Lm1vZGVsLkRhdGVUaW1lVHlwZSBpcyBub3QgY29tcGFyYWJsZScpLgovLwovLyBUaGlzIGxpYnJhcnkgc3RpbGwgb3ducyB0aGUgKmNvZGVkKiBwcm92ZW5hbmNlIG1hcmtlcnMg4oCUIHRob3NlIHdvcmsgZmluZQovLyB2aWEgdGV4dC9jcWwuaWRlbnRpZmllciBhbmQgYXJlIHJlZmVyZW5jZWQgZnJvbQovLyBBY3Rpdml0eURlZmluaXRpb24uZHluYW1pY1ZhbHVlIGZvciB0aGUgZG9zZUFuZFJhdGVbMF0udHlwZSBwYXRoLgovLwovLyBPbmNlIHRoZSBjcWYtZmhpciBidWcgaXMgZml4ZWQgKHRyYWNrIHVwc3RyZWFtKSwgdGhlIGRvc2UtbWFnbml0dWRlCi8vIGV4cHJlc3Npb25zIG1vdmUgYmFjayBpbnRvIHRoaXMgbGlicmFyeSBhbmQgZ2FpbiByZWFsIEJTQS9HRlIgY29tcHV0YXRpb24KLy8gZnJvbSBQYXRpZW50ICsgT2JzZXJ2YXRpb24gY29udGV4dC4KLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCmNvbnRleHQgUGF0aWVudAoKZGVmaW5lIERvc2VBbmRSYXRlVHlwZUNhcmJvcGxhdGluOgogIENvbmNlcHQgeyBjb2RlczogeyAiQ29tcHV0ZWRGcm9tVGFyZ2V0QVVDIiB9IH0KCmRlZmluZSBEb3NlQW5kUmF0ZVR5cGVQYWNsaXRheGVsOgogIENvbmNlcHQgeyBjb2RlczogeyAiQ29tcHV0ZWRGcm9tVGFyZ2V0TWdQZXJNMiIgfSB9Cg=="/>
+    <title value="HemOncDoseHelpers.cql"/>
+  </content>
+</Library>

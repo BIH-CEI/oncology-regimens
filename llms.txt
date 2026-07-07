@@ -1,0 +1,41 @@
+# hemonc-fhir-regimen-catalog#2026-03-12-0.1.0: HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols
+
+## Pages
+
+* [Home](index.md)
+* [Background and Scope](background.md)
+* [Disclaimers and Intended Use](disclaimers.md)
+* [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
+* [Cooperation, Attribution and Licensing](cooperation.md)
+* [Artifacts Summary](artifacts.md)
+* [Versioning Strategy](versioning.md)
+* [Phase 0 Spike — Carboplatin + Paclitaxel Variant](phase0.md)
+
+## Resources
+
+### CodeSystems
+
+* [HemOnc Ontology (fragment, Phase 0 spike)](CodeSystem-hemonc.md)
+* [HemOnc Sig Dose Target Type](CodeSystem-sig-target-type.md)
+
+### ActivityDefinitions
+
+* [Carboplatin AUC 5 IV over 30–60 min, day 1, q21d](ActivityDefinition-sig-carboplatin-auc5-d1-q21d.md)
+* [Paclitaxel 175 mg/m² IV over 3 h, day 1, q21d](ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.md)
+
+### ImplementationGuides
+
+* [HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols](index.md)
+
+### Libraries
+
+* [HemOnc dose-computation helpers (BSA, Calvert)](Library-HemOncDoseHelpers.md)
+
+### MedicationKnowledges
+
+* [hemonc-drug-379-paclitaxel](MedicationKnowledge-hemonc-drug-379-paclitaxel.md)
+* [hemonc-drug-88-carboplatin](MedicationKnowledge-hemonc-drug-88-carboplatin.md)
+
+### PlanDefinitions
+
+* [Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d)](PlanDefinition-regimen-2554-variant-144842.md)

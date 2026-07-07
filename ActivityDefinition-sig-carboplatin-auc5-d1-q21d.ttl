@@ -1,0 +1,191 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "sig-carboplatin-auc5-d1-q21d"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception generating Narrative: Error @1, 17: Premature ExpressionNode termination at unexpected token \"==\"</b></p></div>"
+  ] ;
+  fhir:ActivityDefinition.url [ fhir:value "http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d"] ;
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/cui" ] ;
+     fhir:Identifier.value [ fhir:value "regimen-2554+variant-144842+component-88" ]
+  ] ;
+  fhir:ActivityDefinition.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:ActivityDefinition.name [ fhir:value "CarboplatinAUC5D1Q21D"] ;
+  fhir:ActivityDefinition.title [ fhir:value "Carboplatin AUC 5 IV over 30–60 min, day 1, q21d"] ;
+  fhir:ActivityDefinition.status [ fhir:value "active"] ;
+  fhir:ActivityDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ActivityDefinition.date [ fhir:value "2026-03-12"^^xsd:date] ;
+  fhir:ActivityDefinition.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:ActivityDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.description [ fhir:value "One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83 (cui 144842). Carboplatin as primary systemic component, target AUC 5 IV over 30–60 minutes, day 1 of a 21-day cycle, for 3–6 cycles. The declared dose is a target AUC; the dynamicValue invokes the Calvert helper to compute the mg at $apply time using the patient's GFR."] ;
+  fhir:ActivityDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+         fhir:Coding.code [ fhir:value "88" ] ;
+         fhir:Coding.display [ fhir:value "Carboplatin" ]
+       ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.relatedArtifact [
+     fhir:index 0 ;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ] ;
+     fhir:RelatedArtifact.label [ fhir:value "HemOncKB sigs.csv row, snapshot 2026-03-12" ] ;
+     fhir:RelatedArtifact.citation [ fhir:value "HemOnc Dataverse v2.1 (2026-03-12). regimen_cui=2554, variant_cui=144842, component_cui=88." ] ;
+     fhir:RelatedArtifact.url [ fhir:value "https://dataverse.harvard.edu/dataverse/hemonc" ] ;
+     fhir:RelatedArtifact.document [
+       fhir:Attachment.url [ fhir:value "https://dataverse.harvard.edu/dataverse/hemonc" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ] ;
+     fhir:RelatedArtifact.label [ fhir:value "Calvert et al. 1989, J Clin Oncol 7(11):1748-1756" ] ;
+     fhir:RelatedArtifact.citation [ fhir:value "Calvert AH, Newell DR, Gumbrell LA, et al. Carboplatin dosage: prospective evaluation of a simple formula based on renal function. J Clin Oncol. 1989;7(11):1748-56." ]
+  ] ;
+  fhir:ActivityDefinition.library [
+     fhir:value "http://hemonc.org/fhir/Library/HemOncDoseHelpers" ;
+     fhir:index 0 ;
+     fhir:link <http://hemonc.org/fhir/Library/HemOncDoseHelpers>
+  ] ;
+  fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest"] ;
+  fhir:ActivityDefinition.productReference [
+     fhir:link <http://hemonc.org/fhir/MedicationKnowledge/hemonc-drug-88-carboplatin> ;
+     fhir:Reference.reference [ fhir:value "MedicationKnowledge/hemonc-drug-88-carboplatin" ]
+  ] ;
+  fhir:ActivityDefinition.dosage [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/day-of-cycle" ] ;
+       fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+     ] ;
+     fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
+     fhir:Dosage.text [ fhir:value "Carboplatin AUC 5 IV over 30–60 minutes on day 1 of a 21-day cycle" ] ;
+     fhir:Dosage.patientInstruction [ fhir:value "Dose target is exposure (AUC), not milligrams. Computed mg = 5 × (effective GFR + 25) at $apply time. GFR formula and cap are institution policy." ] ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.boundsRange [
+           fhir:Range.low [
+             fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "1" ] ;
+             fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ]
+           ] ;
+           fhir:Range.high [
+             fhir:Quantity.value [ fhir:value "6"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "1" ] ;
+             fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ]
+           ]
+         ] ;
+         fhir:Timing.repeat.duration [ fhir:value "30"^^xsd:decimal ] ;
+         fhir:Timing.repeat.durationMax [ fhir:value "60"^^xsd:decimal ] ;
+         fhir:Timing.repeat.durationUnit [ fhir:value "min" ] ;
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "21"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ] ;
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:47625008 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "47625008" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous route" ]
+       ]
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/sig-target-type" ] ;
+           fhir:Coding.code [ fhir:value "target-AUC" ]
+         ]
+       ] ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "AUC" ] ;
+         fhir:Quantity.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+         fhir:Quantity.code [ fhir:value "134425" ]
+       ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.dynamicValue [
+     fhir:index 0 ;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "dosageInstruction[0].doseAndRate[0].doseQuantity.value" ] ;
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.description [ fhir:value "Calvert: targetAUC × (effectiveGFR + 25). Phase 0 hardcodes targetAUC=5, GFR=100; production replaces with patient-derived GFR." ] ;
+       fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+       fhir:Expression.expression [ fhir:value "5 * (100.0 + 25)" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "dosageInstruction[0].doseAndRate[0].doseQuantity.unit" ] ;
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+       fhir:Expression.expression [ fhir:value "'mg'" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "dosageInstruction[0].doseAndRate[0].doseQuantity.system" ] ;
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+       fhir:Expression.expression [ fhir:value "'http://unitsofmeasure.org'" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "dosageInstruction[0].doseAndRate[0].doseQuantity.code" ] ;
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.language [ fhir:value "text/fhirpath" ] ;
+       fhir:Expression.expression [ fhir:value "'mg'" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "dosageInstruction[0].doseAndRate[0].type" ] ;
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.language [ fhir:value "text/cql.identifier" ] ;
+       fhir:Expression.expression [ fhir:value "DoseAndRateTypeCarboplatin" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

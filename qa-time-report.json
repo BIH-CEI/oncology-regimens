@@ -1,0 +1,458 @@
+{
+  "date" : "Tue, 07 Jul, 2026 16:34:37 +0000",
+  "doco" : "For each file: start is seconds after start activity occurred. Length = milliseconds activity took",
+  "files" : [{
+    "name" : "/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog.json",
+    "size" : 7287,
+    "processes" : [{
+      "activity" : "load",
+      "start" : 58,
+      "length" : 17
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 12
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 171
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 2743
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 66,
+      "length" : 1
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 66,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 72
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 85
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 76,
+      "length" : 2
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 86,
+      "length" : 3
+    }]
+  },
+  {
+    "name" : "input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json",
+    "size" : 4494,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 5
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 34
+    },
+    {
+      "activity" : "load-configure",
+      "start" : 58,
+      "length" : 3
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 24
+    },
+    {
+      "activity" : "validate",
+      "start" : 62,
+      "length" : 852
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 17
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 18
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 76,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json",
+    "size" : 4033,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 8
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 7
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 11
+    },
+    {
+      "activity" : "validate",
+      "start" : 63,
+      "length" : 319
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 15
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 12
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 76,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "input/resources/CodeSystem-hemonc-fragment.json",
+    "size" : 3356,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 7
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 10
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 11
+    },
+    {
+      "activity" : "validate",
+      "start" : 61,
+      "length" : 1265
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 66,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 16
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 74
+    }]
+  },
+  {
+    "name" : "input/resources/CodeSystem-sig-target-type.json",
+    "size" : 2166,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 3
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 7
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 5
+    },
+    {
+      "activity" : "validate",
+      "start" : 62,
+      "length" : 25
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 14
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 43
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 76,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "input/resources/Library-HemOncDoseHelpers.json",
+    "size" : 4497,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 4
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 22
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 58,
+      "length" : 913
+    },
+    {
+      "activity" : "validate",
+      "start" : 66,
+      "length" : 328
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 30
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 11
+    }]
+  },
+  {
+    "name" : "input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel.json",
+    "size" : 1247,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 9
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 59,
+      "length" : 300
+    },
+    {
+      "activity" : "validate",
+      "start" : 66,
+      "length" : 395
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 9
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 23
+    }]
+  },
+  {
+    "name" : "input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin.json",
+    "size" : 1622,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 3
+    },
+    {
+      "activity" : "checkR4R4B",
+      "start" : 58,
+      "length" : 1
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 60,
+      "length" : 328
+    },
+    {
+      "activity" : "scanForUsageStats",
+      "start" : 66,
+      "length" : 1
+    },
+    {
+      "activity" : "validate",
+      "start" : 67,
+      "length" : 134
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 12
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 17
+    }]
+  },
+  {
+    "name" : "input/resources/PlanDefinition-regimen-2554-variant-144842.json",
+    "size" : 4010,
+    "processes" : [{
+      "activity" : "loadResources",
+      "start" : 58,
+      "length" : 4
+    },
+    {
+      "activity" : "load",
+      "start" : 58,
+      "length" : 19
+    },
+    {
+      "activity" : "generateNarratives",
+      "start" : 60,
+      "length" : 706
+    },
+    {
+      "activity" : "validate",
+      "start" : 66,
+      "length" : 53
+    },
+    {
+      "activity" : "checkConformanceResources3",
+      "start" : 66,
+      "length" : 1
+    },
+    {
+      "activity" : "generate1",
+      "start" : 67,
+      "length" : 37
+    },
+    {
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 14
+    },
+    {
+      "activity" : "generateValidationPack",
+      "start" : 76,
+      "length" : 1
+    },
+    {
+      "activity" : "scanExamplesForR5",
+      "start" : 86,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/fsh-generated/includes/menu.xml",
+    "size" : 1419,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/fsh-generated/includes/fsh-link-references.md",
+    "size" : 538
+  },
+  {
+    "name" : "/input/pagecontent/background.md",
+    "size" : 3693
+  },
+  {
+    "name" : "/input/pagecontent/phase0.md",
+    "size" : 2902
+  },
+  {
+    "name" : "/input/pagecontent/disclaimers.md",
+    "size" : 2636,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/input/pagecontent/versioning.md",
+    "size" : 2943
+  },
+  {
+    "name" : "/input/pagecontent/index.md",
+    "size" : 2141
+  },
+  {
+    "name" : "/input/pagecontent/cooperation.md",
+    "size" : 3087
+  },
+  {
+    "name" : "/input/pagecontent/apply-and-cds.md",
+    "size" : 2645
+  },
+  {
+    "name" : "/template/config",
+    "size" : 0,
+    "processes" : [{
+      "activity" : "generate2",
+      "start" : 69,
+      "length" : 1
+    }]
+  },
+  {
+    "name" : "/template/config/_config.yml",
+    "size" : 140
+  },
+  {
+    "name" : "/temp/pages/_includes/artifacts.xml",
+    "size" : 7280
+  }]
+}

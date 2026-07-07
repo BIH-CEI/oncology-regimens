@@ -1,0 +1,18 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hemonc.org/fhir/CodeSystem/hemonc",
+    "version" : "2026-03-12-0.1.0",
+    "status" : "active",
+    "name" : "HemOnc",
+    "title" : "HemOnc Ontology (fragment, Phase 0 spike)",
+    "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase."
+  },
+  {
+    "url" : "http://hemonc.org/fhir/CodeSystem/sig-target-type",
+    "version" : "2026-03-12-0.1.0",
+    "status" : "active",
+    "name" : "HemOncSigTargetType",
+    "title" : "HemOnc Sig Dose Target Type",
+    "description" : "Small code system distinguishing the *target* expressed by a Sig's doseQuantity from the *computed* mg dose. Used as ActivityDefinition.dosage.doseAndRate.type. A target requires a CQL helper to convert into an administered mg quantity at $apply time."
+  }]
+}

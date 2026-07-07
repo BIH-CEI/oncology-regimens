@@ -1,0 +1,193 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/hemonc> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "hemonc"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem hemonc</b></p><a name=\"hemonc\"> </a><a name=\"hchemonc\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>concept-class-id</td><td>concept-class-id</td><td>string</td><td>HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)</td></tr><tr><td>atc</td><td>atc</td><td>string</td><td>WHO ATC code</td></tr><tr><td>rxnorm</td><td>rxnorm</td><td>string</td><td>RxNorm IN code (preferred mapping per HemOnc rxnorm_map)</td></tr><tr><td>inn</td><td>inn</td><td>string</td><td>International Nonproprietary Name</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/hemonc</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>concept-class-id</b></td><td><b>atc</b></td><td><b>rxnorm</b></td><td><b>inn</b></td></tr><tr><td style=\"white-space:nowrap\">88<a name=\"hemonc-88\"> </a></td><td>Carboplatin</td><td>Component</td><td>L01XA02</td><td>40048</td><td>carboplatin</td></tr><tr><td style=\"white-space:nowrap\">379<a name=\"hemonc-379\"> </a></td><td>Paclitaxel</td><td>Component</td><td>L01CD01</td><td>56946</td><td>paclitaxel</td></tr><tr><td style=\"white-space:nowrap\">2554<a name=\"hemonc-2554\"> </a></td><td>Carboplatin and Paclitaxel (CP)</td><td>Regimen</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">144842<a name=\"hemonc-144842\"> </a></td><td>Variant #83</td><td>Regimen Variant</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134425<a name=\"hemonc-134425\"> </a></td><td>AUC</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134448<a name=\"hemonc-134448\"> </a></td><td>mg/m^2</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134430<a name=\"hemonc-134430\"> </a></td><td>hour</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134451<a name=\"hemonc-134451\"> </a></td><td>minute</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">44957<a name=\"hemonc-44957\"> </a></td><td>IV</td><td>Route</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">139563<a name=\"hemonc-139563\"> </a></td><td>once</td><td>Frequency</td><td/><td/><td/></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc"] ;
+  fhir:CodeSystem.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://dataverse.harvard.edu/dataset.xhtml" ] ;
+     fhir:Identifier.value [ fhir:value "HemOncKB" ]
+  ] ;
+  fhir:CodeSystem.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:CodeSystem.name [ fhir:value "HemOnc"] ;
+  fhir:CodeSystem.title [ fhir:value "HemOnc Ontology (fragment, Phase 0 spike)"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-03-12"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.copyright [ fhir:value "© HemOnc.org. Distributed under CC BY 4.0."] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "fragment"] ;
+  fhir:CodeSystem.property [
+     fhir:index 0 ;
+     fhir:CodeSystem.property.code [ fhir:value "concept-class-id" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)" ] ;
+     fhir:CodeSystem.property.type [ fhir:value "string" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.property.code [ fhir:value "atc" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "WHO ATC code" ] ;
+     fhir:CodeSystem.property.type [ fhir:value "string" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.property.code [ fhir:value "rxnorm" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "RxNorm IN code (preferred mapping per HemOnc rxnorm_map)" ] ;
+     fhir:CodeSystem.property.type [ fhir:value "string" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.property.code [ fhir:value "inn" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "International Nonproprietary Name" ] ;
+     fhir:CodeSystem.property.type [ fhir:value "string" ]
+  ] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "88" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Carboplatin" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Component" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "atc" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "L01XA02" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "rxnorm" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "40048" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "inn" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "carboplatin" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "379" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Paclitaxel" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Component" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "atc" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "L01CD01" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "rxnorm" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "56946" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "inn" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "paclitaxel" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "2554" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Carboplatin and Paclitaxel (CP)" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Regimen" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "144842" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Variant #83" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Regimen Variant" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "134425" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "AUC" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Unit" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "134448" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "mg/m^2" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Unit" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "134430" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "hour" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Unit" ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:CodeSystem.concept.code [ fhir:value "134451" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "minute" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Unit" ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:CodeSystem.concept.code [ fhir:value "44957" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "IV" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Route" ]
+     ]
+  ], [
+     fhir:index 9 ;
+     fhir:CodeSystem.concept.code [ fhir:value "139563" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "once" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "concept-class-id" ] ;
+       fhir:CodeSystem.concept.property.valueString [ fhir:value "Frequency" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/hemonc.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
