@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="nz-crc-mfolfox6-formulary"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b style="color: maroon">Exception parsing generated Narrative (see /tmp/liquid-6043715b-dcd4-4be4-aa88-e33870a93715.html): unexpected non-end of element null::a  at line 176 column 50</b></p></div>
+  </text>
+  <url value="http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary"/>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hemonc.org/fhir/example-formulary"/>
+    <value value="nz-crc-mfolfox6"/>
+  </identifier>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="NZColorectalMFOLFOX6Formulary"/>
+  <title value="NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="order-set"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-10-24"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="jurisdiction"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="urn:iso:std:iso:3166"/>
+        <code value="NZ"/>
+        <display value="New Zealand"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="363406005"/>
+        <display value="Malignant tumor of colon"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+        <code value="13849"/>
+        <display value="mFOLFOX6"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <relatedArtifact>
+    <type value="documentation"/>
+    <label value="Governance source"/>
+    <citation value="Te Aho o Te Kahu. SACT Regimen Library, colorectal group, as read 2026-10-22. Clinical governance: Haematology and Medical Oncology Working Groups; annual regimen review workshops."/>
+    <url value="https://srl.org.nz/regimens/colorectal"/>
+    <document>
+      <url value="https://srl.org.nz/regimens/colorectal"/>
+    </document>
+  </relatedArtifact>
+  <action id="choose-mfolfox6">
+    <title value="Choose one mFOLFOX6 specification"/>
+    <groupingBehavior value="logical-group"/>
+    <selectionBehavior value="exactly-one"/>
+    <action id="srl-52101000210105">
+      <extension url="http://hemonc.org/fhir/StructureDefinition/formulary-rank">
+        <valuePositiveInt value="1"/>
+      </extension>
+      <title value="mFOLFOX6, high dose folinic acid, with bolus (SRL 52101000210105 v2.0.2)"/>
+      <code>
+        <coding>
+          <system value="https://srl.org.nz/regimens"/>
+          <version value="2.0.2"/>
+          <code value="52101000210105"/>
+        </coding>
+      </code>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="Metastatic or adjuvant intent"/>
+          <language value="text/cql.identifier"/>
+          <expression value="Intent is adjuvant or palliative"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12"/>
+    </action>
+    <action id="srl-588251000210108">
+      <extension url="http://hemonc.org/fhir/StructureDefinition/formulary-parameter">
+        <extension url="name">
+          <valueString value="IncludeFluorouracilBolus"/>
+        </extension>
+        <extension url="value">
+          <valueBoolean value="false"/>
+        </extension>
+      </extension>
+      <title value="mFOLFOX6, high dose folinic acid, no bolus (SRL 588251000210108 v1.0.0)"/>
+      <code>
+        <coding>
+          <system value="https://srl.org.nz/regimens"/>
+          <version value="1.0.0"/>
+          <code value="588251000210108"/>
+        </coding>
+      </code>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="Metastatic intent (SRL publishes the no-bolus entry for CRC Metastatic only)"/>
+          <language value="text/cql.identifier"/>
+          <expression value="Intent is palliative"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus|1.0.0"/>
+    </action>
+    <action id="srl-52201000210102">
+      <extension url="http://hemonc.org/fhir/StructureDefinition/formulary-parameter">
+        <extension url="name">
+          <valueString value="FolinicAcidFlatDoseMg"/>
+        </extension>
+        <extension url="value">
+          <valueDecimal value="50"/>
+        </extension>
+      </extension>
+      <extension url="http://hemonc.org/fhir/StructureDefinition/formulary-parameter">
+        <extension url="name">
+          <valueString value="MaxCycles"/>
+        </extension>
+        <extension url="value">
+          <valueInteger value="12"/>
+        </extension>
+      </extension>
+      <title value="mFOLFOX6, low dose folinic acid 50 mg flat, with bolus (SRL 52201000210102 v2.0.0) — adjuvant, 12 cycles"/>
+      <code>
+        <coding>
+          <system value="https://srl.org.nz/regimens"/>
+          <version value="2.0.0"/>
+          <code value="52201000210102"/>
+        </coding>
+      </code>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <language value="text/cql.identifier"/>
+          <expression value="Intent is adjuvant"/>
+        </expression>
+      </condition>
+      <definitionCanonical value="http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12"/>
+    </action>
+  </action>
+</PlanDefinition>

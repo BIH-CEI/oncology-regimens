@@ -1,0 +1,245 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "nz-crc-mfolfox6-formulary"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-6043715b-dcd4-4be4-aa88-e33870a93715.html): unexpected non-end of element null::a  at line 176 column 50</b></p></div>"
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/fhir/example-formulary" ] ;
+     fhir:Identifier.value [ fhir:value "nz-crc-mfolfox6" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "NZColorectalMFOLFOX6Formulary"] ;
+  fhir:PlanDefinition.title [ fhir:value "NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "order-set" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "draft"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2026-10-24"^^xsd:date] ;
+  fhir:PlanDefinition.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively."] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "jurisdiction" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+         fhir:Coding.code [ fhir:value "NZ" ] ;
+         fhir:Coding.display [ fhir:value "New Zealand" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:363406005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "363406005" ] ;
+         fhir:Coding.display [ fhir:value "Malignant tumor of colon" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+         fhir:Coding.code [ fhir:value "13849" ] ;
+         fhir:Coding.display [ fhir:value "mFOLFOX6" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0 ;
+     fhir:RelatedArtifact.type [ fhir:value "documentation" ] ;
+     fhir:RelatedArtifact.label [ fhir:value "Governance source" ] ;
+     fhir:RelatedArtifact.citation [ fhir:value "Te Aho o Te Kahu. SACT Regimen Library, colorectal group, as read 2026-10-22. Clinical governance: Haematology and Medical Oncology Working Groups; annual regimen review workshops." ] ;
+     fhir:RelatedArtifact.url [ fhir:value "https://srl.org.nz/regimens/colorectal" ] ;
+     fhir:RelatedArtifact.document [
+       fhir:Attachment.url [ fhir:value "https://srl.org.nz/regimens/colorectal" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "choose-mfolfox6" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Choose one mFOLFOX6 specification" ] ;
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ] ;
+     fhir:PlanDefinition.action.selectionBehavior [ fhir:value "exactly-one" ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "srl-52101000210105" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/formulary-rank" ] ;
+         fhir:Extension.valuePositiveInt [ fhir:value "1"^^xsd:positiveInteger ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "mFOLFOX6, high dose folinic acid, with bolus (SRL 52101000210105 v2.0.2)" ] ;
+       fhir:PlanDefinition.action.code [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://srl.org.nz/regimens" ] ;
+           fhir:Coding.version [ fhir:value "2.0.2" ] ;
+           fhir:Coding.code [ fhir:value "52101000210105" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "Metastatic or adjuvant intent" ] ;
+           fhir:Expression.language [ fhir:value "text/cql.identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Intent is adjuvant or palliative" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12" ;
+         fhir:link <http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "srl-588251000210108" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "name" ] ;
+           fhir:Extension.valueString [ fhir:value "IncludeFluorouracilBolus" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "value" ] ;
+           fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+         ] ;
+         fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/formulary-parameter" ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "mFOLFOX6, high dose folinic acid, no bolus (SRL 588251000210108 v1.0.0)" ] ;
+       fhir:PlanDefinition.action.code [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://srl.org.nz/regimens" ] ;
+           fhir:Coding.version [ fhir:value "1.0.0" ] ;
+           fhir:Coding.code [ fhir:value "588251000210108" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "Metastatic intent (SRL publishes the no-bolus entry for CRC Metastatic only)" ] ;
+           fhir:Expression.language [ fhir:value "text/cql.identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Intent is palliative" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus|1.0.0" ;
+         fhir:link <http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus|1.0.0>
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "srl-52201000210102" ] ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "name" ] ;
+           fhir:Extension.valueString [ fhir:value "FolinicAcidFlatDoseMg" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "value" ] ;
+           fhir:Extension.valueDecimal [ fhir:value "50"^^xsd:decimal ]
+         ] ;
+         fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/formulary-parameter" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "name" ] ;
+           fhir:Extension.valueString [ fhir:value "MaxCycles" ]
+         ], [
+           fhir:index 1 ;
+           fhir:Extension.url [ fhir:value "value" ] ;
+           fhir:Extension.valueInteger [ fhir:value "12"^^xsd:integer ]
+         ] ;
+         fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/formulary-parameter" ]
+       ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "mFOLFOX6, low dose folinic acid 50 mg flat, with bolus (SRL 52201000210102 v2.0.0) — adjuvant, 12 cycles" ] ;
+       fhir:PlanDefinition.action.code [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://srl.org.nz/regimens" ] ;
+           fhir:Coding.version [ fhir:value "2.0.0" ] ;
+           fhir:Coding.code [ fhir:value "52201000210102" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.language [ fhir:value "text/cql.identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Intent is adjuvant" ]
+         ]
+       ] ;
+       fhir:PlanDefinition.action.definitionCanonical [
+         fhir:value "http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12" ;
+         fhir:link <http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12>
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

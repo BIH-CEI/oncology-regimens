@@ -1,0 +1,64 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "regimen-modification-kind",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem regimen-modification-kind</b></p><a name=\"regimen-modification-kind\"> </a><a name=\"hcregimen-modification-kind\"> </a><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">omit-action<a name=\"regimen-modification-kind-omit-action\"> </a></td><td>Omit action</td><td>An action present in the parent is removed (e.g. the fluorouracil bolus).</td></tr><tr><td style=\"white-space:nowrap\">add-action<a name=\"regimen-modification-kind-add-action\"> </a></td><td>Add action</td><td>An action absent in the parent is added (e.g. a supportive-care medication).</td></tr><tr><td style=\"white-space:nowrap\">replace-dose<a name=\"regimen-modification-kind-replace-dose\"> </a></td><td>Replace dose</td><td>Same drug, same schedule, different dose or dose basis (e.g. mg/m² → flat mg).</td></tr><tr><td style=\"white-space:nowrap\">replace-schedule<a name=\"regimen-modification-kind-replace-schedule\"> </a></td><td>Replace schedule</td><td>Same drug and dose, different days, frequency or infusion duration.</td></tr><tr><td style=\"white-space:nowrap\">replace-route<a name=\"regimen-modification-kind-replace-route\"> </a></td><td>Replace route</td><td>Same drug and dose, different route.</td></tr><tr><td style=\"white-space:nowrap\">replace-product<a name=\"regimen-modification-kind-replace-product\"> </a></td><td>Replace product</td><td>Different product for the same component (e.g. leucovorin → levoleucovorin).</td></tr></table></div>"
+  },
+  "url" : "http://hemonc.org/fhir/CodeSystem/regimen-modification-kind",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "RegimenModificationKind",
+  "title" : "Regimen Modification Kind",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-10-24T21:02:11+00:00",
+  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "contact" : [{
+    "name" : "HemOnc FHIR Catalog Working Group",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://github.com/thome/oncology-regimens"
+    }]
+  }],
+  "description" : "Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 6,
+  "concept" : [{
+    "code" : "omit-action",
+    "display" : "Omit action",
+    "definition" : "An action present in the parent is removed (e.g. the fluorouracil bolus)."
+  },
+  {
+    "code" : "add-action",
+    "display" : "Add action",
+    "definition" : "An action absent in the parent is added (e.g. a supportive-care medication)."
+  },
+  {
+    "code" : "replace-dose",
+    "display" : "Replace dose",
+    "definition" : "Same drug, same schedule, different dose or dose basis (e.g. mg/m² → flat mg)."
+  },
+  {
+    "code" : "replace-schedule",
+    "display" : "Replace schedule",
+    "definition" : "Same drug and dose, different days, frequency or infusion duration."
+  },
+  {
+    "code" : "replace-route",
+    "display" : "Replace route",
+    "definition" : "Same drug and dose, different route."
+  },
+  {
+    "code" : "replace-product",
+    "display" : "Replace product",
+    "definition" : "Different product for the same component (e.g. leucovorin → levoleucovorin)."
+  }]
+}

@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.5"}
-    h3,h4,h5,h6{--heading-prefix:"8.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -100,6 +100,9 @@
   </li>
   <li>
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
   </li>
   <li>
     <a href="phase0.html">Phase 0 Spike</a>
@@ -228,7 +231,7 @@
   </table>
 
 <p>
-<p>Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.</p>
+<p>Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.</p>
 
 </p>
 
@@ -242,11 +245,13 @@
   </p>
 
   
-<ul><li>This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</li></ul>
+<ul>
+ <li><a href="ValueSet-nz-crc-permitted-variants.html">NZ colorectal permitted mFOLFOX6 variants (example)</a></li>
+</ul>
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="hemonc"> </a><a name="hchemonc"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p>
-<table class="grid" data-fhir="generated"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr>
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="hemonc"> </a><a name="hchemonc"> </a><p><b>Eigenschaften</b></p><p><b>This code system defines the following properties for its concepts</b></p>
+<table class="grid" data-fhir="generated"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Beschreibung</b></td></tr>
 <tr><td>concept-class-id</td>
 <td>concept-class-id</td>
 <td>string</td>
@@ -323,6 +328,24 @@
 <td>Frequency</td>
 <td></td>
 <td></td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">13849<a name="hemonc-13849"> </a></td>
+<td>mFOLFOX6</td>
+<td>Regimen</td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">133145<a name="hemonc-133145"> </a></td>
+<td>mFOLFOX6 Variant #06</td>
+<td>Regimen Variant</td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">133143<a name="hemonc-133143"> </a></td>
+<td>mFOLFOX6 Variant #04</td>
+<td>Regimen Variant</td>
+<td></td>
+<td></td>
 <td></td></tr></table></div>
 
   
@@ -350,7 +373,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

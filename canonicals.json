@@ -20,11 +20,25 @@
   "name" : "HemOnc"
 },
 {
+  "id" : "regimen-modification-kind",
+  "type" : "CodeSystem",
+  "url" : "http://hemonc.org/fhir/CodeSystem/regimen-modification-kind",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "RegimenModificationKind"
+},
+{
   "id" : "sig-target-type",
   "type" : "CodeSystem",
   "url" : "http://hemonc.org/fhir/CodeSystem/sig-target-type",
   "version" : "2026-03-12-0.1.0",
   "name" : "HemOncSigTargetType"
+},
+{
+  "id" : "srl-to-hemonc-variant",
+  "type" : "ConceptMap",
+  "url" : "http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "SRLToHemOncVariant"
 },
 {
   "id" : "hemonc-fhir-regimen-catalog",
@@ -41,9 +55,58 @@
   "name" : "HemOncDoseHelpers"
 },
 {
+  "id" : "nz-crc-mfolfox6-formulary",
+  "type" : "PlanDefinition",
+  "url" : "http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "NZColorectalMFOLFOX6Formulary"
+},
+{
   "id" : "regimen-2554-variant-144842",
   "type" : "PlanDefinition",
   "url" : "http://hemonc.org/fhir/PlanDefinition/regimen-2554-variant-144842",
   "version" : "2026-03-12-0.1.0",
   "name" : "CarboplatinPaclitaxelVariant83"
+},
+{
+  "id" : "srl-588251000210108-mfolfox6-nobolus",
+  "type" : "PlanDefinition",
+  "url" : "http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "SRLmFOLFOX6HighFANoBolus"
+},
+{
+  "id" : "formulary-parameter",
+  "type" : "StructureDefinition",
+  "url" : "http://hemonc.org/fhir/StructureDefinition/formulary-parameter",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "FormularyParameter"
+},
+{
+  "id" : "formulary-rank",
+  "type" : "StructureDefinition",
+  "url" : "http://hemonc.org/fhir/StructureDefinition/formulary-rank",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "FormularyRank"
+},
+{
+  "id" : "regimen-modification",
+  "type" : "StructureDefinition",
+  "url" : "http://hemonc.org/fhir/StructureDefinition/regimen-modification",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "RegimenModification"
+},
+{
+  "id" : "nz-crc-permitted-variants",
+  "type" : "ValueSet",
+  "url" : "http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "NZCRCPermittedVariants"
+},
+{
+  "id" : "regimen-modification-kind-vs",
+  "type" : "ValueSet",
+  "url" : "http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "RegimenModificationKindVS"
 }]

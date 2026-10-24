@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-07-07 | *Computable Name*:HemOncFHIRRegimenCatalog |
+| Draft as of 2026-10-24 | *Computable Name*:HemOncFHIRRegimenCatalog |
 
 ### HemOnc FHIR Regimen Catalog
 
@@ -49,7 +49,7 @@ The artifacts in this distribution are reference content, not a medical device o
   "title" : "HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-07-07T16:34:37+00:00",
+  "date" : "2026-10-24T21:02:11+00:00",
   "publisher" : "HemOnc FHIR Catalog Working Group",
   "contact" : [{
     "name" : "HemOnc FHIR Catalog Working Group",
@@ -77,7 +77,7 @@ The artifacts in this distribution are reference content, not a medical device o
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.2.0"
+    "version" : "7.4.0"
   },
   {
     "id" : "hl7ext",
@@ -97,305 +97,8 @@ The artifacts in this distribution are reference content, not a medical device o
   }],
   "definition" : {
     "extension" : [{
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "copyrightyear"
-      },
-      {
-        "url" : "value",
-        "valueString" : "2026+"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "releaselabel"
-      },
-      {
-        "url" : "value",
-        "valueString" : "ci-build"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "show-inherited-invariants"
-      },
-      {
-        "url" : "value",
-        "valueString" : "false"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-version"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-status"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-publisher"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "autoload-resources"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-liquid"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template/liquid"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-liquid"
-      },
-      {
-        "url" : "value",
-        "valueString" : "input/liquid"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-qa"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/qa"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-temp"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/pages"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-output"
-      },
-      {
-        "url" : "value",
-        "valueString" : "output"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-suppressed-warnings"
-      },
-      {
-        "url" : "value",
-        "valueString" : "input/ignoreWarnings.txt"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-history"
-      },
-      {
-        "url" : "value",
-        "valueString" : "http://hemonc.org/fhir/history.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "template-html"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template-page.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "template-md"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template-page-md.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-contact"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-context"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-copyright"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-jurisdiction"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-license"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-wg"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "active-tables"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "fmm-definition"
-      },
-      {
-        "url" : "value",
-        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "propagate-status"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "excludelogbinaryformat"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "tabbed-snapshots"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.3.0"
     },
     {
       "extension" : [{
@@ -698,6 +401,10 @@ The artifacts in this distribution are reference content, not a medical device o
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PlanDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PlanDefinition-regimen-2554-variant-144842.html"
       }],
       "reference" : {
         "reference" : "PlanDefinition/regimen-2554-variant-144842"
@@ -710,6 +417,10 @@ The artifacts in this distribution are reference content, not a medical device o
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-sig-carboplatin-auc5-d1-q21d.html"
       }],
       "reference" : {
         "reference" : "ActivityDefinition/sig-carboplatin-auc5-d1-q21d"
@@ -721,7 +432,59 @@ The artifacts in this distribution are reference content, not a medical device o
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PlanDefinition-srl-588251000210108-mfolfox6-nobolus.html"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/srl-588251000210108-mfolfox6-nobolus"
+      },
+      "name" : "CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)",
+      "description" : "Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-formulary-parameter.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/formulary-parameter"
+      },
+      "name" : "Formulary Parameter",
+      "description" : "A parameter value a formulary entry pins on the referenced (parameterised) variant PlanDefinition. Forwarded by the CDS layer in the nested `parameters` of $apply.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-formulary-rank.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/formulary-rank"
+      },
+      "name" : "Formulary Rank",
+      "description" : "Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Library"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Library-HemOncDoseHelpers.html"
       }],
       "reference" : {
         "reference" : "Library/HemOncDoseHelpers"
@@ -734,18 +497,26 @@ The artifacts in this distribution are reference content, not a medical device o
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-hemonc.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/hemonc"
       },
       "name" : "HemOnc Ontology (fragment, Phase 0 spike)",
-      "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+      "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-sig-target-type.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/sig-target-type"
@@ -758,6 +529,10 @@ The artifacts in this distribution are reference content, not a medical device o
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationKnowledge"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationKnowledge-hemonc-drug-379-paclitaxel.html"
       }],
       "reference" : {
         "reference" : "MedicationKnowledge/hemonc-drug-379-paclitaxel"
@@ -769,6 +544,10 @@ The artifacts in this distribution are reference content, not a medical device o
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationKnowledge"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationKnowledge-hemonc-drug-88-carboplatin.html"
       }],
       "reference" : {
         "reference" : "MedicationKnowledge/hemonc-drug-88-carboplatin"
@@ -779,7 +558,43 @@ The artifacts in this distribution are reference content, not a medical device o
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PlanDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PlanDefinition-nz-crc-mfolfox6-formulary.html"
+      }],
+      "reference" : {
+        "reference" : "PlanDefinition/nz-crc-mfolfox6-formulary"
+      },
+      "name" : "NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)",
+      "description" : "Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-nz-crc-permitted-variants.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/nz-crc-permitted-variants"
+      },
+      "name" : "NZ colorectal permitted mFOLFOX6 variants (example)",
+      "description" : "Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ActivityDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.html"
       }],
       "reference" : {
         "reference" : "ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d"
@@ -787,6 +602,70 @@ The artifacts in this distribution are reference content, not a medical device o
       "name" : "Paclitaxel 175 mg/m² IV over 3 h, day 1, q21d",
       "description" : "One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83 (cui 144842). Paclitaxel as primary systemic component, 175 mg/m² IV over 3 hours, administered on day 1 of a 21-day cycle, for 3–6 cycles. Declared dose is per-m²; the dynamicValue invokes the HemOnc dose helper Library to compute the patient-specific mg at $apply time.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-regimen-modification.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/regimen-modification"
+      },
+      "name" : "Regimen Modification",
+      "description" : "One delta between a derived (L2) PlanDefinition and the HemOnc variant it is derived from. Provenance only: the derived PlanDefinition SHALL be complete on its own (Rule D-1).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-regimen-modification-kind.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/regimen-modification-kind"
+      },
+      "name" : "Regimen Modification Kind",
+      "description" : "Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-regimen-modification-kind-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/regimen-modification-kind-vs"
+      },
+      "name" : "Regimen Modification Kind ValueSet",
+      "description" : "All kinds of regimen modification.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ConceptMap-srl-to-hemonc-variant.html"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/srl-to-hemonc-variant"
+      },
+      "name" : "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)",
+      "description" : "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content.",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
@@ -848,6 +727,15 @@ The artifacts in this distribution are reference content, not a medical device o
         }],
         "nameUrl" : "apply-and-cds.html",
         "title" : "PlanDefinition $apply and CDS Hooks",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "selection-layer.html"
+        }],
+        "nameUrl" : "selection-layer.html",
+        "title" : "Selection Layer — Formularies and Variant Choice",
         "generation" : "markdown"
       },
       {

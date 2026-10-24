@@ -102,6 +102,9 @@
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
   </li>
   <li>
+    <a href="selection-layer.html">Selection Layer</a>
+  </li>
+  <li>
     <a href="phase0.html">Phase 0 Spike</a>
   </li>
   <li>
@@ -171,6 +174,15 @@ protocols, nor patient-specific dose computation, nor a CDS-Hooks-shaped
 delivery model. That gap is structural: most national oncology IGs are
 authored by registry and documentation stakeholders, not by ordering or
 decision-support stakeholders.</p>
+
+<p>One national catalog of executable-grade regimen specifications does
+exist outside FHIR: the New Zealand SACT Regimen Library (Te Aho o Te
+Kahu / NZ Formulary, ~840 regimens, SNOMED CT NZ concept ids, semantic
+versions, per-cycle dose tables including supportive care). It is not
+openly licensed and not FHIR, and the companion ACT-NOW FHIR IG covers
+only patient-level CarePlan/MedicationAdministration. It is used here as
+a comparator and as the worked example of the
+<a href="selection-layer.html">Selection Layer</a>.</p>
 
 <p>This IG fills the gap at the catalog layer.</p>
 
@@ -256,7 +268,7 @@ publication cycles.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

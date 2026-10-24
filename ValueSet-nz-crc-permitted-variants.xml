@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="nz-crc-permitted-variants"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet nz-crc-permitted-variants</b></p><a name="nz-crc-permitted-variants"> </a><a name="hcnz-crc-permitted-variants"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href="CodeSystem-hemonc.html"><code>http://hemonc.org/fhir/CodeSystem/hemonc</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;2026-03-12-0.1.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="CodeSystem-hemonc.html#hemonc-133145">133145</a></td><td>mFOLFOX6 Variant #06</td></tr></table></li><li>Include these codes as defined in <code>https://srl.org.nz/regimens</code><span title="Version is not explicitly stated. No matching Code System found"> version Not Stated (use latest from terminology server)</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>588251000210108</td><td>CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus)</td></tr><tr><td>52201000210102</td><td>CRC Adjuvant – mFOLFOX6 [low dose folinic acid]</td></tr></table></li></ul></div>
+  </text>
+  <url value="http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants"/>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="NZCRCPermittedVariants"/>
+  <title value="NZ colorectal permitted mFOLFOX6 variants (example)"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-10-24T21:02:11+00:00"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6)."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+      <concept>
+        <code value="133145"/>
+        <display value="mFOLFOX6 Variant #06"/>
+      </concept>
+    </include>
+    <include>
+      <system value="https://srl.org.nz/regimens"/>
+      <concept>
+        <code value="588251000210108"/>
+        <display value="CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus)"/>
+      </concept>
+      <concept>
+        <code value="52201000210102"/>
+        <display value="CRC Adjuvant – mFOLFOX6 [low dose folinic acid]"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

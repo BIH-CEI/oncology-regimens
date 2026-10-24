@@ -5,7 +5,15 @@
     "status" : "active",
     "name" : "HemOnc",
     "title" : "HemOnc Ontology (fragment, Phase 0 spike)",
-    "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase."
+    "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase."
+  },
+  {
+    "url" : "http://hemonc.org/fhir/CodeSystem/regimen-modification-kind",
+    "version" : "2026-03-12-0.1.0",
+    "status" : "draft",
+    "name" : "RegimenModificationKind",
+    "title" : "Regimen Modification Kind",
+    "description" : "Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant."
   },
   {
     "url" : "http://hemonc.org/fhir/CodeSystem/sig-target-type",

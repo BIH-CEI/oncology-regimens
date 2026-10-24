@@ -10,7 +10,7 @@
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d | *Version*:2026-03-12-0.1.0 |
 | Active as of 2026-03-12 | *Computable Name*:CarboplatinAUC5D1Q21D |
-| *Other Identifiers:*http://hemonc.org/cui#regimen-2554+variant-144842+component-88 (use: official, ) | |
+| *Other Identifiers:*http://hemonc.org/cui#regimen-2554+variant-144842+component-88 (use: official) | |
 | **Usage:**Clinical Focus: Carboplatin | |
 
  
@@ -91,7 +91,6 @@ One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83
       "url" : "http://hemonc.org/fhir/StructureDefinition/day-of-cycle",
       "valueInteger" : 1
     }],
-    "sequence" : 1,
     "text" : "Carboplatin AUC 5 IV over 30–60 minutes on day 1 of a 21-day cycle",
     "patientInstruction" : "Dose target is exposure (AUC), not milligrams. Computed mg = 5 × (effective GFR + 25) at $apply time. GFR formula and cap are institution policy.",
     "timing" : {

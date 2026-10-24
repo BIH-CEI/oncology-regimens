@@ -93,7 +93,6 @@
        fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/day-of-cycle" ] ;
        fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
      ] ;
-     fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
      fhir:Dosage.text [ fhir:value "Carboplatin AUC 5 IV over 30–60 minutes on day 1 of a 21-day cycle" ] ;
      fhir:Dosage.patientInstruction [ fhir:value "Dose target is exposure (AUC), not milligrams. Computed mg = 5 × (effective GFR + 25) at $apply time. GFR formula and cap are institution policy." ] ;
      fhir:Dosage.timing [

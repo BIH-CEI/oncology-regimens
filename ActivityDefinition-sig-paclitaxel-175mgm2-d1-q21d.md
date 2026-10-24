@@ -10,7 +10,7 @@
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d | *Version*:2026-03-12-0.1.0 |
 | Active as of 2026-03-12 | *Computable Name*:PaclitaxelD1Q21D |
-| *Other Identifiers:*http://hemonc.org/cui#regimen-2554+variant-144842+component-379 (use: official, ) | |
+| *Other Identifiers:*http://hemonc.org/cui#regimen-2554+variant-144842+component-379 (use: official) | |
 | **Usage:**Clinical Focus: Paclitaxel | |
 
  
@@ -86,7 +86,6 @@ One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83
       "url" : "http://hemonc.org/fhir/StructureDefinition/day-of-cycle",
       "valueInteger" : 1
     }],
-    "sequence" : 1,
     "text" : "Paclitaxel 175 mg/m² IV over 3 hours on day 1 of a 21-day cycle",
     "patientInstruction" : "Premedications (corticosteroid + H1 + H2) required 30 min prior — see linked dose-modification policy.",
     "timing" : {

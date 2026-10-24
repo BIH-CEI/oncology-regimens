@@ -64,7 +64,6 @@
     <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">
       <valueInteger value="1"/>
     </extension>
-    <sequence value="1"/>
     <text value="Paclitaxel 175 mg/m² IV over 3 hours on day 1 of a 21-day cycle"/>
     <patientInstruction value="Premedications (corticosteroid + H1 + H2) required 30 min prior — see linked dose-modification policy."/>
     <timing>

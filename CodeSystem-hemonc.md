@@ -14,11 +14,11 @@
 | **Copyright/Legal**: © HemOnc.org. Distributed under CC BY 4.0. | |
 
  
-Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase. 
+Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+* [NZ colorectal permitted mFOLFOX6 variants (example)](ValueSet-nz-crc-permitted-variants.md)
 
 
 
@@ -47,7 +47,7 @@ Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclita
       "value" : "https://github.com/thome/oncology-regimens"
     }]
   }],
-  "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+  "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -180,6 +180,30 @@ Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclita
     "property" : [{
       "code" : "concept-class-id",
       "valueString" : "Frequency"
+    }]
+  },
+  {
+    "code" : "13849",
+    "display" : "mFOLFOX6",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen"
+    }]
+  },
+  {
+    "code" : "133145",
+    "display" : "mFOLFOX6 Variant #06",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen Variant"
+    }]
+  },
+  {
+    "code" : "133143",
+    "display" : "mFOLFOX6 Variant #04",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen Variant"
     }]
   }]
 }

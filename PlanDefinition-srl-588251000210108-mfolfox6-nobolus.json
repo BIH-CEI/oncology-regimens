@@ -1,0 +1,168 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "srl-588251000210108-mfolfox6-nobolus",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-e8f17052-24b4-4d64-a11e-1a6623bfd168.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>"
+  },
+  "extension" : [{
+    "extension" : [{
+      "url" : "kind",
+      "valueCode" : "omit-action"
+    },
+    {
+      "url" : "targetActionId",
+      "valueString" : "fluorouracil-bolus-d1"
+    },
+    {
+      "url" : "component",
+      "valueCodeableConcept" : {
+        "text" : "Fluorouracil (bolus)"
+      }
+    },
+    {
+      "url" : "from",
+      "valueString" : "Fluorouracil 400 mg/m² IV bolus day 1"
+    },
+    {
+      "url" : "rationale",
+      "valueMarkdown" : "The fluorouracil bolus was removed following the recommendation of the New Zealand Society for Oncology (NZSO) Gastrointestinal Cancers Special Interest Group (GISIG)."
+    }],
+    "url" : "http://hemonc.org/fhir/StructureDefinition/regimen-modification"
+  }],
+  "url" : "http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus",
+  "identifier" : [{
+    "use" : "official",
+    "system" : "https://srl.org.nz/regimens",
+    "value" : "588251000210108"
+  },
+  {
+    "use" : "secondary",
+    "system" : "http://hemonc.org/variant-cui",
+    "value" : "133145"
+  },
+  {
+    "use" : "secondary",
+    "system" : "http://hemonc.org/regimen-cui",
+    "value" : "13849"
+  }],
+  "version" : "2026-03-12-0.1.0",
+  "name" : "SRLmFOLFOX6HighFANoBolus",
+  "title" : "CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "clinical-protocol"
+    }]
+  },
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-07-01",
+  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "contact" : [{
+    "name" : "HemOnc FHIR Catalog Working Group",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://github.com/thome/oncology-regimens"
+    }]
+  }],
+  "description" : "Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here.",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "focus"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://hemonc.org/fhir/CodeSystem/hemonc",
+        "code" : "13849",
+        "display" : "mFOLFOX6"
+      }]
+    }
+  },
+  {
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "jurisdiction"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "urn:iso:std:iso:3166",
+        "code" : "NZ",
+        "display" : "New Zealand"
+      }]
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "DE",
+      "display" : "Germany"
+    }]
+  }],
+  "relatedArtifact" : [{
+    "type" : "derived-from",
+    "label" : "Parent HemOnc variant",
+    "resource" : "http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12"
+  },
+  {
+    "type" : "justification",
+    "label" : "SRL entry 588251000210108 v1.0.0, published 2026-07-01",
+    "citation" : "Te Aho o Te Kahu / New Zealand Formulary. SACT Regimen Library: CRC Metastatic – mFOLFOX6 [oxaliplatin, folinic acid and fluorouracil] [high dose folinic acid]. Version 1.0.0, 1 July 2026.",
+    "url" : "https://srl.org.nz/regimens/colorectal/588251000210108",
+    "document" : {
+      "url" : "https://srl.org.nz/regimens/colorectal/588251000210108"
+    }
+  }],
+  "action" : [{
+    "id" : "cycle",
+    "title" : "14-day cycle, repeated until progression or unacceptable toxicity",
+    "timingTiming" : {
+      "repeat" : {
+        "frequency" : 1,
+        "period" : 14,
+        "periodUnit" : "d"
+      }
+    },
+    "groupingBehavior" : "logical-group",
+    "selectionBehavior" : "all",
+    "action" : [{
+      "id" : "oxaliplatin-d1",
+      "title" : "Oxaliplatin 85 mg/m² IV over 120 min, day 1",
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+          "code" : "create"
+        }]
+      }
+    },
+    {
+      "id" : "folinic-acid-d1",
+      "title" : "Folinic acid (calcium folinate) 400 mg/m² IV over 120 min, day 1",
+      "relatedAction" : [{
+        "actionId" : "oxaliplatin-d1",
+        "relationship" : "concurrent-with-start"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+          "code" : "create"
+        }]
+      }
+    },
+    {
+      "id" : "fluorouracil-infusion-d1",
+      "title" : "Fluorouracil 2400 mg/m² IV continuous over 46 h, day 1",
+      "relatedAction" : [{
+        "actionId" : "folinic-acid-d1",
+        "relationship" : "after-end"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/action-type",
+          "code" : "create"
+        }]
+      }
+    }]
+  }]
+}

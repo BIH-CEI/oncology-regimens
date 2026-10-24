@@ -11,6 +11,8 @@
 
 Existing FHIR work in oncology — mCODE, MII Onkologie, the HL7 Europe Cancer Common Model (ECCM), Te Aho o Te Kahu, IDEA4RC — defines profiles on patient-level resources (Condition, Observation, MedicationRequest, MedicationStatement, Procedure) for **recording what was done to a patient**. It does not provide a catalog of executable treatment protocols, nor patient-specific dose computation, nor a CDS-Hooks-shaped delivery model. That gap is structural: most national oncology IGs are authored by registry and documentation stakeholders, not by ordering or decision-support stakeholders.
 
+One national catalog of executable-grade regimen specifications does exist outside FHIR: the New Zealand SACT Regimen Library (Te Aho o Te Kahu / NZ Formulary, ~840 regimens, SNOMED CT NZ concept ids, semantic versions, per-cycle dose tables including supportive care). It is not openly licensed and not FHIR, and the companion ACT-NOW FHIR IG covers only patient-level CarePlan/MedicationAdministration. It is used here as a comparator and as the worked example of the [Selection Layer](selection-layer.md).
+
 This IG fills the gap at the catalog layer.
 
 #### Conceptual layering

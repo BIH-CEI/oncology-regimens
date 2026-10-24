@@ -1,0 +1,710 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Selection Layer — Formularies and Variant Choice - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+          <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols</span>
+            <br/>
+            <span style="display:inline-block;">2026-03-12-0.1.0 - ci-build
+
+
+
+  <img src="assets/images/deu.svg" alt="Germany flag" title="Germany" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="cooperation.html">Cooperation</a>
+  </li>
+  <li>
+    <a href="disclaimers.html">Disclaimers</a>
+  </li>
+  <li>
+    <a href="versioning.html">Versioning</a>
+  </li>
+  <li>
+    <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
+  </li>
+  <li>
+    <a href="phase0.html">Phase 0 Spike</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Selection Layer — Formularies and Variant Choice</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols - Local Development build (v2026-03-12-0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://hemonc.org/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Selection Layer — Formularies and Variant Choice</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<h3 id="selection-layer--formularies-derived-protocols-and-call-time-variant-choice">Selection Layer — Formularies, Derived Protocols and Call-Time Variant Choice</h3>
+
+<blockquote>
+  <p><strong>Status: draft specification (2026-10-24).</strong> Normative language
+(<strong>SHALL</strong>, <strong>SHOULD</strong>, <strong>MAY</strong>) is used so the rules can be tested, but
+the whole layer is <code class="language-plaintext highlighter-rouge">experimental = true</code> until reviewed with HemOnc.org
+and the MII Onkologie maintainers. Tracked as beads issue
+<code class="language-plaintext highlighter-rouge">oncology-regimens-hg6</code>.</p>
+</blockquote>
+
+<h4 id="1-problem-statement">1. Problem statement</h4>
+
+<p>The HemOnc Knowledge Base does not define a canonical dosing for a
+regimen. A regimen concept (one CUI, e.g. mFOLFOX6 = <code class="language-plaintext highlighter-rouge">13849</code>) carries a
+name, a drug set and membership in regimen classes. Doses exist only on
+its <strong>variants</strong>, one per study or group of studies that dosed the
+regimen identically. The <code class="language-plaintext highlighter-rouge">Has variant</code> relationship is a flat, unranked
+list. Variant numbers reflect processing order, not preference
+(mFOLFOX6 Variant #01 is the CAO/ARO/AIO-04 rectal arm with oxaliplatin
+100 mg/m² and no bolus; the dosing most clinics mean by "mFOLFOX6" is
+Variant #06, cui <code class="language-plaintext highlighter-rouge">133145</code>). The words <em>canonical</em> and <em>version</em> in
+HemOncKB mean sig-structure class and snapshot marker respectively, never
+"the reference protocol".</p>
+
+<p>Consequently:</p>
+
+<ul>
+  <li>A <code class="language-plaintext highlighter-rouge">PlanDefinition</code> in this IG is <strong>variant-exact</strong> (see
+<a href="versioning.html">Versioning</a>). There is no regimen-level
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> that could be applied.</li>
+  <li>Any "recommended variant" per MII protocol code or per site <strong>cannot be
+derived from HemOnc</strong>. It is a policy decision made elsewhere.</li>
+  <li>National catalogs that <em>have</em> made that decision (e.g. the New Zealand
+SACT Regimen Library, see &sect;9) also contain consensus modifications with
+no HemOnc variant at all (low-dose folinic acid 50 mg flat; mFOLFOX6
+without the fluorouracil bolus).</li>
+</ul>
+
+<p>This page specifies the layer that holds those decisions, so that the
+HemOnc catalog stays faithful to its source and the choice becomes an
+explicit, versioned, attributable input to <code class="language-plaintext highlighter-rouge">$apply</code>.</p>
+
+<h4 id="2-layering">2. Layering</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   ┌──────────────────────────────────────────────────────────────────┐
+   │  L3  Call-time inputs                                            │
+   │      subject (Patient) · protocol (variant-level PlanDefinition  │
+   │      canonical) · preferred start date · scalar overrides        │
+   ├──────────────────────────────────────────────────────────────────┤
+   │  L2  Selection layer (this page)                                 │
+   │      Formulary PlanDefinitions  (restriction)                    │
+   │      Derived PlanDefinitions    (extension)                      │
+   │      Permitted-variant ValueSets · bridge ConceptMaps            │
+   ├──────────────────────────────────────────────────────────────────┤
+   │  L1  HemOnc catalog (variant-exact, no defaults)                 │
+   │      PlanDefinition per regimen+variant · ActivityDefinition     │
+   │      per sig · MedicationKnowledge · Library                     │
+   ├──────────────────────────────────────────────────────────────────┤
+   │  L0  HemOncKB snapshot (CSV / OMOP)                              │
+   └──────────────────────────────────────────────────────────────────┘
+</code></pre></div></div>
+
+<p><strong>Rule L1-1.</strong> L1 artifacts <strong>SHALL NOT</strong> carry a preferred, default or
+recommended marker. Preference is an L2 property.</p>
+
+<p><strong>Rule L1-2.</strong> L1 <code class="language-plaintext highlighter-rouge">PlanDefinition</code>s <strong>MAY</strong> expose <em>parameters</em> (&sect;5) so
+that a bounded set of modifications can be applied without copying the
+protocol.</p>
+
+<h4 id="3-formulary-plandefinition-restriction">3. Formulary PlanDefinition (restriction)</h4>
+
+<p>A <em>formulary</em> is a <code class="language-plaintext highlighter-rouge">PlanDefinition</code> that enumerates the protocols a
+jurisdiction, institution or programme permits for one clinical
+situation. It is a closed list; what it does not list is not offered.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td><strong>SHALL</strong> be <code class="language-plaintext highlighter-rouge">plan-definition-type#order-set</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">useContext</code></td>
+      <td><strong>SHALL</strong> carry at least one <code class="language-plaintext highlighter-rouge">jurisdiction</code> or <code class="language-plaintext highlighter-rouge">venue</code> context (who the formulary is for) and <strong>SHOULD</strong> carry a <code class="language-plaintext highlighter-rouge">focus</code> context (condition) and <strong>MAY</strong> carry <code class="language-plaintext highlighter-rouge">program</code> (intent/setting, e.g. adjuvant).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">identifier</code></td>
+      <td><strong>SHALL</strong> carry an <code class="language-plaintext highlighter-rouge">official</code> identifier in the issuing body's system.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">action</code> (top level)</td>
+      <td>Exactly one group with <code class="language-plaintext highlighter-rouge">selectionBehavior = exactly-one</code> and <code class="language-plaintext highlighter-rouge">groupingBehavior = logical-group</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">action.action[*].definitionCanonical</code></td>
+      <td><strong>SHALL</strong> reference either an L1 variant <code class="language-plaintext highlighter-rouge">PlanDefinition</code> or an L2 derived <code class="language-plaintext highlighter-rouge">PlanDefinition</code> (&sect;4), always with an explicit <code class="language-plaintext highlighter-rouge">|version</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">action.action[*].condition</code></td>
+      <td><strong>MAY</strong> carry <code class="language-plaintext highlighter-rouge">applicability</code> conditions (CQL or FHIRPath) over intent, stage, biomarker, prior therapy, organ function.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">action.action[*].code</code></td>
+      <td><strong>SHOULD</strong> carry the issuing body's own protocol code for that entry (e.g. SRL concept, MII protocol code, site code).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">action.action[*].extension[formulary-rank]</code></td>
+      <td><strong>MAY</strong> rank entries; absence means unranked.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">relatedArtifact</code></td>
+      <td><strong>SHALL</strong> cite the governance decision (minutes, guideline, consensus statement) with date.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rule F-1 (restriction).</strong> A consumer that applies a formulary <strong>SHALL
+NOT</strong> offer a protocol absent from it, even though that protocol remains
+resolvable in L1.</p>
+
+<p><strong>Rule F-2 (no inheritance).</strong> A formulary <strong>SHALL NOT</strong> be derived from
+another formulary. Two sites with overlapping policy publish two
+formularies. Keeping formularies flat keeps the restriction auditable.</p>
+
+<p><strong>Rule F-3 (version pinning).</strong> Every <code class="language-plaintext highlighter-rouge">definitionCanonical</code> in a
+formulary <strong>SHALL</strong> pin a version. A formulary therefore changes version
+whenever any referenced protocol changes version.</p>
+
+<h4 id="4-derived-plandefinition-extension">4. Derived PlanDefinition (extension)</h4>
+
+<p>A <em>derived protocol</em> is an L2 <code class="language-plaintext highlighter-rouge">PlanDefinition</code> that represents a dosing
+with no exact HemOnc variant, expressed as a delta against the closest
+one.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">clinical-protocol</code>, as for L1.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">identifier[official]</code></td>
+      <td>The issuing body's identifier (SRL concept id, MII code, site code). <strong>SHALL NOT</strong> use <code class="language-plaintext highlighter-rouge">http://hemonc.org/cui</code> as <code class="language-plaintext highlighter-rouge">official</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">identifier[secondary]</code></td>
+      <td><strong>SHALL</strong> carry the parent variant CUI (<code class="language-plaintext highlighter-rouge">http://hemonc.org/variant-cui</code>) and regimen CUI (<code class="language-plaintext highlighter-rouge">http://hemonc.org/regimen-cui</code>) so OMOP round-trips still land on HemOnc concepts.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">relatedArtifact[derived-from]</code></td>
+      <td><strong>SHALL</strong> reference the parent L1 <code class="language-plaintext highlighter-rouge">PlanDefinition</code> canonical with version.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">extension[regimen-modification]</code></td>
+      <td><strong>SHALL</strong> list every delta (&sect;4.1), one entry each. An empty list is an error: use the parent instead.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">relatedArtifact[justification]</code></td>
+      <td><strong>SHALL</strong> cite the source that authorises the delta (consensus statement, guideline, national library entry with version).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">version</code></td>
+      <td><strong>SHOULD</strong> follow the issuing body's versioning (e.g. SRL <code class="language-plaintext highlighter-rouge">2.0.2</code>), not the HemOnc snapshot date.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">status</code></td>
+      <td><code class="language-plaintext highlighter-rouge">draft</code> until the issuing body confirms; <code class="language-plaintext highlighter-rouge">active</code> thereafter; <code class="language-plaintext highlighter-rouge">retired</code> when superseded.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rule D-1 (full content).</strong> A derived <code class="language-plaintext highlighter-rouge">PlanDefinition</code> <strong>SHALL</strong> be
+complete and applicable on its own. The modification extension is
+provenance, not an instruction to compute the content at <code class="language-plaintext highlighter-rouge">$apply</code> time.
+FHIR R4 has no inheritance for <code class="language-plaintext highlighter-rouge">PlanDefinition</code>; a consumer must not need
+the parent to execute the child.</p>
+
+<p><strong>Rule D-2 (re-derivation).</strong> When the parent L1 variant changes version
+(new HemOnc snapshot) or the justification source changes version, the
+derived protocol <strong>SHALL</strong> be re-diffed and its <code class="language-plaintext highlighter-rouge">version</code> or <code class="language-plaintext highlighter-rouge">status</code>
+updated. Tooling <strong>SHOULD</strong> flag derived protocols whose parent version no
+longer matches <code class="language-plaintext highlighter-rouge">relatedArtifact[derived-from]</code>.</p>
+
+<h5 id="41-modification-extension">4.1 Modification extension</h5>
+
+<p><code class="language-plaintext highlighter-rouge">http://hemonc.org/fhir/StructureDefinition/regimen-modification</code>
+(complex extension, context <code class="language-plaintext highlighter-rouge">PlanDefinition</code>), see
+<a href="StructureDefinition-regimen-modification.html">StructureDefinition</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sub-extension</th>
+      <th>Type</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kind</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code</code> from <a href="CodeSystem-regimen-modification-kind.html">regimen-modification-kind</a></td>
+      <td><code class="language-plaintext highlighter-rouge">omit-action</code> · <code class="language-plaintext highlighter-rouge">add-action</code> · <code class="language-plaintext highlighter-rouge">replace-dose</code> · <code class="language-plaintext highlighter-rouge">replace-schedule</code> · <code class="language-plaintext highlighter-rouge">replace-route</code> · <code class="language-plaintext highlighter-rouge">replace-product</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">targetActionId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td><code class="language-plaintext highlighter-rouge">action.id</code> in the parent that is omitted or replaced; absent for <code class="language-plaintext highlighter-rouge">add-action</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">component</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CodeableConcept</code></td>
+      <td>The drug concerned (HemOnc component CUI, plus ATC/RxNorm where available).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">from</code></td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td>Human-readable parent value (e.g. <code class="language-plaintext highlighter-rouge">folinic acid 400 mg/m² IV over 2 h</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">to</code></td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td>Human-readable new value (e.g. <code class="language-plaintext highlighter-rouge">folinic acid 50 mg flat IV over 2 min</code>); absent for <code class="language-plaintext highlighter-rouge">omit-action</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rationale</code></td>
+      <td><code class="language-plaintext highlighter-rouge">markdown</code></td>
+      <td>Why, in the issuing body's words.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="5-parameterised-variants-preferred-over-copies">5. Parameterised variants (preferred over copies)</h4>
+
+<p>Where a modification is a <strong>toggle or a scalar</strong> that leaves the action
+tree intact, the L1 variant <strong>SHOULD</strong> accept it as a parameter instead
+of forcing a derived copy. The formulary entry then references the L1
+variant and supplies fixed parameter values.</p>
+
+<p>Mechanism (cqf-fhir / HAPI Clinical Reasoning compatible):</p>
+
+<ul>
+  <li>The variant's <code class="language-plaintext highlighter-rouge">Library</code> declares the parameter with a default equal to
+the HemOnc value, e.g.
+    <pre><code class="language-cql">parameter IncludeFluorouracilBolus Boolean default true
+parameter FolinicAcidDosePerM2 Decimal default 400.0
+</code></pre>
+  </li>
+  <li>The action that may be omitted carries an <code class="language-plaintext highlighter-rouge">applicability</code> condition
+referencing the parameter:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>action.condition[0].kind = applicability
+action.condition[0].expression.language = text/cql.identifier
+action.condition[0].expression.expression = "Fluorouracil bolus applicable"
+</code></pre></div>    </div>
+  </li>
+  <li>Dose overrides are consumed by the existing <code class="language-plaintext highlighter-rouge">dynamicValue</code> path
+(<code class="language-plaintext highlighter-rouge">doseQuantity.value</code>), see <a href="apply-and-cds.html">$apply</a>.</li>
+  <li>The formulary entry pins the values via
+<code class="language-plaintext highlighter-rouge">extension[formulary-parameter]</code> (name + value) which the CDS layer
+forwards in the nested <code class="language-plaintext highlighter-rouge">parameters</code> resource of <code class="language-plaintext highlighter-rouge">$apply</code>.</li>
+</ul>
+
+<p><strong>Rule P-1 (envelope).</strong> The variant <strong>SHALL</strong> declare, per parameter,
+the admissible range in <code class="language-plaintext highlighter-rouge">Library.parameter</code> (<code class="language-plaintext highlighter-rouge">min</code>/<code class="language-plaintext highlighter-rouge">max</code> via
+<code class="language-plaintext highlighter-rouge">ParameterDefinition</code> extensions or documentation). Values outside the
+envelope <strong>SHALL</strong> be rejected by the CDS layer, not silently applied.</p>
+
+<p><strong>Rule P-2 (when to copy).</strong> Adding a drug, changing cycle structure, or
+changing more than the declared parameters <strong>SHALL</strong> produce a derived
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> (&sect;4), not a parameter set.</p>
+
+<p><strong>Rule P-3 (provenance).</strong> A <code class="language-plaintext highlighter-rouge">CarePlan</code> produced with non-default
+parameters <strong>SHALL</strong> record them (<code class="language-plaintext highlighter-rouge">CarePlan.extension[applied-parameters]</code>
+or the <code class="language-plaintext highlighter-rouge">Parameters</code> resource referenced from <code class="language-plaintext highlighter-rouge">Provenance.entity</code>).</p>
+
+<h4 id="6-terminology-twin">6. Terminology twin</h4>
+
+<p>The same policy is published in terminology form so validators, search
+and non-CDS consumers can see it without executing a <code class="language-plaintext highlighter-rouge">PlanDefinition</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artifact</th>
+      <th>Content</th>
+      <th>Rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ValueSet</code> <em>permitted variants</em></td>
+      <td><code class="language-plaintext highlighter-rouge">compose.include</code> of variant CUIs from <code class="language-plaintext highlighter-rouge">http://hemonc.org/fhir/CodeSystem/hemonc</code> plus derived-protocol codes from the issuing body's CodeSystem.</td>
+      <td><strong>SHALL</strong> be equivalent to the set of <code class="language-plaintext highlighter-rouge">definitionCanonical</code> targets of the formulary; tooling <strong>SHOULD</strong> generate one from the other.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem</code> <em>issuing body protocols</em></td>
+      <td>One concept per derived protocol (and optionally per formulary entry), property <code class="language-plaintext highlighter-rouge">parent-variant-cui</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">content = complete</code> for the body's own codes; <strong>SHALL NOT</strong> restate HemOnc concepts.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ConceptMap</code> <em>bridge</em></td>
+      <td>Issuing-body code → HemOnc variant CUI. <code class="language-plaintext highlighter-rouge">equivalence = equivalent</code> for exact dose matches, <code class="language-plaintext highlighter-rouge">relatedto</code> for derived protocols, <code class="language-plaintext highlighter-rouge">narrower</code> for a national code that maps to several variants.</td>
+      <td><code class="language-plaintext highlighter-rouge">status = draft</code>, <code class="language-plaintext highlighter-rouge">experimental = true</code> until the issuing body reviews.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="7-call-time-inputs-and-the-two-step-cds-flow">7. Call-time inputs and the two-step CDS flow</h4>
+
+<p>Variant choice is an <strong>input</strong>, never a catalog property.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Carrier</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patient</td>
+      <td><code class="language-plaintext highlighter-rouge">$apply</code> <code class="language-plaintext highlighter-rouge">subject</code></td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>Protocol</td>
+      <td>the <code class="language-plaintext highlighter-rouge">PlanDefinition</code> being applied (variant-level L1 or derived L2), by canonical with version</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <td>Preferred start date</td>
+      <td>nested <code class="language-plaintext highlighter-rouge">parameters</code> → CQL <code class="language-plaintext highlighter-rouge">parameter TreatmentStart Date</code></td>
+      <td>yes for timed CarePlans; absent means relative timing only</td>
+    </tr>
+    <tr>
+      <td>Scalar overrides</td>
+      <td>nested <code class="language-plaintext highlighter-rouge">parameters</code> (BSA method, weight basis, variant parameters &sect;5)</td>
+      <td>no</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Step 1 — candidate listing.</strong> The CDS service applies the <em>formulary</em>
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> with <code class="language-plaintext highlighter-rouge">subject</code> (and intent/stage inputs). Because the
+group is <code class="language-plaintext highlighter-rouge">exactly-one</code>, the resulting <code class="language-plaintext highlighter-rouge">RequestGroup</code> is a choice list
+with applicability already evaluated. Delivered as CDS Hooks cards
+(<code class="language-plaintext highlighter-rouge">order-select</code>) with one <code class="language-plaintext highlighter-rouge">suggestion</code> per candidate; each suggestion
+carries the candidate canonical and any pinned parameters.</p>
+
+<p><strong>Step 2 — instantiation.</strong> The chosen canonical is applied with
+<code class="language-plaintext highlighter-rouge">subject</code>, <code class="language-plaintext highlighter-rouge">TreatmentStart</code> and parameters. The result is the cycle-level
+<code class="language-plaintext highlighter-rouge">CarePlan</code> with <code class="language-plaintext highlighter-rouge">MedicationRequest</code>s, <code class="language-plaintext highlighter-rouge">instantiatesCanonical</code> set to the
+chosen protocol (L1 or L2), and <code class="language-plaintext highlighter-rouge">Provenance</code> naming the formulary used.</p>
+
+<p><strong>Rule C-1.</strong> A consumer <strong>SHALL NOT</strong> apply a regimen-level concept.
+There is nothing to apply. A request naming only a regimen CUI
+<strong>SHALL</strong> be answered with Step 1.</p>
+
+<p><strong>Rule C-2.</strong> <code class="language-plaintext highlighter-rouge">CarePlan.instantiatesCanonical</code> <strong>SHALL</strong> reference the
+protocol actually applied, with version. The formulary <strong>SHALL</strong> be
+recorded in <code class="language-plaintext highlighter-rouge">Provenance</code>, not in <code class="language-plaintext highlighter-rouge">instantiatesCanonical</code>.</p>
+
+<h4 id="8-feedback-and-round-trip">8. Feedback and round-trip</h4>
+
+<p>Three loops, of which only the third reaches HemOnc.</p>
+
+<ol>
+  <li><strong>Into this catalog.</strong> A derived protocol is a first-class L2
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> (&sect;4). It is registered, versioned and listed by the
+formulary like any L1 entry.</li>
+  <li><strong>Into the formulary, from use.</strong> Aggregating
+<code class="language-plaintext highlighter-rouge">CarePlan.instantiatesCanonical</code> over a period gives per-variant usage.
+Issuing bodies <strong>MAY</strong> use it to rank, add or retire entries. This is
+the architecture of the New Zealand ACT-NOW programme (regimen
+<code class="language-plaintext highlighter-rouge">CarePlan</code> → national database), reused here at site scale.</li>
+  <li><strong>Into HemOnc.</strong> HemOnc variants are study-derived. A consensus
+modification without a trial has no slot in HemOncKB unless the
+editors accept the consensus source as a citable reference. Until that
+is agreed with HemOnc.org (see <a href="cooperation.html">Cooperation</a>),
+derived protocols <strong>SHALL</strong> be assumed to live permanently in L2.</li>
+</ol>
+
+<h4 id="9-worked-example--nz-colorectal-mfolfox6">9. Worked example — NZ colorectal mFOLFOX6</h4>
+
+<p>Source: SACT Regimen Library, Te Aho o Te Kahu / NZ Formulary,
+<a href="https://srl.org.nz">https://srl.org.nz</a>, colorectal group, read 2026-10-22. Entry ids are
+SNOMED CT NZ-extension concepts; versions are the SRL's own.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>SRL entry</th>
+      <th>SRL id · version</th>
+      <th>Oxali</th>
+      <th>FA</th>
+      <th>5-FU bolus</th>
+      <th>5-FU inf.</th>
+      <th>HemOnc counterpart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CRC Metastatic – mFOLFOX6 [bolus and infusion] [high dose FA]</td>
+      <td><code class="language-plaintext highlighter-rouge">52101000210105</code> · 2.0.2</td>
+      <td>85 mg/m² / 2 h</td>
+      <td>400 mg/m² / 2 h</td>
+      <td>400 mg/m²</td>
+      <td>2400 mg/m² / 46 h</td>
+      <td>mFOLFOX6 Variant #06, cui <code class="language-plaintext highlighter-rouge">133145</code> (IDEA / N0147 / NSABP C-08 / CALGB 80702) — <strong>exact</strong></td>
+    </tr>
+    <tr>
+      <td>CRC Adjuvant – mFOLFOX6 [low dose FA]</td>
+      <td><code class="language-plaintext highlighter-rouge">52201000210102</code> · 2.0.0</td>
+      <td>85</td>
+      <td><strong>50 mg flat / 2 min</strong></td>
+      <td>400</td>
+      <td>2400 / 46 h</td>
+      <td>none → derived from <code class="language-plaintext highlighter-rouge">133145</code>, <code class="language-plaintext highlighter-rouge">replace-dose</code></td>
+    </tr>
+    <tr>
+      <td>CRC Metastatic – mFOLFOX6 [high dose FA] (no bolus)</td>
+      <td><code class="language-plaintext highlighter-rouge">588251000210108</code> · 1.0.0</td>
+      <td>85</td>
+      <td>400</td>
+      <td><strong>—</strong></td>
+      <td>2400 / 46 h</td>
+      <td>none → <code class="language-plaintext highlighter-rouge">133145</code> with <code class="language-plaintext highlighter-rouge">IncludeFluorouracilBolus = false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Artifacts in this IG:</p>
+
+<ul>
+  <li><a href="PlanDefinition-nz-crc-mfolfox6-formulary.html"><code class="language-plaintext highlighter-rouge">PlanDefinition/nz-crc-mfolfox6-formulary</code></a>
+— formulary with three entries, <code class="language-plaintext highlighter-rouge">exactly-one</code>.</li>
+  <li><a href="PlanDefinition-srl-588251000210108-mfolfox6-nobolus.html"><code class="language-plaintext highlighter-rouge">PlanDefinition/srl-588251000210108-mfolfox6-nobolus</code></a>
+— derived protocol (<span class="fhir-conformance">4) shown as a full copy because the L1 mFOLFOX6
+Variant #06 <code class="language-plaintext highlighter-rouge">PlanDefinition</code> is not yet generated; once it is, this
+entry collapses to a parameter set (</span>5).</li>
+  <li><a href="ValueSet-nz-crc-permitted-variants.html"><code class="language-plaintext highlighter-rouge">ValueSet/nz-crc-permitted-variants</code></a>
+— terminology twin of the formulary.</li>
+  <li><a href="ConceptMap-srl-to-hemonc-variant.html"><code class="language-plaintext highlighter-rouge">ConceptMap/srl-to-hemonc-variant</code></a>
+— bridge, three rows.</li>
+</ul>
+
+<p>The SRL is not openly licensed (NZF standard terms, NZ jurisdiction).
+The example reproduces dosing facts for a technical demonstration and
+does not redistribute SRL content.</p>
+
+<h4 id="10-relationship-to-phase-1a">10. Relationship to Phase 1A</h4>
+
+<p>The Phase 1A plan (onboarding guide &sect;6.2) foresees a
+<code class="language-plaintext highlighter-rouge">recommended_variant_cui</code> column in <code class="language-plaintext highlighter-rouge">matches.csv</code> and "one
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> (regimen + recommended variant)" per matched MII code.
+Under this specification:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">recommended_variant_cui</code> becomes an <strong>L2 decision</strong> with a documented
+method and confidence per row, never a HemOnc property.</li>
+  <li>The MII-facing deliverable is a <strong>formulary</strong> per MII protocol code
+(jurisdiction DE, issuing body MII Onkologie or the site) listing the
+admissible HemOnc variants, plus derived protocols for German
+consensus dosing (AWMF S3, Onkopedia) that HemOnc lacks.</li>
+  <li>The bridge <code class="language-plaintext highlighter-rouge">ConceptMap/mii-onko-protokoll-to-hemonc</code> keeps
+<code class="language-plaintext highlighter-rouge">relatedto</code> at regimen level and gains <code class="language-plaintext highlighter-rouge">equivalent</code>/<code class="language-plaintext highlighter-rouge">narrower</code> rows at
+variant level from the formulary.</li>
+</ul>
+
+<h4 id="11-open-questions">11. Open questions</h4>
+
+<ol>
+  <li>Will HemOnc.org accept national consensus documents as variant
+sources? Determines whether &sect;8 loop 3 is ever closed.</li>
+  <li>Should the formulary be an <code class="language-plaintext highlighter-rouge">order-set</code> <code class="language-plaintext highlighter-rouge">PlanDefinition</code> (chosen here,
+executable) or a <code class="language-plaintext highlighter-rouge">Composition</code>/<code class="language-plaintext highlighter-rouge">List</code> (simpler, not executable)? R4
+<code class="language-plaintext highlighter-rouge">CatalogEntry</code> was considered and rejected (draft, removed in R5).</li>
+  <li>Parameter envelope representation: <code class="language-plaintext highlighter-rouge">ParameterDefinition</code> has no
+min/max; candidates are a <code class="language-plaintext highlighter-rouge">Library</code> extension or a <code class="language-plaintext highlighter-rouge">Questionnaire</code>
+with <code class="language-plaintext highlighter-rouge">minValue</code>/<code class="language-plaintext highlighter-rouge">maxValue</code> as the parameter form.</li>
+  <li>Licensing of national libraries (SRL, eviQ, NHS) for publishing
+bridge <code class="language-plaintext highlighter-rouge">ConceptMap</code>s that quote their codes and names.</li>
+</ol>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

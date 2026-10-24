@@ -3,7 +3,7 @@
   "id" : "hemonc",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem hemonc</b></p><a name=\"hemonc\"> </a><a name=\"hchemonc\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>concept-class-id</td><td>concept-class-id</td><td>string</td><td>HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)</td></tr><tr><td>atc</td><td>atc</td><td>string</td><td>WHO ATC code</td></tr><tr><td>rxnorm</td><td>rxnorm</td><td>string</td><td>RxNorm IN code (preferred mapping per HemOnc rxnorm_map)</td></tr><tr><td>inn</td><td>inn</td><td>string</td><td>International Nonproprietary Name</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/hemonc</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>concept-class-id</b></td><td><b>atc</b></td><td><b>rxnorm</b></td><td><b>inn</b></td></tr><tr><td style=\"white-space:nowrap\">88<a name=\"hemonc-88\"> </a></td><td>Carboplatin</td><td>Component</td><td>L01XA02</td><td>40048</td><td>carboplatin</td></tr><tr><td style=\"white-space:nowrap\">379<a name=\"hemonc-379\"> </a></td><td>Paclitaxel</td><td>Component</td><td>L01CD01</td><td>56946</td><td>paclitaxel</td></tr><tr><td style=\"white-space:nowrap\">2554<a name=\"hemonc-2554\"> </a></td><td>Carboplatin and Paclitaxel (CP)</td><td>Regimen</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">144842<a name=\"hemonc-144842\"> </a></td><td>Variant #83</td><td>Regimen Variant</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134425<a name=\"hemonc-134425\"> </a></td><td>AUC</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134448<a name=\"hemonc-134448\"> </a></td><td>mg/m^2</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134430<a name=\"hemonc-134430\"> </a></td><td>hour</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134451<a name=\"hemonc-134451\"> </a></td><td>minute</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">44957<a name=\"hemonc-44957\"> </a></td><td>IV</td><td>Route</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">139563<a name=\"hemonc-139563\"> </a></td><td>once</td><td>Frequency</td><td/><td/><td/></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem hemonc</b></p><a name=\"hemonc\"> </a><a name=\"hchemonc\"> </a><p><b>Eigenschaften</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>Type</b></td><td><b>Beschreibung</b></td></tr><tr><td>concept-class-id</td><td>concept-class-id</td><td>string</td><td>HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)</td></tr><tr><td>atc</td><td>atc</td><td>string</td><td>WHO ATC code</td></tr><tr><td>rxnorm</td><td>rxnorm</td><td>string</td><td>RxNorm IN code (preferred mapping per HemOnc rxnorm_map)</td></tr><tr><td>inn</td><td>inn</td><td>string</td><td>International Nonproprietary Name</td></tr></table><p><b>Concepts</b></p><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/hemonc</code> provides <b>a fragment</b> that includes following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>concept-class-id</b></td><td><b>atc</b></td><td><b>rxnorm</b></td><td><b>inn</b></td></tr><tr><td style=\"white-space:nowrap\">88<a name=\"hemonc-88\"> </a></td><td>Carboplatin</td><td>Component</td><td>L01XA02</td><td>40048</td><td>carboplatin</td></tr><tr><td style=\"white-space:nowrap\">379<a name=\"hemonc-379\"> </a></td><td>Paclitaxel</td><td>Component</td><td>L01CD01</td><td>56946</td><td>paclitaxel</td></tr><tr><td style=\"white-space:nowrap\">2554<a name=\"hemonc-2554\"> </a></td><td>Carboplatin and Paclitaxel (CP)</td><td>Regimen</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">144842<a name=\"hemonc-144842\"> </a></td><td>Variant #83</td><td>Regimen Variant</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134425<a name=\"hemonc-134425\"> </a></td><td>AUC</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134448<a name=\"hemonc-134448\"> </a></td><td>mg/m^2</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134430<a name=\"hemonc-134430\"> </a></td><td>hour</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">134451<a name=\"hemonc-134451\"> </a></td><td>minute</td><td>Unit</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">44957<a name=\"hemonc-44957\"> </a></td><td>IV</td><td>Route</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">139563<a name=\"hemonc-139563\"> </a></td><td>once</td><td>Frequency</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">13849<a name=\"hemonc-13849\"> </a></td><td>mFOLFOX6</td><td>Regimen</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">133145<a name=\"hemonc-133145\"> </a></td><td>mFOLFOX6 Variant #06</td><td>Regimen Variant</td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">133143<a name=\"hemonc-133143\"> </a></td><td>mFOLFOX6 Variant #04</td><td>Regimen Variant</td><td/><td/><td/></tr></table></div>"
   },
   "url" : "http://hemonc.org/fhir/CodeSystem/hemonc",
   "identifier" : [{
@@ -24,7 +24,7 @@
       "value" : "https://github.com/thome/oncology-regimens"
     }]
   }],
-  "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+  "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -157,6 +157,30 @@
     "property" : [{
       "code" : "concept-class-id",
       "valueString" : "Frequency"
+    }]
+  },
+  {
+    "code" : "13849",
+    "display" : "mFOLFOX6",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen"
+    }]
+  },
+  {
+    "code" : "133145",
+    "display" : "mFOLFOX6 Variant #06",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen Variant"
+    }]
+  },
+  {
+    "code" : "133143",
+    "display" : "mFOLFOX6 Variant #04",
+    "property" : [{
+      "code" : "concept-class-id",
+      "valueString" : "Regimen Variant"
     }]
   }]
 }

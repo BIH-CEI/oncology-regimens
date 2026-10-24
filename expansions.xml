@@ -1,9 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="a88c0b02-f77d-4375-a878-e4ff192afb07"/>
+  <id value="fd066872-3f3b-4821-bbc6-ef6271c48352"/>
   <meta>
-    <lastUpdated value="2026-07-07T16:34:37.313+00:00"/>
+    <lastUpdated value="2026-10-24T21:02:11.942+00:00"/>
   </meta>
   <type value="collection"/>
+  <entry>
+    <fullUrl value="http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated">
+            <p class="res-header-id"/>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on 
+              <a href="CodeSystem-regimen-modification-kind.html">codesystem Regimen Modification Kind v2026-03-12-0.1.0 (CodeSystem)</a>
+              <span class="copy-text-inline">
+                <button data-clipboard-text="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind|2026-03-12-0.1.0" title="Click to Copy URL" class="btn-copy" aria-label="copy"> </button>
+              </span>
+            </p>
+            <p>This value set contains 6 concepts</p>
+            <table class="codes" data-fhir="generated">
+              <tr>
+                <td>
+                  <b>System</b>
+                </td>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display (de)</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+                <td>
+                  <b>JSON</b>
+                </td>
+                <td>
+                  <b>XML</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-omit-action"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-omit-action">omit-action</a>
+                </td>
+                <td/>
+                <td>An action present in the parent is removed (e.g. the fluorouracil bolus).</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;omit-action&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;omit-action&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-add-action"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-add-action">add-action</a>
+                </td>
+                <td/>
+                <td>An action absent in the parent is added (e.g. a supportive-care medication).</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;add-action&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;add-action&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-replace-dose"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-replace-dose">replace-dose</a>
+                </td>
+                <td/>
+                <td>Same drug, same schedule, different dose or dose basis (e.g. mg/m² → flat mg).</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;replace-dose&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;replace-dose&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-replace-schedule"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-replace-schedule">replace-schedule</a>
+                </td>
+                <td/>
+                <td>Same drug and dose, different days, frequency or infusion duration.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;replace-schedule&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;replace-schedule&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-replace-route"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-replace-route">replace-route</a>
+                </td>
+                <td/>
+                <td>Same drug and dose, different route.</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;replace-route&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;replace-route&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a name="x-http://hemonc.org/fhir/CodeSystem/regimen-modification-kind-replace-product"> </a>
+                  <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code>
+                </td>
+                <td style="white-space:nowrap">  
+                  <a href="CodeSystem-regimen-modification-kind.html#regimen-modification-kind-replace-product">replace-product</a>
+                </td>
+                <td/>
+                <td>Different product for the same component (e.g. leucovorin → levoleucovorin).</td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="{&quot;system&quot;: &quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;, &quot;version&quot;: &quot;2026-03-12-0.1.0&quot;, &quot;code&quot;: &quot;replace-product&quot;}" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+                <td>
+                  <span class="copy-text-inline">
+                    <button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://hemonc.org/fhir/CodeSystem/regimen-modification-kind&quot;/&gt;&lt;version value=&quot;2026-03-12-0.1.0&quot;/&gt;&lt;code value=&quot;replace-product&quot;/&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy" aria-label="copy"> </button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs"/>
+        <version value="2026-03-12-0.1.0"/>
+        <name value="RegimenModificationKindVS"/>
+        <title value="Regimen Modification Kind ValueSet"/>
+        <status value="draft"/>
+        <experimental value="true"/>
+        <date value="2026-10-24T21:02:11+00:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="DE"/>
+            <display value="Germany"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:2e1cd6b0-e5ce-469e-92e6-61c7af496b06"/>
+          <timestamp value="2026-10-24T21:03:41+00:00"/>
+          <total value="6"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="displayLanguage"/>
+            <valueCode value="de"/>
+          </parameter>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind|2026-03-12-0.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="omit-action"/>
+          </contains>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="add-action"/>
+          </contains>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="replace-dose"/>
+          </contains>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="replace-schedule"/>
+          </contains>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="replace-route"/>
+          </contains>
+          <contains>
+            <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+            <code value="replace-product"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
 </Bundle>

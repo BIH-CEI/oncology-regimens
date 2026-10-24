@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "srl-to-hemonc-variant"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap srl-to-hemonc-variant</b></p><a name=\"srl-to-hemonc-variant\"> </a><a name=\"hcsrl-to-hemonc-variant\"> </a><p>Mapping from https://srl.org.nz/regimens to <a href=\"CodeSystem-hemonc.html\">http://hemonc.org/fhir/CodeSystem/hemonc</a></p><br/><p>Mapping from <code>https://srl.org.nz/regimens</code> to <a href=\"CodeSystem-hemonc.html\">HemOnc Ontology (fragment, Phase 0 spike)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>52101000210105 (CRC Metastatic – mFOLFOX6 [bolus and infusion] [high dose folinic acid] v2.0.2)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent\" title=\"equivalent\">is equivalent to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>Oxaliplatin 85/2h, folinic acid 400/2h, 5-FU 400 bolus + 2400/46h, q14d. Infusion durations match.</td></tr><tr><td>588251000210108 (CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus) v1.0.0)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-relatedto\" title=\"relatedto\">is related to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>omit-action: fluorouracil 400 mg/m² bolus. No HemOnc variant drops the bolus at otherwise identical doses.</td></tr><tr><td>52201000210102 (CRC Adjuvant – mFOLFOX6 [low dose folinic acid] v2.0.0)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-relatedto\" title=\"relatedto\">is related to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>replace-dose: folinic acid 400 mg/m² IV 2 h → 50 mg flat IV 2 min. Lowest HemOnc leucovorin dose for mFOLFOX6 is 200 mg/m².</td></tr></table></div>"
+  ] ;
+  fhir:ConceptMap.url [ fhir:value "http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant"] ;
+  fhir:ConceptMap.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:ConceptMap.name [ fhir:value "SRLToHemOncVariant"] ;
+  fhir:ConceptMap.title [ fhir:value "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)"] ;
+  fhir:ConceptMap.status [ fhir:value "draft"] ;
+  fhir:ConceptMap.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ConceptMap.date [ fhir:value "2026-10-24"^^xsd:date] ;
+  fhir:ConceptMap.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:ConceptMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:ConceptMap.description [ fhir:value "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content."] ;
+  fhir:ConceptMap.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:ConceptMap.sourceUri [ fhir:value "https://srl.org.nz/regimens"] ;
+  fhir:ConceptMap.targetUri [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc"] ;
+  fhir:ConceptMap.group [
+     fhir:index 0 ;
+     fhir:ConceptMap.group.source [ fhir:value "https://srl.org.nz/regimens" ] ;
+     fhir:ConceptMap.group.target [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+     fhir:ConceptMap.group.element [
+       fhir:index 0 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "52101000210105" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "CRC Metastatic – mFOLFOX6 [bolus and infusion] [high dose folinic acid] v2.0.2" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "133145" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "mFOLFOX6 Variant #06" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equivalent" ] ;
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "Oxaliplatin 85/2h, folinic acid 400/2h, 5-FU 400 bolus + 2400/46h, q14d. Infusion durations match." ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "588251000210108" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus) v1.0.0" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "133145" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "mFOLFOX6 Variant #06" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "relatedto" ] ;
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "omit-action: fluorouracil 400 mg/m² bolus. No HemOnc variant drops the bolus at otherwise identical doses." ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "52201000210102" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "CRC Adjuvant – mFOLFOX6 [low dose folinic acid] v2.0.0" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index 0 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "133145" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "mFOLFOX6 Variant #06" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "relatedto" ] ;
+         fhir:ConceptMap.group.element.target.comment [ fhir:value "replace-dose: folinic acid 400 mg/m² IV 2 h → 50 mg flat IV 2 min. Lowest HemOnc leucovorin dose for mFOLFOX6 is 200 mg/m²." ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

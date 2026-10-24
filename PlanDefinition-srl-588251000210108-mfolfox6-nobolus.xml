@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="srl-588251000210108-mfolfox6-nobolus"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b style="color: maroon">Exception parsing generated Narrative (see /tmp/liquid-e8f17052-24b4-4d64-a11e-1a6623bfd168.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>
+  </text>
+  <extension url="http://hemonc.org/fhir/StructureDefinition/regimen-modification">
+    <extension url="kind">
+      <valueCode value="omit-action"/>
+    </extension>
+    <extension url="targetActionId">
+      <valueString value="fluorouracil-bolus-d1"/>
+    </extension>
+    <extension url="component">
+      <valueCodeableConcept>
+        <text value="Fluorouracil (bolus)"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="from">
+      <valueString value="Fluorouracil 400 mg/m² IV bolus day 1"/>
+    </extension>
+    <extension url="rationale">
+      <valueMarkdown value="The fluorouracil bolus was removed following the recommendation of the New Zealand Society for Oncology (NZSO) Gastrointestinal Cancers Special Interest Group (GISIG)."/>
+    </extension>
+  </extension>
+  <url value="http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus"/>
+  <identifier>
+    <use value="official"/>
+    <system value="https://srl.org.nz/regimens"/>
+    <value value="588251000210108"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="http://hemonc.org/variant-cui"/>
+    <value value="133145"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="http://hemonc.org/regimen-cui"/>
+    <value value="13849"/>
+  </identifier>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="SRLmFOLFOX6HighFANoBolus"/>
+  <title value="CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="clinical-protocol"/>
+    </coding>
+  </type>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-07-01"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+        <code value="13849"/>
+        <display value="mFOLFOX6"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="jurisdiction"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="urn:iso:std:iso:3166"/>
+        <code value="NZ"/>
+        <display value="New Zealand"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <relatedArtifact>
+    <type value="derived-from"/>
+    <label value="Parent HemOnc variant"/>
+    <resource value="http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="justification"/>
+    <label value="SRL entry 588251000210108 v1.0.0, published 2026-07-01"/>
+    <citation value="Te Aho o Te Kahu / New Zealand Formulary. SACT Regimen Library: CRC Metastatic – mFOLFOX6 [oxaliplatin, folinic acid and fluorouracil] [high dose folinic acid]. Version 1.0.0, 1 July 2026."/>
+    <url value="https://srl.org.nz/regimens/colorectal/588251000210108"/>
+    <document>
+      <url value="https://srl.org.nz/regimens/colorectal/588251000210108"/>
+    </document>
+  </relatedArtifact>
+  <action id="cycle">
+    <title value="14-day cycle, repeated until progression or unacceptable toxicity"/>
+    <timingTiming>
+      <repeat>
+        <frequency value="1"/>
+        <period value="14"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timingTiming>
+    <groupingBehavior value="logical-group"/>
+    <selectionBehavior value="all"/>
+    <action id="oxaliplatin-d1">
+      <title value="Oxaliplatin 85 mg/m² IV over 120 min, day 1"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+          <code value="create"/>
+        </coding>
+      </type>
+    </action>
+    <action id="folinic-acid-d1">
+      <title value="Folinic acid (calcium folinate) 400 mg/m² IV over 120 min, day 1"/>
+      <relatedAction>
+        <actionId value="oxaliplatin-d1"/>
+        <relationship value="concurrent-with-start"/>
+      </relatedAction>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+          <code value="create"/>
+        </coding>
+      </type>
+    </action>
+    <action id="fluorouracil-infusion-d1">
+      <title value="Fluorouracil 2400 mg/m² IV continuous over 46 h, day 1"/>
+      <relatedAction>
+        <actionId value="folinic-acid-d1"/>
+        <relationship value="after-end"/>
+      </relatedAction>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+          <code value="create"/>
+        </coding>
+      </type>
+    </action>
+  </action>
+</PlanDefinition>

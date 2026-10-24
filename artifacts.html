@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8"}
-    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -100,6 +100,9 @@
   </li>
   <li>
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
   </li>
   <li>
     <a href="phase0.html">Phase 0 Spike</a>
@@ -160,10 +163,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#3">Knowledge Artifacts: Libraries</a>
       </li>
       <li>
-         <a href="#4">Terminology: Code Systems</a>
+         <a href="#4">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#5">Other</a>
+         <a href="#5">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#6">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#7">Example: Example Instances</a>
+      </li>
+      <li>
+         <a href="#8">Other</a>
       </li>
    </ul>
 </div>
@@ -231,6 +243,67 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
    </table>
    <a name="4"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-formulary-parameter.html"
+                  title="StructureDefinition/formulary-parameter">Formulary Parameter</a>
+            </td>
+            <td>
+<p>A parameter value a formulary entry pins on the referenced (parameterised) variant PlanDefinition. Forwarded by the CDS layer in the nested <code class="language-plaintext highlighter-rouge">parameters</code> of $apply.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-formulary-rank.html"
+                  title="StructureDefinition/formulary-rank">Formulary Rank</a>
+            </td>
+            <td>
+<p>Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-regimen-modification.html"
+                  title="StructureDefinition/regimen-modification">Regimen Modification</a>
+            </td>
+            <td>
+<p>One delta between a derived (L2) PlanDefinition and the HemOnc variant it is derived from. Provenance only: the derived PlanDefinition SHALL be complete on its own (Rule D-1).</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-nz-crc-permitted-variants.html"
+                  title="ValueSet/nz-crc-permitted-variants">NZ colorectal permitted mFOLFOX6 variants (example)</a>
+            </td>
+            <td>
+<p>Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-regimen-modification-kind-vs.html"
+                  title="ValueSet/regimen-modification-kind-vs">Regimen Modification Kind ValueSet</a>
+            </td>
+            <td>
+<p>All kinds of regimen modification.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -241,7 +314,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                <a href="CodeSystem-hemonc.html" title="CodeSystem/hemonc">HemOnc Ontology (fragment, Phase 0 spike)</a>
             </td>
             <td>
-<p>Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.</p>
+<p>Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.</p>
 </td>
          </tr>
          <tr>
@@ -253,9 +326,53 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Small code system distinguishing the <em>target</em> expressed by a Sig's doseQuantity from the <em>computed</em> mg dose. Used as ActivityDefinition.dosage.doseAndRate.type. A target requires a CQL helper to convert into an administered mg quantity at $apply time.</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-regimen-modification-kind.html"
+                  title="CodeSystem/regimen-modification-kind">Regimen Modification Kind</a>
+            </td>
+            <td>
+<p>Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant.</p>
+</td>
+         </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="7"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-srl-588251000210108-mfolfox6-nobolus.html"
+                  title="PlanDefinition/srl-588251000210108-mfolfox6-nobolus">CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)</a>
+            </td>
+            <td>
+<p>Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="PlanDefinition-nz-crc-mfolfox6-formulary.html"
+                  title="PlanDefinition/nz-crc-mfolfox6-formulary">NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)</a>
+            </td>
+            <td>
+<p>Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-srl-to-hemonc-variant.html"
+                  title="ConceptMap/srl-to-hemonc-variant">SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)</a>
+            </td>
+            <td>
+<p>Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="8"> </a>
    <h3>Other </h3>
     <p>These are resources that are used within this implementation guide that do not fit into one of the other categories.</p>
 <table class="grid">
@@ -293,7 +410,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

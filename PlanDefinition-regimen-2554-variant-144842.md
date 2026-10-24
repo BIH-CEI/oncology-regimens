@@ -10,7 +10,7 @@
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/PlanDefinition/regimen-2554-variant-144842 | *Version*:2026-03-12-0.1.0 |
 | Active as of 2026-03-12 | *Computable Name*:CarboplatinPaclitaxelVariant83 |
-| *Other Identifiers:*http://hemonc.org/cui#144842 (use: official, ), http://hemonc.org/regimen-cui#2554 (use: secondary, ) | |
+| *Other Identifiers:*http://hemonc.org/cui#144842 (use: official), http://hemonc.org/regimen-cui#2554 (use: secondary) | |
 | **Usage:**Clinical Focus: Carboplatin and Paclitaxel (CP) | |
 
  

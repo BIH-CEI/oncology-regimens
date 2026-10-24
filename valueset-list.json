@@ -1,3 +1,21 @@
 {
-  "codeSystems" : []
+  "codeSystems" : [{
+    "url" : "http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants",
+    "version" : "2026-03-12-0.1.0",
+    "status" : "draft",
+    "name" : "NZCRCPermittedVariants",
+    "title" : "NZ colorectal permitted mFOLFOX6 variants (example)",
+    "description" : "Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6).",
+    "systems" : ["https://srl.org.nz/regimens",
+    "http://hemonc.org/fhir/CodeSystem/hemonc"]
+  },
+  {
+    "url" : "http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs",
+    "version" : "2026-03-12-0.1.0",
+    "status" : "draft",
+    "name" : "RegimenModificationKindVS",
+    "title" : "Regimen Modification Kind ValueSet",
+    "description" : "All kinds of regimen modification.",
+    "systems" : ["http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"]
+  }]
 }

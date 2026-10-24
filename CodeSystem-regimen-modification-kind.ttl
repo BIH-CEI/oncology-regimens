@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/regimen-modification-kind> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "regimen-modification-kind"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem regimen-modification-kind</b></p><a name=\"regimen-modification-kind\"> </a><a name=\"hcregimen-modification-kind\"> </a><p>This case-sensitive code system <code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">omit-action<a name=\"regimen-modification-kind-omit-action\"> </a></td><td>Omit action</td><td>An action present in the parent is removed (e.g. the fluorouracil bolus).</td></tr><tr><td style=\"white-space:nowrap\">add-action<a name=\"regimen-modification-kind-add-action\"> </a></td><td>Add action</td><td>An action absent in the parent is added (e.g. a supportive-care medication).</td></tr><tr><td style=\"white-space:nowrap\">replace-dose<a name=\"regimen-modification-kind-replace-dose\"> </a></td><td>Replace dose</td><td>Same drug, same schedule, different dose or dose basis (e.g. mg/m² → flat mg).</td></tr><tr><td style=\"white-space:nowrap\">replace-schedule<a name=\"regimen-modification-kind-replace-schedule\"> </a></td><td>Replace schedule</td><td>Same drug and dose, different days, frequency or infusion duration.</td></tr><tr><td style=\"white-space:nowrap\">replace-route<a name=\"regimen-modification-kind-replace-route\"> </a></td><td>Replace route</td><td>Same drug and dose, different route.</td></tr><tr><td style=\"white-space:nowrap\">replace-product<a name=\"regimen-modification-kind-replace-product\"> </a></td><td>Replace product</td><td>Different product for the same component (e.g. leucovorin → levoleucovorin).</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"] ;
+  fhir:CodeSystem.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:CodeSystem.name [ fhir:value "RegimenModificationKind"] ;
+  fhir:CodeSystem.title [ fhir:value "Regimen Modification Kind"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-10-24T21:02:11+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "6"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "omit-action" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Omit action" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "An action present in the parent is removed (e.g. the fluorouracil bolus)." ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "add-action" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Add action" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "An action absent in the parent is added (e.g. a supportive-care medication)." ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "replace-dose" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Replace dose" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Same drug, same schedule, different dose or dose basis (e.g. mg/m² → flat mg)." ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "replace-schedule" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Replace schedule" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Same drug and dose, different days, frequency or infusion duration." ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "replace-route" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Replace route" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Same drug and dose, different route." ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "replace-product" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Replace product" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Different product for the same component (e.g. leucovorin → levoleucovorin)." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/CodeSystem/regimen-modification-kind.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

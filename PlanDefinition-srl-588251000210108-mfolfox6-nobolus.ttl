@@ -1,0 +1,204 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "srl-588251000210108-mfolfox6-nobolus"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-e8f17052-24b4-4d64-a11e-1a6623bfd168.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "kind" ] ;
+       fhir:Extension.valueCode [ fhir:value "omit-action" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "targetActionId" ] ;
+       fhir:Extension.valueString [ fhir:value "fluorouracil-bolus-d1" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "component" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.text [ fhir:value "Fluorouracil (bolus)" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "from" ] ;
+       fhir:Extension.valueString [ fhir:value "Fluorouracil 400 mg/m² IV bolus day 1" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Extension.url [ fhir:value "rationale" ] ;
+       fhir:Extension.valueMarkdown [ fhir:value "The fluorouracil bolus was removed following the recommendation of the New Zealand Society for Oncology (NZSO) Gastrointestinal Cancers Special Interest Group (GISIG)." ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/regimen-modification" ]
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "https://srl.org.nz/regimens" ] ;
+     fhir:Identifier.value [ fhir:value "588251000210108" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.use [ fhir:value "secondary" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/variant-cui" ] ;
+     fhir:Identifier.value [ fhir:value "133145" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Identifier.use [ fhir:value "secondary" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/regimen-cui" ] ;
+     fhir:Identifier.value [ fhir:value "13849" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "SRLmFOLFOX6HighFANoBolus"] ;
+  fhir:PlanDefinition.title [ fhir:value "CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "clinical-protocol" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "draft"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2026-07-01"^^xsd:date] ;
+  fhir:PlanDefinition.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here."] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+         fhir:Coding.code [ fhir:value "13849" ] ;
+         fhir:Coding.display [ fhir:value "mFOLFOX6" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "jurisdiction" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+         fhir:Coding.code [ fhir:value "NZ" ] ;
+         fhir:Coding.display [ fhir:value "New Zealand" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.relatedArtifact [
+     fhir:index 0 ;
+     fhir:RelatedArtifact.type [ fhir:value "derived-from" ] ;
+     fhir:RelatedArtifact.label [ fhir:value "Parent HemOnc variant" ] ;
+     fhir:RelatedArtifact.resource [
+       fhir:value "http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12" ;
+       fhir:link <http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12>
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:RelatedArtifact.type [ fhir:value "justification" ] ;
+     fhir:RelatedArtifact.label [ fhir:value "SRL entry 588251000210108 v1.0.0, published 2026-07-01" ] ;
+     fhir:RelatedArtifact.citation [ fhir:value "Te Aho o Te Kahu / New Zealand Formulary. SACT Regimen Library: CRC Metastatic – mFOLFOX6 [oxaliplatin, folinic acid and fluorouracil] [high dose folinic acid]. Version 1.0.0, 1 July 2026." ] ;
+     fhir:RelatedArtifact.url [ fhir:value "https://srl.org.nz/regimens/colorectal/588251000210108" ] ;
+     fhir:RelatedArtifact.document [
+       fhir:Attachment.url [ fhir:value "https://srl.org.nz/regimens/colorectal/588251000210108" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "cycle" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "14-day cycle, repeated until progression or unacceptable toxicity" ] ;
+     fhir:PlanDefinition.action.timingTiming [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "14"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.groupingBehavior [ fhir:value "logical-group" ] ;
+     fhir:PlanDefinition.action.selectionBehavior [ fhir:value "all" ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "oxaliplatin-d1" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Oxaliplatin 85 mg/m² IV over 120 min, day 1" ] ;
+       fhir:PlanDefinition.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/action-type" ] ;
+           fhir:Coding.code [ fhir:value "create" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "folinic-acid-d1" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Folinic acid (calcium folinate) 400 mg/m² IV over 120 min, day 1" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "oxaliplatin-d1" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "concurrent-with-start" ]
+       ] ;
+       fhir:PlanDefinition.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/action-type" ] ;
+           fhir:Coding.code [ fhir:value "create" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "fluorouracil-infusion-d1" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Fluorouracil 2400 mg/m² IV continuous over 46 h, day 1" ] ;
+       fhir:PlanDefinition.action.relatedAction [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "folinic-acid-d1" ] ;
+         fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "after-end" ]
+       ] ;
+       fhir:PlanDefinition.action.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/action-type" ] ;
+           fhir:Coding.code [ fhir:value "create" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

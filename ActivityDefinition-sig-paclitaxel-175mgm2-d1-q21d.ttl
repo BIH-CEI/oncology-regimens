@@ -88,7 +88,6 @@
        fhir:Extension.url [ fhir:value "http://hemonc.org/fhir/StructureDefinition/day-of-cycle" ] ;
        fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
      ] ;
-     fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
      fhir:Dosage.text [ fhir:value "Paclitaxel 175 mg/m² IV over 3 hours on day 1 of a 21-day cycle" ] ;
      fhir:Dosage.patientInstruction [ fhir:value "Premedications (corticosteroid + H1 + H2) required 30 min prior — see linked dose-modification policy." ] ;
      fhir:Dosage.timing [

@@ -1,40 +1,130 @@
 HemOncFHIRRegimenCatalog : Validation Results
 =========================================
 
-err = 20, warn = 33, info = 31
-IG Publisher Version: 2.2.10
-Generated Tue Jul 07 16:36:04 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
- Build Errors : 2 / 6 / 0
- /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog : 4 / 4 / 3
+err = 21, warn = 61, info = 51, broken links = 0
+IG Publisher Version: 3.0.1
+Generated Sat Oct 24 21:03:56 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
+ Build Errors : 2 / 14 / 1
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/CodeSystem-regimen-modification-kind : 0 / 1 / 2
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ConceptMap-srl-to-hemonc-variant : 1 / 3 / 2
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog : 2 / 4 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/PlanDefinition-nz-crc-mfolfox6-formulary : 0 / 7 / 5
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/PlanDefinition-srl-588251000210108-mfolfox6-nobolus : 0 / 5 / 4
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/StructureDefinition-formulary-parameter : 0 / 0 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/StructureDefinition-formulary-rank : 0 / 0 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/StructureDefinition-regimen-modification : 0 / 0 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ValueSet-nz-crc-permitted-variants : 0 / 3 / 4
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ValueSet-regimen-modification-kind-vs : 0 / 1 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d : 3 / 4 / 7
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d : 3 / 4 / 6
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-hemonc-fragment : 0 / 2 / 6
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-sig-target-type : 0 / 1 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/Library-HemOncDoseHelpers : 0 / 0 / 3
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel : 3 / 2 / 4
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin : 3 / 4 / 5
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel : 4 / 2 / 4
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin : 4 / 4 / 5
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/PlanDefinition-regimen-2554-variant-144842 : 2 / 6 / 4
 </table>
+
 == n/a ==
 ERROR: ImplementationGuide.definition.parameter[27].value: Supressed messages file not found
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-379-paclitaxel.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-88-carboplatin.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 ERROR: package.tgz: Error converting pacakge to R4B: Error processing package/MedicationKnowledge-hemonc-drug-379-paclitaxel.json: Not a JSON Object: null
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 177
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 10
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 9
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 109 column 8
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 111 column 12
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 112 column 20
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 113 column 16
+WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 115 column 12
+INFORMATION: selection-layer.html: No conformance term found in the text: 4) shown as a full copy because the L1 mFOLFOX6
+Variant #06 PlanDefinition is not yet generated; once it is, this
+entry collapses to a parameter set (
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml, dependency-table-nontech.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+
+
+== fsh-generated/resources/CodeSystem-regimen-modification-kind.json ==
+INFORMATION: CodeSystem/regimen-modification-kind: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: Resource: The resource CodeSystem/regimen-modification-kind should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/ConceptMap-srl-to-hemonc-variant.json ==
+INFORMATION: ConceptMap/srl-to-hemonc-variant: ConceptMap.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: ConceptMap/srl-to-hemonc-variant: ConceptMap.source.ofType(uri): URL-Wert 'https://srl.org.nz/regimens' löst nicht auf
+WARNING: ConceptMap/srl-to-hemonc-variant: ConceptMap.group[0].source: URL-Wert 'https://srl.org.nz/regimens' löst nicht auf
+ERROR: ConceptMap/srl-to-hemonc-variant: ConceptMap.target: Reference must be to a ValueSet, but found a CodeSystem instead
+WARNING: ConceptMap/srl-to-hemonc-variant: ConceptMap.group[0].target: Zielcodesystem http://hemonc.org/fhir/CodeSystem/hemonc hat nicht alle Inhalte (Inhalt = fragment), daher können die Codes nicht geprüft werden
+
+
 == fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog.json ==
 WARNING: ImplementationGuide.version: The version 2026-03-12-0.1.0 is not a valid semantic version and will not be acceptible to the ci-build, nor will it be a valid vesion in the NPM package system
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog: Unknown Parameters: [apply-status=true]
 INFORMATION: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
 WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2].uri: Canonical URL 'http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie' kann nicht aufgelöst werden
-ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[4].extension[0].value.ofType(string): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden
-ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[4].extension[0].value.ofType(string): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden)
-ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[32].extension[0].value.ofType(code): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden
-ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[32].extension[0].value.ofType(code): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.1.2 nicht ermittelt werden)
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[5].extension[0].value.ofType(code): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0 nicht ermittelt werden
+ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[5].extension[0].value.ofType(code): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0 nicht ermittelt werden)
 WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie doesn't point to an actual ImplementationGuide resource
-INFORMATION: Resource: The resource ImplementationGuide/hemonc-fhir-regimen-catalog could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+INFORMATION: Resource: The resource ImplementationGuide/hemonc-fhir-regimen-catalog could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/PlanDefinition-nz-crc-mfolfox6-formulary.json ==
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/fhir/example-formulary' löst nicht auf
+INFORMATION: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.useContext[0].value.ofType(CodeableConcept).coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NZ for language(s) 'de-DE'. The display is 'New Zealand' which is a valid display for the default language
+INFORMATION: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.useContext[1].value.ofType(CodeableConcept).coding[0].display: There are no valid display names found for the code http://snomed.info/sct#363406005 for language(s) 'de-DE'. The display is 'Malignant tumor of colon' which is a valid display for the default language
+INFORMATION: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.useContext[2].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.relatedArtifact[0].url: URL-Wert 'https://srl.org.nz/regimens/colorectal' löst nicht auf
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.action[0].action[0].code[0].coding[0].system: A definition for CodeSystem 'https://srl.org.nz/regimens' version '2.0.2' could not be found, so the code cannot be validated. No versions of this code system are known
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.action[0].action[0].definition.ofType(canonical): Canonical URL 'http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12' kann nicht aufgelöst werden
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.action[0].action[1].code[0].coding[0].system: A definition for CodeSystem 'https://srl.org.nz/regimens' version '1.0.0' could not be found, so the code cannot be validated. No versions of this code system are known
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.action[0].action[2].code[0].coding[0].system: A definition for CodeSystem 'https://srl.org.nz/regimens' version '2.0.0' could not be found, so the code cannot be validated. No versions of this code system are known
+WARNING: PlanDefinition/nz-crc-mfolfox6-formulary: PlanDefinition.action[0].action[2].definition.ofType(canonical): Canonical URL 'http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12' kann nicht aufgelöst werden
+
+
+== fsh-generated/resources/PlanDefinition-srl-588251000210108-mfolfox6-nobolus.json ==
+WARNING: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.identifier[0].system: URL-Wert 'https://srl.org.nz/regimens' löst nicht auf
+WARNING: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.identifier[1].system: URL-Wert 'http://hemonc.org/variant-cui' löst nicht auf
+WARNING: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.identifier[2].system: URL-Wert 'http://hemonc.org/regimen-cui' löst nicht auf
+INFORMATION: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+INFORMATION: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.useContext[1].value.ofType(CodeableConcept).coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#NZ for language(s) 'de-DE'. The display is 'New Zealand' which is a valid display for the default language
+INFORMATION: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.relatedArtifact[0].resource: Canonical URL 'http://hemonc.org/fhir/PlanDefinition/regimen-13849-variant-133145|2026-03-12' kann nicht aufgelöst werden
+WARNING: PlanDefinition/srl-588251000210108-mfolfox6-nobolus: PlanDefinition.relatedArtifact[1].url: URL-Wert 'https://srl.org.nz/regimens/colorectal/588251000210108' löst nicht auf
+
+
+== fsh-generated/resources/StructureDefinition-formulary-parameter.json ==
+INFORMATION: StructureDefinition/formulary-parameter: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/formulary-parameter could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/StructureDefinition-formulary-rank.json ==
+INFORMATION: StructureDefinition/formulary-rank: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/formulary-rank could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/StructureDefinition-regimen-modification.json ==
+INFORMATION: StructureDefinition/regimen-modification: StructureDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+INFORMATION: Resource: The resource StructureDefinition/regimen-modification could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/ValueSet-nz-crc-permitted-variants.json ==
+INFORMATION: ValueSet/nz-crc-permitted-variants: ValueSet.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: ValueSet/nz-crc-permitted-variants: ValueSet.compose.include[1].system: URL-Wert 'https://srl.org.nz/regimens' löst nicht auf
+INFORMATION: ValueSet/nz-crc-permitted-variants: ValueSet.compose.include[0]: The value set references CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' which has status 'fragment'
+INFORMATION: ValueSet/nz-crc-permitted-variants: ValueSet.compose.include[1]: The concepts in the value set include have not been validated because the code system 'https://srl.org.nz/regimens' is not known, and no terminology service supports it
+WARNING: Resource: The resource ValueSet/nz-crc-permitted-variants should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+WARNING: ValueSet.where(id = 'nz-crc-permitted-variants'): Error from https://tx.fhir.org/r4: Error: A definition for CodeSystem 'https://srl.org.nz/regimens' could not be found, so the value set cannot be expanded
+
+
+== fsh-generated/resources/ValueSet-regimen-modification-kind-vs.json ==
+INFORMATION: ValueSet/regimen-modification-kind-vs: ValueSet.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
+WARNING: Resource: The resource ValueSet/regimen-modification-kind-vs should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json ==
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json: Artifact library could not be found so no data requirements were inferred.
 WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
@@ -48,7 +138,9 @@ WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dos
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/sig-target-type|2026-03-12-0.1.0
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].dose.ofType(Quantity): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-INFORMATION: Resource: The resource ActivityDefinition/sig-carboplatin-auc5-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+INFORMATION: Resource: The resource ActivityDefinition/sig-carboplatin-auc5-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json ==
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json: Artifact library could not be found so no data requirements were inferred.
 WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
@@ -61,7 +153,9 @@ ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dos
 WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
 INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
 INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].doseAndRate[0].type: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/sig-target-type|2026-03-12-0.1.0
-INFORMATION: Resource: The resource ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+INFORMATION: Resource: The resource ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/CodeSystem-hemonc-fragment.json ==
 WARNING: CodeSystem/hemonc: CodeSystem.identifier[0].system: URL-Wert 'https://dataverse.harvard.edu/dataset.xhtml' löst nicht auf
 INFORMATION: CodeSystem/hemonc: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
@@ -69,13 +163,19 @@ INFORMATION: CodeSystem/hemonc: CodeSystem.property[0]: This property has only a
 INFORMATION: CodeSystem/hemonc: CodeSystem.property[1]: This property has only a code ('atc') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
 INFORMATION: CodeSystem/hemonc: CodeSystem.property[2]: This property has only a code ('rxnorm') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
 INFORMATION: CodeSystem/hemonc: CodeSystem.property[3]: This property has only a code ('inn') and not a URI, so it has no clearly defined meaning in the terminology ecosystem
-WARNING: Resource: The resource CodeSystem/hemonc should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource CodeSystem/hemonc should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/CodeSystem-sig-target-type.json ==
 INFORMATION: CodeSystem/sig-target-type: CodeSystem.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
-WARNING: Resource: The resource CodeSystem/sig-target-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: Resource: The resource CodeSystem/sig-target-type should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/Library-HemOncDoseHelpers.json ==
 INFORMATION: Library/HemOncDoseHelpers: Library.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
-INFORMATION: Resource: The resource Library/HemOncDoseHelpers could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+INFORMATION: Resource: The resource Library/HemOncDoseHelpers could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
 == input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel.json ==
 ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
 ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12')
@@ -85,6 +185,9 @@ INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge
 WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
 INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'Taxane' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.kinetics[0]: Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
+
+
 == input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin.json ==
 ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
 ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12')
@@ -94,9 +197,12 @@ INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge
 WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
 INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'PlatinumAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].type.coding[0]: Das CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis ist unbekannt
+WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].type.coding[0].system: Das CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis ist unbekannt
 INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0].coding[0].code: Unknown Code 'AlkylatingAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.kinetics[0]: Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
+
+
 == input/resources/PlanDefinition-regimen-2554-variant-144842.json ==
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/input/resources/PlanDefinition-regimen-2554-variant-144842.json: Artifact library could not be found so no data requirements were inferred.
 WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
@@ -108,4 +214,6 @@ ERROR: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].acti
 WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
 ERROR: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[1].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
 WARNING: PlanDefinition/regimen-2554-variant-144842: PlanDefinition.action[0].action[1].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
-INFORMATION: Resource: The resource PlanDefinition/regimen-2554-variant-144842 could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+INFORMATION: Resource: The resource PlanDefinition/regimen-2554-variant-144842 could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+

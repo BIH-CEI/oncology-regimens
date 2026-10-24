@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="regimen-modification-kind-vs"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet regimen-modification-kind-vs</b></p><a name="regimen-modification-kind-vs"> </a><a name="hcregimen-modification-kind-vs"> </a><ul><li>Include all codes defined in <a href="CodeSystem-regimen-modification-kind.html"><code>http://hemonc.org/fhir/CodeSystem/regimen-modification-kind</code></a><span title="Version is not explicitly stated, which means it is fixed to the version provided in this specification"> version &#x1F4E6;2026-03-12-0.1.0</span></li></ul></div>
+  </text>
+  <url value="http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs"/>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="RegimenModificationKindVS"/>
+  <title value="Regimen Modification Kind ValueSet"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-10-24T21:02:11+00:00"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="All kinds of regimen modification."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://hemonc.org/fhir/CodeSystem/regimen-modification-kind"/>
+    </include>
+  </compose>
+</ValueSet>

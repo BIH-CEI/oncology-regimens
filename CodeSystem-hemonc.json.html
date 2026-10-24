@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.5"}
-    h3,h4,h5,h6{--heading-prefix:"8.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -102,6 +102,9 @@
   </li>
   <li>
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
   </li>
   <li>
     <a href="phase0.html">Phase 0 Spike</a>
@@ -210,7 +213,7 @@
   "<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.id">id</a>" : "hemonc",
   "<a href="http://hl7.org/fhir/R4/domainresource.html#CodeSystem.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem hemonc&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;hemonc\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hchemonc\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Properties&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;This code system defines the following properties for its concepts&lt;/b&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Description&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;concept-class-id&lt;/td&gt;&lt;td&gt;concept-class-id&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;atc&lt;/td&gt;&lt;td&gt;atc&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;WHO ATC code&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;rxnorm&lt;/td&gt;&lt;td&gt;rxnorm&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;RxNorm IN code (preferred mapping per HemOnc rxnorm_map)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;inn&lt;/td&gt;&lt;td&gt;inn&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;International Nonproprietary Name&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Concepts&lt;/b&gt;&lt;/p&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;http://hemonc.org/fhir/CodeSystem/hemonc&lt;/code&gt; provides &lt;b&gt;a fragment&lt;/b&gt; that includes following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;concept-class-id&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;atc&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;rxnorm&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;inn&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;88&lt;a name=\&quot;hemonc-88\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Carboplatin&lt;/td&gt;&lt;td&gt;Component&lt;/td&gt;&lt;td&gt;L01XA02&lt;/td&gt;&lt;td&gt;40048&lt;/td&gt;&lt;td&gt;carboplatin&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;379&lt;a name=\&quot;hemonc-379\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paclitaxel&lt;/td&gt;&lt;td&gt;Component&lt;/td&gt;&lt;td&gt;L01CD01&lt;/td&gt;&lt;td&gt;56946&lt;/td&gt;&lt;td&gt;paclitaxel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;2554&lt;a name=\&quot;hemonc-2554\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Carboplatin and Paclitaxel (CP)&lt;/td&gt;&lt;td&gt;Regimen&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;144842&lt;a name=\&quot;hemonc-144842\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Variant #83&lt;/td&gt;&lt;td&gt;Regimen Variant&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134425&lt;a name=\&quot;hemonc-134425\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;AUC&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134448&lt;a name=\&quot;hemonc-134448\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/m^2&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134430&lt;a name=\&quot;hemonc-134430\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;hour&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134451&lt;a name=\&quot;hemonc-134451\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;minute&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;44957&lt;a name=\&quot;hemonc-44957\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;IV&lt;/td&gt;&lt;td&gt;Route&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;139563&lt;a name=\&quot;hemonc-139563\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;once&lt;/td&gt;&lt;td&gt;Frequency&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem hemonc&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;hemonc\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hchemonc\&quot;&gt; &lt;/a&gt;&lt;p&gt;&lt;b&gt;Eigenschaften&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;This code system defines the following properties for its concepts&lt;/b&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Beschreibung&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;concept-class-id&lt;/td&gt;&lt;td&gt;concept-class-id&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;atc&lt;/td&gt;&lt;td&gt;atc&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;WHO ATC code&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;rxnorm&lt;/td&gt;&lt;td&gt;rxnorm&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;RxNorm IN code (preferred mapping per HemOnc rxnorm_map)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;inn&lt;/td&gt;&lt;td&gt;inn&lt;/td&gt;&lt;td&gt;string&lt;/td&gt;&lt;td&gt;International Nonproprietary Name&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Concepts&lt;/b&gt;&lt;/p&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;http://hemonc.org/fhir/CodeSystem/hemonc&lt;/code&gt; provides &lt;b&gt;a fragment&lt;/b&gt; that includes following codes:&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;concept-class-id&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;atc&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;rxnorm&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;inn&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;88&lt;a name=\&quot;hemonc-88\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Carboplatin&lt;/td&gt;&lt;td&gt;Component&lt;/td&gt;&lt;td&gt;L01XA02&lt;/td&gt;&lt;td&gt;40048&lt;/td&gt;&lt;td&gt;carboplatin&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;379&lt;a name=\&quot;hemonc-379\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Paclitaxel&lt;/td&gt;&lt;td&gt;Component&lt;/td&gt;&lt;td&gt;L01CD01&lt;/td&gt;&lt;td&gt;56946&lt;/td&gt;&lt;td&gt;paclitaxel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;2554&lt;a name=\&quot;hemonc-2554\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Carboplatin and Paclitaxel (CP)&lt;/td&gt;&lt;td&gt;Regimen&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;144842&lt;a name=\&quot;hemonc-144842\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Variant #83&lt;/td&gt;&lt;td&gt;Regimen Variant&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134425&lt;a name=\&quot;hemonc-134425\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;AUC&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134448&lt;a name=\&quot;hemonc-134448\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/m^2&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134430&lt;a name=\&quot;hemonc-134430\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;hour&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;134451&lt;a name=\&quot;hemonc-134451\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;minute&lt;/td&gt;&lt;td&gt;Unit&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;44957&lt;a name=\&quot;hemonc-44957\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;IV&lt;/td&gt;&lt;td&gt;Route&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;139563&lt;a name=\&quot;hemonc-139563\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;once&lt;/td&gt;&lt;td&gt;Frequency&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;13849&lt;a name=\&quot;hemonc-13849\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;mFOLFOX6&lt;/td&gt;&lt;td&gt;Regimen&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;133145&lt;a name=\&quot;hemonc-133145\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;mFOLFOX6 Variant #06&lt;/td&gt;&lt;td&gt;Regimen Variant&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;133143&lt;a name=\&quot;hemonc-133143\&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;mFOLFOX6 Variant #04&lt;/td&gt;&lt;td&gt;Regimen Variant&lt;/td&gt;&lt;td/&gt;&lt;td/&gt;&lt;td/&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
   },
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.url">url</a>" : "http://hemonc.org/fhir/CodeSystem/hemonc",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.identifier">identifier</a>" : [
@@ -237,7 +240,7 @@
       ]
     }
   ],
-  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">description</a>" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+  "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.description">description</a>" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
   "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.jurisdiction">jurisdiction</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -398,6 +401,36 @@
           "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value_x_">valueString</a>" : "Frequency"
         }
       ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "13849",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "mFOLFOX6",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a>" : "concept-class-id",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value_x_">valueString</a>" : "Regimen"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "133145",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "mFOLFOX6 Variant #06",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a>" : "concept-class-id",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value_x_">valueString</a>" : "Regimen Variant"
+        }
+      ]
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.code">code</a>" : "133143",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.display">display</a>" : "mFOLFOX6 Variant #04",
+      "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property">property</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.code">code</a>" : "concept-class-id",
+          "<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem.concept.property.value_x_">valueString</a>" : "Regimen Variant"
+        }
+      ]
     }
   ]
 }</code></pre>
@@ -424,7 +457,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

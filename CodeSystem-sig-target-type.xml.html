@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.6"}
-    h3,h4,h5,h6{--heading-prefix:"8.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.11"}
+    h3,h4,h5,h6{--heading-prefix:"9.11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -102,6 +102,9 @@
   </li>
   <li>
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
   </li>
   <li>
     <a href="phase0.html">Phase 0 Spike</a>
@@ -207,7 +210,7 @@
 
   <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/codesystem.html#CodeSystem">CodeSystem</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;sig-target-type&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#CodeSystem.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sig-target-type&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#CodeSystem.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
     &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: CodeSystem sig-target-type&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;sig-target-type&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcsig-target-type&quot;&gt; &lt;/a&gt;&lt;p&gt;This case-sensitive code system &lt;code&gt;http://hemonc.org/fhir/CodeSystem/sig-target-type&lt;/code&gt; defines the following codes:&lt;/p&gt;&lt;table class=&quot;codes&quot;&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;target-mg-per-m2&lt;a name=&quot;sig-target-type-target-mg-per-m2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Target dose expressed in mg/m² (multiply by BSA at $apply)&lt;/td&gt;&lt;td&gt;The doseQuantity is the literal per-m² target from the protocol. Computed mg = doseQuantity.value × BSA(patient, formula, cap).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;target-AUC&lt;a name=&quot;sig-target-type-target-AUC&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Carboplatin AUC target (apply Calvert formula)&lt;/td&gt;&lt;td&gt;The doseQuantity is the target AUC. Computed mg = AUC × (effectiveGFR + 25), where effectiveGFR is min(GFR(patient, formula), GFR-cap).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;target-mg-per-kg&lt;a name=&quot;sig-target-type-target-mg-per-kg&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Target dose expressed in mg/kg (multiply by weight)&lt;/td&gt;&lt;td&gt;The doseQuantity is the literal per-kg target. Computed mg = doseQuantity.value × WeightKg(patient).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;target-absolute-mg&lt;a name=&quot;sig-target-type-target-absolute-mg&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Literal absolute mg dose (no patient-specific computation needed)&lt;/td&gt;&lt;td&gt;The doseQuantity is the dispensed mg as-is. CQL helpers are not invoked.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;computed-from-target-AUC&lt;a name=&quot;sig-target-type-computed-from-target-AUC&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Computed mg dose derived from a target-AUC (provenance marker)&lt;/td&gt;&lt;td&gt;Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply, so the original target paradigm is recoverable from the order.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;white-space:nowrap&quot;&gt;computed-from-target-mg-per-m2&lt;a name=&quot;sig-target-type-computed-from-target-mg-per-m2&quot;&gt; &lt;/a&gt;&lt;/td&gt;&lt;td&gt;Computed mg dose derived from a per-m² target (provenance marker)&lt;/td&gt;&lt;td&gt;Set on MedicationRequest.dosageInstruction.doseAndRate.type after $apply.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
@@ -302,7 +305,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

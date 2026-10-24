@@ -43,8 +43,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.1"}
-    h3,h4,h5,h6{--heading-prefix:"8.1"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.1"}
+    h3,h4,h5,h6{--heading-prefix:"9.1"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -102,6 +102,9 @@
   </li>
   <li>
     <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
   </li>
   <li>
     <a href="phase0.html">Phase 0 Spike</a>
@@ -207,7 +210,7 @@
 
   <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
 &lt;<a href="http://hl7.org/fhir/R4/activitydefinition.html#ActivityDefinition">ActivityDefinition</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/resource.html#ActivityDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;sig-carboplatin-auc5-d1-q21d&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#ActivityDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sig-carboplatin-auc5-d1-q21d&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#ActivityDefinition.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
     &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b style=&quot;color: maroon&quot;&gt;Exception generating Narrative: Error @1, 17: Premature ExpressionNode termination at unexpected token &amp;quot;==&amp;quot;&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
@@ -281,7 +284,6 @@
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Dosage.extension">extension</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hemonc.org/fhir/StructureDefinition/day-of-cycle&quot;&gt;
       &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueInteger</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Dosage.extension">extension</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.sequence">sequence</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>=&quot;1&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.text">text</a>
           <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Carboplatin AUC 5 IV over 30–60 minutes on day 1 of a 21-day cycle&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Dosage#Dosage.patientInstruction">patientInstruction</a>
@@ -391,7 +393,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 7, 2026 16:34+0000">2026-07-07</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">HemOnc FHIR Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Oct 24, 2026 21:02+0000">2026-10-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

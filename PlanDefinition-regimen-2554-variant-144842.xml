@@ -89,7 +89,7 @@
                     
                         
                         <p style="margin-bottom: 5px;">
-                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.2.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.4.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
                         </p>
                         
                         

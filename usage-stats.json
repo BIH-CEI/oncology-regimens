@@ -3,12 +3,157 @@
   "version": "2026-03-12-0.1.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "DE",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://hemonc.org/fhir/StructureDefinition/formulary-parameter",
+      "title": "Formulary Parameter",
+      "types": [
+        "string",
+        "boolean",
+        "decimal",
+        "integer",
+        "string",
+        "CodeableConcept",
+        "Quantity",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "http://hemonc.org/fhir/StructureDefinition/formulary-rank",
+      "title": "Formulary Rank",
+      "types": [
+        "positiveInt"
+      ]
+    },
+    {
+      "url": "http://hemonc.org/fhir/StructureDefinition/regimen-modification",
+      "title": "Regimen Modification",
+      "types": [
+        "code",
+        "string",
+        "CodeableConcept",
+        "string",
+        "string",
+        "markdown",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    }
+  ],
   "profiles": {},
   "usage": {
     "http://hemonc.org/fhir/StructureDefinition/day-of-cycle": [
       "ActivityDefinition.dosage",
       "PlanDefinition.action.action"
+    ],
+    "http://hemonc.org/fhir/StructureDefinition/formulary-parameter": [
+      "PlanDefinition.action.action"
+    ],
+    "http://hemonc.org/fhir/StructureDefinition/formulary-rank": [
+      "PlanDefinition.action.action"
+    ],
+    "http://hemonc.org/fhir/StructureDefinition/regimen-modification": [
+      "PlanDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
@@ -25,6 +170,9 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
     ]
   }
 }

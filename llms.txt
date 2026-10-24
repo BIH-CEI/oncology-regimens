@@ -3,20 +3,33 @@
 ## Pages
 
 * [Home](index.md)
-* [Background and Scope](background.md)
-* [Disclaimers and Intended Use](disclaimers.md)
-* [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
 * [Cooperation, Attribution and Licensing](cooperation.md)
-* [Artifacts Summary](artifacts.md)
 * [Versioning Strategy](versioning.md)
+* [Artifacts Summary](artifacts.md)
 * [Phase 0 Spike — Carboplatin + Paclitaxel Variant](phase0.md)
+* [Disclaimers and Intended Use](disclaimers.md)
+* [Background and Scope](background.md)
+* [Selection Layer — Formularies and Variant Choice](selection-layer.md)
+* [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
 
 ## Resources
 
 ### CodeSystems
 
 * [HemOnc Ontology (fragment, Phase 0 spike)](CodeSystem-hemonc.md)
+* [Regimen Modification Kind](CodeSystem-regimen-modification-kind.md)
 * [HemOnc Sig Dose Target Type](CodeSystem-sig-target-type.md)
+
+### ValueSets
+
+* [NZ colorectal permitted mFOLFOX6 variants (example)](ValueSet-nz-crc-permitted-variants.md)
+* [Regimen Modification Kind ValueSet](ValueSet-regimen-modification-kind-vs.md)
+
+### Extensions
+
+* [Formulary Parameter](StructureDefinition-formulary-parameter.md)
+* [Formulary Rank](StructureDefinition-formulary-rank.md)
+* [Regimen Modification](StructureDefinition-regimen-modification.md)
 
 ### ActivityDefinitions
 
@@ -39,3 +52,9 @@
 ### PlanDefinitions
 
 * [Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d)](PlanDefinition-regimen-2554-variant-144842.md)
+
+### Examples
+
+* [SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6) (ConceptMap)](ConceptMap-srl-to-hemonc-variant.md)
+* [NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22) (PlanDefinition)](PlanDefinition-nz-crc-mfolfox6-formulary.md)
+* [CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0) (PlanDefinition)](PlanDefinition-srl-588251000210108-mfolfox6-nobolus.md)

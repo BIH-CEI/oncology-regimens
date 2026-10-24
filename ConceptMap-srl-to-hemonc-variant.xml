@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="srl-to-hemonc-variant"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ConceptMap srl-to-hemonc-variant</b></p><a name="srl-to-hemonc-variant"> </a><a name="hcsrl-to-hemonc-variant"> </a><p>Mapping from https://srl.org.nz/regimens to <a href="CodeSystem-hemonc.html">http://hemonc.org/fhir/CodeSystem/hemonc</a></p><br/><p>Mapping from <code>https://srl.org.nz/regimens</code> to <a href="CodeSystem-hemonc.html">HemOnc Ontology (fragment, Phase 0 spike)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>52101000210105 (CRC Metastatic – mFOLFOX6 [bolus and infusion] [high dose folinic acid] v2.0.2)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equivalent" title="equivalent">is equivalent to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>Oxaliplatin 85/2h, folinic acid 400/2h, 5-FU 400 bolus + 2400/46h, q14d. Infusion durations match.</td></tr><tr><td>588251000210108 (CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus) v1.0.0)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-relatedto" title="relatedto">is related to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>omit-action: fluorouracil 400 mg/m² bolus. No HemOnc variant drops the bolus at otherwise identical doses.</td></tr><tr><td>52201000210102 (CRC Adjuvant – mFOLFOX6 [low dose folinic acid] v2.0.0)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-relatedto" title="relatedto">is related to</a></td><td>133145 (mFOLFOX6 Variant #06)</td><td>replace-dose: folinic acid 400 mg/m² IV 2 h → 50 mg flat IV 2 min. Lowest HemOnc leucovorin dose for mFOLFOX6 is 200 mg/m².</td></tr></table></div>
+  </text>
+  <url value="http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant"/>
+  <version value="2026-03-12-0.1.0"/>
+  <name value="SRLToHemOncVariant"/>
+  <title value="SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-10-24"/>
+  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <contact>
+    <name value="HemOnc FHIR Catalog Working Group"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://github.com/thome/oncology-regimens"/>
+    </telecom>
+  </contact>
+  <description value="Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="DE"/>
+      <display value="Germany"/>
+    </coding>
+  </jurisdiction>
+  <sourceUri value="https://srl.org.nz/regimens"/>
+  <targetUri value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+  <group>
+    <source value="https://srl.org.nz/regimens"/>
+    <target value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+    <element>
+      <code value="52101000210105"/>
+      <display value="CRC Metastatic – mFOLFOX6 [bolus and infusion] [high dose folinic acid] v2.0.2"/>
+      <target>
+        <code value="133145"/>
+        <display value="mFOLFOX6 Variant #06"/>
+        <equivalence value="equivalent"/>
+        <comment value="Oxaliplatin 85/2h, folinic acid 400/2h, 5-FU 400 bolus + 2400/46h, q14d. Infusion durations match."/>
+      </target>
+    </element>
+    <element>
+      <code value="588251000210108"/>
+      <display value="CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus) v1.0.0"/>
+      <target>
+        <code value="133145"/>
+        <display value="mFOLFOX6 Variant #06"/>
+        <equivalence value="relatedto"/>
+        <comment value="omit-action: fluorouracil 400 mg/m² bolus. No HemOnc variant drops the bolus at otherwise identical doses."/>
+      </target>
+    </element>
+    <element>
+      <code value="52201000210102"/>
+      <display value="CRC Adjuvant – mFOLFOX6 [low dose folinic acid] v2.0.0"/>
+      <target>
+        <code value="133145"/>
+        <display value="mFOLFOX6 Variant #06"/>
+        <equivalence value="relatedto"/>
+        <comment value="replace-dose: folinic acid 400 mg/m² IV 2 h → 50 mg flat IV 2 min. Lowest HemOnc leucovorin dose for mFOLFOX6 is 200 mg/m²."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

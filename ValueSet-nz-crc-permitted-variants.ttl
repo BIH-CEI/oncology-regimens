@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "nz-crc-permitted-variants"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet nz-crc-permitted-variants</b></p><a name=\"nz-crc-permitted-variants\"> </a><a name=\"hcnz-crc-permitted-variants\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"CodeSystem-hemonc.html\"><code>http://hemonc.org/fhir/CodeSystem/hemonc</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?2026-03-12-0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-hemonc.html#hemonc-133145\">133145</a></td><td>mFOLFOX6 Variant #06</td></tr></table></li><li>Include these codes as defined in <code>https://srl.org.nz/regimens</code><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>588251000210108</td><td>CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus)</td></tr><tr><td>52201000210102</td><td>CRC Adjuvant – mFOLFOX6 [low dose folinic acid]</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants"] ;
+  fhir:ValueSet.version [ fhir:value "2026-03-12-0.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "NZCRCPermittedVariants"] ;
+  fhir:ValueSet.title [ fhir:value "NZ colorectal permitted mFOLFOX6 variants (example)"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-10-24T21:02:11+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6)."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "DE" ] ;
+       fhir:Coding.display [ fhir:value "Germany" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "133145" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "mFOLFOX6 Variant #06" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://srl.org.nz/regimens" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "588251000210108" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "CRC Metastatic – mFOLFOX6 [high dose folinic acid] (no bolus)" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "52201000210102" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "CRC Adjuvant – mFOLFOX6 [low dose folinic acid]" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
