@@ -3,7 +3,10 @@
   "id": "hemonc",
   "url": "http://hemonc.org/fhir/CodeSystem/hemonc",
   "identifier": [
-    { "system": "https://dataverse.harvard.edu/dataset.xhtml", "value": "HemOncKB" }
+    {
+      "system": "https://dataverse.harvard.edu/dataset.xhtml",
+      "value": "HemOncKB"
+    }
   ],
   "version": "2026-03-12",
   "name": "HemOnc",
@@ -13,93 +16,195 @@
   "date": "2026-03-12",
   "publisher": "HemOnc.org",
   "contact": [
-    { "name": "HemOnc Dataverse",
-      "telecom": [{ "system": "url",
-                    "value": "https://dataverse.harvard.edu/dataverse/hemonc" }] }
+    {
+      "name": "HemOnc Dataverse",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://dataverse.harvard.edu/dataverse/hemonc"
+        }
+      ]
+    }
   ],
-  "description": "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
+  "description": "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
   "copyright": "© HemOnc.org. Distributed under CC BY 4.0.",
   "caseSensitive": true,
   "content": "fragment",
   "property": [
-    { "code": "concept-class-id",
+    {
+      "code": "concept-class-id",
       "description": "HemOnc concept_class_id (e.g. Component, Regimen, Regimen Variant, Unit, Route, Frequency)",
-      "type": "string" },
-    { "code": "atc",
+      "type": "string"
+    },
+    {
+      "code": "atc",
       "description": "WHO ATC code",
-      "type": "string" },
-    { "code": "rxnorm",
+      "type": "string"
+    },
+    {
+      "code": "rxnorm",
       "description": "RxNorm IN code (preferred mapping per HemOnc rxnorm_map)",
-      "type": "string" },
-    { "code": "inn",
+      "type": "string"
+    },
+    {
+      "code": "inn",
       "description": "International Nonproprietary Name",
-      "type": "string" }
+      "type": "string"
+    }
   ],
   "concept": [
-    { "code": "88",
+    {
+      "code": "88",
       "display": "Carboplatin",
       "property": [
-        { "code": "concept-class-id", "valueString": "Component" },
-        { "code": "atc",   "valueString": "L01XA02" },
-        { "code": "rxnorm","valueString": "40048" },
-        { "code": "inn",   "valueString": "carboplatin" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Component"
+        },
+        {
+          "code": "atc",
+          "valueString": "L01XA02"
+        },
+        {
+          "code": "rxnorm",
+          "valueString": "40048"
+        },
+        {
+          "code": "inn",
+          "valueString": "carboplatin"
+        }
       ]
     },
-    { "code": "379",
+    {
+      "code": "379",
       "display": "Paclitaxel",
       "property": [
-        { "code": "concept-class-id", "valueString": "Component" },
-        { "code": "atc",   "valueString": "L01CD01" },
-        { "code": "rxnorm","valueString": "56946" },
-        { "code": "inn",   "valueString": "paclitaxel" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Component"
+        },
+        {
+          "code": "atc",
+          "valueString": "L01CD01"
+        },
+        {
+          "code": "rxnorm",
+          "valueString": "56946"
+        },
+        {
+          "code": "inn",
+          "valueString": "paclitaxel"
+        }
       ]
     },
-    { "code": "2554",
+    {
+      "code": "2554",
       "display": "Carboplatin and Paclitaxel (CP)",
       "property": [
-        { "code": "concept-class-id", "valueString": "Regimen" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Regimen"
+        }
       ]
     },
-    { "code": "144842",
+    {
+      "code": "144842",
       "display": "Variant #83",
       "property": [
-        { "code": "concept-class-id", "valueString": "Regimen Variant" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Regimen Variant"
+        }
       ]
     },
-    { "code": "134425",
+    {
+      "code": "134425",
       "display": "AUC",
       "property": [
-        { "code": "concept-class-id", "valueString": "Unit" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Unit"
+        }
       ]
     },
-    { "code": "134448",
+    {
+      "code": "134448",
       "display": "mg/m^2",
       "property": [
-        { "code": "concept-class-id", "valueString": "Unit" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Unit"
+        }
       ]
     },
-    { "code": "134430",
+    {
+      "code": "134430",
       "display": "hour",
       "property": [
-        { "code": "concept-class-id", "valueString": "Unit" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Unit"
+        }
       ]
     },
-    { "code": "134451",
+    {
+      "code": "134451",
       "display": "minute",
       "property": [
-        { "code": "concept-class-id", "valueString": "Unit" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Unit"
+        }
       ]
     },
-    { "code": "44957",
+    {
+      "code": "44957",
       "display": "IV",
       "property": [
-        { "code": "concept-class-id", "valueString": "Route" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Route"
+        }
       ]
     },
-    { "code": "139563",
+    {
+      "code": "139563",
       "display": "once",
       "property": [
-        { "code": "concept-class-id", "valueString": "Frequency" }
+        {
+          "code": "concept-class-id",
+          "valueString": "Frequency"
+        }
+      ]
+    },
+    {
+      "code": "13849",
+      "display": "mFOLFOX6",
+      "property": [
+        {
+          "code": "concept-class-id",
+          "valueString": "Regimen"
+        }
+      ]
+    },
+    {
+      "code": "133145",
+      "display": "mFOLFOX6 Variant #06",
+      "property": [
+        {
+          "code": "concept-class-id",
+          "valueString": "Regimen Variant"
+        }
+      ]
+    },
+    {
+      "code": "133143",
+      "display": "mFOLFOX6 Variant #04",
+      "property": [
+        {
+          "code": "concept-class-id",
+          "valueString": "Regimen Variant"
+        }
       ]
     }
   ]

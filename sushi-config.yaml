@@ -44,6 +44,8 @@ pages:
     title: Versioning Strategy
   apply-and-cds.md:
     title: PlanDefinition $apply and CDS Hooks
+  selection-layer.md:
+    title: Selection Layer — Formularies and Variant Choice
   phase0.md:
     title: Phase 0 Spike — Carboplatin + Paclitaxel Variant #83
 
@@ -54,5 +56,6 @@ menu:
   Disclaimers: disclaimers.html
   Versioning: versioning.html
   "$apply and CDS Hooks": apply-and-cds.html
+  Selection Layer: selection-layer.html
   Phase 0 Spike: phase0.html
   Artifacts: artifacts.html

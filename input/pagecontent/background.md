@@ -12,6 +12,15 @@ delivery model. That gap is structural: most national oncology IGs are
 authored by registry and documentation stakeholders, not by ordering or
 decision-support stakeholders.
 
+One national catalog of executable-grade regimen specifications does
+exist outside FHIR: the New Zealand SACT Regimen Library (Te Aho o Te
+Kahu / NZ Formulary, ~840 regimens, SNOMED CT NZ concept ids, semantic
+versions, per-cycle dose tables including supportive care). It is not
+openly licensed and not FHIR, and the companion ACT-NOW FHIR IG covers
+only patient-level CarePlan/MedicationAdministration. It is used here as
+a comparator and as the worked example of the
+[Selection Layer](selection-layer.html).
+
 This IG fills the gap at the catalog layer.
 
 #### Conceptual layering
