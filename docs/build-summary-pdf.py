@@ -32,7 +32,7 @@ def footer(canv, doc):
     canv.setFillColor(colors.HexColor("#666666"))
     canv.drawString(
         2 * cm, 1.0 * cm,
-        "HemOnc FHIR Regimen Catalog — Summary (draft / experimental)")
+        "European SACT Regimen Catalog — Summary (draft / experimental)")
     canv.drawRightString(PAGE[0] - 2 * cm, 1.0 * cm, f"Page {doc.page}")
     canv.restoreState()
 
@@ -160,8 +160,8 @@ def build():
         str(OUT), pagesize=PAGE,
         leftMargin=2 * cm, rightMargin=2 * cm,
         topMargin=1.8 * cm, bottomMargin=1.6 * cm,
-        title="HemOnc FHIR Regimen Catalog — Summary",
-        author="HemOnc FHIR Catalog Working Group",
+        title="European SACT Regimen Catalog — Summary",
+        author="European SACT Regimen Catalog Working Group",
     )
 
     story = []
@@ -169,7 +169,7 @@ def build():
     # Title page
     story += [
         Spacer(1, 3 * cm),
-        Paragraph("HemOnc FHIR Regimen Catalog", TITLE),
+        Paragraph("European SACT Regimen Catalog", TITLE),
         Paragraph(
             "Executable Knowledge Layer for Oncology Treatment Protocols",
             SUBT),

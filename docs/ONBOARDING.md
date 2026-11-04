@@ -1,6 +1,6 @@
-# Onboarding — HemOnc FHIR Regimen Catalog
+# Onboarding — European SACT Regimen Catalog
 
-**Projekt:** `oncology-regimens` (HemOnc FHIR Regimen Catalog)
+**Projekt:** `oncology-regimens` (European SACT Regimen Catalog, früher „HemOnc FHIR Regimen Catalog“)
 **Kontext:** BIH / MII Onkologie / HL7 Europe **PHOENIX**
 **Für:** Gastwissenschaftlerin, die den Katalog inhaltlich erarbeitet
 **Betreuung:** Thomas Debertshäuser (BIH), Prof. Sylvia Thun (BIH)

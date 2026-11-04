@@ -1,12 +1,13 @@
-# HemOnc FHIR Regimen Catalog
+# European SACT Regimen Catalog
 
-A FHIR R4 Implementation Guide projecting the
-[HemOnc Knowledge Base](https://hemonc.org) into executable knowledge
-artifacts (`PlanDefinition`, `ActivityDefinition`, `MedicationKnowledge`,
-`Library`, `CodeSystem`, `ConceptMap`). Companion to the
+A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy
+(SACT) regimens as executable knowledge artifacts (`PlanDefinition`,
+`ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`,
+`ConceptMap`). Catalog-layer companion to the
+[HL7 Europe PHOENIX Cancer Common Model](https://build.fhir.org/ig/hl7-eu/cancer-common/)
+and the
 [MII Onkologie](https://www.medizininformatik-initiative.de/Kerndatensatz/KDS_Onkologie_2026/MIIIGModulOnkologie.html)
-module and aligned with the
-[HL7 Europe PHOENIX Cancer Common Model](https://build.fhir.org/ig/hl7-eu/cancer-common/).
+module. First content source: the [HemOnc Knowledge Base](https://hemonc.org).
 
 Developed in cooperation with **HemOnc.org**, the **OHDSI** oncology
 community, **HL7-EU PHOENIX**, and the **MII Onkologie** working group.

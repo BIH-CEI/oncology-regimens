@@ -111,7 +111,7 @@ Usage: #example
 * experimental = true
 * version = "1.0.0"
 * date = "2026-07-01"
-* publisher = "HemOnc FHIR Catalog Working Group (example; content attributed to Te Aho o Te Kahu / NZ Formulary)"
+* publisher = "European SACT Regimen Catalog Working Group (example; content attributed to Te Aho o Te Kahu / NZ Formulary)"
 * type = $pdtype#clinical-protocol
 * identifier[0].use = #official
 * identifier[0].system = "https://srl.org.nz/regimens"
@@ -173,7 +173,7 @@ Usage: #example
 * experimental = true
 * version = "2026-10-22"
 * date = "2026-10-24"
-* publisher = "HemOnc FHIR Catalog Working Group (example)"
+* publisher = "European SACT Regimen Catalog Working Group (example)"
 * type = $pdtype#order-set
 * identifier[0].use = #official
 * identifier[0].system = "http://hemonc.org/fhir/example-formulary"
@@ -257,7 +257,7 @@ Usage: #example
 * experimental = true
 * version = "2026-10-22"
 * date = "2026-10-24"
-* publisher = "HemOnc FHIR Catalog Working Group (example)"
+* publisher = "European SACT Regimen Catalog Working Group (example)"
 * description = "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content."
 * sourceUri = "https://srl.org.nz/regimens"
 * targetUri = "http://hemonc.org/fhir/CodeSystem/hemonc"

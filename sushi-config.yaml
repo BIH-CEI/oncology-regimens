@@ -1,14 +1,15 @@
 id: hemonc-fhir-regimen-catalog
 canonical: http://hemonc.org/fhir
-name: HemOncFHIRRegimenCatalog
-title: HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols
+name: EuropeanSACTRegimenCatalog
+title: European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens
 description: |
-  FHIR R4 projection of the HemOnc Knowledge Base (HemOncKB) as executable
-  knowledge artifacts (PlanDefinition, ActivityDefinition, MedicationKnowledge,
-  Library, CodeSystem, ConceptMap). Companion to the German MII Onkologie module
-  and aligned with the HL7 Europe PHOENIX Cancer Common Model initiative.
-  Developed in cooperation with HemOnc.org / OHDSI Oncology / HL7-EU PHOENIX /
-  MII Onkologie. CC BY 4.0.
+  FHIR R4 Implementation Guide that represents systemic anti-cancer therapy
+  (SACT) regimens as executable knowledge artifacts (PlanDefinition,
+  ActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).
+  Catalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and
+  the German MII Onkologie module. First content source: the HemOnc Knowledge
+  Base (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,
+  OHDSI Oncology and MII Onkologie. CC BY 4.0.
 status: draft
 experimental: true
 version: 2026-03-12-0.1.0
@@ -19,7 +20,7 @@ license: CC-BY-4.0
 jurisdiction: urn:iso:std:iso:3166#DE "Germany"
 
 publisher:
-  name: HemOnc FHIR Catalog Working Group
+  name: European SACT Regimen Catalog Working Group
   url: https://github.com/thome/oncology-regimens
 
 dependencies:
