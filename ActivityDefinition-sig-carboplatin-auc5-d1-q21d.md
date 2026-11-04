@@ -1,4 +1,4 @@
-# Carboplatin AUC 5 IV over 30–60 min, day 1, q21d - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# Carboplatin AUC 5 IV over 30–60 min, day 1, q21d - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -38,9 +38,9 @@ One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83
   "status" : "active",
   "experimental" : true,
   "date" : "2026-03-12",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

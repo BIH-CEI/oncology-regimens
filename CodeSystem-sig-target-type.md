@@ -1,4 +1,4 @@
-# HemOnc Sig Dose Target Type - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# HemOnc Sig Dose Target Type - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -33,9 +33,9 @@ Small code system distinguishing the **target** expressed by a Sig's doseQuantit
   "status" : "active",
   "experimental" : true,
   "date" : "2026-03-12",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

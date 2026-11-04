@@ -11,10 +11,10 @@
   "title" : "Formulary Parameter",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

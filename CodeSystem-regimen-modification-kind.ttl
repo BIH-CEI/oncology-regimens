@@ -18,11 +18,11 @@
   fhir:CodeSystem.title [ fhir:value "Regimen Modification Kind"] ;
   fhir:CodeSystem.status [ fhir:value "draft"] ;
   fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
-  fhir:CodeSystem.date [ fhir:value "2026-10-24T21:02:11+00:00"^^xsd:dateTime] ;
-  fhir:CodeSystem.publisher [ fhir:value "HemOnc FHIR Catalog Working Group"] ;
+  fhir:CodeSystem.date [ fhir:value "2026-11-04T08:45:26+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "European SACT Regimen Catalog Working Group"] ;
   fhir:CodeSystem.contact [
      fhir:index 0 ;
-     fhir:ContactDetail.name [ fhir:value "HemOnc FHIR Catalog Working Group" ] ;
+     fhir:ContactDetail.name [ fhir:value "European SACT Regimen Catalog Working Group" ] ;
      fhir:ContactDetail.telecom [
        fhir:index 0 ;
        fhir:ContactPoint.system [ fhir:value "url" ] ;

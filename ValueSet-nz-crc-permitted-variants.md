@@ -1,4 +1,4 @@
-# NZ colorectal permitted mFOLFOX6 variants (example) - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# NZ colorectal permitted mFOLFOX6 variants (example) - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-10-24 | *Computable Name*:NZCRCPermittedVariants |
+| Draft as of 2026-11-04 | *Computable Name*:NZCRCPermittedVariants |
 
  
 Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6). 
@@ -53,10 +53,10 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "NZ colorectal permitted mFOLFOX6 variants (example)",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

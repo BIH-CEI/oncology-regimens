@@ -11,10 +11,10 @@
   <title value="Regimen Modification Kind"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2026-10-24T21:02:11+00:00"/>
-  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <date value="2026-11-04T08:45:26+00:00"/>
+  <publisher value="European SACT Regimen Catalog Working Group"/>
   <contact>
-    <name value="HemOnc FHIR Catalog Working Group"/>
+    <name value="European SACT Regimen Catalog Working Group"/>
     <telecom>
       <system value="url"/>
       <value value="https://github.com/thome/oncology-regimens"/>

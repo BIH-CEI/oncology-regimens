@@ -1,4 +1,4 @@
-# Formulary Rank - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# Formulary Rank - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/StructureDefinition/formulary-rank | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-10-24 | *Computable Name*:FormularyRank |
+| Draft as of 2026-11-04 | *Computable Name*:FormularyRank |
 
 Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked.
 
@@ -47,10 +47,10 @@ Other representations of profile: [CSV](StructureDefinition-formulary-rank.csv),
   "title" : "Formulary Rank",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

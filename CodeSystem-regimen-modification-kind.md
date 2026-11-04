@@ -1,4 +1,4 @@
-# Regimen Modification Kind - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# Regimen Modification Kind - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/CodeSystem/regimen-modification-kind | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-10-24 | *Computable Name*:RegimenModificationKind |
+| Draft as of 2026-11-04 | *Computable Name*:RegimenModificationKind |
 
  
 Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant. 
@@ -32,10 +32,10 @@ Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc v
   "title" : "Regimen Modification Kind",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

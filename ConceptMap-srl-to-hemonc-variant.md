@@ -1,4 +1,4 @@
-# SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6) - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6) - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -29,9 +29,9 @@ Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant eac
   "status" : "draft",
   "experimental" : true,
   "date" : "2026-10-24",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

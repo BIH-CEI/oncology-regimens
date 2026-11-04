@@ -1,4 +1,4 @@
-# CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0) - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0) - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -16,7 +16,7 @@
  
 Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here. 
 
-**Exception parsing generated Narrative (see /tmp/liquid-e8f17052-24b4-4d64-a11e-1a6623bfd168.html): unexpected non-end of element null::a at line 205 column 50**
+**Exception parsing generated Narrative (see /tmp/liquid-ae6457c0-bb22-4dc3-8429-ac0a974abeb6.html): unexpected non-end of element null::a at line 205 column 50**
 
 
 
@@ -79,9 +79,9 @@ Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorou
   "status" : "draft",
   "experimental" : true,
   "date" : "2026-07-01",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

@@ -3,24 +3,24 @@
   "id" : "hemonc-fhir-regimen-catalog",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hemonc-fhir-regimen-catalog</b></p><a name=\"hemonc-fhir-regimen-catalog\"> </a><a name=\"hchemonc-fhir-regimen-catalog\"> </a><h2>HemOncFHIRRegimenCatalog</h2><p>The official URL for this implementation guide is: </p><pre>http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog</pre><div><p>FHIR R4 projection of the HemOnc Knowledge Base (HemOncKB) as executable\nknowledge artifacts (PlanDefinition, ActivityDefinition, MedicationKnowledge,\nLibrary, CodeSystem, ConceptMap). Companion to the German MII Onkologie module\nand aligned with the HL7 Europe PHOENIX Cancer Common Model initiative.\nDeveloped in cooperation with HemOnc.org / OHDSI Oncology / HL7-EU PHOENIX /\nMII Onkologie. CC BY 4.0.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hemonc-fhir-regimen-catalog</b></p><a name=\"hemonc-fhir-regimen-catalog\"> </a><a name=\"hchemonc-fhir-regimen-catalog\"> </a><h2>EuropeanSACTRegimenCatalog</h2><p>The official URL for this implementation guide is: </p><pre>http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog</pre><div><p>FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.</p>\n</div></div>"
   },
   "url" : "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog",
   "version" : "2026-03-12-0.1.0",
-  "name" : "HemOncFHIRRegimenCatalog",
-  "title" : "HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols",
+  "name" : "EuropeanSACTRegimenCatalog",
+  "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"
     }]
   }],
-  "description" : "FHIR R4 projection of the HemOnc Knowledge Base (HemOncKB) as executable\nknowledge artifacts (PlanDefinition, ActivityDefinition, MedicationKnowledge,\nLibrary, CodeSystem, ConceptMap). Companion to the German MII Onkologie module\nand aligned with the HL7 Europe PHOENIX Cancer Common Model initiative.\nDeveloped in cooperation with HemOnc.org / OHDSI Oncology / HL7-EU PHOENIX /\nMII Onkologie. CC BY 4.0.\n",
+  "description" : "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -39,7 +39,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -49,7 +49,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "de_medizininformatikinitiative_kerndatensatz_onkologie",

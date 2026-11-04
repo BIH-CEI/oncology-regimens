@@ -3,7 +3,7 @@
   "id" : "srl-588251000210108-mfolfox6-nobolus",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-e8f17052-24b4-4d64-a11e-1a6623bfd168.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-ae6457c0-bb22-4dc3-8429-ac0a974abeb6.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>"
   },
   "extension" : [{
     "extension" : [{
@@ -58,9 +58,9 @@
   "status" : "draft",
   "experimental" : true,
   "date" : "2026-07-01",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

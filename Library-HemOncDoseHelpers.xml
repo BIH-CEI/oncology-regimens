@@ -58,7 +58,7 @@
                     
                         
                         <p style="margin-bottom: 5px;">
-                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.4.0/CodeSystem-library-type.html">http://terminology.hl7.org/CodeSystem/library-type</a></span>
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/7.5.0/CodeSystem-library-type.html">http://terminology.hl7.org/CodeSystem/library-type</a></span>
                         </p>
                         
                         
@@ -86,7 +86,7 @@
         
         <tr>
             <th scope="row"><b>Publisher: </b></th>
-            <td style="padding-left: 4px;">HemOnc FHIR Catalog Working Group</td>
+            <td style="padding-left: 4px;">European SACT Regimen Catalog Working Group</td>
         </tr>
         
 
@@ -239,9 +239,9 @@ define DoseAndRateTypePaclitaxel:
     </coding>
   </type>
   <date value="2026-03-12"/>
-  <publisher value="HemOnc FHIR Catalog Working Group"/>
+  <publisher value="European SACT Regimen Catalog Working Group"/>
   <contact>
-    <name value="HemOnc FHIR Catalog Working Group"/>
+    <name value="European SACT Regimen Catalog Working Group"/>
     <telecom>
       <system value="url"/>
       <value value="https://github.com/thome/oncology-regimens"/>

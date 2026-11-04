@@ -1,13 +1,13 @@
 {
   "url" : "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog",
-  "name" : "HemOncFHIRRegimenCatalog",
-  "title" : "HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols",
-  "description" : "FHIR R4 projection of the HemOnc Knowledge Base (HemOncKB) as executable\nknowledge artifacts (PlanDefinition, ActivityDefinition, MedicationKnowledge,\nLibrary, CodeSystem, ConceptMap). Companion to the German MII Onkologie module\nand aligned with the HL7 Europe PHOENIX Cancer Common Model initiative.\nDeveloped in cooperation with HemOnc.org / OHDSI Oncology / HL7-EU PHOENIX /\nMII Onkologie. CC BY 4.0.",
+  "name" : "EuropeanSACTRegimenCatalog",
+  "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
+  "description" : "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.",
   "status" : "draft",
   "package-id" : "hemonc-fhir-regimen-catalog",
   "ig-ver" : "2026-03-12-0.1.0",
-  "date" : "Sat, 24 Oct, 2026 21:02:11 +0000",
-  "dateISO8601" : "2026-10-24T21:02:11+00:00",
+  "date" : "Wed, 04 Nov, 2026 08:45:26 +0000",
+  "dateISO8601" : "2026-11-04T08:45:26+00:00",
   "errs" : 21,
   "warnings" : 61,
   "hints" : 51,
@@ -16,5 +16,5 @@
   "suppressed-warnings" : 0,
   "version" : "4.0.1",
   "tool" : "6.0.0-snapshot1 (3)",
-  "maxMemory" : 1593511632
+  "maxMemory" : 1834479240
 }

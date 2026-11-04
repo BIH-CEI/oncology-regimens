@@ -1,4 +1,4 @@
-HemOncFHIRRegimenCatalog : Validation Results
+EuropeanSACTRegimenCatalog : Validation Results
 =========================================
 
 err = 21, warn = 61, info = 51, broken links = 0

@@ -1,4 +1,4 @@
-# NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22) - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22) - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -16,7 +16,7 @@
  
 Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively. 
 
-**Exception parsing generated Narrative (see /tmp/liquid-6043715b-dcd4-4be4-aa88-e33870a93715.html): unexpected non-end of element null::a at line 176 column 50**
+**Exception parsing generated Narrative (see /tmp/liquid-62182f48-6897-468d-84e6-da211867a71a.html): unexpected non-end of element null::a at line 176 column 50**
 
 
 
@@ -44,9 +44,9 @@ Example formulary (selection layer, §3 of the Selection Layer page). Lists the 
   "status" : "draft",
   "experimental" : true,
   "date" : "2026-10-24",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"

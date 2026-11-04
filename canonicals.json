@@ -45,7 +45,7 @@
   "type" : "ImplementationGuide",
   "url" : "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog",
   "version" : "2026-03-12-0.1.0",
-  "name" : "HemOncFHIRRegimenCatalog"
+  "name" : "EuropeanSACTRegimenCatalog"
 },
 {
   "id" : "HemOncDoseHelpers",

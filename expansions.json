@@ -1,8 +1,8 @@
 {
   "resourceType" : "Bundle",
-  "id" : "fd066872-3f3b-4821-bbc6-ef6271c48352",
+  "id" : "0f635c78-9baf-4b6d-8d15-701d40498c6f",
   "meta" : {
-    "lastUpdated" : "2026-10-24T21:02:11.942+00:00"
+    "lastUpdated" : "2026-11-04T08:45:26.034+00:00"
   },
   "type" : "collection",
   "entry" : [{
@@ -19,7 +19,7 @@
       "title" : "Regimen Modification Kind ValueSet",
       "status" : "draft",
       "experimental" : true,
-      "date" : "2026-10-24T21:02:11+00:00",
+      "date" : "2026-11-04T08:45:26+00:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -28,8 +28,8 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:2e1cd6b0-e5ce-469e-92e6-61c7af496b06",
-        "timestamp" : "2026-10-24T21:03:41+00:00",
+        "identifier" : "urn:uuid:15a4aa54-0dc4-40cf-91f7-b2fefea7cc2d",
+        "timestamp" : "2026-11-04T08:46:51+00:00",
         "total" : 6,
         "offset" : 0,
         "parameter" : [{

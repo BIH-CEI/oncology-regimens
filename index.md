@@ -1,4 +1,4 @@
-# Home - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# Home - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * **Home**
@@ -8,11 +8,11 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-10-24 | *Computable Name*:HemOncFHIRRegimenCatalog |
+| Draft as of 2026-11-04 | *Computable Name*:EuropeanSACTRegimenCatalog |
 
-### HemOnc FHIR Regimen Catalog
+### European SACT Regimen Catalog
 
-A FHIR R4 projection of the [HemOnc Knowledge Base](https://hemonc.org) as executable knowledge artifacts (`PlanDefinition`, `ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`, `ConceptMap`).
+A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy (SACT) regimens as executable knowledge artifacts (`PlanDefinition`, `ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`, `ConceptMap`). The [HemOnc Knowledge Base](https://hemonc.org) is the first content source; which further knowledge bases populate the catalog is a later decision.
 
 This IG provides the **catalog layer** — **what to give** — that complements the MII Onkologie Modul's **recording layer** — **what was given**. Together they close the loop from registry-mandated reporting back to executable clinical-decision support, anchored on a single, openly-licenced source of truth for oncology regimens.
 
@@ -45,20 +45,20 @@ The artifacts in this distribution are reference content, not a medical device o
   "id" : "hemonc-fhir-regimen-catalog",
   "url" : "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog",
   "version" : "2026-03-12-0.1.0",
-  "name" : "HemOncFHIRRegimenCatalog",
-  "title" : "HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols",
+  "name" : "EuropeanSACTRegimenCatalog",
+  "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-24T21:02:11+00:00",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "date" : "2026-11-04T08:45:26+00:00",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"
     }]
   }],
-  "description" : "FHIR R4 projection of the HemOnc Knowledge Base (HemOncKB) as executable\nknowledge artifacts (PlanDefinition, ActivityDefinition, MedicationKnowledge,\nLibrary, CodeSystem, ConceptMap). Companion to the German MII Onkologie module\nand aligned with the HL7 Europe PHOENIX Cancer Common Model initiative.\nDeveloped in cooperation with HemOnc.org / OHDSI Oncology / HL7-EU PHOENIX /\nMII Onkologie. CC BY 4.0.\n",
+  "description" : "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -77,7 +77,7 @@ The artifacts in this distribution are reference content, not a medical device o
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -87,7 +87,7 @@ The artifacts in this distribution are reference content, not a medical device o
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "de_medizininformatikinitiative_kerndatensatz_onkologie",

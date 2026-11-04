@@ -1,16 +1,16 @@
-# hemonc-fhir-regimen-catalog#2026-03-12-0.1.0: HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols
+# hemonc-fhir-regimen-catalog#2026-03-12-0.1.0: European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens
 
 ## Pages
 
 * [Home](index.md)
-* [Cooperation, Attribution and Licensing](cooperation.md)
-* [Versioning Strategy](versioning.md)
+* [Background and Scope](background.md)
 * [Artifacts Summary](artifacts.md)
 * [Phase 0 Spike — Carboplatin + Paclitaxel Variant](phase0.md)
-* [Disclaimers and Intended Use](disclaimers.md)
-* [Background and Scope](background.md)
 * [Selection Layer — Formularies and Variant Choice](selection-layer.md)
 * [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
+* [Disclaimers and Intended Use](disclaimers.md)
+* [Cooperation, Attribution and Licensing](cooperation.md)
+* [Versioning Strategy](versioning.md)
 
 ## Resources
 
@@ -38,7 +38,7 @@
 
 ### ImplementationGuides
 
-* [HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols](index.md)
+* [European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens](index.md)
 
 ### Libraries
 

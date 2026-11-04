@@ -1,4 +1,4 @@
-# Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d) - HemOnc FHIR Regimen Catalog — Executable Knowledge Layer for Oncology Protocols v2026-03-12-0.1.0
+# Carboplatin and Paclitaxel (CP) — Variant #83 (Carbo AUC 5 + Paclitaxel 175 mg/m² q21d) - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
@@ -31,7 +31,7 @@ One executable variant of the Carboplatin + Paclitaxel regimen (HemOnc cui 2554)
 * **Actions: **: **Date: **
   * : 2026-03-12
 * **Actions: **: **Publisher: **
-  * : HemOnc FHIR Catalog Working Group
+  * : European SACT Regimen Catalog Working Group
 * **Actions: **: **Description: **
   * : One executable variant of the Carboplatin + Paclitaxel regimen (HemOnc cui 2554). Single 21-day cycle pattern repeated 3–6 times: Carboplatin target AUC 5 + Paclitaxel 175 mg/m², both IV on day 1. Sourced from HemOncKB sigs.csv snapshot 2026-03-12 (variant_cui 144842, first reported in the MITO-2 trial). This Phase 0 artifact does not include premedications, dose-modification rules, or hold-for-counts logic — those are deferred to subsequent Library resources.
 * **Actions: **: **Jurisdiction: **
@@ -76,9 +76,9 @@ One executable variant of the Carboplatin + Paclitaxel regimen (HemOnc cui 2554)
   "status" : "active",
   "experimental" : true,
   "date" : "2026-03-12",
-  "publisher" : "HemOnc FHIR Catalog Working Group",
+  "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
-    "name" : "HemOnc FHIR Catalog Working Group",
+    "name" : "European SACT Regimen Catalog Working Group",
     "telecom" : [{
       "system" : "url",
       "value" : "https://github.com/thome/oncology-regimens"
