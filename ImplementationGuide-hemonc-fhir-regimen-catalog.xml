@@ -18,7 +18,7 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
   <title value="European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2026-11-04T08:45:26+00:00"/>
+  <date value="2026-11-10T19:55:45+00:00"/>
   <publisher value="European SACT Regimen Catalog Working Group"/>
   <contact>
     <name value="European SACT Regimen Catalog Working Group"/>
@@ -46,18 +46,15 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
     <packageId value="hl7.terminology.r4"/>
     <version value="7.5.0"/>
   </dependsOn>
-  <dependsOn id="hl7ext">
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
-      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
-    </extension>
-    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
-    <packageId value="hl7.fhir.uv.extensions.r4"/>
-    <version value="5.4.0"/>
-  </dependsOn>
   <dependsOn id="de_medizininformatikinitiative_kerndatensatz_onkologie">
     <uri value="http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie"/>
     <packageId value="de.medizininformatikinitiative.kerndatensatz.onkologie"/>
     <version value="2026.0.3"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_extensions_r4">
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.4.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
@@ -281,6 +278,17 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/med-example-carboplatin"/>
+      </reference>
+      <name value="Carboplatin"/>
+      <description value="Kind-of-drug Medication for carboplatin with the full coding stack (HemOnc CUI, RxNorm, UNII, EMA SPOR SMS, ATC-WHO, ATC-DE, ASK) and HemOnc classification. Canonical metadata via artifact-* extensions (R6: native Medication.url/version/name/publisher)."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="PlanDefinition"/>
       </extension>
       <reference>
@@ -369,22 +377,22 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationKnowledge"/>
+        <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="MedicationKnowledge/hemonc-drug-379-paclitaxel"/>
+        <reference value="Medication/hemonc-drug-379-paclitaxel"/>
       </reference>
-      <name value="hemonc-drug-379-paclitaxel"/>
+      <name value="Paclitaxel"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationKnowledge"/>
+        <valueString value="Medication"/>
       </extension>
       <reference>
-        <reference value="MedicationKnowledge/hemonc-drug-88-carboplatin"/>
+        <reference value="Medication/hemonc-drug-88-carboplatin"/>
       </reference>
-      <name value="hemonc-drug-88-carboplatin"/>
+      <name value="Carboplatin"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -464,6 +472,17 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
       <description value="Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content."/>
       <exampleBoolean value="true"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/med-example-vepdegestrant"/>
+      </reference>
+      <name value="Vepdegestrant"/>
+      <description value="Kind-of-drug Medication for an investigational substance without ATC, ASK or RxNorm code: HemOnc CUI, UNII and EMA SPOR SMS only. Investigational status via medication-type."/>
+      <exampleBoolean value="true"/>
+    </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
         <valueUrl value="toc.html"/>
@@ -509,6 +528,14 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
         </extension>
         <nameUrl value="versioning.html"/>
         <title value="Versioning Strategy"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="fhir-versions.html"/>
+        </extension>
+        <nameUrl value="fhir-versions.html"/>
+        <title value="FHIR Versions — R4 Baseline, R5 and R6 Adaptations"/>
         <generation value="markdown"/>
       </page>
       <page>

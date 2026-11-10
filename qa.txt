@@ -1,13 +1,15 @@
 EuropeanSACTRegimenCatalog : Validation Results
 =========================================
 
-err = 21, warn = 61, info = 51, broken links = 0
-IG Publisher Version: 3.0.2
-Generated Wed Nov 04 08:47:03 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
- Build Errors : 2 / 14 / 1
+err = 18, warn = 71, info = 52, broken links = 0
+IG Publisher Version: 3.0.2 Out of date - current version is 3.0.3
+Generated Tue Nov 10 19:56:53 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
+ Build Errors : 1 / 14 / 1
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/CodeSystem-regimen-modification-kind : 0 / 1 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ConceptMap-srl-to-hemonc-variant : 1 / 3 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog : 2 / 4 / 3
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/Medication-med-example-carboplatin : 2 / 4 / 1
+ /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/Medication-med-example-vepdegestrant : 1 / 4 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/PlanDefinition-nz-crc-mfolfox6-formulary : 0 / 7 / 5
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/PlanDefinition-srl-588251000210108-mfolfox6-nobolus : 0 / 5 / 4
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/StructureDefinition-formulary-parameter : 0 / 0 / 3
@@ -15,21 +17,20 @@ Generated Wed Nov 04 08:47:03 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regim
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/StructureDefinition-regimen-modification : 0 / 0 / 3
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ValueSet-nz-crc-permitted-variants : 0 / 3 / 4
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ValueSet-regimen-modification-kind-vs : 0 / 1 / 2
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d : 3 / 4 / 7
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d : 3 / 4 / 6
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-carboplatin-auc5-d1-q21d : 1 / 4 / 7
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d : 1 / 4 / 6
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-hemonc-fragment : 0 / 2 / 6
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/CodeSystem-sig-target-type : 0 / 1 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/Library-HemOncDoseHelpers : 0 / 0 / 3
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel : 4 / 2 / 4
- /home/runner/work/oncology-regimens/oncology-regimens/input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin : 4 / 4 / 5
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/Medication-hemonc-drug-379-paclitaxel : 3 / 3 / 4
+ /home/runner/work/oncology-regimens/oncology-regimens/input/resources/Medication-hemonc-drug-88-carboplatin : 4 / 5 / 5
  /home/runner/work/oncology-regimens/oncology-regimens/input/resources/PlanDefinition-regimen-2554-variant-144842 : 2 / 6 / 4
 </table>
 
 == n/a ==
 ERROR: ImplementationGuide.definition.parameter[27].value: Supressed messages file not found
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-379-paclitaxel.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationKnowledge/hemonc-drug-88-carboplatin.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-ERROR: package.tgz: Error converting pacakge to R4B: Error processing package/MedicationKnowledge-hemonc-drug-379-paclitaxel.json: Not a JSON Object: null
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Medication/hemonc-drug-88-carboplatin.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Medication/hemonc-drug-379-paclitaxel.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</a>" expecting "</img>" at line 34 column 177
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 79 column 10
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/output/searchform.html: The html source is not well formed: Found "</div>" expecting "</body>" at line 80 column 9
@@ -64,11 +65,29 @@ WARNING: ConceptMap/srl-to-hemonc-variant: ConceptMap.group[0].target: Zielcodes
 WARNING: ImplementationGuide.version: The version 2026-03-12-0.1.0 is not a valid semantic version and will not be acceptible to the ci-build, nor will it be a valid vesion in the NPM package system
 WARNING: /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ImplementationGuide-hemonc-fhir-regimen-catalog: Unknown Parameters: [apply-status=true]
 INFORMATION: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
-WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2].uri: Canonical URL 'http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie' kann nicht aufgelöst werden
+WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[1].uri: Canonical URL 'http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie' kann nicht aufgelöst werden
 ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[5].extension[0].value.ofType(code): Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0 nicht ermittelt werden
 ERROR: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.definition.extension[5].extension[0].value.ofType(code): Der angegebene Wert ('apply-status') ist nicht im ValueSet 'ig-parameters Codes ValueSet' (http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0), und ein Code aus diesem Valueset ist erforderlich) (error message = Der angegebene Code '#apply-status' befindet sich nicht im ValueSet 'http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0'; Die System-URI konnte für den Code apply-status im ValueSet http://hl7.org/fhir/tools/ValueSet/ig-parameters|1.3.0 nicht ermittelt werden)
-WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[2]: The canonical URL http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie doesn't point to an actual ImplementationGuide resource
+WARNING: ImplementationGuide/hemonc-fhir-regimen-catalog: ImplementationGuide.dependsOn[1]: The canonical URL http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie doesn't point to an actual ImplementationGuide resource
 INFORMATION: Resource: The resource ImplementationGuide/hemonc-fhir-regimen-catalog could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
+
+
+== fsh-generated/resources/Medication-med-example-carboplatin.json ==
+WARNING: Medication/med-example-carboplatin: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://hl7.org/fhir/CodeSystem/medication-classification-type' could not be found, so the code cannot be validated
+ERROR: Medication/med-example-carboplatin: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+WARNING: Medication/med-example-carboplatin: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: Das CodeSystem http://hl7.org/fhir/CodeSystem/medication-classification-type ist unbekannt
+ERROR: Medication/med-example-carboplatin: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+WARNING: Medication/med-example-carboplatin: Medication.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+WARNING: Medication/med-example-carboplatin: Medication.code.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12' could not be found, so the code cannot be validated. No versions of this code system are known
+
+
+== fsh-generated/resources/Medication-med-example-vepdegestrant.json ==
+WARNING: Medication/med-example-vepdegestrant: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: Das CodeSystem http://hl7.org/fhir/CodeSystem/medication-classification-type ist unbekannt
+ERROR: Medication/med-example-vepdegestrant: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+WARNING: Medication/med-example-vepdegestrant: Medication.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+WARNING: Medication/med-example-vepdegestrant: Medication.code.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12' could not be found, so the code cannot be validated. No versions of this code system are known
+INFORMATION: Medication/med-example-vepdegestrant: Medication.code.coding[1].display: There are no valid display names found for the code http://fdasis.nlm.nih.gov#WC1U3R1YMI for language(s) 'de-DE'. The display is 'VEPDEGESTRANT' which is a valid display for the default language
+WARNING: Medication/med-example-vepdegestrant: Medication.code.coding[2].system: A definition for CodeSystem 'https://spor.ema.europa.eu/v2/substances' could not be found, so the code cannot be validated
 
 
 == fsh-generated/resources/PlanDefinition-nz-crc-mfolfox6-formulary.json ==
@@ -131,8 +150,6 @@ WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.ide
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
 WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.relatedArtifact[0].url: URL-Wert 'https://dataverse.harvard.edu/dataverse/hemonc' löst nicht auf
-ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.product.ofType(Reference): Es konnte kein passendes Profil für MedicationKnowledge/hemonc-drug-88-carboplatin (nach Typ) unter den Auswahlmöglichkeiten [; [http://hl7.org/fhir/StructureDefinition/Medication|4.0.1, http://hl7.org/fhir/StructureDefinition/Substance|4.0.1]] gefunden werden
-ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.product.ofType(Reference): Ungültiger Ressourcen-Zieltyp. Gefunden MedicationKnowledge, aber  einen von ([Medication, Substance]) erwartet
 ERROR: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
 WARNING: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
 INFORMATION: ActivityDefinition/sig-carboplatin-auc5-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
@@ -147,8 +164,6 @@ WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.i
 INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.useContext[0].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.jurisdiction[0].coding[0].display: There are no valid display names found for the code urn:iso:std:iso:3166#DE for language(s) 'de-DE'. The display is 'Germany' which is a valid display for the default language
 WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.relatedArtifact[0].url: URL-Wert 'https://dataverse.harvard.edu/dataverse/hemonc' löst nicht auf
-ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.product.ofType(Reference): Es konnte kein passendes Profil für MedicationKnowledge/hemonc-drug-379-paclitaxel (nach Typ) unter den Auswahlmöglichkeiten [; [http://hl7.org/fhir/StructureDefinition/Medication|4.0.1, http://hl7.org/fhir/StructureDefinition/Substance|4.0.1]] gefunden werden
-ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.product.ofType(Reference): Ungültiger Ressourcen-Zieltyp. Gefunden MedicationKnowledge, aber  einen von ([Medication, Substance]) erwartet
 ERROR: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].extension[0]: Die extension http://hemonc.org/fhir/StructureDefinition/day-of-cycle ist nicht bekannt, and hier nicht erlaubt
 WARNING: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].extension[0].url: URL-Wert 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle' löst nicht auf
 INFORMATION: ActivityDefinition/sig-paclitaxel-175mgm2-d1-q21d: ActivityDefinition.dosage[0].route.coding[0].display: There are no valid display names found for the code http://snomed.info/sct#47625008 for language(s) 'de-DE'. The display is 'Intravenous route' which is a valid display for the default language
@@ -176,31 +191,32 @@ INFORMATION: Library/HemOncDoseHelpers: Library.jurisdiction[0].coding[0].displa
 INFORMATION: Resource: The resource Library/HemOncDoseHelpers could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html)
 
 
-== input/resources/MedicationKnowledge-hemonc-drug-379-paclitaxel.json ==
-ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
-ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12')
-INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12' löst nicht auf
-ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12
-INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
-INFORMATION: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-WARNING: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'Taxane' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-ERROR: MedicationKnowledge/hemonc-drug-379-paclitaxel: MedicationKnowledge.kinetics[0]: Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
+== input/resources/Medication-hemonc-drug-379-paclitaxel.json ==
+ERROR: Medication/hemonc-drug-379-paclitaxel: Medication.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12')
+INFORMATION: Medication/hemonc-drug-379-paclitaxel: Medication.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12' löst nicht auf
+ERROR: Medication/hemonc-drug-379-paclitaxel: Medication.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12
+WARNING: Medication/hemonc-drug-379-paclitaxel: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://hl7.org/fhir/CodeSystem/medication-classification-type' could not be found, so the code cannot be validated
+ERROR: Medication/hemonc-drug-379-paclitaxel: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+INFORMATION: Medication/hemonc-drug-379-paclitaxel: Medication.extension[4].extension[1].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: Medication/hemonc-drug-379-paclitaxel: Medication.extension[4].extension[1].value.ofType(CodeableConcept).coding[0].code: Unknown Code 'Taxane' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Medication/hemonc-drug-379-paclitaxel: Medication.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+INFORMATION: Medication/hemonc-drug-379-paclitaxel: Medication.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 
 
-== input/resources/MedicationKnowledge-hemonc-drug-88-carboplatin.json ==
-ERROR: MedicationKnowledge.kinetics[0]: Nicht erkannte Property '@comment'
-ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12')
-INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12' löst nicht auf
-ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12
-INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].type.coding[0].system: A definition for CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis' could not be found, so the code cannot be validated
-INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[0].classification[0].coding[0].code: Unknown Code 'PlatinumAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].type.coding[0].system: Das CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc-classification-axis ist unbekannt
-INFORMATION: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0]: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
-WARNING: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.medicineClassification[1].classification[0].coding[0].code: Unknown Code 'AlkylatingAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-ERROR: MedicationKnowledge/hemonc-drug-88-carboplatin: MedicationKnowledge.kinetics[0]: Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
+== input/resources/Medication-hemonc-drug-88-carboplatin.json ==
+ERROR: Medication/hemonc-drug-88-carboplatin: Medication.meta.source: URI-Werte können keine Leerzeichen enthalten ('HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12')
+INFORMATION: Medication/hemonc-drug-88-carboplatin: Medication.meta.source: URL-Wert 'HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12' löst nicht auf
+ERROR: Medication/hemonc-drug-88-carboplatin: Medication.text.div: Die URL ist nicht gültig, weil '(URL enthält 5 ungültige Zeichen (' '))': https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12
+WARNING: Medication/hemonc-drug-88-carboplatin: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://hl7.org/fhir/CodeSystem/medication-classification-type' could not be found, so the code cannot be validated
+ERROR: Medication/hemonc-drug-88-carboplatin: Medication.extension[4].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+INFORMATION: Medication/hemonc-drug-88-carboplatin: Medication.extension[4].extension[1].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: Medication/hemonc-drug-88-carboplatin: Medication.extension[4].extension[1].value.ofType(CodeableConcept).coding[0].code: Unknown Code 'PlatinumAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Medication/hemonc-drug-88-carboplatin: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: Das CodeSystem http://hl7.org/fhir/CodeSystem/medication-classification-type ist unbekannt
+ERROR: Medication/hemonc-drug-88-carboplatin: Medication.extension[5].extension[0].value.ofType(CodeableConcept).coding[0].system: URL-Wert 'http://hl7.org/fhir/CodeSystem/medication-classification-type' löst nicht auf
+INFORMATION: Medication/hemonc-drug-88-carboplatin: Medication.extension[5].extension[1].value.ofType(CodeableConcept): Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
+WARNING: Medication/hemonc-drug-88-carboplatin: Medication.extension[5].extension[1].value.ofType(CodeableConcept).coding[0].code: Unknown Code 'AlkylatingAgent' in the CodeSystem 'http://hemonc.org/fhir/CodeSystem/hemonc' version '2026-03-12-0.1.0' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Medication/hemonc-drug-88-carboplatin: Medication.identifier[0].system: URL-Wert 'http://hemonc.org/cui' löst nicht auf
+INFORMATION: Medication/hemonc-drug-88-carboplatin: Medication.code: Reference to experimental CodeSystem http://hemonc.org/fhir/CodeSystem/hemonc|2026-03-12-0.1.0
 
 
 == input/resources/PlanDefinition-regimen-2554-variant-144842.json ==

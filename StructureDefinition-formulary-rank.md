@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/StructureDefinition/formulary-rank | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-04 | *Computable Name*:FormularyRank |
+| Draft as of 2026-11-10 | *Computable Name*:FormularyRank |
 
 Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked.
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-formulary-rank.csv),
   "title" : "Formulary Rank",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-04T08:45:26+00:00",
+  "date" : "2026-11-10T19:55:45+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

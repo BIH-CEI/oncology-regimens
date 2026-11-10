@@ -8,11 +8,11 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-04 | *Computable Name*:EuropeanSACTRegimenCatalog |
+| Draft as of 2026-11-10 | *Computable Name*:EuropeanSACTRegimenCatalog |
 
 ### European SACT Regimen Catalog
 
-A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy (SACT) regimens as executable knowledge artifacts (`PlanDefinition`, `ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`, `ConceptMap`). The [HemOnc Knowledge Base](https://hemonc.org) is the first content source; which further knowledge bases populate the catalog is a later decision.
+A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy (SACT) regimens as executable knowledge artifacts (`PlanDefinition`, `ActivityDefinition`, `Medication`, `Library`, `CodeSystem`, `ConceptMap`). The [HemOnc Knowledge Base](https://hemonc.org) is the first content source; which further knowledge bases populate the catalog is a later decision.
 
 This IG provides the **catalog layer** — **what to give** — that complements the MII Onkologie Modul's **recording layer** — **what was given**. Together they close the loop from registry-mandated reporting back to executable clinical-decision support, anchored on a single, openly-licenced source of truth for oncology regimens.
 
@@ -49,7 +49,7 @@ The artifacts in this distribution are reference content, not a medical device o
   "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-04T08:45:26+00:00",
+  "date" : "2026-11-10T19:55:45+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",
@@ -80,20 +80,16 @@ The artifacts in this distribution are reference content, not a medical device o
     "version" : "7.5.0"
   },
   {
-    "id" : "hl7ext",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-    }],
-    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-    "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.4.0"
-  },
-  {
     "id" : "de_medizininformatikinitiative_kerndatensatz_onkologie",
     "uri" : "http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/ImplementationGuide/de.medizininformatikinitiative.kerndatensatz.onkologie",
     "packageId" : "de.medizininformatikinitiative.kerndatensatz.onkologie",
     "version" : "2026.0.3"
+  },
+  {
+    "id" : "hl7_fhir_uv_extensions_r4",
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.4.0"
   }],
   "definition" : {
     "extension" : [{
@@ -400,6 +396,22 @@ The artifacts in this distribution are reference content, not a medical device o
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-med-example-carboplatin.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/med-example-carboplatin"
+      },
+      "name" : "Carboplatin",
+      "description" : "Kind-of-drug Medication for carboplatin with the full coding stack (HemOnc CUI, RxNorm, UNII, EMA SPOR SMS, ATC-WHO, ATC-DE, ASK) and HemOnc classification. Canonical metadata via artifact-* extensions (R6: native Medication.url/version/name/publisher).",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PlanDefinition"
       },
       {
@@ -528,31 +540,31 @@ The artifacts in this distribution are reference content, not a medical device o
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationKnowledge"
+        "valueString" : "Medication"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationKnowledge-hemonc-drug-379-paclitaxel.html"
+        "valueUri" : "Medication-hemonc-drug-379-paclitaxel.html"
       }],
       "reference" : {
-        "reference" : "MedicationKnowledge/hemonc-drug-379-paclitaxel"
+        "reference" : "Medication/hemonc-drug-379-paclitaxel"
       },
-      "name" : "hemonc-drug-379-paclitaxel",
+      "name" : "Paclitaxel",
       "exampleBoolean" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationKnowledge"
+        "valueString" : "Medication"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationKnowledge-hemonc-drug-88-carboplatin.html"
+        "valueUri" : "Medication-hemonc-drug-88-carboplatin.html"
       }],
       "reference" : {
-        "reference" : "MedicationKnowledge/hemonc-drug-88-carboplatin"
+        "reference" : "Medication/hemonc-drug-88-carboplatin"
       },
-      "name" : "hemonc-drug-88-carboplatin",
+      "name" : "Carboplatin",
       "exampleBoolean" : false
     },
     {
@@ -666,6 +678,22 @@ The artifacts in this distribution are reference content, not a medical device o
       "name" : "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)",
       "description" : "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-med-example-vepdegestrant.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/med-example-vepdegestrant"
+      },
+      "name" : "Vepdegestrant",
+      "description" : "Kind-of-drug Medication for an investigational substance without ATC, ASK or RxNorm code: HemOnc CUI, UNII and EMA SPOR SMS only. Investigational status via medication-type.",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
@@ -718,6 +746,15 @@ The artifacts in this distribution are reference content, not a medical device o
         }],
         "nameUrl" : "versioning.html",
         "title" : "Versioning Strategy",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "fhir-versions.html"
+        }],
+        "nameUrl" : "fhir-versions.html",
+        "title" : "FHIR Versions — R4 Baseline, R5 and R6 Adaptations",
         "generation" : "markdown"
       },
       {

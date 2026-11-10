@@ -1,0 +1,130 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "hemonc-drug-88-carboplatin"] ;
+  fhir:Resource.meta [
+     fhir:Meta.source [ fhir:value "HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12" ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication hemonc-drug-88-carboplatin</b></p><a name=\"hemonc-drug-88-carboplatin\"> </a><a name=\"hchemonc-drug-88-carboplatin\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Information Source: <a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12\">HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12</a></p></div><p><b>Artifact URL</b>: <a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin\">http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Carboplatin</p><p><b>Artifact Publisher</b>: HemOnc.org</p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type pharmacologic}\">HemOnc main class</span></li><li>classification: <span title=\"Codes:{http://hemonc.org/fhir/CodeSystem/hemonc PlatinumAgent}\">Platinum agent</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type moa}\">CanMED major class</span></li><li>classification: <span title=\"Codes:{http://hemonc.org/fhir/CodeSystem/hemonc AlkylatingAgent}\">Alkylating agent</span></li><li>source: HemOncKB drugs.csv CanMED_major_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/88 (use: official)</p><p><b>code</b>: <span title=\"Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 88}, {http://www.nlm.nih.gov/research/umls/rxnorm 40048}, {http://www.whocc.no/atc L01XA02}\">Carboplatin</span></p><p><b>status</b>: Active</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-url" ] ;
+     fhir:Extension.valueUri [ fhir:value "http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-version" ] ;
+     fhir:Extension.valueString [ fhir:value "2026-03-12" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-name" ] ;
+     fhir:Extension.valueString [ fhir:value "Carboplatin" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-publisher" ] ;
+     fhir:Extension.valueString [ fhir:value "HemOnc.org" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/CodeSystem/medication-classification-type" ] ;
+           fhir:Coding.code [ fhir:value "pharmacologic" ] ;
+           fhir:Coding.display [ fhir:value "Pharmacologic Class" ]
+         ] ;
+         fhir:CodeableConcept.text [ fhir:value "HemOnc main class" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "classification" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+           fhir:Coding.code [ fhir:value "PlatinumAgent" ] ;
+           fhir:Coding.display [ fhir:value "Platinum agent" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "source" ] ;
+       fhir:Extension.valueString [ fhir:value "HemOncKB drugs.csv main_class, snapshot 2026-03-12" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/medication-classification" ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/CodeSystem/medication-classification-type" ] ;
+           fhir:Coding.code [ fhir:value "moa" ] ;
+           fhir:Coding.display [ fhir:value "Mechanism of Action" ]
+         ] ;
+         fhir:CodeableConcept.text [ fhir:value "CanMED major class" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "classification" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+           fhir:Coding.code [ fhir:value "AlkylatingAgent" ] ;
+           fhir:Coding.display [ fhir:value "Alkylating agent" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "source" ] ;
+       fhir:Extension.valueString [ fhir:value "HemOncKB drugs.csv CanMED_major_class, snapshot 2026-03-12" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/medication-classification" ]
+  ] ;
+  fhir:Medication.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/cui" ] ;
+     fhir:Identifier.value [ fhir:value "88" ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+       fhir:Coding.code [ fhir:value "88" ] ;
+       fhir:Coding.display [ fhir:value "Carboplatin" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Coding.system [ fhir:value "http://www.nlm.nih.gov/research/umls/rxnorm" ] ;
+       fhir:Coding.code [ fhir:value "40048" ] ;
+       fhir:Coding.display [ fhir:value "carboplatin" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Coding.system [ fhir:value "http://www.whocc.no/atc" ] ;
+       fhir:Coding.code [ fhir:value "L01XA02" ] ;
+       fhir:Coding.display [ fhir:value "carboplatin" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Carboplatin" ]
+  ] ;
+  fhir:Medication.status [ fhir:value "active"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

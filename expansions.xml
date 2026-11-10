@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="0f635c78-9baf-4b6d-8d15-701d40498c6f"/>
+  <id value="07f40b3f-e38e-47f0-a6fb-daf38ca06354"/>
   <meta>
-    <lastUpdated value="2026-11-04T08:45:26.034+00:00"/>
+    <lastUpdated value="2026-11-10T19:55:45.321+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -177,7 +177,7 @@
         <title value="Regimen Modification Kind ValueSet"/>
         <status value="draft"/>
         <experimental value="true"/>
-        <date value="2026-11-04T08:45:26+00:00"/>
+        <date value="2026-11-10T19:55:45+00:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -186,8 +186,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:15a4aa54-0dc4-40cf-91f7-b2fefea7cc2d"/>
-          <timestamp value="2026-11-04T08:46:51+00:00"/>
+          <identifier value="urn:uuid:f9e3cdec-a1ad-45cc-8c9d-3099e1b123fb"/>
+          <timestamp value="2026-11-10T19:56:37+00:00"/>
           <total value="6"/>
           <offset value="0"/>
           <parameter>

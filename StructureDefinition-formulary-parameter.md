@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/StructureDefinition/formulary-parameter | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-04 | *Computable Name*:FormularyParameter |
+| Draft as of 2026-11-10 | *Computable Name*:FormularyParameter |
 
 A parameter value a formulary entry pins on the referenced (parameterised) variant PlanDefinition. Forwarded by the CDS layer in the nested `parameters` of $apply.
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-formulary-parameter.
   "title" : "Formulary Parameter",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-04T08:45:26+00:00",
+  "date" : "2026-11-10T19:55:45+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

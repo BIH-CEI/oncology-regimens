@@ -12,7 +12,7 @@ The Phase 0 spike validates the end-to-end pipeline on one regimen variant from 
 #### What's included
 
 * HemOnc regimen `2554` "Carboplatin and Paclitaxel (CP)" variant `144842` (Variant #83), first reported in the MITO-2 trial: Carbo AUC 5 + Paclitaxel 175 mg/m², IV day 1 of a 21-day cycle, for 3–6 cycles.
-* All seven FHIR artifacts: `CodeSystem` (HemOnc fragment), `CodeSystem` (sig-target-type), two `MedicationKnowledge`, two `ActivityDefinition` (one per sig), one `Library` (BSA + Calvert helpers), one `PlanDefinition` (the variant with its cycle action).
+* All seven FHIR artifacts: `CodeSystem` (HemOnc fragment), `CodeSystem` (sig-target-type), two `Medication`, two `ActivityDefinition` (one per sig), one `Library` (BSA + Calvert helpers), one `PlanDefinition` (the variant with its cycle action).
 * A demo Patient + height + weight + creatinine Observation Bundle.
 * A `load-and-apply.sh` script that loads everything into HAPI and invokes `$apply`, returning a `CarePlan` with two computed `MedicationRequest` resources: **Carboplatin 625 mg** (Calvert) and **Paclitaxel 323.75 mg** (BSA), both with `computed-from-target-*` provenance codes.
 
@@ -20,7 +20,7 @@ The Phase 0 spike validates the end-to-end pipeline on one regimen variant from 
 
 1. `PlanDefinition/$apply`produces a`CarePlan`containing two`MedicationRequest`resources.
 1. Each`MedicationRequest.dosageInstruction.doseAndRate`carries both the computed mg dose and the provenance code identifying the target paradigm (AUC for carboplatin, mg/m² for paclitaxel).
-1. The`MedicationRequest.medicationReference`points at the IG's`MedicationKnowledge`, which carries ATC + RxNorm + HemOnc CUI for downstream RxNorm-anchored systems.
+1. The`MedicationRequest.medicationReference`points at the IG's catalog`Medication`, which carries ATC + RxNorm + HemOnc CUI for downstream RxNorm-anchored systems.
 1. `instantiatesCanonical`on every emitted`MedicationRequest`resolves to the catalog`ActivityDefinition`, preserving full knowledge-to-instance provenance.
 
 #### Known limitations (tracked)

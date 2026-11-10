@@ -78,8 +78,8 @@
   ] ;
   fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest"] ;
   fhir:ActivityDefinition.productReference [
-     fhir:link <http://hemonc.org/fhir/MedicationKnowledge/hemonc-drug-379-paclitaxel> ;
-     fhir:Reference.reference [ fhir:value "MedicationKnowledge/hemonc-drug-379-paclitaxel" ]
+     fhir:link <http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel> ;
+     fhir:Reference.reference [ fhir:value "Medication/hemonc-drug-379-paclitaxel" ]
   ] ;
   fhir:ActivityDefinition.dosage [
      fhir:index 0 ;

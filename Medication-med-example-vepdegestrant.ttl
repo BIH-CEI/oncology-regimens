@@ -1,0 +1,98 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hemonc.org/fhir/Medication/med-example-vepdegestrant> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "med-example-vepdegestrant"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication med-example-vepdegestrant</b></p><a name=\"med-example-vepdegestrant\"> </a><a name=\"hcmed-example-vepdegestrant\"> </a><p><b>Artifact URL</b>: <a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/med-example-vepdegestrant\">http://hemonc.org/fhir/Medication/med-example-vepdegestrant</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Vepdegestrant</p><p><b>Artifact Publisher</b>: HemOnc.org</p><p><b>Medication Type</b>: <span title=\"Codes:\">Investigational medicinal product (IMP)</span></p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type moa}\">HemOnc main class</span></li><li>classification: <span title=\"Codes:\">Proteolysis-targeting chimera estrogen receptor degrader</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/161163 (use: official)</p><p><b>code</b>: <span title=\"Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 161163}, {http://fdasis.nlm.nih.gov WC1U3R1YMI}, {https://spor.ema.europa.eu/v2/substances 300000041131}\">Vepdegestrant</span></p><p><b>status</b>: Active</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-url" ] ;
+     fhir:Extension.valueUri [ fhir:value "http://hemonc.org/fhir/Medication/med-example-vepdegestrant" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-version" ] ;
+     fhir:Extension.valueString [ fhir:value "2026-03-12" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-name" ] ;
+     fhir:Extension.valueString [ fhir:value "Vepdegestrant" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/artifact-publisher" ] ;
+     fhir:Extension.valueString [ fhir:value "HemOnc.org" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/medication-type" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "Investigational medicinal product (IMP)" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "type" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://hl7.org/fhir/CodeSystem/medication-classification-type" ] ;
+           fhir:Coding.code [ fhir:value "moa" ] ;
+           fhir:Coding.display [ fhir:value "Mechanism of Action" ]
+         ] ;
+         fhir:CodeableConcept.text [ fhir:value "HemOnc main class" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "classification" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.text [ fhir:value "Proteolysis-targeting chimera estrogen receptor degrader" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "source" ] ;
+       fhir:Extension.valueString [ fhir:value "HemOncKB drugs.csv main_class, snapshot 2026-03-12" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/medication-classification" ]
+  ] ;
+  fhir:Medication.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://hemonc.org/cui" ] ;
+     fhir:Identifier.value [ fhir:value "161163" ]
+  ] ;
+  fhir:Medication.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://hemonc.org/fhir/CodeSystem/hemonc" ] ;
+       fhir:Coding.version [ fhir:value "2026-03-12" ] ;
+       fhir:Coding.code [ fhir:value "161163" ] ;
+       fhir:Coding.display [ fhir:value "Vepdegestrant" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Coding.system [ fhir:value "http://fdasis.nlm.nih.gov" ] ;
+       fhir:Coding.code [ fhir:value "WC1U3R1YMI" ] ;
+       fhir:Coding.display [ fhir:value "VEPDEGESTRANT" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Coding.system [ fhir:value "https://spor.ema.europa.eu/v2/substances" ] ;
+       fhir:Coding.code [ fhir:value "300000041131" ] ;
+       fhir:Coding.display [ fhir:value "Vepdegestrant" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Vepdegestrant" ]
+  ] ;
+  fhir:Medication.status [ fhir:value "active"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hemonc.org/fhir/Medication/med-example-vepdegestrant.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

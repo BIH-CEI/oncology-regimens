@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>FHIR Versions — R4 Baseline, R5 and R6 Adaptations - European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens v2026-03-12-0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens</span>
+            <br/>
+            <span style="display:inline-block;">2026-03-12-0.1.0 - ci-build
+
+
+
+  <img alt="Germany flag" src="assets/images/deu.svg" height="16" title="Germany"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="cooperation.html">Cooperation</a>
+  </li>
+  <li>
+    <a href="disclaimers.html">Disclaimers</a>
+  </li>
+  <li>
+    <a href="versioning.html">Versioning</a>
+  </li>
+  <li>
+    <a href="fhir-versions.html">FHIR Versions</a>
+  </li>
+  <li>
+    <a href="apply-and-cds.html">$apply and CDS Hooks</a>
+  </li>
+  <li>
+    <a href="selection-layer.html">Selection Layer</a>
+  </li>
+  <li>
+    <a href="phase0.html">Phase 0 Spike</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>FHIR Versions — R4 Baseline, R5 and R6 Adaptations</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens - Local Development build (v2026-03-12-0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hemonc.org/fhir/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>FHIR Versions — R4 Baseline, R5 and R6 Adaptations</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h3 id="fhir-versions--r4-baseline-r5-and-r6-adaptations">FHIR Versions — R4 Baseline, R5 and R6 Adaptations</h3>
+
+<p><em>Status: draft starting point for Phase 1A deliverable A.8. Facts checked
+against the FHIR R6 CI build (6.0.0-snapshot1, 2026-11-09) and HL7 JIRA on
+2026-11-10.</em></p>
+
+<h4 id="baseline-fhir-r4">Baseline: FHIR R4</h4>
+
+<p>This IG is published on <strong>FHIR R4 (4.0.1)</strong>. Reasons:</p>
+
+<ul>
+  <li>The German MII Onkologie module (dependency, 2026.0.3) is R4.</li>
+  <li>PlanDefinition execution and CDS Hooks run today on HAPI FHIR with
+cqf-fhir on R4; there is no clinical-reasoning implementation for R6.</li>
+  <li>R6 is not final. The first normative ballot ran in September 2026;
+publication is announced for the first half of 2027.</li>
+</ul>
+
+<p>The design rule for every artifact type is therefore: <strong>model in R4 so
+that the R6 migration is a mechanical rename, not a remodelling.</strong> Where
+R4 lacks an element that R6 has, the IG pre-adopts the element through
+the standard extension from <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions</code> (the same URLs exist
+in the R4, R5 and R6 flavours of that package).</p>
+
+<h4 id="r5-with-r4-backport">R5 with R4 backport</h4>
+
+<p>The second rule is "R5 semantics, R4 syntax". Where an R5 element is
+needed in R4, the cross-version extension package
+<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code> provides it. <strong>Currently no cross-version
+extension is in use</strong>, because none of the R5 changes touches an element
+this IG relies on:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>R4 → R5 change</th>
+      <th>Affects this IG?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code></td>
+      <td><code class="language-plaintext highlighter-rouge">form</code> → <code class="language-plaintext highlighter-rouge">doseForm</code>; <code class="language-plaintext highlighter-rouge">ingredient.item[x]</code> → CodeableReference; adds <code class="language-plaintext highlighter-rouge">definition</code>, <code class="language-plaintext highlighter-rouge">marketingAuthorizationHolder</code>, <code class="language-plaintext highlighter-rouge">totalVolume</code></td>
+      <td>No. The catalog <code class="language-plaintext highlighter-rouge">Medication</code> uses <code class="language-plaintext highlighter-rouge">identifier</code>, <code class="language-plaintext highlighter-rouge">code</code>, <code class="language-plaintext highlighter-rouge">status</code> and extensions only.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ActivityDefinition</code></td>
+      <td><code class="language-plaintext highlighter-rouge">product[x]</code> reference targets add <code class="language-plaintext highlighter-rouge">Ingredient</code>, <code class="language-plaintext highlighter-rouge">SubstanceDefinition</code>; <code class="language-plaintext highlighter-rouge">subject[x]</code> adds canonical</td>
+      <td>No. <code class="language-plaintext highlighter-rouge">productReference</code> targets <code class="language-plaintext highlighter-rouge">Medication</code>, valid in R4, R5 and R6.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PlanDefinition</code></td>
+      <td>adds <code class="language-plaintext highlighter-rouge">actor</code>, <code class="language-plaintext highlighter-rouge">action.location</code> (CodeableReference), <code class="language-plaintext highlighter-rouge">action.type</code> binding changes</td>
+      <td>No. The regimen, variant, derived-protocol and formulary PlanDefinitions use <code class="language-plaintext highlighter-rouge">action.definitionCanonical</code>, <code class="language-plaintext highlighter-rouge">action.selectionBehavior</code>, <code class="language-plaintext highlighter-rouge">action.timingTiming</code>, <code class="language-plaintext highlighter-rouge">relatedArtifact</code>, <code class="language-plaintext highlighter-rouge">useContext</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ConceptMap</code></td>
+      <td><code class="language-plaintext highlighter-rouge">group.element.target.equivalence</code> → <code class="language-plaintext highlighter-rouge">relationship</code> (new code set)</td>
+      <td>Yes, at publication time: the R4 <code class="language-plaintext highlighter-rouge">equivalence</code> codes map 1:1 to R5 <code class="language-plaintext highlighter-rouge">relationship</code> codes for the values used here (<code class="language-plaintext highlighter-rouge">equivalent</code>, <code class="language-plaintext highlighter-rouge">narrower</code>/<code class="language-plaintext highlighter-rouge">source-is-broader-than-target</code>, <code class="language-plaintext highlighter-rouge">wider</code>/<code class="language-plaintext highlighter-rouge">source-is-narrower-than-target</code>, <code class="language-plaintext highlighter-rouge">unmatched</code>/<code class="language-plaintext highlighter-rouge">not-related-to</code>). Tooling handles this; no extension needed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Library</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
+      <td>no structural change for the elements used</td>
+      <td>No.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="r6-what-changes-per-artifact-type">R6: what changes per artifact type</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artifact type</th>
+      <th>R4 representation in this IG</th>
+      <th>R6 target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> (kind of drug, catalog level)</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> with <code class="language-plaintext highlighter-rouge">identifier</code> (HemOnc CUI), <code class="language-plaintext highlighter-rouge">code</code> (coding stack), <code class="language-plaintext highlighter-rouge">status</code>; canonical metadata via <code class="language-plaintext highlighter-rouge">artifact-url</code>, <code class="language-plaintext highlighter-rouge">artifact-version</code>, <code class="language-plaintext highlighter-rouge">artifact-name</code>, <code class="language-plaintext highlighter-rouge">artifact-publisher</code> extensions (<code class="language-plaintext highlighter-rouge">artifact-status</code> is not used: it is a modifier extension and <code class="language-plaintext highlighter-rouge">Medication.status</code> already exists); classes via <code class="language-plaintext highlighter-rouge">medication-classification</code> extension</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> as <strong>canonical resource</strong> (<a href="https://jira.hl7.org/browse/FHIR-57813">FHIR-57813</a>): the four <code class="language-plaintext highlighter-rouge">artifact-*</code> extensions become native <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">version</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">publisher</code>; <code class="language-plaintext highlighter-rouge">status</code> is re-bound to the union of publication and medication status, <code class="language-plaintext highlighter-rouge">active</code> stays valid. <code class="language-plaintext highlighter-rouge">medication-classification</code> becomes native <code class="language-plaintext highlighter-rouge">Medication.classification</code> (<a href="https://jira.hl7.org/browse/FHIR-59521">FHIR-59521</a>, <a href="https://jira.hl7.org/browse/FHIR-59525">FHIR-59525</a>). <code class="language-plaintext highlighter-rouge">identifier</code> and <code class="language-plaintext highlighter-rouge">code</code> unchanged.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MedicationKnowledge</code></td>
+      <td><strong>not used</strong> (removed from this IG 2026-11-10)</td>
+      <td><strong>Removed from the specification</strong> (<a href="https://jira.hl7.org/browse/FHIR-50845">FHIR-50845</a>, Pharmacy WG, Madrid WGM May 2025, vote 12-0-4). Not moved to an incubator. Element mapping published with <a href="https://jira.hl7.org/browse/FHIR-57378">FHIR-57378</a>; see below.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ActivityDefinition</code> (sig)</td>
+      <td><code class="language-plaintext highlighter-rouge">kind = MedicationRequest</code>, <code class="language-plaintext highlighter-rouge">productReference → Medication</code>, <code class="language-plaintext highlighter-rouge">dosage</code>, <code class="language-plaintext highlighter-rouge">dynamicValue</code>, <code class="language-plaintext highlighter-rouge">library</code></td>
+      <td>Unchanged for the elements used. <code class="language-plaintext highlighter-rouge">product</code> cannot reference <code class="language-plaintext highlighter-rouge">MedicationKnowledge</code> in any FHIR version, which is the second reason the catalog drug resource is <code class="language-plaintext highlighter-rouge">Medication</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">PlanDefinition</code> (regimen, variant, derived protocol, formulary)</td>
+      <td>see <a href="selection-layer.html">Selection Layer</a></td>
+      <td>No removal known. To be re-verified against the R6 build at publication.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Library</code> (CQL, FHIRPath)</td>
+      <td><code class="language-plaintext highlighter-rouge">type = logic-library</code>, <code class="language-plaintext highlighter-rouge">content</code></td>
+      <td>Unchanged.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code>, <code class="language-plaintext highlighter-rouge">ConceptMap</code></td>
+      <td>HemOnc fragment, sig-target-type, MII bindings</td>
+      <td><code class="language-plaintext highlighter-rouge">ConceptMap</code> as in the R5 row. Others unchanged.</td>
+    </tr>
+    <tr>
+      <td>Extensions <code class="language-plaintext highlighter-rouge">day-of-cycle</code>, <code class="language-plaintext highlighter-rouge">formulary-rank</code>, <code class="language-plaintext highlighter-rouge">formulary-parameter</code>, <code class="language-plaintext highlighter-rouge">regimen-modification</code></td>
+      <td>defined in this IG</td>
+      <td>Unchanged (extension URLs are version-independent).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="medicationknowledge--this-ig">MedicationKnowledge → this IG</h5>
+
+<p>Mapping of the <code class="language-plaintext highlighter-rouge">MedicationKnowledge</code> elements this IG used in Phase 0,
+following the Pharmacy WG mapping in FHIR-57378 (Rotterdam WGM, May 2026):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>MedicationKnowledge (R4/R5)</th>
+      <th>Here (R4)</th>
+      <th>R6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.code</code></td>
+      <td>same</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">status</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.status</code></td>
+      <td>same</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">synonym</code> (R4 only)</td>
+      <td>not carried; synonyms belong to the terminology layer (<code class="language-plaintext highlighter-rouge">CodeSystem.concept.designation</code> of the HemOnc fragment)</td>
+      <td>same</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">medicineClassification</code></td>
+      <td>extension <code class="language-plaintext highlighter-rouge">medication-classification</code> (<code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">classification</code>, <code class="language-plaintext highlighter-rouge">source</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">Medication.classification</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">productType</code> (e.g. investigational)</td>
+      <td>extension <code class="language-plaintext highlighter-rouge">medication-type</code></td>
+      <td>same extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kinetics</code>, <code class="language-plaintext highlighter-rouge">monograph</code>, <code class="language-plaintext highlighter-rouge">relatedMedicationKnowledge</code></td>
+      <td>not carried (narrative only in Phase 0)</td>
+      <td>undecided in FHIR-57378</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cost</code>, <code class="language-plaintext highlighter-rouge">regulatory</code>, <code class="language-plaintext highlighter-rouge">packaging</code></td>
+      <td>never used</td>
+      <td><code class="language-plaintext highlighter-rouge">FormularyItem</code>, <code class="language-plaintext highlighter-rouge">MedicinalProductDefinition</code> family</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="formularyitem-r6-additional-resource">FormularyItem (R6 Additional Resource)</h4>
+
+<p><code class="language-plaintext highlighter-rouge">FormularyItem</code> is published by the Pharmacy WG in the
+<a href="https://build.fhir.org/ig/HL7/phx-incubator/">R6 Pharmacy Incubator</a>
+as an <em>Additional Resource</em>, i.e. outside the core specification, usable
+with R6 through the <code class="language-plaintext highlighter-rouge">resourceDefinition</code> mechanism. It describes "a
+product or service that is available through a program and includes the
+conditions and constraints of availability". Key elements: <code class="language-plaintext highlighter-rouge">status</code>,
+<code class="language-plaintext highlighter-rouge">category</code>, <code class="language-plaintext highlighter-rouge">context</code> (Organization | InsurancePlan), <code class="language-plaintext highlighter-rouge">subject</code>
+(CodeableReference to <code class="language-plaintext highlighter-rouge">Medication</code>, <code class="language-plaintext highlighter-rouge">ActivityDefinition</code>,
+<code class="language-plaintext highlighter-rouge">MedicinalProductDefinition</code>, <code class="language-plaintext highlighter-rouge">PackagedProductDefinition</code>,
+<code class="language-plaintext highlighter-rouge">DeviceDefinition</code>, <code class="language-plaintext highlighter-rouge">NutritionProduct</code>, <code class="language-plaintext highlighter-rouge">ObservationDefinition</code>), <code class="language-plaintext highlighter-rouge">cost</code>,
+<code class="language-plaintext highlighter-rouge">availabilityStatus</code>, <code class="language-plaintext highlighter-rouge">availabilityPeriod</code>, <code class="language-plaintext highlighter-rouge">coverageInformation</code>,
+<code class="language-plaintext highlighter-rouge">substitution</code>, <code class="language-plaintext highlighter-rouge">maxDispense</code>, <code class="language-plaintext highlighter-rouge">indicationGuideline</code>, <code class="language-plaintext highlighter-rouge">associatedItems</code>.</p>
+
+<p>Relationship to the <a href="selection-layer.html">Selection Layer</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Selection-layer concept</th>
+      <th>R4 (this IG)</th>
+      <th>R6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Which protocols a site or body offers (restriction), ranked, with pinned parameters</td>
+      <td>formulary <code class="language-plaintext highlighter-rouge">PlanDefinition</code> with <code class="language-plaintext highlighter-rouge">action.definitionCanonical</code>, <code class="language-plaintext highlighter-rouge">formulary-rank</code>, <code class="language-plaintext highlighter-rouge">formulary-parameter</code></td>
+      <td><strong>stays <code class="language-plaintext highlighter-rouge">PlanDefinition</code>.</strong> <code class="language-plaintext highlighter-rouge">FormularyItem.subject</code> cannot reference <code class="language-plaintext highlighter-rouge">PlanDefinition</code>, so a formulary of regimens is not a set of FormularyItems.</td>
+    </tr>
+    <tr>
+      <td>Drug-level availability, substitution, maximum dispense, cost, coverage for a program</td>
+      <td>out of scope (no element in this IG)</td>
+      <td><code class="language-plaintext highlighter-rouge">FormularyItem</code> with <code class="language-plaintext highlighter-rouge">subject → Medication</code> (the catalog Medication of this IG), <code class="language-plaintext highlighter-rouge">context → Organization</code>.</td>
+    </tr>
+    <tr>
+      <td>Sig-level constraints of a program (e.g. a site allows one sig of a drug)</td>
+      <td>out of scope</td>
+      <td><code class="language-plaintext highlighter-rouge">FormularyItem</code> with <code class="language-plaintext highlighter-rouge">subject → ActivityDefinition</code> (the sig).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Open point for feedback to the Pharmacy WG (deliverable C.5): add
+<code class="language-plaintext highlighter-rouge">PlanDefinition</code> to <code class="language-plaintext highlighter-rouge">FormularyItem.subject</code>, so that a formulary entry can
+be a protocol rather than a drug or a single sig. Until then, protocol
+formularies remain <code class="language-plaintext highlighter-rouge">PlanDefinition</code> in all FHIR versions, which is also the
+representation <code class="language-plaintext highlighter-rouge">$apply</code> and CDS Hooks consume.</p>
+
+<h4 id="decision-log">Decision log</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Decision</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-11-10</td>
+      <td>Catalog drug resource is <code class="language-plaintext highlighter-rouge">Medication</code>, not <code class="language-plaintext highlighter-rouge">MedicationKnowledge</code>; canonical metadata via <code class="language-plaintext highlighter-rouge">artifact-*</code> extensions; classes via <code class="language-plaintext highlighter-rouge">medication-classification</code></td>
+      <td>FHIR-50845, FHIR-57378, FHIR-57813; Pharmacy WG minutes Madrid 2025-05-12</td>
+    </tr>
+    <tr>
+      <td>2026-11-10</td>
+      <td>No cross-version extensions in use; <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code> is the designated package if one becomes necessary</td>
+      <td>this page</td>
+    </tr>
+    <tr>
+      <td>2026-11-10</td>
+      <td>Protocol formularies stay <code class="language-plaintext highlighter-rouge">PlanDefinition</code>; <code class="language-plaintext highlighter-rouge">FormularyItem</code> is the R6 target for drug- and sig-level program constraints only</td>
+      <td>phx-incubator FormularyItem 0.1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 10, 2026 19:55+0000">2026-11-10</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

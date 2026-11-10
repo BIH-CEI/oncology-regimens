@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="med-example-vepdegestrant"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Medication med-example-vepdegestrant</b></p><a name="med-example-vepdegestrant"> </a><a name="hcmed-example-vepdegestrant"> </a><p><b>Artifact URL</b>: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/med-example-vepdegestrant">http://hemonc.org/fhir/Medication/med-example-vepdegestrant</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Vepdegestrant</p><p><b>Artifact Publisher</b>: HemOnc.org</p><p><b>Medication Type</b>: <span title="Codes:">Investigational medicinal product (IMP)</span></p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type moa}">HemOnc main class</span></li><li>classification: <span title="Codes:">Proteolysis-targeting chimera estrogen receptor degrader</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/161163 (use: official)</p><p><b>code</b>: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 161163}, {http://fdasis.nlm.nih.gov WC1U3R1YMI}, {https://spor.ema.europa.eu/v2/substances 300000041131}">Vepdegestrant</span></p><p><b>status</b>: Active</p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-url">
+    <valueUri value="http://hemonc.org/fhir/Medication/med-example-vepdegestrant"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-version">
+    <valueString value="2026-03-12"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-name">
+    <valueString value="Vepdegestrant"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-publisher">
+    <valueString value="HemOnc.org"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/medication-type">
+    <valueCodeableConcept>
+      <text value="Investigational medicinal product (IMP)"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/medication-classification">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/CodeSystem/medication-classification-type"/>
+          <code value="moa"/>
+          <display value="Mechanism of Action"/>
+        </coding>
+        <text value="HemOnc main class"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="classification">
+      <valueCodeableConcept>
+        <text value="Proteolysis-targeting chimera estrogen receptor degrader"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="source">
+      <valueString value="HemOncKB drugs.csv main_class, snapshot 2026-03-12"/>
+    </extension>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hemonc.org/cui"/>
+    <value value="161163"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+      <version value="2026-03-12"/>
+      <code value="161163"/>
+      <display value="Vepdegestrant"/>
+    </coding>
+    <coding>
+      <system value="http://fdasis.nlm.nih.gov"/>
+      <code value="WC1U3R1YMI"/>
+      <display value="VEPDEGESTRANT"/>
+    </coding>
+    <coding>
+      <system value="https://spor.ema.europa.eu/v2/substances"/>
+      <code value="300000041131"/>
+      <display value="Vepdegestrant"/>
+    </coding>
+    <text value="Vepdegestrant"/>
+  </code>
+  <status value="active"/>
+</Medication>

@@ -84,7 +84,7 @@ One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83
   "library" : ["http://hemonc.org/fhir/Library/HemOncDoseHelpers"],
   "kind" : "MedicationRequest",
   "productReference" : {
-    "reference" : "MedicationKnowledge/hemonc-drug-88-carboplatin"
+    "reference" : "Medication/hemonc-drug-88-carboplatin"
   },
   "dosage" : [{
     "extension" : [{

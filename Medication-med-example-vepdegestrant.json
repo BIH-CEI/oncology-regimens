@@ -1,0 +1,79 @@
+{
+  "resourceType" : "Medication",
+  "id" : "med-example-vepdegestrant",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication med-example-vepdegestrant</b></p><a name=\"med-example-vepdegestrant\"> </a><a name=\"hcmed-example-vepdegestrant\"> </a><p><b>Artifact URL</b>: <a href=\"https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/med-example-vepdegestrant\">http://hemonc.org/fhir/Medication/med-example-vepdegestrant</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Vepdegestrant</p><p><b>Artifact Publisher</b>: HemOnc.org</p><p><b>Medication Type</b>: <span title=\"Codes:\">Investigational medicinal product (IMP)</span></p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type moa}\">HemOnc main class</span></li><li>classification: <span title=\"Codes:\">Proteolysis-targeting chimera estrogen receptor degrader</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/161163\u00a0(use:\u00a0official)</p><p><b>code</b>: <span title=\"Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 161163}, {http://fdasis.nlm.nih.gov WC1U3R1YMI}, {https://spor.ema.europa.eu/v2/substances 300000041131}\">Vepdegestrant</span></p><p><b>status</b>: Active</p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-url",
+    "valueUri" : "http://hemonc.org/fhir/Medication/med-example-vepdegestrant"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-version",
+    "valueString" : "2026-03-12"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-name",
+    "valueString" : "Vepdegestrant"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/artifact-publisher",
+    "valueString" : "HemOnc.org"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/medication-type",
+    "valueCodeableConcept" : {
+      "text" : "Investigational medicinal product (IMP)"
+    }
+  },
+  {
+    "extension" : [{
+      "url" : "type",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+          "code" : "moa",
+          "display" : "Mechanism of Action"
+        }],
+        "text" : "HemOnc main class"
+      }
+    },
+    {
+      "url" : "classification",
+      "valueCodeableConcept" : {
+        "text" : "Proteolysis-targeting chimera estrogen receptor degrader"
+      }
+    },
+    {
+      "url" : "source",
+      "valueString" : "HemOncKB drugs.csv main_class, snapshot 2026-03-12"
+    }],
+    "url" : "http://hl7.org/fhir/StructureDefinition/medication-classification"
+  }],
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://hemonc.org/cui",
+    "value" : "161163"
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://hemonc.org/fhir/CodeSystem/hemonc",
+      "version" : "2026-03-12",
+      "code" : "161163",
+      "display" : "Vepdegestrant"
+    },
+    {
+      "system" : "http://fdasis.nlm.nih.gov",
+      "code" : "WC1U3R1YMI",
+      "display" : "VEPDEGESTRANT"
+    },
+    {
+      "system" : "https://spor.ema.europa.eu/v2/substances",
+      "code" : "300000041131",
+      "display" : "Vepdegestrant"
+    }],
+    "text" : "Vepdegestrant"
+  },
+  "status" : "active"
+}

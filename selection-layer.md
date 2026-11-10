@@ -36,7 +36,7 @@ This page specifies the layer that holds those decisions, so that the HemOnc cat
    ├──────────────────────────────────────────────────────────────────┤
    │  L1  HemOnc catalog (variant-exact, no defaults)                 │
    │      PlanDefinition per regimen+variant · ActivityDefinition     │
-   │      per sig · MedicationKnowledge · Library                     │
+   │      per sig · Medication · Library                              │
    ├──────────────────────────────────────────────────────────────────┤
    │  L0  HemOncKB snapshot (CSV / OMOP)                              │
    └──────────────────────────────────────────────────────────────────┘

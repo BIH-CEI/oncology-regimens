@@ -63,7 +63,7 @@
   "library" : ["http://hemonc.org/fhir/Library/HemOncDoseHelpers"],
   "kind" : "MedicationRequest",
   "productReference" : {
-    "reference" : "MedicationKnowledge/hemonc-drug-88-carboplatin"
+    "reference" : "Medication/hemonc-drug-88-carboplatin"
   },
   "dosage" : [{
     "extension" : [{

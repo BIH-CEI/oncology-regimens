@@ -152,6 +152,24 @@
     "http://hemonc.org/fhir/StructureDefinition/regimen-modification": [
       "PlanDefinition"
     ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-name": [
+      "Medication"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-publisher": [
+      "Medication"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-url": [
+      "Medication"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-version": [
+      "Medication"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/medication-classification": [
+      "Medication"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/medication-type": [
+      "Medication"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],

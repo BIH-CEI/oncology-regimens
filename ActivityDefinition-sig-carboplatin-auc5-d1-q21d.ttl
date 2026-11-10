@@ -83,8 +83,8 @@
   ] ;
   fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest"] ;
   fhir:ActivityDefinition.productReference [
-     fhir:link <http://hemonc.org/fhir/MedicationKnowledge/hemonc-drug-88-carboplatin> ;
-     fhir:Reference.reference [ fhir:value "MedicationKnowledge/hemonc-drug-88-carboplatin" ]
+     fhir:link <http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin> ;
+     fhir:Reference.reference [ fhir:value "Medication/hemonc-drug-88-carboplatin" ]
   ] ;
   fhir:ActivityDefinition.dosage [
      fhir:index 0 ;

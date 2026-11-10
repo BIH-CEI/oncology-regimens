@@ -3,14 +3,15 @@
 ## Pages
 
 * [Home](index.md)
-* [Background and Scope](background.md)
-* [Artifacts Summary](artifacts.md)
 * [Phase 0 Spike — Carboplatin + Paclitaxel Variant](phase0.md)
-* [Selection Layer — Formularies and Variant Choice](selection-layer.md)
-* [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
-* [Disclaimers and Intended Use](disclaimers.md)
-* [Cooperation, Attribution and Licensing](cooperation.md)
+* [Background and Scope](background.md)
 * [Versioning Strategy](versioning.md)
+* [Cooperation, Attribution and Licensing](cooperation.md)
+* [FHIR Versions — R4 Baseline, R5 and R6 Adaptations](fhir-versions.md)
+* [Disclaimers and Intended Use](disclaimers.md)
+* [Artifacts Summary](artifacts.md)
+* [PlanDefinition $apply and CDS Hooks](apply-and-cds.md)
+* [Selection Layer — Formularies and Variant Choice](selection-layer.md)
 
 ## Resources
 
@@ -44,10 +45,10 @@
 
 * [HemOnc dose-computation helpers (BSA, Calvert)](Library-HemOncDoseHelpers.md)
 
-### MedicationKnowledges
+### Medications
 
-* [hemonc-drug-379-paclitaxel](MedicationKnowledge-hemonc-drug-379-paclitaxel.md)
-* [hemonc-drug-88-carboplatin](MedicationKnowledge-hemonc-drug-88-carboplatin.md)
+* [hemonc-drug-379-paclitaxel](Medication-hemonc-drug-379-paclitaxel.md)
+* [hemonc-drug-88-carboplatin](Medication-hemonc-drug-88-carboplatin.md)
 
 ### PlanDefinitions
 
@@ -56,5 +57,7 @@
 ### Examples
 
 * [SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6) (ConceptMap)](ConceptMap-srl-to-hemonc-variant.md)
+* [med-example-carboplatin (Medication)](Medication-med-example-carboplatin.md)
+* [med-example-vepdegestrant (Medication)](Medication-med-example-vepdegestrant.md)
 * [NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22) (PlanDefinition)](PlanDefinition-nz-crc-mfolfox6-formulary.md)
 * [CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0) (PlanDefinition)](PlanDefinition-srl-588251000210108-mfolfox6-nobolus.md)

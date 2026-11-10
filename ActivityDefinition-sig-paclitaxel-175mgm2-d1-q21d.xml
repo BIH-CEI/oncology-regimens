@@ -58,7 +58,7 @@
   <library value="http://hemonc.org/fhir/Library/HemOncDoseHelpers"/>
   <kind value="MedicationRequest"/>
   <productReference>
-    <reference value="MedicationKnowledge/hemonc-drug-379-paclitaxel"/>
+    <reference value="Medication/hemonc-drug-379-paclitaxel"/>
   </productReference>
   <dosage>
     <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">

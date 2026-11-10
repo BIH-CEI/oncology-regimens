@@ -68,8 +68,10 @@ These are example instances that show what data produced and consumed by systems
 | | |
 | :--- | :--- |
 | [CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)](PlanDefinition-srl-588251000210108-mfolfox6-nobolus.md) | Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here. |
+| [Carboplatin](Medication-med-example-carboplatin.md) | Kind-of-drug Medication for carboplatin with the full coding stack (HemOnc CUI, RxNorm, UNII, EMA SPOR SMS, ATC-WHO, ATC-DE, ASK) and HemOnc classification. Canonical metadata via artifact-* extensions (R6: native Medication.url/version/name/publisher). |
 | [NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)](PlanDefinition-nz-crc-mfolfox6-formulary.md) | Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively. |
 | [SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)](ConceptMap-srl-to-hemonc-variant.md) | Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content. |
+| [Vepdegestrant](Medication-med-example-vepdegestrant.md) | Kind-of-drug Medication for an investigational substance without ATC, ASK or RxNorm code: HemOnc CUI, UNII and EMA SPOR SMS only. Investigational status via medication-type. |
 
 ### Other 
 
@@ -77,6 +79,6 @@ These are resources that are used within this implementation guide that do not f
 
 | |
 | :--- |
-| [hemonc-drug-379-paclitaxel](MedicationKnowledge-hemonc-drug-379-paclitaxel.md) |
-| [hemonc-drug-88-carboplatin](MedicationKnowledge-hemonc-drug-88-carboplatin.md) |
+| [Carboplatin](Medication-hemonc-drug-88-carboplatin.md) |
+| [Paclitaxel](Medication-hemonc-drug-379-paclitaxel.md) |
 

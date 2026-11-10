@@ -58,7 +58,7 @@
   "library" : ["http://hemonc.org/fhir/Library/HemOncDoseHelpers"],
   "kind" : "MedicationRequest",
   "productReference" : {
-    "reference" : "MedicationKnowledge/hemonc-drug-379-paclitaxel"
+    "reference" : "Medication/hemonc-drug-379-paclitaxel"
   },
   "dosage" : [{
     "extension" : [{

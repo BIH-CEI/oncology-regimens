@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="hemonc-drug-379-paclitaxel"/>
+  <meta>
+    <source value="HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Medication hemonc-drug-379-paclitaxel</b></p><a name="hemonc-drug-379-paclitaxel"> </a><a name="hchemonc-drug-379-paclitaxel"> </a><div style="display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Information Source: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12">HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12</a></p></div><p><b>Artifact URL</b>: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel">http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Paclitaxel</p><p><b>Artifact Publisher</b>: HemOnc.org</p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type pharmacologic}">HemOnc main class</span></li><li>classification: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc Taxane}">Taxane</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/379 (use: official)</p><p><b>code</b>: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 379}, {http://www.nlm.nih.gov/research/umls/rxnorm 56946}, {http://www.whocc.no/atc L01CD01}">Paclitaxel</span></p><p><b>status</b>: Active</p></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-url">
+    <valueUri value="http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-version">
+    <valueString value="2026-03-12"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-name">
+    <valueString value="Paclitaxel"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/artifact-publisher">
+    <valueString value="HemOnc.org"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/medication-classification">
+    <extension url="type">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hl7.org/fhir/CodeSystem/medication-classification-type"/>
+          <code value="pharmacologic"/>
+          <display value="Pharmacologic Class"/>
+        </coding>
+        <text value="HemOnc main class"/>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="classification">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+          <code value="Taxane"/>
+          <display value="Taxane"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="source">
+      <valueString value="HemOncKB drugs.csv main_class, snapshot 2026-03-12"/>
+    </extension>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://hemonc.org/cui"/>
+    <value value="379"/>
+  </identifier>
+  <code>
+    <coding>
+      <system value="http://hemonc.org/fhir/CodeSystem/hemonc"/>
+      <code value="379"/>
+      <display value="Paclitaxel"/>
+    </coding>
+    <coding>
+      <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+      <code value="56946"/>
+      <display value="paclitaxel"/>
+    </coding>
+    <coding>
+      <system value="http://www.whocc.no/atc"/>
+      <code value="L01CD01"/>
+      <display value="paclitaxel"/>
+    </coding>
+    <text value="Paclitaxel"/>
+  </code>
+  <status value="active"/>
+</Medication>

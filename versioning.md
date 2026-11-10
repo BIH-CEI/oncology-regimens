@@ -11,7 +11,7 @@ This IG operates over content that itself has four orthogonal version axes; the 
 
 #### Authoritative version of every artifact
 
-The HemOncKB snapshot date in `YYYY-MM-DD` form (e.g. `2026-03-12`). Every `CodeSystem`, `ValueSet`, `MedicationKnowledge`, `ActivityDefinition`, `PlanDefinition` and `Library` in this IG carries this value as `Resource.version`. A new HemOnc snapshot (quarterly) produces a new version against the same canonical URL.
+The HemOncKB snapshot date in `YYYY-MM-DD` form (e.g. `2026-03-12`). Every `CodeSystem`, `ValueSet`, `ActivityDefinition`, `PlanDefinition` and `Library` in this IG carries this value as `Resource.version`; the catalog `Medication` carries it in the `artifact-version` extension (R4 `Medication` has no `version`; R6 does, see [FHIR Versions](fhir-versions.md)). A new HemOnc snapshot (quarterly) produces a new version against the same canonical URL.
 
 `Resource.date` is set to the same snapshot timestamp.
 

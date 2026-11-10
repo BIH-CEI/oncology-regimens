@@ -63,7 +63,7 @@
   <library value="http://hemonc.org/fhir/Library/HemOncDoseHelpers"/>
   <kind value="MedicationRequest"/>
   <productReference>
-    <reference value="MedicationKnowledge/hemonc-drug-88-carboplatin"/>
+    <reference value="Medication/hemonc-drug-88-carboplatin"/>
   </productReference>
   <dosage>
     <extension url="http://hemonc.org/fhir/StructureDefinition/day-of-cycle">
