@@ -1,0 +1,76 @@
+/// url = 'http://hemonc.org/fhir/StructureMap/Medication6to4'
+/// name = 'ESRCMedication6to4'
+/// title = 'European SACT Regimen Catalog: catalog Medication, R6 to R4'
+/// status = 'draft'
+/// description = 'Inverse of Medication4to6. Native R6 canonical elements become artifact-* extensions in R4. PublicationStatus codes without an R4 counterpart (draft, unknown) are stored as inactive with the original code in a cross-version extension on the primitive; retired is restored to the original R4 code when the 4to6 map recorded one, otherwise inactive. NOT EXECUTED YET - see README.'
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/Medication" alias MedicationR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/Medication" alias MedicationR4 as target
+
+imports "http://hl7.org/fhir/uv/xver/StructureMap/*6to4"
+
+conceptmap "MedicationStatus6to4" {
+  prefix s = "http://hl7.org/fhir/publication-status"
+  prefix t = "http://hl7.org/fhir/CodeSystem/medication-status"
+
+  s:active  - t:active
+  s:retired - t:inactive
+  s:draft   - t:inactive
+  s:unknown - t:inactive
+}
+
+group Medication(source src : MedicationR6, target tgt : MedicationR4) <<type+>> {
+  src.id -> tgt.id;
+  src.meta -> tgt.meta;
+  src.implicitRules -> tgt.implicitRules;
+  src.language -> tgt.language;
+  src.text -> tgt.text;
+  src.contained -> tgt.contained;
+  src.modifierExtension -> tgt.modifierExtension;
+  src.extension as e -> tgt.extension as t then Extension(e, t);
+
+  // Native canonical elements -> artifact-* extensions (R4 pre-adoption form).
+  src.url as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-url', x.value = v "artifactUrl";
+  src.version as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-version', x.value = v "artifactVersion";
+  src.name as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-name', x.value = v "artifactName";
+  src.title as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-title', x.value = v "artifactTitle";
+  src.publisher as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-publisher', x.value = v "artifactPublisher";
+  src.description as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-description', x.value = v "artifactDescription";
+  src.date as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-date', x.value = v "artifactDate";
+  src.jurisdiction as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-jurisdiction', x.value = v "artifactJurisdiction";
+  // versionAlgorithm, experimental, contact, useContext, purpose, copyright,
+  // copyrightLabel: artifact-* extensions exist for all of them; add when used.
+
+  src.identifier -> tgt.identifier;
+  src.code -> tgt.code;
+
+  // status, rule 1: an original R4 code recorded by 4to6 wins.
+  src.status as v where (extension('http://hl7.org/fhir/4.0/StructureDefinition/extension-Medication.status').exists())
+    -> tgt.status = (v.extension('http://hl7.org/fhir/4.0/StructureDefinition/extension-Medication.status').value) "statusRestored";
+  // status, rule 2: otherwise translate; draft and unknown are lossy, so keep the R6 code.
+  src.status as v where (extension('http://hl7.org/fhir/4.0/StructureDefinition/extension-Medication.status').exists().not())
+    -> tgt.status = translate(v, '#MedicationStatus6to4', 'code') as ts then {
+      src.status as w where ($this = 'draft' or $this = 'unknown') -> ts.extension as x,
+        x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Medication.status',
+        x.value = w "keepR6Status";
+    } "statusTranslated";
+
+  src.marketingAuthorizationHolder -> tgt.manufacturer;
+  src.doseForm -> tgt.form;
+  src.ingredient as s -> tgt.ingredient as t then MedicationIngredient(s, t);
+  src.instance as s -> tgt.batch as t then MedicationBatch(s, t);
+  // R6 packageSize, definition, ingredient.role, instance.identifier: no R4
+  // element; not used by this IG. A server would store them as cross-version
+  // extensions (http://hl7.org/fhir/6.0/StructureDefinition/extension-Medication.<path>).
+}
+
+group MedicationIngredient(source src, target tgt) extends BackboneElement {
+  src.item -> tgt.item;
+  src.isActive -> tgt.isActive;
+  src.strength -> tgt.strength;
+}
+
+group MedicationBatch(source src, target tgt) extends BackboneElement {
+  src.lotNumber -> tgt.lotNumber;
+  src.expirationDate -> tgt.expirationDate;
+}
