@@ -49,7 +49,7 @@ The artifacts in this distribution are reference content, not a medical device o
   "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T19:55:45+00:00",
+  "date" : "2026-11-10T21:38:12+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

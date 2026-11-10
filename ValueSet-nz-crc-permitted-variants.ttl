@@ -18,7 +18,7 @@
   fhir:ValueSet.title [ fhir:value "NZ colorectal permitted mFOLFOX6 variants (example)"] ;
   fhir:ValueSet.status [ fhir:value "draft"] ;
   fhir:ValueSet.experimental [ fhir:value "true"^^xsd:boolean] ;
-  fhir:ValueSet.date [ fhir:value "2026-11-10T19:55:45+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.date [ fhir:value "2026-11-10T21:38:12+00:00"^^xsd:dateTime] ;
   fhir:ValueSet.publisher [ fhir:value "European SACT Regimen Catalog Working Group"] ;
   fhir:ValueSet.contact [
      fhir:index 0 ;

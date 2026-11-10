@@ -167,8 +167,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="fhir-versions--r4-baseline-r5-and-r6-adaptations">FHIR Versions — R4 Baseline, R5 and R6 Adaptations</h3>
 
 <p><em>Status: draft starting point for Phase 1A deliverable A.8. Facts checked
-against the FHIR R6 CI build (6.0.0-snapshot1, 2026-11-09) and HL7 JIRA on
-2026-11-10.</em></p>
+against the FHIR R6 CI build (6.0.0-snapshot1, generated 2026-11-09),
+HL7 JIRA and the generated cross-version maps on 2026-11-10.</em></p>
 
 <h4 id="baseline-fhir-r4">Baseline: FHIR R4</h4>
 
@@ -179,22 +179,50 @@ against the FHIR R6 CI build (6.0.0-snapshot1, 2026-11-09) and HL7 JIRA on
   <li>PlanDefinition execution and CDS Hooks run today on HAPI FHIR with
 cqf-fhir on R4; there is no clinical-reasoning implementation for R6.</li>
   <li>R6 is not final. The first normative ballot ran in September 2026;
-publication is announced for the first half of 2027.</li>
+publication is announced for the first half of 2027. Between
+6.0.0-ballot5 and the current build, Medication, Dosage and
+MedicationRequest changed again (see below).</li>
 </ul>
 
-<p>The design rule for every artifact type is therefore: <strong>model in R4 so
-that the R6 migration is a mechanical rename, not a remodelling.</strong> Where
-R4 lacks an element that R6 has, the IG pre-adopts the element through
-the standard extension from <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions</code> (the same URLs exist
-in the R4, R5 and R6 flavours of that package).</p>
+<h4 id="cross-version-strategy-one-source-derived-views">Cross-version strategy: one source, derived views</h4>
+
+<p>The pattern follows the FHIR Camp 2026 experiment described by Health
+Samurai ("One FHIR Store, Two Versions: Serving R4 and R6 with FML",
+2026-11-08): <strong>one stored version, every other version computed by FHIR
+Mapping Language maps, and every write must survive the round trip</strong>
+(R6 → R4 → R6 unchanged). There the store is a server and the maps run
+per request. Here the "store" is this repository and its R4 package, the
+maps run at build time, and the derived R5 and R6 packages are build
+outputs. Rules adopted from that work:</p>
+
+<ol>
+  <li><strong>R4 is authored and validated; R5 and R6 are derived, never edited.</strong>
+A change in modelling is a change in the R4 source plus the map.</li>
+  <li><strong>Every artifact must round-trip R4 → R6 → R4 without loss.</strong> That is
+the acceptance test for the maps (issue oncology-regimens-d0w).</li>
+  <li><strong>Pre-adopt R6 elements in R4 through extensions that exist in every
+version</strong>, preferring the published <code class="language-plaintext highlighter-rouge">artifact-*</code> and <code class="language-plaintext highlighter-rouge">medication-*</code>
+extensions of <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.extensions</code> over the generic
+cross-version URL scheme
+<code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/6.0/StructureDefinition/extension-&lt;path&gt;</code>. The
+generic scheme is used only where no published extension exists
+(lossy code translations, see Medication status below).</li>
+  <li><strong>Maps are the generated cross-version maps where they are correct,
+hand-written where this IG's modelling needs more</strong> (see
+<a href="https://github.com/thome/oncology-regimens/tree/main/maps/xver"><code class="language-plaintext highlighter-rouge">maps/xver/</code></a>
+in the repository). The generated maps are the 164 R4→R6 and 63 R6→R4
+maps from the FHIRPath Lab executor used in that experiment.</li>
+  <li><strong>No map has been executed yet.</strong> The HL7 validator does not run
+cross-version maps; the TypeScript executor has to be wired into CI
+first. Until then this page is the normative description and the maps
+are its machine-readable draft.</li>
+</ol>
 
 <h4 id="r5-with-r4-backport">R5 with R4 backport</h4>
 
-<p>The second rule is "R5 semantics, R4 syntax". Where an R5 element is
-needed in R4, the cross-version extension package
-<code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code> provides it. <strong>Currently no cross-version
-extension is in use</strong>, because none of the R5 changes touches an element
-this IG relies on:</p>
+<p>The rule is "R5 semantics, R4 syntax". Where an R5 element is needed in
+R4, the cross-version extension package <code class="language-plaintext highlighter-rouge">hl7.fhir.uv.xver-r5.r4</code>
+provides it. <strong>Currently no cross-version extension is in use</strong>:</p>
 
 <table>
   <thead>
@@ -217,13 +245,13 @@ this IG relies on:</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">PlanDefinition</code></td>
-      <td>adds <code class="language-plaintext highlighter-rouge">actor</code>, <code class="language-plaintext highlighter-rouge">action.location</code> (CodeableReference), <code class="language-plaintext highlighter-rouge">action.type</code> binding changes</td>
-      <td>No. The regimen, variant, derived-protocol and formulary PlanDefinitions use <code class="language-plaintext highlighter-rouge">action.definitionCanonical</code>, <code class="language-plaintext highlighter-rouge">action.selectionBehavior</code>, <code class="language-plaintext highlighter-rouge">action.timingTiming</code>, <code class="language-plaintext highlighter-rouge">relatedArtifact</code>, <code class="language-plaintext highlighter-rouge">useContext</code>.</td>
+      <td>adds <code class="language-plaintext highlighter-rouge">actor</code>, <code class="language-plaintext highlighter-rouge">action.location</code>, <code class="language-plaintext highlighter-rouge">action.input/output</code> become backbone elements</td>
+      <td>No. This IG uses <code class="language-plaintext highlighter-rouge">action.definitionCanonical</code>, <code class="language-plaintext highlighter-rouge">action.selectionBehavior</code>, <code class="language-plaintext highlighter-rouge">action.timingTiming</code>, <code class="language-plaintext highlighter-rouge">action.relatedAction</code>, <code class="language-plaintext highlighter-rouge">action.code</code> (at most one), <code class="language-plaintext highlighter-rouge">relatedArtifact</code>, <code class="language-plaintext highlighter-rouge">useContext</code>.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ConceptMap</code></td>
-      <td><code class="language-plaintext highlighter-rouge">group.element.target.equivalence</code> → <code class="language-plaintext highlighter-rouge">relationship</code> (new code set)</td>
-      <td>Yes, at publication time: the R4 <code class="language-plaintext highlighter-rouge">equivalence</code> codes map 1:1 to R5 <code class="language-plaintext highlighter-rouge">relationship</code> codes for the values used here (<code class="language-plaintext highlighter-rouge">equivalent</code>, <code class="language-plaintext highlighter-rouge">narrower</code>/<code class="language-plaintext highlighter-rouge">source-is-broader-than-target</code>, <code class="language-plaintext highlighter-rouge">wider</code>/<code class="language-plaintext highlighter-rouge">source-is-narrower-than-target</code>, <code class="language-plaintext highlighter-rouge">unmatched</code>/<code class="language-plaintext highlighter-rouge">not-related-to</code>). Tooling handles this; no extension needed.</td>
+      <td><code class="language-plaintext highlighter-rouge">group.element.target.equivalence</code> → <code class="language-plaintext highlighter-rouge">relationship</code></td>
+      <td>Yes, at publication: the generated map does <strong>not</strong> read <code class="language-plaintext highlighter-rouge">equivalence</code>, so the hand-written map must translate <code class="language-plaintext highlighter-rouge">equivalent</code>, <code class="language-plaintext highlighter-rouge">wider</code>→<code class="language-plaintext highlighter-rouge">source-is-narrower-than-target</code>, <code class="language-plaintext highlighter-rouge">narrower</code>→<code class="language-plaintext highlighter-rouge">source-is-broader-than-target</code>, <code class="language-plaintext highlighter-rouge">unmatched</code>→<code class="language-plaintext highlighter-rouge">not-related-to</code>. No ConceptMap instance exists in the IG yet.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Library</code>, <code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code></td>
@@ -240,47 +268,113 @@ this IG relies on:</p>
     <tr>
       <th>Artifact type</th>
       <th>R4 representation in this IG</th>
-      <th>R6 target</th>
+      <th>R6 target (6.0.0-snapshot1)</th>
+      <th>Map</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Medication</code> (kind of drug, catalog level)</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> with <code class="language-plaintext highlighter-rouge">identifier</code> (HemOnc CUI), <code class="language-plaintext highlighter-rouge">code</code> (coding stack), <code class="language-plaintext highlighter-rouge">status</code>; canonical metadata via <code class="language-plaintext highlighter-rouge">artifact-url</code>, <code class="language-plaintext highlighter-rouge">artifact-version</code>, <code class="language-plaintext highlighter-rouge">artifact-name</code>, <code class="language-plaintext highlighter-rouge">artifact-publisher</code> extensions (<code class="language-plaintext highlighter-rouge">artifact-status</code> is not used: it is a modifier extension and <code class="language-plaintext highlighter-rouge">Medication.status</code> already exists); classes via <code class="language-plaintext highlighter-rouge">medication-classification</code> extension</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication</code> as <strong>canonical resource</strong> (<a href="https://jira.hl7.org/browse/FHIR-57813">FHIR-57813</a>): the four <code class="language-plaintext highlighter-rouge">artifact-*</code> extensions become native <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">version</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">publisher</code>; <code class="language-plaintext highlighter-rouge">status</code> is re-bound to the union of publication and medication status, <code class="language-plaintext highlighter-rouge">active</code> stays valid. <code class="language-plaintext highlighter-rouge">medication-classification</code> becomes native <code class="language-plaintext highlighter-rouge">Medication.classification</code> (<a href="https://jira.hl7.org/browse/FHIR-59521">FHIR-59521</a>, <a href="https://jira.hl7.org/browse/FHIR-59525">FHIR-59525</a>). <code class="language-plaintext highlighter-rouge">identifier</code> and <code class="language-plaintext highlighter-rouge">code</code> unchanged.</td>
+      <td><code class="language-plaintext highlighter-rouge">identifier</code> (HemOnc CUI), <code class="language-plaintext highlighter-rouge">code</code> (coding stack), <code class="language-plaintext highlighter-rouge">status</code>; canonical metadata via <code class="language-plaintext highlighter-rouge">artifact-url</code>, <code class="language-plaintext highlighter-rouge">artifact-version</code>, <code class="language-plaintext highlighter-rouge">artifact-name</code>, <code class="language-plaintext highlighter-rouge">artifact-publisher</code>; classes via <code class="language-plaintext highlighter-rouge">medication-classification</code>; investigational flag via <code class="language-plaintext highlighter-rouge">medication-type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Medication</code> <strong>is a canonical resource</strong> (<a href="https://jira.hl7.org/browse/FHIR-57813">FHIR-57813</a>): the four <code class="language-plaintext highlighter-rouge">artifact-*</code> extensions become native <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">version</code>, <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">publisher</code>. <code class="language-plaintext highlighter-rouge">status</code> is bound to PublicationStatus (<a href="https://jira.hl7.org/browse/FHIR-59543">FHIR-59543</a>): <code class="language-plaintext highlighter-rouge">active</code> unchanged, <code class="language-plaintext highlighter-rouge">inactive</code> and <code class="language-plaintext highlighter-rouge">entered-in-error</code> become <code class="language-plaintext highlighter-rouge">retired</code>. <strong><code class="language-plaintext highlighter-rouge">Medication.classification</code> is not in the build</strong>; <a href="https://jira.hl7.org/browse/FHIR-59521">FHIR-59521</a> is open, so <code class="language-plaintext highlighter-rouge">medication-classification</code> stays an extension.</td>
+      <td>hand-written <code class="language-plaintext highlighter-rouge">Medication_4to6</code> / <code class="language-plaintext highlighter-rouge">_6to4</code> (the generated map was made from ballot5, where Medication had no canonical elements)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">MedicationKnowledge</code></td>
       <td><strong>not used</strong> (removed from this IG 2026-11-10)</td>
-      <td><strong>Removed from the specification</strong> (<a href="https://jira.hl7.org/browse/FHIR-50845">FHIR-50845</a>, Pharmacy WG, Madrid WGM May 2025, vote 12-0-4). Not moved to an incubator. Element mapping published with <a href="https://jira.hl7.org/browse/FHIR-57378">FHIR-57378</a>; see below.</td>
+      <td><strong>Removed from the specification</strong> (<a href="https://jira.hl7.org/browse/FHIR-50845">FHIR-50845</a>, Pharmacy WG, Madrid WGM May 2025, 12-0-4). Not moved to an incubator. Element mapping in <a href="https://jira.hl7.org/browse/FHIR-57378">FHIR-57378</a>; see below.</td>
+      <td>none needed</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">ActivityDefinition</code> (sig)</td>
-      <td><code class="language-plaintext highlighter-rouge">kind = MedicationRequest</code>, <code class="language-plaintext highlighter-rouge">productReference → Medication</code>, <code class="language-plaintext highlighter-rouge">dosage</code>, <code class="language-plaintext highlighter-rouge">dynamicValue</code>, <code class="language-plaintext highlighter-rouge">library</code></td>
-      <td>Unchanged for the elements used. <code class="language-plaintext highlighter-rouge">product</code> cannot reference <code class="language-plaintext highlighter-rouge">MedicationKnowledge</code> in any FHIR version, which is the second reason the catalog drug resource is <code class="language-plaintext highlighter-rouge">Medication</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">kind = MedicationRequest</code>, <code class="language-plaintext highlighter-rouge">productReference → Medication</code>, <code class="language-plaintext highlighter-rouge">dosage</code> 0..* with <code class="language-plaintext highlighter-rouge">sequence</code>, <code class="language-plaintext highlighter-rouge">timing</code>, <code class="language-plaintext highlighter-rouge">route</code>, <code class="language-plaintext highlighter-rouge">doseAndRate</code>; <code class="language-plaintext highlighter-rouge">dynamicValue</code> paths on <code class="language-plaintext highlighter-rouge">MedicationRequest.dosageInstruction[0]...</code></td>
+      <td><strong>Remodelled.</strong> <code class="language-plaintext highlighter-rouge">dosage</code> becomes <code class="language-plaintext highlighter-rouge">dosageInstruction</code> 0..1 of the new type <code class="language-plaintext highlighter-rouge">DosageInstruction</code> (<a href="https://jira.hl7.org/browse/FHIR-53721">FHIR-53721</a>, <a href="https://jira.hl7.org/browse/FHIR-54340">FHIR-54340</a>): <code class="language-plaintext highlighter-rouge">renderedInstruction</code>, <code class="language-plaintext highlighter-rouge">repeatCycle</code> (Duration, <a href="https://jira.hl7.org/browse/FHIR-54252">FHIR-54252</a>), <code class="language-plaintext highlighter-rouge">step[]</code> with <code class="language-plaintext highlighter-rouge">start</code>/<code class="language-plaintext highlighter-rouge">end</code> (RelativeTime), <code class="language-plaintext highlighter-rouge">count</code>, <code class="language-plaintext highlighter-rouge">component</code> (Dosage 1..*), <code class="language-plaintext highlighter-rouge">safety</code>. <code class="language-plaintext highlighter-rouge">Dosage</code> loses <code class="language-plaintext highlighter-rouge">sequence</code> and <code class="language-plaintext highlighter-rouge">maxDose*</code>, gains <code class="language-plaintext highlighter-rouge">condition</code>, <code class="language-plaintext highlighter-rouge">safety</code>, and <code class="language-plaintext highlighter-rouge">doseExpression</code>/<code class="language-plaintext highlighter-rouge">rateExpression</code>. <code class="language-plaintext highlighter-rouge">MedicationRequest.dosageInstruction</code> is 0..1 <code class="language-plaintext highlighter-rouge">DosageInstruction</code> as well, so every <code class="language-plaintext highlighter-rouge">dynamicValue.path</code> changes. <code class="language-plaintext highlighter-rouge">timing[x]</code> drops dateTime and Period (unused here). <code class="language-plaintext highlighter-rouge">product</code> may not reference <code class="language-plaintext highlighter-rouge">Substance</code> (unused).</td>
+      <td>hand-written, <strong>to do</strong> (issue oncology-regimens-u7w). The generated map puts each R4 <code class="language-plaintext highlighter-rouge">Dosage</code> into its own sequential <code class="language-plaintext highlighter-rouge">step</code>, which is wrong for concurrent components sharing one <code class="language-plaintext highlighter-rouge">sequence</code>.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">PlanDefinition</code> (regimen, variant, derived protocol, formulary)</td>
       <td>see <a href="selection-layer.html">Selection Layer</a></td>
-      <td>No removal known. To be re-verified against the R6 build at publication.</td>
+      <td><code class="language-plaintext highlighter-rouge">action.code</code> becomes 0..1 (this IG uses at most one); <code class="language-plaintext highlighter-rouge">action.relatedAction.actionId</code> → <code class="language-plaintext highlighter-rouge">targetId</code>; <code class="language-plaintext highlighter-rouge">action.timing[x]</code> drops dateTime and Period (this IG uses Timing); <code class="language-plaintext highlighter-rouge">action.input/output</code> become backbone elements (unused). No removal.</td>
+      <td>generated map sufficient</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">Library</code> (CQL, FHIRPath)</td>
       <td><code class="language-plaintext highlighter-rouge">type = logic-library</code>, <code class="language-plaintext highlighter-rouge">content</code></td>
-      <td>Unchanged.</td>
+      <td>Unchanged. The CQL itself must be re-checked where it reads <code class="language-plaintext highlighter-rouge">dosageInstruction</code>.</td>
+      <td>generated</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">CodeSystem</code>, <code class="language-plaintext highlighter-rouge">ValueSet</code>, <code class="language-plaintext highlighter-rouge">ConceptMap</code></td>
       <td>HemOnc fragment, sig-target-type, MII bindings</td>
       <td><code class="language-plaintext highlighter-rouge">ConceptMap</code> as in the R5 row. Others unchanged.</td>
+      <td>generated (+ hand-written ConceptMap once one exists)</td>
     </tr>
     <tr>
       <td>Extensions <code class="language-plaintext highlighter-rouge">day-of-cycle</code>, <code class="language-plaintext highlighter-rouge">formulary-rank</code>, <code class="language-plaintext highlighter-rouge">formulary-parameter</code>, <code class="language-plaintext highlighter-rouge">regimen-modification</code></td>
       <td>defined in this IG</td>
-      <td>Unchanged (extension URLs are version-independent).</td>
+      <td>URLs are version-independent. <code class="language-plaintext highlighter-rouge">day-of-cycle</code> is the one whose <strong>meaning</strong> has a native R6 home: <code class="language-plaintext highlighter-rouge">DosageInstruction.step.start</code> as RelativeTime offset from the cycle start.</td>
+      <td>part of the sig map</td>
     </tr>
   </tbody>
 </table>
+
+<h5 id="why-the-r6-dosage-model-matters-for-this-ig">Why the R6 dosage model matters for this IG</h5>
+
+<p>The R6 <code class="language-plaintext highlighter-rouge">DosageInstruction</code> expresses what this IG currently builds from
+R4 <code class="language-plaintext highlighter-rouge">Dosage</code> plus extensions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Regimen concept</th>
+      <th>R4 (this IG)</th>
+      <th>R6 native</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cycle length (q21d)</td>
+      <td><code class="language-plaintext highlighter-rouge">Dosage.timing.repeat.period = 21 d</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DosageInstruction.repeatCycle = 21 d</code></td>
+    </tr>
+    <tr>
+      <td>day of cycle</td>
+      <td>extension <code class="language-plaintext highlighter-rouge">day-of-cycle</code> on <code class="language-plaintext highlighter-rouge">Dosage</code></td>
+      <td><code class="language-plaintext highlighter-rouge">step.start</code> (RelativeTime offset)</td>
+    </tr>
+    <tr>
+      <td>concurrent components of one day</td>
+      <td>several <code class="language-plaintext highlighter-rouge">Dosage</code> with the same <code class="language-plaintext highlighter-rouge">sequence</code></td>
+      <td>several <code class="language-plaintext highlighter-rouge">component</code> in one <code class="language-plaintext highlighter-rouge">step</code></td>
+    </tr>
+    <tr>
+      <td>sequential phases</td>
+      <td><code class="language-plaintext highlighter-rouge">Dosage.sequence</code> 1, 2, … or chained PlanDefinition actions</td>
+      <td><code class="language-plaintext highlighter-rouge">step[]</code> in order, <code class="language-plaintext highlighter-rouge">step.count</code></td>
+    </tr>
+    <tr>
+      <td>dose formula (Calvert, mg/m²)</td>
+      <td><code class="language-plaintext highlighter-rouge">dynamicValue</code> with FHIRPath/CQL on the request</td>
+      <td><code class="language-plaintext highlighter-rouge">doseAndRate.doseExpression</code> (Expression) in the definition itself; <code class="language-plaintext highlighter-rouge">dynamicValue</code> still available</td>
+    </tr>
+    <tr>
+      <td>hold / modify rules</td>
+      <td>out of scope (site policy, future Library)</td>
+      <td><code class="language-plaintext highlighter-rouge">Dosage.condition</code> (DosageCondition), <code class="language-plaintext highlighter-rouge">safety</code> (DosageSafety with dose limits)</td>
+    </tr>
+    <tr>
+      <td>number of cycles (3–6)</td>
+      <td><code class="language-plaintext highlighter-rouge">timing.repeat.boundsRange</code> in cycles</td>
+      <td>not an element: "It does not say how many cycles are taken" (dosage.html). <code class="language-plaintext highlighter-rouge">renderedInstruction</code> or PlanDefinition context. Feedback item.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is the one place where R6 is a remodel rather than a rename. The
+R4 sig profile of this IG will be constrained so that the mapping is
+deterministic (same <code class="language-plaintext highlighter-rouge">sequence</code> = one step; <code class="language-plaintext highlighter-rouge">day-of-cycle</code> = step offset;
+one <code class="language-plaintext highlighter-rouge">period</code> = <code class="language-plaintext highlighter-rouge">repeatCycle</code>), and the R6 shape is reported back to the
+Pharmacy WG with worked oncology examples (issue oncology-regimens-pxp).</p>
 
 <h5 id="medicationknowledge--this-ig">MedicationKnowledge → this IG</h5>
 
@@ -304,7 +398,7 @@ following the Pharmacy WG mapping in FHIR-57378 (Rotterdam WGM, May 2026):</p>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">status</code></td>
       <td><code class="language-plaintext highlighter-rouge">Medication.status</code></td>
-      <td>same</td>
+      <td>PublicationStatus</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">synonym</code> (R4 only)</td>
@@ -314,7 +408,7 @@ following the Pharmacy WG mapping in FHIR-57378 (Rotterdam WGM, May 2026):</p>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">medicineClassification</code></td>
       <td>extension <code class="language-plaintext highlighter-rouge">medication-classification</code> (<code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">classification</code>, <code class="language-plaintext highlighter-rouge">source</code>)</td>
-      <td><code class="language-plaintext highlighter-rouge">Medication.classification</code></td>
+      <td>same extension until FHIR-59521 lands as <code class="language-plaintext highlighter-rouge">Medication.classification</code></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">productType</code> (e.g. investigational)</td>
@@ -410,6 +504,11 @@ representation <code class="language-plaintext highlighter-rouge">$apply</code> 
       <td>Protocol formularies stay <code class="language-plaintext highlighter-rouge">PlanDefinition</code>; <code class="language-plaintext highlighter-rouge">FormularyItem</code> is the R6 target for drug- and sig-level program constraints only</td>
       <td>phx-incubator FormularyItem 0.1.0</td>
     </tr>
+    <tr>
+      <td>2026-11-10</td>
+      <td>One R4 source, derived R5/R6 views by FML maps at build time, round-trip as acceptance test; generated maps where correct, hand-written for Medication (canonical elements) and the sig (DosageInstruction)</td>
+      <td>Health Samurai FHIR Camp 2026 write-up; generated maps from ballot5; R6 snapshot1</td>
+    </tr>
   </tbody>
 </table>
 
@@ -432,7 +531,7 @@ representation <code class="language-plaintext highlighter-rouge">$apply</code> 
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 10, 2026 19:55+0000">2026-11-10</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 10, 2026 21:38+0000">2026-11-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

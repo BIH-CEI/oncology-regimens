@@ -32,7 +32,7 @@ Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc v
   "title" : "Regimen Modification Kind",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T19:55:45+00:00",
+  "date" : "2026-11-10T21:38:12+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

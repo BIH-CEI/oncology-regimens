@@ -16,7 +16,7 @@
  
 Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively. 
 
-**Exception parsing generated Narrative (see /tmp/liquid-4707fb9d-291d-4e70-b823-7486eea9ba6e.html): unexpected non-end of element null::a at line 176 column 50**
+**Exception parsing generated Narrative (see /tmp/liquid-e32eeb24-01dd-4b21-ae09-1be0a4086f76.html): unexpected non-end of element null::a at line 176 column 50**
 
 
 

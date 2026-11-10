@@ -11,7 +11,7 @@
   fhir:Resource.id [ fhir:value "nz-crc-mfolfox6-formulary"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-4707fb9d-291d-4e70-b823-7486eea9ba6e.html): unexpected non-end of element null::a  at line 176 column 50</b></p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b style=\"color: maroon\">Exception parsing generated Narrative (see /tmp/liquid-e32eeb24-01dd-4b21-ae09-1be0a4086f76.html): unexpected non-end of element null::a  at line 176 column 50</b></p></div>"
   ] ;
   fhir:PlanDefinition.url [ fhir:value "http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary"] ;
   fhir:PlanDefinition.identifier [

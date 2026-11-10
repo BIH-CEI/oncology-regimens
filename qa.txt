@@ -3,7 +3,7 @@ EuropeanSACTRegimenCatalog : Validation Results
 
 err = 18, warn = 71, info = 52, broken links = 0
 IG Publisher Version: 3.0.2 Out of date - current version is 3.0.3
-Generated Tue Nov 10 19:56:53 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
+Generated Tue Nov 10 21:39:14 UTC 2026. FHIR version 4.0.1 for hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 (canonical = http://hemonc.org/fhir)
  Build Errors : 1 / 14 / 1
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/CodeSystem-regimen-modification-kind : 0 / 1 / 2
  /home/runner/work/oncology-regimens/oncology-regimens/fsh-generated/resources/ConceptMap-srl-to-hemonc-variant : 1 / 3 / 2
