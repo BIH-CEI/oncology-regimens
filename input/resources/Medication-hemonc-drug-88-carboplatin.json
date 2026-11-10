@@ -1,0 +1,60 @@
+{
+  "resourceType": "Medication",
+  "id": "hemonc-drug-88-carboplatin",
+  "meta": {
+    "source": "HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12"
+  },
+  "extension": [
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-url",
+      "valueUri": "http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-version",
+      "valueString": "2026-03-12" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-name",
+      "valueString": "Carboplatin" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-publisher",
+      "valueString": "HemOnc.org" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/medication-classification",
+      "extension": [
+        { "url": "type",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+                         "code": "pharmacologic", "display": "Pharmacologic Class" }],
+            "text": "HemOnc main class" } },
+        { "url": "classification",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hemonc.org/fhir/CodeSystem/hemonc",
+                         "code": "PlatinumAgent", "display": "Platinum agent" }] } },
+        { "url": "source", "valueString": "HemOncKB drugs.csv main_class, snapshot 2026-03-12" }
+      ] },
+    { "url": "http://hl7.org/fhir/StructureDefinition/medication-classification",
+      "extension": [
+        { "url": "type",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+                         "code": "moa", "display": "Mechanism of Action" }],
+            "text": "CanMED major class" } },
+        { "url": "classification",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hemonc.org/fhir/CodeSystem/hemonc",
+                         "code": "AlkylatingAgent", "display": "Alkylating agent" }] } },
+        { "url": "source", "valueString": "HemOncKB drugs.csv CanMED_major_class, snapshot 2026-03-12" }
+      ] }
+  ],
+  "identifier": [
+    { "use": "official",
+      "system": "http://hemonc.org/cui",
+      "value": "88" }
+  ],
+  "code": {
+    "coding": [
+      { "system": "http://hemonc.org/fhir/CodeSystem/hemonc",
+        "code": "88", "display": "Carboplatin" },
+      { "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "40048", "display": "carboplatin" },
+      { "system": "http://www.whocc.no/atc",
+        "code": "L01XA02", "display": "carboplatin" }
+    ],
+    "text": "Carboplatin"
+  },
+  "status": "active"
+}

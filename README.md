@@ -2,7 +2,7 @@
 
 A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy
 (SACT) regimens as executable knowledge artifacts (`PlanDefinition`,
-`ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`,
+`ActivityDefinition`, `Medication`, `Library`, `CodeSystem`,
 `ConceptMap`). Catalog-layer companion to the
 [HL7 Europe PHOENIX Cancer Common Model](https://build.fhir.org/ig/hl7-eu/cancer-common/)
 and the

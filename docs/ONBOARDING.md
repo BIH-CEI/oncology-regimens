@@ -36,7 +36,7 @@ Artefakte**. Das Drei-Ebenen-Modell:
    │  Katalog-Ebene  ← DIESES PROJEKT              │  ← was zu geben ist
    │   PlanDefinition (Regimen + Variante)         │
    │   ActivityDefinition (einzelne "sig")         │
-   │   MedicationKnowledge (Wirkstoff + Klasse)    │
+   │   Medication (Wirkstoff + Klasse)             │
    │   Library (BSA-, Calvert-Dosisformeln, CQL)   │
    └───────────────────▲──────────────────────────┘
                        │ abgeleitet aus
@@ -70,7 +70,7 @@ kann später ebenso an HL7-EU PHOENIX/ECCM oder andere Länder-Bindungen andocke
 | **HemOnc Dataverse** (Datendownload) | https://dataverse.harvard.edu/dataverse/hemonc | Quelle der `hemonckb-raw/`-Snapshots |
 | **HemOnc-Publikation** (Warner et al. 2019) | https://pubmed.ncbi.nlm.nih.gov/31238109/ | Zitier- & Lizenzgrundlage (CC BY 4.0) |
 | **OHDSI / OMOP Oncology** | https://www.ohdsi.org/ | HemOnc ist OMOP-kanonisch; Identitätsparität OMOP↔FHIR |
-| **RxNorm** | https://www.nlm.nih.gov/research/umls/rxnorm/ | Wirkstoff-Coding in `MedicationKnowledge` |
+| **RxNorm** | https://www.nlm.nih.gov/research/umls/rxnorm/ | Wirkstoff-Coding in `Medication` |
 | **ATC/WHO** | https://atcddd.fhi.no/atc_ddd_index/ | Wirkstoffklassifikation |
 | **SNOMED CT** | https://www.snomed.org/ | Bedingungen/Wirkstoffe |
 | **NCIt** | https://ncithesaurus.nci.nih.gov/ | Bedingungs-Mapping |
@@ -164,8 +164,8 @@ Alle CSVs sind ein **HemOnc-Dataverse-Snapshot vom 12.03.2026** (Concept-Relatio
 | `Tables/regimens.csv` | ~2 795 | `regimen_name, regimen_cui, regimen_type, sact, sact_modalities, components, studies, highest_evidence, first_studied, last_published, variant.count` | **Zentraler Regimen-Katalog.** Basis fürs MII↔HemOnc-Matching und die `PlanDefinition`-Identität. `highest_evidence` + `last_published` steuern den Phase-1A-Filter. |
 | `Tables/variants.csv` | ~27 400 | `regimen_cui, variant, variant_cui, portions, components, timings, branches, sigs, routes, allSIGsHave*`-Flags | **Regimen-Varianten** (studienspezifische Dosierschemata). `variant_cui` verankert die `PlanDefinition`. Die `allSIGsHave*`-Flags zeigen Datenvollständigkeit (Dose/Unit/Route/Schedule …). |
 | `Tables/sigs.csv` | ~24 555 | `regimen_cui, variant_cui, component, component_cui, component_role, cycle_length_lb/ub/unit, timing_sequence, timing, branch, step_number` | **Atomare Dosieranweisungen** („gib Wirkstoff X in Dosis Y an Schema Z"). Quelle für die `ActivityDefinition`s. `component_role` unterscheidet Primär- von Begleit-/Prämedikation. |
-| `Tables/drugs.csv` | ~874 | `drug, drug_CUI, drug_INN, atc, investigational, multiagent, main_class, class_type, CanMED_major_class(_CUI), CanMED_minor_class(_CUI)` | **Wirkstoff-Wörterbuch** → `MedicationKnowledge`. Enthält **ATC** + INN + Klassenzuordnung. |
-| `Mapping/rxnorm_map.csv` | ~902 | `parent, code, hemonc_preferred_rxnorm, rxnorm_type, IN_rxnorm, …` | HemOnc-Drug → **RxNorm**-Mapping für `MedicationKnowledge.code`. |
+| `Tables/drugs.csv` | ~874 | `drug, drug_CUI, drug_INN, atc, investigational, multiagent, main_class, class_type, CanMED_major_class(_CUI), CanMED_minor_class(_CUI)` | **Wirkstoff-Wörterbuch** → `Medication`. Enthält **ATC** + INN + Klassenzuordnung. |
+| `Mapping/rxnorm_map.csv` | ~902 | `parent, code, hemonc_preferred_rxnorm, rxnorm_type, IN_rxnorm, …` | HemOnc-Drug → **RxNorm**-Mapping für `Medication.code`. |
 | `Tables/conditions.csv` | ~319 | `condition, condition_cui, map_NCIT, map_SNOMED, map_OncoTree, map_ICD10CM, map_ICDO3 …` | Indikations-/Diagnose-Konzepte mit Mappings (NCIt, SNOMED, ICD-10, ICD-O-3). |
 | `Tables/indications.csv` | ~3 550 | `component, component_cui, regulator, date, condition, accelerated, withdrawn, prior_therapy, …` | Regulatorische Zulassungs-Indikationen (FDA/EMA), inkl. Vortherapie-Kriterien. |
 | `Tables/variant_eligibility.csv` | ~635 | `regimen_cui, variant_cui, string, type, logic, unit, logic_count` | Einschluss-/Ausschluss-Kriterien pro Variante (für Studien-Matching/CDS). |
@@ -196,7 +196,7 @@ Pro Regimen-Variante entsteht ein kleiner Satz zusammenhängender Ressourcen:
 |---|---|---|---|
 | `PlanDefinition` | Regimen-Variante | `variants.csv` + `sigs.csv` | Der ausführbare Protokoll-Baum (Zyklen, Aktionen, Timing). Identität = Regimen-CUI + Varianten-CUI. |
 | `ActivityDefinition` | „sig" (Einzelgabe) | `sigs.csv` | „Gib Wirkstoff X, Dosis Y (z. B. 175 mg/m²), Route, Schema". |
-| `MedicationKnowledge` | Wirkstoff | `drugs.csv` + `rxnorm_map.csv` | Wirkstoff mit ATC + RxNorm + HemOnc-CUI-Codings, Klassenzuordnung. |
+| `Medication` (Katalog-Ebene, kind of drug) | Wirkstoff | `drugs.csv` + `rxnorm_map.csv` | Wirkstoff mit ATC + RxNorm + HemOnc-CUI-Codings, Klassenzuordnung. |
 | `Library` | Katalog (wenige) | `phase0/cql/` | CQL/FHIRPath-Dosisformeln: BSA (Mosteller/Du Bois/Haycock), Cockcroft-Gault-GFR, Calvert. |
 | `CodeSystem` / `ValueSet` | Katalog | `concept_stage.csv` | HemOnc-Konzept-Fragment + kleines `sig-target-type`-Vokabular. |
 | `ConceptMap` | Bridge | Matching-Ergebnis | `mii-onko-protokoll-to-hemonc` (MII-Code → HemOnc-CUI), `status=draft, experimental=true`. |
@@ -239,7 +239,7 @@ MII-Onkologie-Protokollcodes und HemOnc**.
    Für jeden **gematchten** Protokollcode:
    - 1 `PlanDefinition` (Regimen + empfohlene Variante),
    - je `ActivityDefinition` pro sig,
-   - `MedicationKnowledge` pro beteiligtem Wirkstoff.
+   - `Medication` pro beteiligtem Wirkstoff (nicht MedicationKnowledge: in R6 entfernt, siehe IG-Seite "FHIR Versions").
    Für **ungematchte** Codes: Stub-`PlanDefinition` mit `status=draft`.
 
 3. **Bridge-ConceptMap** *(bd: `interop-prototypes-lzf`)*
@@ -255,7 +255,7 @@ MII-Onkologie-Protokollcodes und HemOnc**.
 ### 6.3 Definition of Done (Phase 1A)
 - [ ] `matches.csv` / `ambiguous.csv` / `unmatched.csv` liegen versioniert im Repo.
 - [ ] Für alle Matches existieren valide `PlanDefinition` + `ActivityDefinition` +
-      `MedicationKnowledge` (R4-validator-clean).
+      `Medication` (R4-validator-clean).
 - [ ] `mii-onko-protokoll-to-hemonc` ConceptMap generiert (draft/experimental).
 - [ ] IG baut ohne Fehler; mindestens ein neues Regimen läuft via `$apply` durch.
 - [ ] Jede `PlanDefinition` trägt `relatedArtifact[derived-from]` auf die HemOnc-Quellzeile.
@@ -279,7 +279,7 @@ MII-Onkologie-Protokollcodes und HemOnc**.
 http://hemonc.org/fhir/<ResourceType>/<stable-id>
 ```
 - `CodeSystem/hemonc`, `CodeSystem/sig-target-type`
-- `MedicationKnowledge/hemonc-drug-<CUI>-<inn>`
+- `Medication/hemonc-drug-<CUI>-<inn>`
 - `ActivityDefinition/sig-<component>-<dose>-<schedule>`
 - `PlanDefinition/regimen-<regimen_cui>-variant-<variant_cui>`
 - `Library/hemonc-dose-helpers`

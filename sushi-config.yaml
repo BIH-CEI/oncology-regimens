@@ -25,6 +25,7 @@ publisher:
 
 dependencies:
   de.medizininformatikinitiative.kerndatensatz.onkologie: 2026.0.3
+  hl7.fhir.uv.extensions.r4: 5.4.0
 
 parameters:
   show-inherited-invariants: false
@@ -43,6 +44,8 @@ pages:
     title: Disclaimers and Intended Use
   versioning.md:
     title: Versioning Strategy
+  fhir-versions.md:
+    title: FHIR Versions — R4 Baseline, R5 and R6 Adaptations
   apply-and-cds.md:
     title: PlanDefinition $apply and CDS Hooks
   selection-layer.md:
@@ -56,6 +59,7 @@ menu:
   Cooperation: cooperation.html
   Disclaimers: disclaimers.html
   Versioning: versioning.html
+  FHIR Versions: fhir-versions.html
   "$apply and CDS Hooks": apply-and-cds.html
   Selection Layer: selection-layer.html
   Phase 0 Spike: phase0.html

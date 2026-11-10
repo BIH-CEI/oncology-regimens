@@ -38,7 +38,7 @@ This IG fills the gap at the catalog layer.
    │  Catalog (this IG)                      │ ← what to give
    │   PlanDefinition (regimen + variant)    │
    │   ActivityDefinition (sig)              │
-   │   MedicationKnowledge (drug + class)    │
+   │   Medication (drug + class)             │
    │   Library (BSA, Calvert, …)             │
    └─────────────────────────────────────────┘
                     ▲
@@ -54,7 +54,7 @@ This IG fills the gap at the catalog layer.
 
 - FHIR R4 `CodeSystem`, `ValueSet`, `ConceptMap` for HemOnc concepts
   and the small `sig-target-type` vocabulary.
-- `MedicationKnowledge` per HemOnc drug, with ATC / RxNorm / HemOnc
+- `Medication` (kind of drug, catalog level) per HemOnc drug, with ATC / RxNorm / HemOnc
   CUI codings.
 - `PlanDefinition` per HemOnc regimen variant, identified by HemOnc
   regimen + variant CUIs (stable, sharp), with experimental MII

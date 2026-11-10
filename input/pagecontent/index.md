@@ -2,7 +2,7 @@
 
 A FHIR R4 Implementation Guide that represents systemic anti-cancer therapy
 (SACT) regimens as executable knowledge artifacts (`PlanDefinition`,
-`ActivityDefinition`, `MedicationKnowledge`, `Library`, `CodeSystem`,
+`ActivityDefinition`, `Medication`, `Library`, `CodeSystem`,
 `ConceptMap`). The [HemOnc Knowledge Base](https://hemonc.org) is the first
 content source; which further knowledge bases populate the catalog is a
 later decision.

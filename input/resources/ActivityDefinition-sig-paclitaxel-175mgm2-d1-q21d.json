@@ -35,7 +35,7 @@
   "library": [
     "http://hemonc.org/fhir/Library/HemOncDoseHelpers"
   ],
-  "productReference": { "reference": "MedicationKnowledge/hemonc-drug-379-paclitaxel" },
+  "productReference": { "reference": "Medication/hemonc-drug-379-paclitaxel" },
   "dosage": [
     { "sequence": 1,
       "text": "Paclitaxel 175 mg/m² IV over 3 hours on day 1 of a 21-day cycle",

@@ -1,0 +1,47 @@
+{
+  "resourceType": "Medication",
+  "id": "hemonc-drug-379-paclitaxel",
+  "meta": {
+    "source": "HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12"
+  },
+  "extension": [
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-url",
+      "valueUri": "http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-version",
+      "valueString": "2026-03-12" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-name",
+      "valueString": "Paclitaxel" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/artifact-publisher",
+      "valueString": "HemOnc.org" },
+    { "url": "http://hl7.org/fhir/StructureDefinition/medication-classification",
+      "extension": [
+        { "url": "type",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+                         "code": "pharmacologic", "display": "Pharmacologic Class" }],
+            "text": "HemOnc main class" } },
+        { "url": "classification",
+          "valueCodeableConcept": {
+            "coding": [{ "system": "http://hemonc.org/fhir/CodeSystem/hemonc",
+                         "code": "Taxane", "display": "Taxane" }] } },
+        { "url": "source", "valueString": "HemOncKB drugs.csv main_class, snapshot 2026-03-12" }
+      ] }
+  ],
+  "identifier": [
+    { "use": "official",
+      "system": "http://hemonc.org/cui",
+      "value": "379" }
+  ],
+  "code": {
+    "coding": [
+      { "system": "http://hemonc.org/fhir/CodeSystem/hemonc",
+        "code": "379", "display": "Paclitaxel" },
+      { "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "56946", "display": "paclitaxel" },
+      { "system": "http://www.whocc.no/atc",
+        "code": "L01CD01", "display": "paclitaxel" }
+    ],
+    "text": "Paclitaxel"
+  },
+  "status": "active"
+}

@@ -11,7 +11,7 @@ Reasoning instance.
   AUC 5 + Paclitaxel 175 mg/m², IV day 1 of a 21-day cycle, for 3–6
   cycles.
 - All seven FHIR artifacts: `CodeSystem` (HemOnc fragment), `CodeSystem`
-  (sig-target-type), two `MedicationKnowledge`, two `ActivityDefinition`
+  (sig-target-type), two `Medication`, two `ActivityDefinition`
   (one per sig), one `Library` (BSA + Calvert helpers), one
   `PlanDefinition` (the variant with its cycle action).
 - A demo Patient + height + weight + creatinine Observation Bundle.
@@ -29,7 +29,7 @@ Reasoning instance.
    both the computed mg dose and the provenance code identifying
    the target paradigm (AUC for carboplatin, mg/m² for paclitaxel).
 3. The `MedicationRequest.medicationReference` points at the IG's
-   `MedicationKnowledge`, which carries ATC + RxNorm + HemOnc CUI
+   catalog `Medication`, which carries ATC + RxNorm + HemOnc CUI
    for downstream RxNorm-anchored systems.
 4. `instantiatesCanonical` on every emitted `MedicationRequest`
    resolves to the catalog `ActivityDefinition`, preserving full
