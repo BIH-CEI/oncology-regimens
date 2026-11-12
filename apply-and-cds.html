@@ -192,13 +192,18 @@ IG's catalog and ordering responsibility.</p>
 
 <h4 id="dose-computation">Dose computation</h4>
 
-<p>Per-patient dose computation lives in <code class="language-plaintext highlighter-rouge">Library/HemOncDoseHelpers</code> (CQL)
-and in <code class="language-plaintext highlighter-rouge">ActivityDefinition.dynamicValue</code> (FHIRPath, where the CQL engine
-hits known cqf-fhir limitations as of 8.4.0). The library exposes
-parameterized BSA (Mosteller / Du Bois / Haycock), Cockcroft-Gault GFR,
-and Calvert helpers. Institution policy (which BSA formula, BSA cap,
-GFR formula, GFR cap, target AUC) is supplied at <code class="language-plaintext highlighter-rouge">$apply</code> time via the
-nested <code class="language-plaintext highlighter-rouge">parameters</code> Parameters resource.</p>
+<p>Per-patient dose computation is split between <code class="language-plaintext highlighter-rouge">Library/HemOncDoseHelpers</code>
+(CQL: the provenance codes) and <code class="language-plaintext highlighter-rouge">ActivityDefinition.dynamicValue</code>
+(FHIRPath: the dose magnitude). In Phase 0 the magnitudes are constants
+(GFR 100 mL/min, BSA 1.85 m²); the Library declares the parameters
+(BSA formula and cap, GFR formula and cap, target AUC, mg/m² dose) that
+institution policy will supply at <code class="language-plaintext highlighter-rouge">$apply</code> time through the nested
+<code class="language-plaintext highlighter-rouge">parameters</code> Parameters resource, but does not read them yet. The split
+was a work-around for a cqf-fhir 8.4.0 bug that is gone in HAPI 8.12.0,
+so the computation can move into the Library; the <code class="language-plaintext highlighter-rouge">$apply</code> scenarios in
+<code class="language-plaintext highlighter-rouge">tests/apply/</code> (Cockcroft-Gault from creatinine, GFR cap, Mosteller BSA,
+missing or stale inputs, parameter override) are its specification and
+run as expected failures until then.</p>
 
 <h4 id="input-modes-which-patient-data-which-parameters">Input modes (which patient data, which parameters)</h4>
 
@@ -230,6 +235,16 @@ every PlanDefinition carrying an <code class="language-plaintext highlighter-rou
 with a CDS Hook id (e.g. <code class="language-plaintext highlighter-rouge">order-sign</code>). The same artifacts work in
 both delivery modes.</p>
 
+<h4 id="testing-apply">Testing <code class="language-plaintext highlighter-rouge">$apply</code></h4>
+
+<p><code class="language-plaintext highlighter-rouge">tests/apply/</code> holds executable scenarios: patient fixtures, the
+PlanDefinition, optional parameters and FHIRPath assertions over the
+returned CarePlan. <code class="language-plaintext highlighter-rouge">scripts/apply/apply_tests.py</code> runs them against
+HAPI FHIR 8.12.0 with Clinical Reasoning, locally through
+<code class="language-plaintext highlighter-rouge">phase0/docker-compose.yml</code> and in CI. Scenarios marked as expected
+failures specify open work and fail the build when they start passing,
+so that the marker is removed together with the issue.</p>
+
 
 
 
@@ -249,7 +264,7 @@ both delivery modes.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2026 17:59+0000">2026-11-12</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2026 18:44+0000">2026-11-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

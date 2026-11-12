@@ -8,8 +8,8 @@
     "description" : "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase.",
     "uses" : {
     },
-    "ValueSet-nz-crc-permitted-variants.html" : "NZ colorectal permitted mFOLFOX6 variants (example)",
-    "ConceptMap-srl-to-hemonc-variant.html" : "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)"
+    "ConceptMap-srl-to-hemonc-variant.html" : "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)",
+    "ValueSet-nz-crc-permitted-variants.html" : "NZ colorectal permitted mFOLFOX6 variants (example)"
   },
   {
     "url" : "http://hemonc.org/fhir/CodeSystem/regimen-modification-kind",

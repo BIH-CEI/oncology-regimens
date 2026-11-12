@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-regimen-modification
   "title" : "Regimen Modification",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-12T17:59:01+00:00",
+  "date" : "2026-11-12T18:44:05+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

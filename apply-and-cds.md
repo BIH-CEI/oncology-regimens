@@ -28,7 +28,7 @@ MedicationAdministration (instance: actually given)
 
 #### Dose computation
 
-Per-patient dose computation lives in `Library/HemOncDoseHelpers` (CQL) and in `ActivityDefinition.dynamicValue` (FHIRPath, where the CQL engine hits known cqf-fhir limitations as of 8.4.0). The library exposes parameterized BSA (Mosteller / Du Bois / Haycock), Cockcroft-Gault GFR, and Calvert helpers. Institution policy (which BSA formula, BSA cap, GFR formula, GFR cap, target AUC) is supplied at `$apply` time via the nested `parameters` Parameters resource.
+Per-patient dose computation is split between `Library/HemOncDoseHelpers` (CQL: the provenance codes) and `ActivityDefinition.dynamicValue` (FHIRPath: the dose magnitude). In Phase 0 the magnitudes are constants (GFR 100 mL/min, BSA 1.85 m²); the Library declares the parameters (BSA formula and cap, GFR formula and cap, target AUC, mg/m² dose) that institution policy will supply at `$apply` time through the nested `parameters` Parameters resource, but does not read them yet. The split was a work-around for a cqf-fhir 8.4.0 bug that is gone in HAPI 8.12.0, so the computation can move into the Library; the `$apply` scenarios in `tests/apply/` (Cockcroft-Gault from creatinine, GFR cap, Mosteller BSA, missing or stale inputs, parameter override) are its specification and run as expected failures until then.
 
 #### Input modes (which patient data, which parameters)
 
@@ -44,4 +44,8 @@ Four mechanisms compose freely:
 A CDS service consumes an `order-sign` hook from the EHR, invokes `PlanDefinition/$apply` internally, and returns a card containing a transaction `Bundle` of CarePlan + RequestGroup + MedicationRequests as `suggestions[0].actions[0].resource`. The clinician accepts; the EHR creates the orders.
 
 HAPI's cqf-fhir exposes a `$cds-services` endpoint automatically for every PlanDefinition carrying an `action.trigger.type = named-event` with a CDS Hook id (e.g. `order-sign`). The same artifacts work in both delivery modes.
+
+#### Testing $apply
+
+`tests/apply/` holds executable scenarios: patient fixtures, the PlanDefinition, optional parameters and FHIRPath assertions over the returned CarePlan. `scripts/apply/apply_tests.py` runs them against HAPI FHIR 8.12.0 with Clinical Reasoning, locally through `phase0/docker-compose.yml` and in CI. Scenarios marked as expected failures specify open work and fail the build when they start passing, so that the marker is removed together with the issue.
 

@@ -210,10 +210,12 @@ knowledge-to-instance provenance.</li>
 <ul>
   <li>Dose computation is split between a CQL <code class="language-plaintext highlighter-rouge">Library</code> (the <code class="language-plaintext highlighter-rouge">type</code>
 CodeableConcepts) and FHIRPath in <code class="language-plaintext highlighter-rouge">ActivityDefinition.dynamicValue</code>
-(the <code class="language-plaintext highlighter-rouge">doseQuantity.value</code>). The CQL <code class="language-plaintext highlighter-rouge">System.Quantity</code> literal hits
-a coercion bug in cqf-fhir 8.4.0 when assigned to <code class="language-plaintext highlighter-rouge">Dosage.doseAndRate
-.doseQuantity</code>; the FHIRPath sub-field assignment works around it.
-Tracked for re-migration once the upstream fix lands.</li>
+(the <code class="language-plaintext highlighter-rouge">doseQuantity.value</code>), and the magnitudes are Phase 0 constants
+(GFR 100 mL/min, BSA 1.85 m²). The split was forced by a coercion bug
+in cqf-fhir 8.4.0 when a CQL <code class="language-plaintext highlighter-rouge">System.Quantity</code> is assigned to
+<code class="language-plaintext highlighter-rouge">Dosage.doseAndRate.doseQuantity</code>; with HAPI 8.12.0 that assignment
+works (scenario <code class="language-plaintext highlighter-rouge">cql-quantity-dynamicvalue</code>), so the next step is
+patient-derived GFR and BSA in the Library (issue oncology-regimens-m75).</li>
   <li>Cycle expansion (emitting per-cycle RequestGroups with calendar
 offsets) is not yet wired; the spike emits one MedicationRequest
 per sig, with the cycle structure declared in <code class="language-plaintext highlighter-rouge">PlanDefinition.action
@@ -227,7 +229,11 @@ PlanDefinition layer in subsequent phases.</li>
 
 <p>The full reproduction recipe lives in <code class="language-plaintext highlighter-rouge">phase0/README.md</code> in the
 project repository, including the Docker Compose definition for
-HAPI + cqf-fhir and the <code class="language-plaintext highlighter-rouge">load-and-apply.sh</code> script. See the
+HAPI + cqf-fhir and the <code class="language-plaintext highlighter-rouge">load-and-apply.sh</code> script. The validated
+outcomes above are executable: <code class="language-plaintext highlighter-rouge">tests/apply/</code> holds sixteen <code class="language-plaintext highlighter-rouge">$apply</code>
+scenarios (patient fixtures, parameters, FHIRPath assertions) run by
+<code class="language-plaintext highlighter-rouge">scripts/apply/apply_tests.py</code> in CI; seven pass today, the rest are
+expected failures that specify the next steps. See the
 <a href="disclaimers.html">Disclaimers page</a> — this is sandbox software,
 not for clinical use.</p>
 
@@ -250,7 +256,7 @@ not for clinical use.</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2026 17:59+0000">2026-11-12</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 12, 2026 18:44+0000">2026-11-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
