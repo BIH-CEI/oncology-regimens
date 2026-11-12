@@ -161,7 +161,7 @@ def collect_sources(all_, only):
         for f in sorted(gen.glob("*.json")):
             if f.name.startswith(("ImplementationGuide-", "StructureDefinition-")):
                 continue
-            if f.name.startswith("PlanDefinition-") and not all_:
+            if f.name.startswith("PlanDefinition-") and not all_ and not only:
                 seen_plan += 1
                 if seen_plan > 2:
                     continue

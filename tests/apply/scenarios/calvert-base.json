@@ -1,0 +1,70 @@
+{
+  "title": "Carboplatin AUC 5: Calvert dose and provenance",
+  "description": "Demo patient (female, 58 y, 168 cm, 72 kg, creatinine 0.9 mg/dL). Phase 0 computes 5 x (100 + 25) = 625 mg with a fixed GFR; the provenance code, the catalog references and the cycle timing must be carried into the MedicationRequest.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "resourceType",
+        "equals": "CarePlan"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').count()",
+        "equals": 1
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "equals": 625
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.code",
+        "equals": "mg"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].type.coding.where(system = 'http://hemonc.org/fhir/CodeSystem/sig-target-type').code",
+        "equals": "computed-from-target-AUC"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').instantiatesCanonical",
+        "equals": "http://hemonc.org/fhir/ActivityDefinition/sig-carboplatin-auc5-d1-q21d|2026-03-12"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].timing.repeat.period",
+        "equals": 21
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].timing.repeat.periodUnit",
+        "equals": "d"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].timing.repeat.boundsRange.low.value",
+        "equals": 3
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].timing.repeat.boundsRange.high.value",
+        "equals": 6
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].extension('http://hemonc.org/fhir/StructureDefinition/day-of-cycle').value",
+        "equals": 1
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').subject.reference",
+        "equals": "Patient/demo-cp-1"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').status",
+        "equals": "active"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').intent",
+        "equals": "order"
+      }
+    ]
+  }
+}

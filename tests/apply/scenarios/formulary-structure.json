@@ -1,0 +1,30 @@
+{
+  "title": "Formulary (selection layer): the choice group and its three entries survive $apply",
+  "description": "nz-crc-mfolfox6-formulary applies to a RequestGroup with the exactly-one choice and the three SRL-coded entries; applicability conditions have no library yet and come back as asked-unknown (see formulary-pinned-parameters).",
+  "planDefinition": "nz-crc-mfolfox6-formulary",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "instantiatesCanonical",
+        "equals": "http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary|2026-10-22"
+      },
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.where(id = 'choose-mfolfox6').selectionBehavior",
+        "equals": "exactly-one"
+      },
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.where(id = 'choose-mfolfox6').action.count()",
+        "equals": 3
+      },
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.action.code.coding.where(system = 'https://srl.org.nz/regimens').code",
+        "count": 3
+      }
+    ]
+  }
+}

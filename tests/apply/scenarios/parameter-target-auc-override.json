@@ -1,0 +1,25 @@
+{
+  "title": "TargetAUC parameter changes the carboplatin dose",
+  "description": "Demo patient with TargetAUC 6 instead of the sig default 5: with the Phase 0 GFR of 100 the dose would be 6 x 125 = 750 mg.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "equals": 750
+      }
+    ]
+  },
+  "parameters": {
+    "TargetAUC": 6.0
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-m75",
+    "reason": "Library parameters are declared but not read by the dynamicValues"
+  }
+}

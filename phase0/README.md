@@ -9,24 +9,21 @@ Regimen: `2554` "Carboplatin and Paclitaxel (CP)".
 Variant: `144842` "Variant #83" (Carboplatin AUC 5 + Paclitaxel 175 mg/m², q21d,
 3–6 cycles; first reported in MITO-2).
 
-## Artifacts in this folder
+## What is in this folder
 
 ```
 phase0/
-├── README.md                                              ← this file
-├── cql/
-│   └── HemOncDoseHelpers.cql                              ← source CQL
-└── resources/
-    ├── CodeSystem-hemonc-fragment.json                    ← HemOnc concepts (fragment)
-    ├── CodeSystem-sig-target-type.json                    ← target-AUC, target-mg-per-m2, …
-    ├── MedicationKnowledge-hemonc-drug-88-carboplatin.json
-    ├── MedicationKnowledge-hemonc-drug-379-paclitaxel.json
-    ├── ActivityDefinition-sig-carboplatin-auc5-d1-q21d.json
-    ├── ActivityDefinition-sig-paclitaxel-175mgm2-d1-q21d.json
-    ├── Library-hemonc-dose-helpers.json                   ← CQL embedded as base64
-    ├── PlanDefinition-regimen-2554-variant-144842.json    ← the executable variant
-    └── Bundle-phase0-knowledge.json                       ← collection manifest
+├── README.md                         ← this file
+├── docker-compose.yml                ← HAPI FHIR 8.12.0 with Clinical Reasoning (cqf-fhir), port 8096
+├── cql/HemOncDoseHelpers.cql         ← source CQL of Library/HemOncDoseHelpers (base64 in input/resources)
+├── examples/                         ← demo patient + observations (height, weight, creatinine)
+└── scripts/load-and-apply.sh         ← loads the IG into HAPI, runs three scenarios, prints $apply
 ```
+
+The knowledge artifacts themselves live in the IG: hand-written JSON in
+`input/resources/` (CodeSystems, two Medications, two sigs, the Library, the
+variant PlanDefinition) and FSH in `input/fsh/`. The executable expectations
+for `$apply` are the scenarios in `tests/apply/` (see its README).
 
 ## Canonical URL scheme (stable across releases)
 
@@ -36,10 +33,10 @@ http://hemonc.org/fhir/<ResourceType>/<stable-id>
 
 * `CodeSystem/hemonc`
 * `CodeSystem/sig-target-type`
-* `MedicationKnowledge/hemonc-drug-<CUI>-<inn>`
+* `Medication/hemonc-drug-<CUI>-<inn>` (catalog Medication; `MedicationKnowledge` is removed in FHIR R6)
 * `ActivityDefinition/sig-<component>-<dose>-<schedule>` *(or a content hash once we scale)*
 * `PlanDefinition/regimen-<regimen_cui>-variant-<variant_cui>`
-* `Library/hemonc-dose-helpers`
+* `Library/HemOncDoseHelpers`
 
 Every resource carries `version = "2026-03-12"` (= the HemOnc snapshot date).
 Future quarterly snapshots emit a new `version` against the same canonical URL.
@@ -79,16 +76,20 @@ The administered mg lives in the **MedicationAdministration**.
 
 ## Validation status
 
-Resources are hand-authored R4 JSON. **Not yet validated** against:
-- HL7 FHIR R4 spec via `fhir validator`
-- HAPI Clinical Reasoning `$apply` (would require a HAPI instance with the
-  Library precompiled and a stub Patient bundle including height, weight,
-  creatinine, age, sex)
-
-Next concrete step is to spin up a local HAPI + cqf-fhir, post the Bundle,
-post a stub Patient + Observations, and call
-`PlanDefinition/$apply?subject=Patient/x` to confirm the emitted CarePlan
-contains MedicationRequests with computed mg doses.
+* The IG builds with SUSHI and the IG Publisher (CI workflow `build-ig`).
+* `PlanDefinition/$apply` is exercised by `tests/apply` against HAPI 8.12.0
+  with cqf-fhir (CI workflow `apply-scenarios`): the variant yields a CarePlan
+  with two MedicationRequests, 625 mg carboplatin (Phase 0 GFR constant) and
+  323.75 mg paclitaxel (Phase 0 BSA constant), with provenance codes and
+  versioned `instantiatesCanonical`. Patient-derived GFR and BSA, input checks,
+  parameter overrides and cycle expansion are specified as expected-failure
+  scenarios (beads oncology-regimens-m75, -hsd).
+* The cqf-fhir 8.4.0 bug that blocked assigning a CQL Quantity to
+  `doseQuantity` is gone in 8.12.0 (scenario `cql-quantity-dynamicvalue`
+  passes), so the dose expressions can move from FHIRPath sub-fields back into
+  the Library.
+* R4 ↔ R6: every artifact round-trips through the maps in `maps/xver/`
+  (CI workflow `xver-roundtrip`).
 
 ## Snapshot provenance
 

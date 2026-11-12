@@ -1,0 +1,23 @@
+{
+  "title": "CQL Quantity assigned to doseQuantity through a dynamicValue",
+  "description": "Reproduction of the cqf-fhir 8.4.0 coercion bug: a test sig returns 625 'mg' from CQL and assigns it to dosageInstruction[0].doseAndRate[0].doseQuantity as a whole. Passes with the HAPI image pinned in phase0/docker-compose.yml, so the dose expressions can move back from FHIRPath sub-fields into the Library (oncology-regimens-m75).",
+  "planDefinition": "apply-test-cql-quantity",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json",
+    "fixtures/cql-quantity-artifacts.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "equals": 625
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.code",
+        "equals": "mg"
+      }
+    ]
+  }
+}

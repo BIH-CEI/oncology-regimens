@@ -1,0 +1,96 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Patient/apply-no-creatinine"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "apply-no-creatinine",
+        "gender": "female",
+        "birthDate": "1960-01-01",
+        "name": [
+          {
+            "family": "ApplyTest",
+            "given": [
+              "no-creatinine"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|no-creatinine-8302-2"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "no-creatinine-8302-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-no-creatinine"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 165,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|no-creatinine-29463-7"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "no-creatinine-29463-7"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-no-creatinine"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 60,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    }
+  ]
+}

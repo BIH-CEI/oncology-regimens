@@ -105,6 +105,7 @@ Context: PlanDefinition.action
 Instance: srl-588251000210108-mfolfox6-nobolus
 InstanceOf: PlanDefinition
 Usage: #example
+* url = "http://hemonc.org/fhir/PlanDefinition/srl-588251000210108-mfolfox6-nobolus"
 * name = "SRLmFOLFOX6HighFANoBolus"
 * title = "CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)"
 * status = #draft
@@ -167,6 +168,7 @@ Usage: #example
 Instance: nz-crc-mfolfox6-formulary
 InstanceOf: PlanDefinition
 Usage: #example
+* url = "http://hemonc.org/fhir/PlanDefinition/nz-crc-mfolfox6-formulary"
 * name = "NZColorectalMFOLFOX6Formulary"
 * title = "NZ colorectal formulary — mFOLFOX6 family (example, SRL read 2026-10-22)"
 * status = #draft
@@ -251,6 +253,7 @@ Description: "Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the 
 Instance: srl-to-hemonc-variant
 InstanceOf: ConceptMap
 Usage: #example
+* url = "http://hemonc.org/fhir/ConceptMap/srl-to-hemonc-variant"
 * name = "SRLToHemOncVariant"
 * title = "SRL regimen id → HemOnc variant CUI (example, colorectal mFOLFOX6)"
 * status = #draft

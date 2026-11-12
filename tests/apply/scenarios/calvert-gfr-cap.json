@@ -1,0 +1,22 @@
+{
+  "title": "Calvert with the GFR cap of 125 mL/min",
+  "description": "25-year-old man, 95 kg, creatinine 0.6 mg/dL: CG = 253 mL/min, capped at 125 (CarboGFRCapMlMin default); dose = 5 x 150 = 750 mg.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/apply-gfr-high",
+  "fixtures": [
+    "fixtures/patient-gfr-high.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "equals": 750
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-m75",
+    "reason": "dose is a Phase 0 constant, no GFR cap"
+  }
+}

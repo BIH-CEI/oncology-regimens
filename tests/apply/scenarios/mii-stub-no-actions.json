@@ -1,0 +1,30 @@
+{
+  "title": "MII protocol stub without actions applies to an empty RequestGroup",
+  "description": "The MII Onkologie protocol skeletons (166 PlanDefinitions, no actions yet) must apply without error and emit no requests. Guards the stub shape until sigs are authored.",
+  "planDefinition": "mii-protokoll-abvd",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "resourceType",
+        "equals": "CarePlan"
+      },
+      {
+        "fhirpath": "instantiatesCanonical",
+        "equals": "http://hemonc.org/fhir/PlanDefinition/mii-protokoll-abvd|2026.0.3"
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).count()",
+        "equals": 0
+      },
+      {
+        "fhirpath": "contained.ofType(RequestGroup).count()",
+        "equals": 1
+      }
+    ]
+  }
+}

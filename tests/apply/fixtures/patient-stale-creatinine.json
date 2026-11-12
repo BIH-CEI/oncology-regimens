@@ -1,0 +1,131 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Patient/apply-stale-creatinine"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "apply-stale-creatinine",
+        "gender": "female",
+        "birthDate": "1960-01-01",
+        "name": [
+          {
+            "family": "ApplyTest",
+            "given": [
+              "stale-creatinine"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|stale-creatinine-8302-2"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "stale-creatinine-8302-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-stale-creatinine"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 165,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|stale-creatinine-29463-7"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "stale-creatinine-29463-7"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-stale-creatinine"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 60,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|stale-creatinine-2160-0"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "stale-creatinine-2160-0"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-stale-creatinine"
+        },
+        "effectiveDateTime": "2024-01-15",
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    }
+  ]
+}

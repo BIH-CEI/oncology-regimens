@@ -1,0 +1,26 @@
+{
+  "title": "Cycle expansion: requests per cycle with day offsets",
+  "description": "A 21-day cycle repeated at least 3 times yields per-cycle groups (cycle-1, cycle-2, cycle-3) with carboplatin and paclitaxel on day 1 of each cycle, i.e. day 1, 22, 43 relative to the start.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.where(id.startsWith('cycle-')).count()",
+        "minCount": 3
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).count()",
+        "minCount": 6
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-hsd",
+    "reason": "cycles are declared in timingTiming but not unrolled"
+  }
+}

@@ -1,7 +1,8 @@
 services:
   hapi:
-    # 8.4.0+ ships cqf-fhir Clinical Reasoning; pin a known-good tag once verified
-    image: hapiproject/hapi:latest
+    # Pinned: HAPI 8.12.0 (cqf-fhir Clinical Reasoning). Verified 2026-11-12 with
+    # scripts/apply/apply_tests.py; the CQL Quantity coercion bug of 8.4.0 is gone.
+    image: hapiproject/hapi:v8.12.0-2
     container_name: oncology-hapi-cr
     restart: unless-stopped
     ports:

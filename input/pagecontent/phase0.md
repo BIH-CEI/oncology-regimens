@@ -39,10 +39,12 @@ Reasoning instance.
 
 - Dose computation is split between a CQL `Library` (the `type`
   CodeableConcepts) and FHIRPath in `ActivityDefinition.dynamicValue`
-  (the `doseQuantity.value`). The CQL `System.Quantity` literal hits
-  a coercion bug in cqf-fhir 8.4.0 when assigned to `Dosage.doseAndRate
-  .doseQuantity`; the FHIRPath sub-field assignment works around it.
-  Tracked for re-migration once the upstream fix lands.
+  (the `doseQuantity.value`), and the magnitudes are Phase 0 constants
+  (GFR 100 mL/min, BSA 1.85 m²). The split was forced by a coercion bug
+  in cqf-fhir 8.4.0 when a CQL `System.Quantity` is assigned to
+  `Dosage.doseAndRate.doseQuantity`; with HAPI 8.12.0 that assignment
+  works (scenario `cql-quantity-dynamicvalue`), so the next step is
+  patient-derived GFR and BSA in the Library (issue oncology-regimens-m75).
 - Cycle expansion (emitting per-cycle RequestGroups with calendar
   offsets) is not yet wired; the spike emits one MedicationRequest
   per sig, with the cycle structure declared in `PlanDefinition.action
@@ -55,6 +57,10 @@ Reasoning instance.
 
 The full reproduction recipe lives in `phase0/README.md` in the
 project repository, including the Docker Compose definition for
-HAPI + cqf-fhir and the `load-and-apply.sh` script. See the
+HAPI + cqf-fhir and the `load-and-apply.sh` script. The validated
+outcomes above are executable: `tests/apply/` holds sixteen `$apply`
+scenarios (patient fixtures, parameters, FHIRPath assertions) run by
+`scripts/apply/apply_tests.py` in CI; seven pass today, the rest are
+expected failures that specify the next steps. See the
 [Disclaimers page](disclaimers.html) — this is sandbox software,
 not for clinical use.

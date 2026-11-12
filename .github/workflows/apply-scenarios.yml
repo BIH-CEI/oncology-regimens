@@ -1,0 +1,74 @@
+name: $apply scenarios (HAPI + cqf-fhir)
+
+# Runs the PlanDefinition/$apply scenarios in tests/apply against a HAPI FHIR
+# server with Clinical Reasoning. Scenarios marked expectedFailure are the
+# specification of open work and must keep failing; see tests/apply/README.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tests/apply/**'
+      - 'scripts/apply/**'
+      - 'input/**'
+      - 'sushi-config.yaml'
+      - 'phase0/docker-compose.yml'
+      - '.github/workflows/apply-scenarios.yml'
+  pull_request:
+    paths:
+      - 'tests/apply/**'
+      - 'scripts/apply/**'
+      - 'input/**'
+      - 'sushi-config.yaml'
+      - 'phase0/docker-compose.yml'
+      - '.github/workflows/apply-scenarios.yml'
+  workflow_dispatch:
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    services:
+      hapi:
+        image: hapiproject/hapi:v8.12.0-2   # keep in sync with phase0/docker-compose.yml
+        ports:
+          - 8096:8080
+        env:
+          HAPI_FHIR_FHIR_VERSION: R4
+          HAPI_FHIR_SERVER_ADDRESS: http://localhost:8096/fhir
+          HAPI_FHIR_CR_ENABLED: "true"
+          HAPI_FHIR_CR_CQL_USE_EMBEDDED_LIBRARIES: "true"
+          HAPI_FHIR_CLIENT_ID_STRATEGY: ANY
+          HAPI_FHIR_ALLOW_EXTERNAL_REFERENCES: "true"
+          HAPI_FHIR_ALLOW_PLACEHOLDER_REFERENCES: "true"
+          HAPI_FHIR_VALIDATION_REQUESTS_ENABLED: "false"
+          JAVA_OPTS: -Xmx2g
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi@${{ vars.SUSHI_VERSION || '3.19.0' }}
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install fhirpathpy
+        run: pip install fhirpathpy
+
+      - name: Run $apply scenarios
+        run: python3 scripts/apply/apply_tests.py --wait 300 --load --keep apply-out
+
+      - name: Upload $apply results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apply-results
+          path: apply-out
+          retention-days: 14

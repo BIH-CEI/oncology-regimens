@@ -1,0 +1,117 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Library/apply-test-cql-quantity"
+      },
+      "resource": {
+        "resourceType": "Library",
+        "id": "apply-test-cql-quantity",
+        "url": "http://hemonc.org/fhir/Library/ApplyTestCqlQuantity",
+        "version": "0.1.0",
+        "name": "ApplyTestCqlQuantity",
+        "status": "draft",
+        "experimental": true,
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/library-type",
+              "code": "logic-library"
+            }
+          ]
+        },
+        "description": "Test fixture: CQL Quantity returned to a dynamicValue (cqf-fhir coercion bug reproduction).",
+        "content": [
+          {
+            "contentType": "text/cql",
+            "data": "bGlicmFyeSBBcHBseVRlc3RDcWxRdWFudGl0eSB2ZXJzaW9uICcwLjEuMCcKCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnCgppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJyBjYWxsZWQgRkhJUkhlbHBlcnMKCmNvbnRleHQgUGF0aWVudAoKLy8gUmVwcm9kdWNlcyB0aGUgY3FmLWZoaXIgOC40LjAgY29lcmNpb24gYnVnOiBhc3NpZ25pbmcgdGhpcyBRdWFudGl0eSB0bwovLyBEb3NhZ2UuZG9zZUFuZFJhdGUuZG9zZVF1YW50aXR5IHRocm91Z2ggQWN0aXZpdHlEZWZpbml0aW9uLmR5bmFtaWNWYWx1ZSBmYWlscy4KZGVmaW5lIENhcmJvcGxhdGluRG9zZVF1YW50aXR5OiA2MjUgJ21nJwo="
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "ActivityDefinition/apply-test-sig-cql-quantity"
+      },
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "apply-test-sig-cql-quantity",
+        "url": "http://hemonc.org/fhir/ActivityDefinition/apply-test-sig-cql-quantity",
+        "version": "0.1.0",
+        "name": "ApplyTestSigCqlQuantity",
+        "status": "draft",
+        "experimental": true,
+        "description": "Test fixture: carboplatin sig whose dose is a CQL Quantity assigned to doseQuantity as a whole.",
+        "kind": "MedicationRequest",
+        "library": [
+          "http://hemonc.org/fhir/Library/ApplyTestCqlQuantity"
+        ],
+        "productReference": {
+          "reference": "Medication/hemonc-drug-88-carboplatin"
+        },
+        "dosage": [
+          {
+            "sequence": 1,
+            "text": "Carboplatin, dose from CQL Quantity",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "47625008",
+                  "display": "Intravenous route"
+                }
+              ]
+            }
+          }
+        ],
+        "dynamicValue": [
+          {
+            "path": "dosageInstruction[0].doseAndRate[0].doseQuantity",
+            "expression": {
+              "language": "text/cql.identifier",
+              "expression": "CarboplatinDoseQuantity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "PlanDefinition/apply-test-cql-quantity"
+      },
+      "resource": {
+        "resourceType": "PlanDefinition",
+        "id": "apply-test-cql-quantity",
+        "url": "http://hemonc.org/fhir/PlanDefinition/apply-test-cql-quantity",
+        "version": "0.1.0",
+        "name": "ApplyTestCqlQuantity",
+        "status": "draft",
+        "experimental": true,
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+              "code": "clinical-protocol"
+            }
+          ]
+        },
+        "description": "Test fixture for the cqf-fhir Quantity coercion bug.",
+        "library": [
+          "http://hemonc.org/fhir/Library/ApplyTestCqlQuantity"
+        ],
+        "action": [
+          {
+            "id": "carbo",
+            "title": "Carboplatin (CQL Quantity)",
+            "definitionCanonical": "http://hemonc.org/fhir/ActivityDefinition/apply-test-sig-cql-quantity|0.1.0"
+          }
+        ]
+      }
+    }
+  ]
+}

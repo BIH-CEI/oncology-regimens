@@ -1,0 +1,131 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Patient/apply-bsa-large"
+      },
+      "resource": {
+        "resourceType": "Patient",
+        "id": "apply-bsa-large",
+        "gender": "male",
+        "birthDate": "1975-03-03",
+        "name": [
+          {
+            "family": "ApplyTest",
+            "given": [
+              "bsa-large"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|bsa-large-8302-2"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "bsa-large-8302-2"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-bsa-large"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 180,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|bsa-large-29463-7"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "bsa-large-29463-7"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-bsa-large"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 90,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http://hemonc.org/fhir/apply-test|bsa-large-2160-0"
+      },
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "identifier": [
+          {
+            "system": "http://hemonc.org/fhir/apply-test",
+            "value": "bsa-large-2160-0"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/apply-bsa-large"
+        },
+        "effectiveDateTime": "2026-05-20",
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    }
+  ]
+}

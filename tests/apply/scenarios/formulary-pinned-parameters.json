@@ -1,0 +1,26 @@
+{
+  "title": "Formulary entries resolve to catalog variants and pinned parameters apply",
+  "description": "Choosing entry srl-52201000210102 (adjuvant, low-dose folinic acid 50 mg flat, 12 cycles) must resolve the HemOnc variant 133145 from the catalog and apply FolinicAcidFlatDoseMg = 50 and MaxCycles = 12; applicability conditions evaluate against an intent.",
+  "planDefinition": "nz-crc-mfolfox6-formulary",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.action.where(id = 'srl-52201000210102').resource",
+        "exists": true
+      },
+      {
+        "fhirpath": "contained.ofType(RequestGroup).action.action.condition.extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-action-condition-result').extension('http://hl7.org/fhir/StructureDefinition/data-absent-reason')",
+        "exists": false
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-v96",
+    "reason": "variant 133145 not in the catalog, no library for the applicability expressions, parameters not applied"
+  }
+}

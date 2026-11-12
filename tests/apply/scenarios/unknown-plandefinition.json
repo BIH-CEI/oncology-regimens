@@ -1,0 +1,22 @@
+{
+  "title": "Unknown PlanDefinition returns 404 with an OperationOutcome",
+  "description": "Negative case: the operation on a PlanDefinition id that is not in the catalog.",
+  "planDefinition": "does-not-exist",
+  "subject": "Patient/demo-cp-1",
+  "fixtures": [
+    "fixtures/patient-demo-cp-1.json"
+  ],
+  "expect": {
+    "status": 404,
+    "assertions": [
+      {
+        "fhirpath": "resourceType",
+        "equals": "OperationOutcome"
+      },
+      {
+        "fhirpath": "issue.where(severity = 'error')",
+        "exists": true
+      }
+    ]
+  }
+}

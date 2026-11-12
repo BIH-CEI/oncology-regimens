@@ -144,6 +144,20 @@ nach `.xver/` (git-ignoriert). Abgeleitete R6-Ressourcen liegen danach in
 `.xver/out/r6/`. Hintergrund und die Validator-Eigenheiten, die das Skript
 umgeht: `maps/xver/README.md`; Modellentscheidungen: IG-Seite "FHIR Versions".
 
+### `$apply`-Szenarien (HAPI + cqf-fhir)
+
+```bash
+cd phase0 && docker compose up -d && cd ..     # HAPI 8.12.0 mit Clinical Reasoning, Port 8096
+pip install fhirpathpy
+sushi .
+python3 scripts/apply/apply_tests.py --load    # IG laden, alle Szenarien
+```
+
+Szenarien liegen in `tests/apply/scenarios/` (Patientendaten, PlanDefinition,
+Parameter, FHIRPath-Erwartungen). Als `expectedFailure` markierte Szenarien
+sind die Spezifikation offener Arbeit und müssen rot bleiben; CI-Workflow
+`apply-scenarios`. Details: `tests/apply/README.md`.
+
 ### Phase-0-Spike lokal ausführen (empfohlener erster Lauf)
 ```bash
 cd phase0
