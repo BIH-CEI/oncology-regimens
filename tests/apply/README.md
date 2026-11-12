@@ -34,8 +34,17 @@ means: remove the marker and close or update the issue it names.
 | `formulary-structure` | selection-layer formulary keeps the exactly-one choice and its three SRL-coded entries | pass |
 | `cql-quantity-dynamicvalue` | a CQL Quantity assigned to `doseQuantity` in one dynamicValue (test fixture library) | pass on HAPI 8.12.0; failed on 8.4.0 (oncology-regimens-r4g) |
 | `calvert-gfr-from-creatinine`, `calvert-gfr-cap`, `paclitaxel-bsa-mosteller`, `missing-creatinine`, `stale-creatinine`, `parameter-target-auc-override` | doses derived from Patient and Observations, GFR cap, input checks, Library parameters honoured | expected failure, oncology-regimens-m75 |
+| `missing-weight`, `missing-height`, `weight-in-pounds`, `creatinine-in-umol`, `implausible-values` | negative cases: no dose without the inputs a formula needs (weight for Cockcroft-Gault and BSA, height for BSA), an OperationOutcome via `cqf-messages` naming the missing input, unit conversion (lb, µmol/L), refusal of implausible values | expected failure, oncology-regimens-m75 |
 | `cycle-expansion` | per-cycle groups with day offsets | expected failure, oncology-regimens-hsd |
 | `formulary-pinned-parameters` | formulary entries resolve to catalog variants, applicability conditions evaluate, pinned parameters apply | expected failure, oncology-regimens-v96 |
+
+Messages: in `$apply` results, warnings and errors arrive as an
+`OperationOutcome` contained in the CarePlan and linked from the
+RequestGroup through the `cqf-messages` extension; the negative scenarios
+assert on `contained.ofType(OperationOutcome).issue.diagnostics`. In CDS
+Hooks the same information becomes cards (`indicator` info, warning,
+critical; `summary`, `detail`, `suggestions`), which is not tested yet
+(oncology-regimens-718).
 
 What this does not test: FHIR R6 (there is no `$apply` implementation for
 R6; the derived R6 resources are only validated, see `maps/xver/`), CDS

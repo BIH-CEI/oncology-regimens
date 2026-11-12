@@ -1,0 +1,31 @@
+{
+  "title": "No height: paclitaxel has no dose, carboplatin keeps its dose",
+  "description": "Patient with weight and creatinine but no height. BSA cannot be computed, so paclitaxel has no mg dose; Cockcroft-Gault does not need the height, so carboplatin is still computed (female, 61 y, 70 kg, creatinine 0.9: CG = 65.6 mL/min, dose 453 mg).",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/apply-no-height",
+  "fixtures": [
+    "fixtures/patient-no-height.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-379-paclitaxel').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "exists": false
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "approx": 453,
+        "tolerance": 0.05
+      },
+      {
+        "fhirpath": "contained.ofType(OperationOutcome).issue.diagnostics.where($this.contains('eight'))",
+        "exists": true
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-m75",
+    "reason": "doses are Phase 0 constants, inputs are not checked"
+  }
+}

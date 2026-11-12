@@ -1,0 +1,28 @@
+{
+  "title": "Weight recorded in pounds is converted, not taken as kilograms",
+  "description": "Weight 154 [lb_av] = 69.9 kg, height 170 cm, creatinine 0.9, female 61 y. Expected carboplatin 5 x (CG 65.5 + 25) = 452 mg and paclitaxel 175 x BSA 1.82 = 318 mg. Taking 154 as kg would give 605 mg and 426 mg.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/apply-weight-lb",
+  "fixtures": [
+    "fixtures/patient-weight-lb.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "approx": 452,
+        "tolerance": 0.05
+      },
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-379-paclitaxel').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "approx": 318,
+        "tolerance": 0.03
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-m75",
+    "reason": "doses are Phase 0 constants, units are not read"
+  }
+}

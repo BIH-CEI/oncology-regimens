@@ -1,0 +1,23 @@
+{
+  "title": "Creatinine in µmol/L is converted to mg/dL",
+  "description": "Demo patient values with creatinine 79.6 µmol/L (= 0.9 mg/dL). Must give the same carboplatin dose as calvert-gfr with 0.9 mg/dL: female 58 y, 72 kg, CG = 77.4 mL/min, dose 512 mg.",
+  "planDefinition": "regimen-2554-variant-144842",
+  "subject": "Patient/apply-creatinine-umol",
+  "fixtures": [
+    "fixtures/patient-creatinine-umol.json"
+  ],
+  "expect": {
+    "status": 200,
+    "assertions": [
+      {
+        "fhirpath": "contained.ofType(MedicationRequest).where(medication.reference = 'Medication/hemonc-drug-88-carboplatin').dosageInstruction[0].doseAndRate[0].doseQuantity.value",
+        "approx": 512,
+        "tolerance": 0.05
+      }
+    ]
+  },
+  "expectedFailure": {
+    "issue": "oncology-regimens-m75",
+    "reason": "doses are Phase 0 constants, units are not read"
+  }
+}
