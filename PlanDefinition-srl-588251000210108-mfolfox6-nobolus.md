@@ -16,7 +16,7 @@
  
 Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here. 
 
-**Exception parsing generated Narrative (see /tmp/liquid-73bb92bb-5a90-4a36-8fea-8d2092ec51cf.html): unexpected non-end of element null::a at line 205 column 50**
+**Exception parsing generated Narrative (see /tmp/liquid-c2f79964-bdd0-48e2-b418-c27162cc838a.html): unexpected non-end of element null::a at line 205 column 50**
 
 
 

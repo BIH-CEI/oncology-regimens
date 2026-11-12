@@ -3,7 +3,7 @@
 <PlanDefinition xmlns="http://hl7.org/fhir">
   <id value="srl-588251000210108-mfolfox6-nobolus"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b style="color: maroon">Exception parsing generated Narrative (see /tmp/liquid-73bb92bb-5a90-4a36-8fea-8d2092ec51cf.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b style="color: maroon">Exception parsing generated Narrative (see /tmp/liquid-c2f79964-bdd0-48e2-b418-c27162cc838a.html): unexpected non-end of element null::a  at line 205 column 50</b></p></div>
   </text>
   <extension url="http://hemonc.org/fhir/StructureDefinition/regimen-modification">
     <extension url="kind">

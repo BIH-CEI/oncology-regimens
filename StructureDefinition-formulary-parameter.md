@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-formulary-parameter.
   "title" : "Formulary Parameter",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-12T18:44:05+00:00",
+  "date" : "2026-11-12T19:05:05+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",
