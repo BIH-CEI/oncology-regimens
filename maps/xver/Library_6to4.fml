@@ -1,0 +1,58 @@
+// European SACT Regimen Catalog: Library, R6 -> R4. Inverse of Library_4to6;
+// versionAlgorithm and copyrightLabel are kept in extensions.
+
+map "http://hemonc.org/fhir/StructureMap/Library6to4" = "ESRCLibrary6to4"
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/Library" alias LibraryR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/Library" alias LibraryR4 as target
+
+group Library(source src : LibraryR6, target tgt : LibraryR4) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.versionAlgorithm as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Library.versionAlgorithm[x]', x.value = v "versionAlgorithm";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.subtitle as v -> tgt.subtitle = v "subtitle";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.type as v -> tgt.type = v "type";
+  src.subject as v -> tgt.subject = v "subject";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.usage as v -> tgt.usage = v "usage";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.copyrightLabel as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-copyrightLabel', x.value = v "copyrightLabel";
+  src.approvalDate as v -> tgt.approvalDate = v "approvalDate";
+  src.lastReviewDate as v -> tgt.lastReviewDate = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.effectivePeriod = v "effectivePeriod";
+  src.topic as v -> tgt.topic = v "topic";
+  src.author as v -> tgt.author = v "author";
+  src.editor as v -> tgt.editor = v "editor";
+  src.reviewer as v -> tgt.reviewer = v "reviewer";
+  src.endorser as v -> tgt.endorser = v "endorser";
+  src.relatedArtifact as v -> tgt.relatedArtifact = v "relatedArtifact";
+  src.parameter as v -> tgt.parameter = v "parameter";
+  src.dataRequirement as v -> tgt.dataRequirement = v "dataRequirement";
+  src.content as v -> tgt.content = v "content";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

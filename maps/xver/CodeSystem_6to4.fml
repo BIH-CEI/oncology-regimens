@@ -1,0 +1,62 @@
+// European SACT Regimen Catalog: CodeSystem, R6 -> R4. Inverse of CodeSystem_4to6;
+// R6-only metadata is kept in cross-version extensions.
+
+map "http://hemonc.org/fhir/StructureMap/CodeSystem6to4" = "ESRCCodeSystem6to4"
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/CodeSystem" alias CodeSystemR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/CodeSystem" alias CodeSystemR4 as target
+
+group CodeSystem(source src : CodeSystemR6, target tgt : CodeSystemR4) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.versionAlgorithm as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.versionAlgorithm[x]', x.value = v "versionAlgorithm";
+  src.copyrightLabel as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.copyrightLabel', x.value = v "copyrightLabel";
+  src.approvalDate as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.approvalDate', x.value = v "approvalDate";
+  src.lastReviewDate as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.lastReviewDate', x.value = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.effectivePeriod', x.value = v "effectivePeriod";
+  src.topic as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.topic', x.value = v "topic";
+  src.author as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.author', x.value = v "author";
+  src.editor as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.editor', x.value = v "editor";
+  src.reviewer as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.reviewer', x.value = v "reviewer";
+  src.endorser as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.endorser', x.value = v "endorser";
+  src.relatedArtifact as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-CodeSystem.relatedArtifact', x.value = v "relatedArtifact";
+  src.caseSensitive as v -> tgt.caseSensitive = v "caseSensitive";
+  src.valueSet as v -> tgt.valueSet = v "valueSet";
+  src.hierarchyMeaning as v -> tgt.hierarchyMeaning = v "hierarchyMeaning";
+  src.compositional as v -> tgt.compositional = v "compositional";
+  src.versionNeeded as v -> tgt.versionNeeded = v "versionNeeded";
+  src.content as v -> tgt.content = v "content";
+  src.supplements as v -> tgt.supplements = v "supplements";
+  src.count as v -> tgt.count = v "count";
+  src.filter as v -> tgt.filter = v "filter";
+  src.property as v -> tgt.property = v "property";
+  src.concept as v -> tgt.concept = v "concept";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

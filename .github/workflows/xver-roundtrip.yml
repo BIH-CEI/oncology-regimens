@@ -1,0 +1,74 @@
+name: Cross-version round trip (R4 -> R6 -> R4)
+
+# Derives the R6 view of the IG with the FML maps in maps/xver, validates it
+# against the R6 CI build and checks that converting back yields the R4 source.
+# See maps/xver/README.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'maps/xver/**'
+      - 'scripts/xver/**'
+      - 'input/**'
+      - 'sushi-config.yaml'
+      - '.github/workflows/xver-roundtrip.yml'
+  pull_request:
+    paths:
+      - 'maps/xver/**'
+      - 'scripts/xver/**'
+      - 'input/**'
+      - 'sushi-config.yaml'
+      - '.github/workflows/xver-roundtrip.yml'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'Convert every resource (default: representative subset)'
+        type: boolean
+        default: false
+
+jobs:
+  roundtrip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi@${{ vars.SUSHI_VERSION || '3.19.0' }}
+
+      - name: Run SUSHI
+        run: sushi .
+
+      - name: Cache validator, core packages and private package cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .xver/tools
+            .xver/pkgs
+            .xver/home
+          key: xver-${{ hashFiles('scripts/xver/xver.py') }}-${{ github.run_number }}
+          restore-keys: xver-${{ hashFiles('scripts/xver/xver.py') }}-
+
+      - name: Round trip
+        env:
+          XVER_JAVA_OPTS: ""
+        run: python3 scripts/xver/xver.py ${{ inputs.all && '--all' || '' }}
+
+      - name: Upload derived R6 resources and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xver-r6-derived
+          path: |
+            .xver/out
+            .xver/logs
+          retention-days: 14

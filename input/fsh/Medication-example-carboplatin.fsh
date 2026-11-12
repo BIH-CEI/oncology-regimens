@@ -26,7 +26,7 @@ Alias: $artifact-name = http://hl7.org/fhir/StructureDefinition/artifact-name
 Alias: $artifact-publisher = http://hl7.org/fhir/StructureDefinition/artifact-publisher
 Alias: $medication-classification = http://hl7.org/fhir/StructureDefinition/medication-classification
 Alias: $medication-type = http://hl7.org/fhir/StructureDefinition/medication-type
-Alias: $classification-type = http://hl7.org/fhir/CodeSystem/medication-classification-type
+Alias: $classification-type = http://hl7.org/fhir/medication-classification-type
 
 Instance: med-example-carboplatin
 InstanceOf: Medication

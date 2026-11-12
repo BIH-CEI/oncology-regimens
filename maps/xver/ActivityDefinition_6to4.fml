@@ -1,0 +1,159 @@
+// European SACT Regimen Catalog: sig ActivityDefinition, R6 -> R4.
+// Inverse of ActivityDefinition_4to6: every DosageInstruction.step becomes one
+// R4 Dosage (first component; the sig profile has exactly one component per
+// step), step.start offset n days -> day-of-cycle n+1, cross-version
+// extensions written by 4to6 are restored, dynamicValue paths are rewritten
+// back. R6-only content (renderedInstruction, step.count/end/safety,
+// Dosage.condition/safety, doseExpression) is kept in cross-version
+// extensions where it is cheap to do so and otherwise dropped with a comment.
+//
+// Executed by scripts/xver/xver.py with the HL7 validator (see README.md).
+
+map "http://hemonc.org/fhir/StructureMap/ActivityDefinition6to4" = "ESRCActivityDefinition6to4"
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/ActivityDefinition" alias ActivityDefinitionR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/ActivityDefinition" alias ActivityDefinitionR4 as target
+
+group ActivityDefinition(source src : ActivityDefinitionR6, target tgt : ActivityDefinitionR4) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ActivityDefinition.timing[x]') -> tgt.timing = (e.value) "timingRestored";
+  src.extension as e where (url.startsWith('http://hl7.org/fhir/4.0/StructureDefinition/extension-').not()) -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.versionAlgorithm as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.versionAlgorithm[x]', x.value = v "versionAlgorithm";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.subtitle as v -> tgt.subtitle = v "subtitle";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.subject : CodeableConcept as v -> tgt.subject = v "subjectCodeableConcept";
+  src.subject : Reference as v -> tgt.subject = v "subjectReference";
+  src.subject : canonical as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.subject[x]', x.value = v "subjectCanonical";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.usage as v -> tgt.usage = v "usage";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.copyrightLabel as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-copyrightLabel', x.value = v "copyrightLabel";
+  src.approvalDate as v -> tgt.approvalDate = v "approvalDate";
+  src.lastReviewDate as v -> tgt.lastReviewDate = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.effectivePeriod = v "effectivePeriod";
+  src.topic as v -> tgt.topic = v "topic";
+  src.author as v -> tgt.author = v "author";
+  src.editor as v -> tgt.editor = v "editor";
+  src.reviewer as v -> tgt.reviewer = v "reviewer";
+  src.endorser as v -> tgt.endorser = v "endorser";
+  src.relatedArtifact as v -> tgt.relatedArtifact = v "relatedArtifact";
+  src.library as v -> tgt.library = v "library";
+  src.kind as v -> tgt.kind = v "kind";
+  src.profile as v -> tgt.profile = v "profile";
+  src.code as v -> tgt.code = v "code";
+  src.intent as v -> tgt.intent = v "intent";
+  src.priority as v -> tgt.priority = v "priority";
+  src.doNotPerform as v -> tgt.doNotPerform = v "doNotPerform";
+
+  src.timing : Timing as v -> tgt.timing = v "timingTiming";
+  src.timing : Age as v -> tgt.timing = v "timingAge";
+  src.timing : Range as v -> tgt.timing = v "timingRange";
+  src.timing : Duration as v -> tgt.timing = v "timingDuration";
+  src.timing : RelativeTime as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.timing[x]', x.value = v "timingRelativeTime";
+  src.asNeeded as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.asNeeded[x]', x.value = v "asNeeded";
+
+  src.location as cr where (reference.exists()) -> tgt.location = (cr.reference) "location";
+  src.participant as s -> tgt.participant as t then ActivityDefinitionParticipant(s, t) "participant";
+  src.product : Reference as v -> tgt.product = v "productReference";
+  src.product : CodeableConcept as v -> tgt.product = v "productCodeableConcept";
+  src.quantity as v -> tgt.quantity = v "quantity";
+  src.bodySite as v -> tgt.bodySite = v "bodySite";
+  src.specimenRequirement as v -> tgt.specimenRequirement as r, r.reference = v "specimenRequirement";
+  src.observationRequirement as v -> tgt.observationRequirement as r, r.reference = v "observationRequirement";
+  src.observationResultRequirement as v -> tgt.observationResultRequirement as r, r.reference = v "observationResultRequirement";
+  src.transform as v -> tgt.transform = v "transform";
+  src.dynamicValue as s -> tgt.dynamicValue as t then ActivityDefinitionDynamicValue(s, t) "dynamicValue";
+
+  src.dosageInstruction as di then {
+    di.renderedInstruction as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.dosageInstruction.renderedInstruction', x.value = v "renderedInstruction";
+    di.safety as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ActivityDefinition.dosageInstruction.safety', x.value = v "safety";
+    // repeatCycle is derived from the component timing in 4to6 and needs no element here.
+    di.step as s -> tgt.dosage as d then StepToDosage(s, d) "dosage";
+  } "dosageInstruction";
+}
+
+group StepToDosage(source s, target d) {
+  s.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.sequence') -> d.sequence = (e.value) "sequence";
+  // offset n days from the start of the course -> day of cycle n+1.
+  s.start as st where (offset.exists()) -> d.extension as x,
+    x.url = 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle',
+    x.value = ((st.offset.value + 1).truncate()) "dayOfCycle";
+  s.component first as c then ComponentToDosage(c, d) "component";
+}
+
+group ComponentToDosage(source c, target d) {
+  c.id as v -> d.id = v "id";
+  c.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerPeriod') -> d.maxDosePerPeriod = (e.value) "maxDosePerPeriod";
+  c.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerAdministration') -> d.maxDosePerAdministration = (e.value) "maxDosePerAdministration";
+  c.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerLifetime') -> d.maxDosePerLifetime = (e.value) "maxDosePerLifetime";
+  c.extension as e where (url.startsWith('http://hl7.org/fhir/4.0/StructureDefinition/extension-').not()) -> d.extension as t then Extension(e, t) "extension";
+  c.modifierExtension as e -> d.modifierExtension as t then Extension(e, t) "modifierExtension";
+  c.text as v -> d.text = v "text";
+  c.additionalInstruction as v -> d.additionalInstruction = v "additionalInstruction";
+  c.patientInstruction as v -> d.patientInstruction = v "patientInstruction";
+  c.timing as v -> d.timing = v "timing";
+  c.asNeeded as v -> d.asNeeded = v "asNeeded";
+  c.asNeededFor first as v -> d.asNeeded = v "asNeededFor";
+  c.site as cr where (concept.exists()) -> d.site = (cr.concept) "site";
+  c.route as v -> d.route = v "route";
+  c.method as v -> d.method = v "method";
+  c.doseAndRate as s -> d.doseAndRate as t then DoseAndRate(s, t) "doseAndRate";
+  // R6-only: condition, safety are not representable in R4 Dosage; kept as extensions.
+  c.condition as v -> d.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Dosage.condition', x.value = v "condition";
+  c.safety as v -> d.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Dosage.safety', x.value = v "safety";
+}
+
+group DoseAndRate(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.type as v -> tgt.type = v "type";
+  src.dose : Range as v -> tgt.dose = v "doseRange";
+  src.dose : Quantity as v -> tgt.dose = v "doseQuantity";
+  src.dose : Expression as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Dosage.doseAndRate.dose[x]', x.value = v "doseExpression";
+  src.rate : Ratio as v -> tgt.rate = v "rateRatio";
+  src.rate : Range as v -> tgt.rate = v "rateRange";
+  src.rate : Quantity as v -> tgt.rate = v "rateQuantity";
+  src.rate : Expression as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-Dosage.doseAndRate.rate[x]', x.value = v "rateExpression";
+}
+
+group ActivityDefinitionParticipant(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.type as v -> tgt.type = v "type";
+  src.role as v -> tgt.role = v "role";
+}
+
+group ActivityDefinitionDynamicValue(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.path as v -> tgt.path = (v.replaceMatches('dosageInstruction\\.step\\[(\\d+)\\]\\.component\\[0\\]', 'dosageInstruction[$1]')) "path";
+  src.expression as v -> tgt.expression = v "expression";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

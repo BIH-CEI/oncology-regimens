@@ -2,7 +2,7 @@
   "resourceType": "Medication",
   "id": "hemonc-drug-88-carboplatin",
   "meta": {
-    "source": "HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12"
+    "source": "https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=88;snapshot=2026-03-12"
   },
   "extension": [
     { "url": "http://hl7.org/fhir/StructureDefinition/artifact-url",
@@ -17,7 +17,7 @@
       "extension": [
         { "url": "type",
           "valueCodeableConcept": {
-            "coding": [{ "system": "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+            "coding": [{ "system": "http://hl7.org/fhir/medication-classification-type",
                          "code": "pharmacologic", "display": "Pharmacologic Class" }],
             "text": "HemOnc main class" } },
         { "url": "classification",
@@ -30,7 +30,7 @@
       "extension": [
         { "url": "type",
           "valueCodeableConcept": {
-            "coding": [{ "system": "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+            "coding": [{ "system": "http://hl7.org/fhir/medication-classification-type",
                          "code": "moa", "display": "Mechanism of Action" }],
             "text": "CanMED major class" } },
         { "url": "classification",

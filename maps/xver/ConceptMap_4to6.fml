@@ -1,0 +1,128 @@
+// European SACT Regimen Catalog: ConceptMap, R4 -> R6. The R5 remodel applies:
+// source[x]/target[x] -> sourceScope[x]/targetScope[x], group.source/target
+// uri -> canonical, group.element.target.equivalence -> relationship. Lossy
+// equivalence codes keep the original on the primitive. Executed by
+// scripts/xver/xver.py (see README.md).
+
+map "http://hemonc.org/fhir/StructureMap/ConceptMap4to6" = "ESRCConceptMap4to6"
+
+// R4 concept-map-equivalence -> R5/R6 concept-map-relationship.
+conceptmap "Equivalence4to6" {
+  prefix s = "http://hl7.org/fhir/concept-map-equivalence"
+  prefix t = "http://hl7.org/fhir/concept-map-relationship"
+
+  s:relatedto   - t:"related-to"
+  s:equivalent  - t:equivalent
+  s:equal       - t:equivalent
+  s:wider       - t:"source-is-narrower-than-target"
+  s:subsumes    - t:"source-is-narrower-than-target"
+  s:narrower    - t:"source-is-broader-than-target"
+  s:specializes - t:"source-is-broader-than-target"
+  s:inexact     - t:"related-to"
+  s:unmatched   - t:"not-related-to"
+  s:disjoint    - t:"not-related-to"
+}
+
+uses "http://hl7.org/fhir/4.0/StructureDefinition/ConceptMap" alias ConceptMapR4 as source
+uses "http://hl7.org/fhir/6.0/StructureDefinition/ConceptMap" alias ConceptMapR6 as target
+
+group ConceptMap(source src : ConceptMapR4, target tgt : ConceptMapR6) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.source : uri as v -> tgt.sourceScope = v "sourceScopeUri";
+  src.source : canonical as v -> tgt.sourceScope = v "sourceScopeCanonical";
+  src.target : uri as v -> tgt.targetScope = v "targetScopeUri";
+  src.target : canonical as v -> tgt.targetScope = v "targetScopeCanonical";
+  src.group as s -> tgt.group as t then ConceptMapGroup(s, t) "group";
+}
+
+group ConceptMapGroup(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.source as v -> tgt.source = v "source";   // uri -> canonical
+  src.sourceVersion as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ConceptMap.group.sourceVersion', x.value = v "sourceVersion";
+  src.target as v -> tgt.target = v "target";
+  src.targetVersion as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ConceptMap.group.targetVersion', x.value = v "targetVersion";
+  src.element as s -> tgt.element as t then ConceptMapGroupElement(s, t) "element";
+  src.unmapped as s -> tgt.unmapped as t then ConceptMapGroupUnmapped(s, t) "unmapped";
+}
+
+group ConceptMapGroupElement(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.code as v -> tgt.code = v "code";
+  src.display as v -> tgt.display = v "display";
+  src.target as s -> tgt.target as t then ConceptMapGroupElementTarget(s, t) "target";
+}
+
+group ConceptMapGroupElementTarget(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.code as v -> tgt.code = v "code";
+  src.display as v -> tgt.display = v "display";
+  // lossless: relatedto, equivalent, wider, narrower, unmatched
+  src.equivalence as v where ($this = 'relatedto' or $this = 'equivalent' or $this = 'wider' or $this = 'narrower' or $this = 'unmatched')
+    -> tgt.relationship = translate(v, '#Equivalence4to6', 'code') "relationshipLossless";
+  // lossy: equal, subsumes, specializes, inexact, disjoint keep the R4 code
+  src.equivalence as v where ($this = 'equal' or $this = 'subsumes' or $this = 'specializes' or $this = 'inexact' or $this = 'disjoint')
+    -> tgt.relationship = translate(v, '#Equivalence4to6', 'code') as r,
+       r.extension as x,
+       x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ConceptMap.group.element.target.equivalence',
+       x.value = v "relationshipLossy";
+  src.comment as v -> tgt.comment = v "comment";
+  src.dependsOn as s -> tgt.dependsOn as t then ConceptMapOtherElement(s, t) "dependsOn";
+  src.product as s -> tgt.product as t then ConceptMapOtherElement(s, t) "product";
+}
+
+group ConceptMapOtherElement(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  // R4 property (uri) -> R6 attribute (code), R4 value (string) -> R6 value[x] string;
+  // system and display have no R6 element.
+  src.property as v -> tgt.attribute = v "attribute";
+  src.value as v -> tgt.value = v "value";
+  src.system as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ConceptMap.group.element.target.dependsOn.system', x.value = v "system";
+  src.display as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ConceptMap.group.element.target.dependsOn.display', x.value = v "display";
+}
+
+group ConceptMapGroupUnmapped(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.mode as v -> tgt.mode = v "mode";
+  src.code as v -> tgt.code = v "code";
+  src.display as v -> tgt.display = v "display";
+  src.url as v -> tgt.otherMap = v "otherMap";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

@@ -1,0 +1,174 @@
+// European SACT Regimen Catalog: sig ActivityDefinition, R4 -> R6.
+//
+// The R6 CI build replaces ActivityDefinition.dosage 0..* Dosage by
+// dosageInstruction 0..1 DosageInstruction (FHIR-53721, FHIR-54340,
+// FHIR-54252). Deterministic rules for the sig profile of this IG:
+//
+//   one R4 Dosage                     -> one DosageInstruction.step with one component
+//     (a sig is one product; concurrency between products is expressed in
+//     the PlanDefinition, so Dosage.sequence values are unique and ordered)
+//   Dosage.sequence                   -> step order; the value itself is kept in a
+//                                        cross-version extension on the step
+//   day-of-cycle extension (day n)    -> step.start.offsetDuration = (n - 1) d
+//                                        (no context: "start of the course" = start of the cycle)
+//   Dosage.timing.repeat.period/Unit  -> DosageInstruction.repeatCycle (first Dosage
+//                                        with a period); the Timing itself stays on
+//                                        the component, so nothing is lost
+//   dynamicValue.path
+//     dosageInstruction[i].…          -> dosageInstruction.step[i].component[0].…
+//   Dosage.maxDose*                   -> cross-version extensions (DosageSafety mapping
+//                                        is not attempted yet; not used by this IG)
+//
+// Executed by scripts/xver/xver.py with the HL7 validator (see README.md).
+
+map "http://hemonc.org/fhir/StructureMap/ActivityDefinition4to6" = "ESRCActivityDefinition4to6"
+
+uses "http://hl7.org/fhir/4.0/StructureDefinition/ActivityDefinition" alias ActivityDefinitionR4 as source
+uses "http://hl7.org/fhir/6.0/StructureDefinition/ActivityDefinition" alias ActivityDefinitionR6 as target
+
+group ActivityDefinition(source src : ActivityDefinitionR4, target tgt : ActivityDefinitionR6) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+
+  // Metadata: identical in R4 and R6 (usage: string -> markdown is a plain copy).
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.subtitle as v -> tgt.subtitle = v "subtitle";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.subject : CodeableConcept as v -> tgt.subject = v "subjectCodeableConcept";
+  src.subject : Reference as v -> tgt.subject = v "subjectReference";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.usage as v -> tgt.usage = v "usage";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.approvalDate as v -> tgt.approvalDate = v "approvalDate";
+  src.lastReviewDate as v -> tgt.lastReviewDate = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.effectivePeriod = v "effectivePeriod";
+  src.topic as v -> tgt.topic = v "topic";
+  src.author as v -> tgt.author = v "author";
+  src.editor as v -> tgt.editor = v "editor";
+  src.reviewer as v -> tgt.reviewer = v "reviewer";
+  src.endorser as v -> tgt.endorser = v "endorser";
+  src.relatedArtifact as v -> tgt.relatedArtifact = v "relatedArtifact";
+  src.library as v -> tgt.library = v "library";
+  src.kind as v -> tgt.kind = v "kind";
+  src.profile as v -> tgt.profile = v "profile";
+  src.code as v -> tgt.code = v "code";
+  src.intent as v -> tgt.intent = v "intent";
+  src.priority as v -> tgt.priority = v "priority";
+  src.doNotPerform as v -> tgt.doNotPerform = v "doNotPerform";
+
+  // timing[x]: Timing, Age, Range, Duration survive; dateTime and Period do not exist in R6.
+  src.timing : Timing as v -> tgt.timing = v "timingTiming";
+  src.timing : Age as v -> tgt.timing = v "timingAge";
+  src.timing : Range as v -> tgt.timing = v "timingRange";
+  src.timing : Duration as v -> tgt.timing = v "timingDuration";
+  src.timing : dateTime as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ActivityDefinition.timing[x]', x.value = v "timingDateTime";
+  src.timing : Period as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-ActivityDefinition.timing[x]', x.value = v "timingPeriod";
+
+  src.location as v -> tgt.location as cr, cr.reference = v "location";   // Reference -> CodeableReference
+  src.participant as s -> tgt.participant as t then ActivityDefinitionParticipant(s, t) "participant";
+  // product[x]: this IG references Medication, valid in both versions (Substance is not an R6 target).
+  src.product : Reference as v -> tgt.product = v "productReference";
+  src.product : CodeableConcept as v -> tgt.product = v "productCodeableConcept";
+  src.quantity as v -> tgt.quantity = v "quantity";
+  src.bodySite as v -> tgt.bodySite = v "bodySite";
+  // Reference -> canonical: the reference string is taken as the canonical.
+  src.specimenRequirement as v -> tgt.specimenRequirement = (v.reference) "specimenRequirement";
+  src.observationRequirement as v -> tgt.observationRequirement = (v.reference) "observationRequirement";
+  src.observationResultRequirement as v -> tgt.observationResultRequirement = (v.reference) "observationResultRequirement";
+  src.transform as v -> tgt.transform = v "transform";
+  src.dynamicValue as s -> tgt.dynamicValue as t then ActivityDefinitionDynamicValue(s, t) "dynamicValue";
+
+  // The sig: dosage[] -> dosageInstruction (steps, components, repeatCycle).
+  src where (dosage.exists()) -> tgt.dosageInstruction as di then {
+    src.dosage first as d where (timing.repeat.period.exists()) -> di.repeatCycle as rc,
+      rc.value = (d.timing.repeat.period),
+      rc.unit = (d.timing.repeat.periodUnit),
+      rc.system = 'http://unitsofmeasure.org',
+      rc.code = (d.timing.repeat.periodUnit) "repeatCycle";
+    src.dosage as d -> di.step as s then DosageToStep(d, s) "step";
+  } "dosageInstruction";
+}
+
+group DosageToStep(source d, target s) {
+  d.sequence as v -> s.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.sequence', x.value = v "sequence";
+  // day of cycle n -> offset of n-1 days from the start of the course (cycle).
+  // The Duration is built stand-alone and then copied into offset[x]: the
+  // validator engine cannot create children of a polymorphic element in a
+  // version-patched definition (see README.md), but it can copy one.
+  d.extension as e where (url = 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle') -> s.start as st,
+    create('Duration') as off,
+    off.value = (e.value - 1),
+    off.unit = 'd',
+    off.system = 'http://unitsofmeasure.org',
+    off.code = 'd',
+    st.offset = off "dayOfCycle";
+  d -> s.component as c then DosageToComponent(d, c) "component";
+}
+
+group DosageToComponent(source d, target c) {
+  d.id as v -> c.id = v "id";
+  d.extension as e where (url != 'http://hemonc.org/fhir/StructureDefinition/day-of-cycle') -> c.extension as t then Extension(e, t) "extension";
+  d.modifierExtension as e -> c.modifierExtension as t then Extension(e, t) "modifierExtension";
+  d.text as v -> c.text = v "text";
+  d.additionalInstruction as v -> c.additionalInstruction = v "additionalInstruction";
+  d.patientInstruction as v -> c.patientInstruction = v "patientInstruction";
+  d.timing as v -> c.timing = v "timing";
+  d.asNeeded : boolean as v -> c.asNeeded = v "asNeededBoolean";
+  d.asNeeded : CodeableConcept as v -> c.asNeededFor = v "asNeededFor";
+  d.site as v -> c.site as cr, cr.concept = v "site";   // CodeableConcept -> CodeableReference
+  d.route as v -> c.route = v "route";
+  d.method as v -> c.method = v "method";
+  d.doseAndRate as s -> c.doseAndRate as t then DoseAndRate(s, t) "doseAndRate";
+  d.maxDosePerPeriod as v -> c.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerPeriod', x.value = v "maxDosePerPeriod";
+  d.maxDosePerAdministration as v -> c.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerAdministration', x.value = v "maxDosePerAdministration";
+  d.maxDosePerLifetime as v -> c.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Dosage.maxDosePerLifetime', x.value = v "maxDosePerLifetime";
+}
+
+group DoseAndRate(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.type as v -> tgt.type = v "type";
+  src.dose as v -> tgt.dose = v "dose";
+  src.rate as v -> tgt.rate = v "rate";
+}
+
+group ActivityDefinitionParticipant(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.type as v -> tgt.type = v "type";
+  src.role as v -> tgt.role = v "role";
+}
+
+group ActivityDefinitionDynamicValue(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  // MedicationRequest.dosageInstruction is 0..1 DosageInstruction in R6.
+  src.path as v -> tgt.path = (v.replaceMatches('dosageInstruction\\[(\\d+)\\]', 'dosageInstruction.step[$1].component[0]')) "path";
+  src.expression as v -> tgt.expression = v "expression";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

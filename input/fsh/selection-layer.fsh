@@ -259,8 +259,7 @@ Usage: #example
 * date = "2026-10-24"
 * publisher = "European SACT Regimen Catalog Working Group (example)"
 * description = "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content."
-* sourceUri = "https://srl.org.nz/regimens"
-* targetUri = "http://hemonc.org/fhir/CodeSystem/hemonc"
+// source[x]/target[x] are value-set scopes, not code systems; the systems are on group.source/target.
 * group[0].source = "https://srl.org.nz/regimens"
 * group[0].target = $hemonc
 * group[0].element[0].code = #52101000210105
@@ -281,3 +280,20 @@ Usage: #example
 * group[0].element[2].target[0].display = "mFOLFOX6 Variant #06"
 * group[0].element[2].target[0].equivalence = #relatedto
 * group[0].element[2].target[0].comment = "replace-dose: folinic acid 400 mg/m² IV 2 h → 50 mg flat IV 2 min. Lowest HemOnc leucovorin dose for mFOLFOX6 is 200 mg/m²."
+
+// ---------------------------------------------------------------------------
+// Day of cycle: the day within a treatment cycle on which a sig or an action
+// is given (day 1 = first day of the cycle). Used on Dosage (ActivityDefinition
+// sigs) and on PlanDefinition.action. In FHIR R6 the sig-level value maps to
+// DosageInstruction.step.start (RelativeTime offset of day-1 days from the
+// start of the cycle); see the FHIR Versions page.
+// ---------------------------------------------------------------------------
+Extension: DayOfCycle
+Id: day-of-cycle
+Title: "Day of Cycle"
+Description: "Day within a treatment cycle on which a sig or a plan action is given. Day 1 is the first day of the cycle."
+Context: Dosage, PlanDefinition.action
+* value[x] only integer
+* valueInteger 1..1
+* ^status = #draft
+* ^experimental = true

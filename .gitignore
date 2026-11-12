@@ -23,3 +23,10 @@ phase0/hapi-data/
 
 # Raw HemOnc CSV bundle is tracked separately; the unzipped working tree is rebuildable
 hemonckb-raw/additional_tables/
+
+# Beads / Dolt files (added by bd init)
+*.db
+.beads-credential-key
+
+# Cross-version harness (scripts/xver/xver.py): tools, packages, derived output
+/.xver

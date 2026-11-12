@@ -1,0 +1,54 @@
+// European SACT Regimen Catalog: ValueSet, R6 -> R4. Inverse of ValueSet_4to6;
+// R6-only metadata is kept in cross-version extensions.
+
+map "http://hemonc.org/fhir/StructureMap/ValueSet6to4" = "ESRCValueSet6to4"
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/ValueSet" alias ValueSetR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/ValueSet" alias ValueSetR4 as target
+
+group ValueSet(source src : ValueSetR6, target tgt : ValueSetR4) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.versionAlgorithm as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.versionAlgorithm[x]', x.value = v "versionAlgorithm";
+  src.copyrightLabel as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.copyrightLabel', x.value = v "copyrightLabel";
+  src.approvalDate as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.approvalDate', x.value = v "approvalDate";
+  src.lastReviewDate as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.lastReviewDate', x.value = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.effectivePeriod', x.value = v "effectivePeriod";
+  src.topic as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.topic', x.value = v "topic";
+  src.author as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.author', x.value = v "author";
+  src.editor as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.editor', x.value = v "editor";
+  src.reviewer as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.reviewer', x.value = v "reviewer";
+  src.endorser as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.endorser', x.value = v "endorser";
+  src.relatedArtifact as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-ValueSet.relatedArtifact', x.value = v "relatedArtifact";
+  src.immutable as v -> tgt.immutable = v "immutable";
+  src.compose as v -> tgt.compose = v "compose";
+  src.expansion as v -> tgt.expansion = v "expansion";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

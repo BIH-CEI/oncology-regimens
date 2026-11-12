@@ -1,0 +1,180 @@
+// European SACT Regimen Catalog: PlanDefinition, R6 -> R4. Inverse of
+// PlanDefinition_4to6. R6-only elements (actor, asNeeded, action.linkId,
+// action.location, action.applicabilityBehavior, relatedAction.endRelationship,
+// input/output title and relatedData, participant actorId/function/type
+// canonical and reference) are kept in cross-version extensions.
+//
+// Executed by scripts/xver/xver.py with the HL7 validator (see README.md).
+
+map "http://hemonc.org/fhir/StructureMap/PlanDefinition6to4" = "ESRCPlanDefinition6to4"
+
+uses "http://hl7.org/fhir/6.0/StructureDefinition/PlanDefinition" alias PlanDefinitionR6 as source
+uses "http://hl7.org/fhir/4.0/StructureDefinition/PlanDefinition" alias PlanDefinitionR4 as target
+
+group PlanDefinition(source src : PlanDefinitionR6, target tgt : PlanDefinitionR4) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.versionAlgorithm as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.versionAlgorithm[x]', x.value = v "versionAlgorithm";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.subtitle as v -> tgt.subtitle = v "subtitle";
+  src.type as v -> tgt.type = v "type";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.subject : CodeableConcept as v -> tgt.subject = v "subjectCodeableConcept";
+  src.subject : Reference as v -> tgt.subject = v "subjectReference";
+  src.subject : canonical as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.subject[x]', x.value = v "subjectCanonical";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.usage as v -> tgt.usage = v "usage";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.copyrightLabel as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/StructureDefinition/artifact-copyrightLabel', x.value = v "copyrightLabel";
+  src.approvalDate as v -> tgt.approvalDate = v "approvalDate";
+  src.lastReviewDate as v -> tgt.lastReviewDate = v "lastReviewDate";
+  src.effectivePeriod as v -> tgt.effectivePeriod = v "effectivePeriod";
+  src.topic as v -> tgt.topic = v "topic";
+  src.author as v -> tgt.author = v "author";
+  src.editor as v -> tgt.editor = v "editor";
+  src.reviewer as v -> tgt.reviewer = v "reviewer";
+  src.endorser as v -> tgt.endorser = v "endorser";
+  src.relatedArtifact as v -> tgt.relatedArtifact = v "relatedArtifact";
+  src.library as v -> tgt.library = v "library";
+  src.goal as s -> tgt.goal as t then PlanDefinitionGoal(s, t) "goal";
+  src.actor as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.actor', x.value = v "actor";
+  src.action as s -> tgt.action as t then PlanDefinitionAction(s, t) "action";
+  src.asNeeded as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.asNeeded[x]', x.value = v "asNeeded";
+}
+
+group PlanDefinitionGoal(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.category as v -> tgt.category = v "category";
+  src.description as v -> tgt.description = v "description";
+  src.priority as v -> tgt.priority = v "priority";
+  src.start as v -> tgt.start = v "start";
+  src.addresses as v -> tgt.addresses = v "addresses";
+  src.documentation as v -> tgt.documentation = v "documentation";
+  src.target as s -> tgt.target as t then PlanDefinitionGoalTarget(s, t) "target";
+}
+
+group PlanDefinitionGoalTarget(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.measure as v -> tgt.measure = v "measure";
+  src.detail : Quantity as v -> tgt.detail = v "detailQuantity";
+  src.detail : Range as v -> tgt.detail = v "detailRange";
+  src.detail : CodeableConcept as v -> tgt.detail = v "detailCodeableConcept";
+  src.detail : string as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.goal.target.detail[x]', x.value = v "detailString";
+  src.detail : boolean as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.goal.target.detail[x]', x.value = v "detailBoolean";
+  src.detail : integer as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.goal.target.detail[x]', x.value = v "detailInteger";
+  src.detail : Ratio as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.goal.target.detail[x]', x.value = v "detailRatio";
+  src.due as v -> tgt.due = v "due";
+}
+
+group PlanDefinitionAction(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  // action.code overflow recorded by 4to6 comes back as further codes.
+  src.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-PlanDefinition.action.code') -> tgt.code = (e.value) "codeOverflow";
+  src.extension as e where (url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-PlanDefinition.action.timing[x]') -> tgt.timing = (e.value) "timingRestored";
+  src.extension as e where (url.startsWith('http://hl7.org/fhir/4.0/StructureDefinition/extension-').not()) -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.linkId as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.linkId', x.value = v "linkId";
+  src.prefix as v -> tgt.prefix = v "prefix";
+  src.title as v -> tgt.title = v "title";
+  src.description as v -> tgt.description = v "description";
+  src.textEquivalent as v -> tgt.textEquivalent = v "textEquivalent";
+  src.priority as v -> tgt.priority = v "priority";
+  src.code as v -> tgt.code = v "code";
+  src.reason as v -> tgt.reason = v "reason";
+  src.documentation as v -> tgt.documentation = v "documentation";
+  src.goalId as v -> tgt.goalId = v "goalId";
+  src.subject : CodeableConcept as v -> tgt.subject = v "subjectCodeableConcept";
+  src.subject : Reference as v -> tgt.subject = v "subjectReference";
+  src.subject : canonical as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.subject[x]', x.value = v "subjectCanonical";
+  src.trigger as v -> tgt.trigger = v "trigger";
+  src.condition as s -> tgt.condition as t then PlanDefinitionActionCondition(s, t) "condition";
+  src.input as i where (requirement.exists()) -> tgt.input = (i.requirement) "input";
+  src.output as o where (requirement.exists()) -> tgt.output = (o.requirement) "output";
+  src.relatedAction as s -> tgt.relatedAction as t then PlanDefinitionActionRelatedAction(s, t) "relatedAction";
+  src.timing : Timing as v -> tgt.timing = v "timingTiming";
+  src.timing : Age as v -> tgt.timing = v "timingAge";
+  src.timing : Duration as v -> tgt.timing = v "timingDuration";
+  src.timing : Range as v -> tgt.timing = v "timingRange";
+  src.timing : RelativeTime as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.timing[x]', x.value = v "timingRelativeTime";
+  src.location as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.location', x.value = v "location";
+  src.participant as s -> tgt.participant as t then PlanDefinitionActionParticipant(s, t) "participant";
+  src.type as v -> tgt.type = v "type";
+  src.applicabilityBehavior as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.applicabilityBehavior', x.value = v "applicabilityBehavior";
+  src.groupingBehavior as v -> tgt.groupingBehavior = v "groupingBehavior";
+  src.selectionBehavior as v -> tgt.selectionBehavior = v "selectionBehavior";
+  src.requiredBehavior as v -> tgt.requiredBehavior = v "requiredBehavior";
+  src.precheckBehavior as v -> tgt.precheckBehavior = v "precheckBehavior";
+  src.cardinalityBehavior as v -> tgt.cardinalityBehavior = v "cardinalityBehavior";
+  src.definition : canonical as v -> tgt.definition = v "definitionCanonical";
+  src.definition : uri as v -> tgt.definition = v "definitionUri";
+  src.transform as v -> tgt.transform = v "transform";
+  src.dynamicValue as s -> tgt.dynamicValue as t then PlanDefinitionActionDynamicValue(s, t) "dynamicValue";
+  src.action as s -> tgt.action as t then PlanDefinitionAction(s, t) "action";
+}
+
+group PlanDefinitionActionCondition(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.kind as v -> tgt.kind = v "kind";
+  src.expression as v -> tgt.expression = v "expression";
+}
+
+group PlanDefinitionActionRelatedAction(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.targetId as v -> tgt.actionId = v "actionId";
+  src.relationship as v -> tgt.relationship = v "relationship";
+  src.endRelationship as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.relatedAction.endRelationship', x.value = v "endRelationship";
+  src.offset as v -> tgt.offset = v "offset";
+}
+
+group PlanDefinitionActionParticipant(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.type as v -> tgt.type = v "type";
+  src.role as v -> tgt.role = v "role";
+  src.actorId as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.participant.actorId', x.value = v "actorId";
+  src.typeCanonical as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.participant.typeCanonical', x.value = v "typeCanonical";
+  src.typeReference as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.participant.typeReference', x.value = v "typeReference";
+  src.function as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/6.0/StructureDefinition/extension-PlanDefinition.action.participant.function', x.value = v "function";
+}
+
+group PlanDefinitionActionDynamicValue(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.path as v -> tgt.path = (v.replaceMatches('dosageInstruction\\.step\\[(\\d+)\\]\\.component\\[0\\]', 'dosageInstruction[$1]')) "path";
+  src.expression as v -> tgt.expression = v "expression";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

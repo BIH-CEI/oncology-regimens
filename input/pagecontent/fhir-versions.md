@@ -1,8 +1,12 @@
 ### FHIR Versions — R4 Baseline, R5 and R6 Adaptations
 
-*Status: draft starting point for Phase 1A deliverable A.8. Facts checked
-against the FHIR R6 CI build (6.0.0-snapshot1, generated 2026-11-09),
-HL7 JIRA and the generated cross-version maps on 2026-11-10.*
+*Status: draft for Phase 1A deliverable A.8. Facts checked against the
+FHIR R6 CI build (build.fhir.org, package label 6.0.0-snapshot1, built
+2026-11-10), HL7 JIRA and the generated cross-version maps. The maps of
+this IG are executed and round-trip tested since 2026-11-12 (see below).
+Note: the published `hl7.fhir.r6.core#6.0.0-snapshot1` package on the
+registry (2026-09-10) predates the canonical `Medication` and the
+`DosageInstruction` type; "R6" on this page means the CI build.*
 
 #### Baseline: FHIR R4
 
@@ -38,15 +42,21 @@ outputs. Rules adopted from that work:
    `http://hl7.org/fhir/6.0/StructureDefinition/extension-<path>`. The
    generic scheme is used only where no published extension exists
    (lossy code translations, see Medication status below).
-4. **Maps are the generated cross-version maps where they are correct,
-   hand-written where this IG's modelling needs more** (see
+4. **Maps are hand-written and self-contained**, one pair per artifact
+   type (see
    [`maps/xver/`](https://github.com/thome/oncology-regimens/tree/main/maps/xver)
-   in the repository). The generated maps are the 164 R4→R6 and 63 R6→R4
-   maps from the FHIRPath Lab executor used in that experiment.
-5. **No map has been executed yet.** The HL7 validator does not run
-   cross-version maps; the TypeScript executor has to be wired into CI
-   first. Until then this page is the normative description and the maps
-   are its machine-readable draft.
+   in the repository): `Medication`, `ActivityDefinition`, `PlanDefinition`,
+   `Library`, `CodeSystem`, `ValueSet`, `ConceptMap`, each R4→R6 and R6→R4.
+   The generated maps of the FHIR Camp experiment (164 R4→R6, 63 R6→R4)
+   were used to find the differences, not imported: they predate the
+   canonical `Medication` and put every `Dosage` into its own step.
+5. **Every map is executed in CI.** `scripts/xver/xver.py` runs the maps
+   with the HL7 validator (7.0.5) against the R6 CI build, validates the
+   derived R6 resources against R6 and converts them back; a difference to
+   the R4 source fails the build (workflow `xver-roundtrip`). The derived
+   R6 resources are a build artifact, not a published package yet. The
+   validator needs a handful of work-arounds for cross-version execution;
+   they are documented in `maps/xver/README.md` and reported upstream.
 
 #### R5 with R4 backport
 
@@ -59,19 +69,19 @@ provides it. **Currently no cross-version extension is in use**:
 | `Medication` | `form` → `doseForm`; `ingredient.item[x]` → CodeableReference; adds `definition`, `marketingAuthorizationHolder`, `totalVolume` | No. The catalog `Medication` uses `identifier`, `code`, `status` and extensions only. |
 | `ActivityDefinition` | `product[x]` reference targets add `Ingredient`, `SubstanceDefinition`; `subject[x]` adds canonical | No. `productReference` targets `Medication`, valid in R4, R5 and R6. |
 | `PlanDefinition` | adds `actor`, `action.location`, `action.input/output` become backbone elements | No. This IG uses `action.definitionCanonical`, `action.selectionBehavior`, `action.timingTiming`, `action.relatedAction`, `action.code` (at most one), `relatedArtifact`, `useContext`. |
-| `ConceptMap` | `group.element.target.equivalence` → `relationship` | Yes, at publication: the generated map does **not** read `equivalence`, so the hand-written map must translate `equivalent`, `wider`→`source-is-narrower-than-target`, `narrower`→`source-is-broader-than-target`, `unmatched`→`not-related-to`. No ConceptMap instance exists in the IG yet. |
+| `ConceptMap` | `group.element.target.equivalence` → `relationship`; `source[x]`/`target[x]` → `sourceScope[x]`/`targetScope[x]`; `group.source` uri → canonical | Yes: the hand-written `ConceptMap_4to6` translates `relatedto`, `equivalent`, `wider`→`source-is-narrower-than-target`, `narrower`→`source-is-broader-than-target`, `unmatched`→`not-related-to` without loss and keeps the R4 code on the primitive for `equal`, `subsumes`, `specializes`, `inexact`, `disjoint`. The selection-layer ConceptMap (SRL → HemOnc variant) round-trips. |
 | `Library`, `CodeSystem`, `ValueSet` | no structural change for the elements used | No. |
 
 #### R6: what changes per artifact type
 
 | Artifact type | R4 representation in this IG | R6 target (6.0.0-snapshot1) | Map |
 |---|---|---|---|
-| `Medication` (kind of drug, catalog level) | `identifier` (HemOnc CUI), `code` (coding stack), `status`; canonical metadata via `artifact-url`, `artifact-version`, `artifact-name`, `artifact-publisher`; classes via `medication-classification`; investigational flag via `medication-type` | `Medication` **is a canonical resource** ([FHIR-57813](https://jira.hl7.org/browse/FHIR-57813)): the four `artifact-*` extensions become native `url`, `version`, `name`, `publisher`. `status` is bound to PublicationStatus ([FHIR-59543](https://jira.hl7.org/browse/FHIR-59543)): `active` unchanged, `inactive` and `entered-in-error` become `retired`. **`Medication.classification` is not in the build**; [FHIR-59521](https://jira.hl7.org/browse/FHIR-59521) is open, so `medication-classification` stays an extension. | hand-written `Medication_4to6` / `_6to4` (the generated map was made from ballot5, where Medication had no canonical elements) |
+| `Medication` (kind of drug, catalog level) | `identifier` (HemOnc CUI), `code` (coding stack), `status`; canonical metadata via `artifact-url`, `artifact-version`, `artifact-name`, `artifact-publisher`; classes via `medication-classification`; investigational flag via `medication-type` | `Medication` **is a canonical resource** ([FHIR-57813](https://jira.hl7.org/browse/FHIR-57813)): the four `artifact-*` extensions become native `url`, `version`, `name`, `publisher`. `status` is bound to PublicationStatus ([FHIR-59543](https://jira.hl7.org/browse/FHIR-59543)): `active` unchanged, `inactive` and `entered-in-error` become `retired`. **`Medication.classification` is not in the build**; [FHIR-59521](https://jira.hl7.org/browse/FHIR-59521) is open, so `medication-classification` stays an extension. | hand-written `Medication_4to6` / `_6to4`, round trip passes (the generated map was made from ballot5, where Medication had no canonical elements) |
 | `MedicationKnowledge` | **not used** (removed from this IG 2026-11-10) | **Removed from the specification** ([FHIR-50845](https://jira.hl7.org/browse/FHIR-50845), Pharmacy WG, Madrid WGM May 2025, 12-0-4). Not moved to an incubator. Element mapping in [FHIR-57378](https://jira.hl7.org/browse/FHIR-57378); see below. | none needed |
-| `ActivityDefinition` (sig) | `kind = MedicationRequest`, `productReference → Medication`, `dosage` 0..* with `sequence`, `timing`, `route`, `doseAndRate`; `dynamicValue` paths on `MedicationRequest.dosageInstruction[0]...` | **Remodelled.** `dosage` becomes `dosageInstruction` 0..1 of the new type `DosageInstruction` ([FHIR-53721](https://jira.hl7.org/browse/FHIR-53721), [FHIR-54340](https://jira.hl7.org/browse/FHIR-54340)): `renderedInstruction`, `repeatCycle` (Duration, [FHIR-54252](https://jira.hl7.org/browse/FHIR-54252)), `step[]` with `start`/`end` (RelativeTime), `count`, `component` (Dosage 1..*), `safety`. `Dosage` loses `sequence` and `maxDose*`, gains `condition`, `safety`, and `doseExpression`/`rateExpression`. `MedicationRequest.dosageInstruction` is 0..1 `DosageInstruction` as well, so every `dynamicValue.path` changes. `timing[x]` drops dateTime and Period (unused here). `product` may not reference `Substance` (unused). | hand-written, **to do** (issue oncology-regimens-u7w). The generated map puts each R4 `Dosage` into its own sequential `step`, which is wrong for concurrent components sharing one `sequence`. |
-| `PlanDefinition` (regimen, variant, derived protocol, formulary) | see [Selection Layer](selection-layer.html) | `action.code` becomes 0..1 (this IG uses at most one); `action.relatedAction.actionId` → `targetId`; `action.timing[x]` drops dateTime and Period (this IG uses Timing); `action.input/output` become backbone elements (unused). No removal. | generated map sufficient |
-| `Library` (CQL, FHIRPath) | `type = logic-library`, `content` | Unchanged. The CQL itself must be re-checked where it reads `dosageInstruction`. | generated |
-| `CodeSystem`, `ValueSet`, `ConceptMap` | HemOnc fragment, sig-target-type, MII bindings | `ConceptMap` as in the R5 row. Others unchanged. | generated (+ hand-written ConceptMap once one exists) |
+| `ActivityDefinition` (sig) | `kind = MedicationRequest`, `productReference → Medication`, `dosage` 0..* with `sequence`, `timing`, `route`, `doseAndRate`; `dynamicValue` paths on `MedicationRequest.dosageInstruction[0]...` | **Remodelled.** `dosage` becomes `dosageInstruction` 0..1 of the new type `DosageInstruction` ([FHIR-53721](https://jira.hl7.org/browse/FHIR-53721), [FHIR-54340](https://jira.hl7.org/browse/FHIR-54340)): `renderedInstruction`, `repeatCycle` (Duration, [FHIR-54252](https://jira.hl7.org/browse/FHIR-54252)), `step[]` with `start`/`end` (RelativeTime), `count`, `component` (Dosage 1..*), `safety`. `Dosage` loses `sequence` and `maxDose*`, gains `condition`, `safety`, and `doseExpression`/`rateExpression`. `MedicationRequest.dosageInstruction` is 0..1 `DosageInstruction` as well, so every `dynamicValue.path` changes. `timing[x]` drops dateTime and Period (unused here). `product` may not reference `Substance` (unused). | hand-written `ActivityDefinition_4to6` / `_6to4`, round trip passes. Deterministic rules: one `Dosage` = one `step` with one `component` (a sig is one product; concurrency between products lives in the PlanDefinition, so `sequence` values are unique and ordered); `day-of-cycle` *n* = `step.start.offsetDuration` of *n−1* days; `timing.repeat.period` → `repeatCycle` (the `Timing` stays on the component); `dynamicValue.path` `dosageInstruction[i]…` → `dosageInstruction.step[i].component[0]…`; `maxDose*` kept in cross-version extensions. |
+| `PlanDefinition` (regimen, variant, derived protocol, formulary) | see [Selection Layer](selection-layer.html) | `action.code` becomes 0..1 (this IG uses at most one); `action.relatedAction.actionId` → `targetId`; `action.timing[x]` drops dateTime and Period (this IG uses Timing); `action.input/output` become backbone elements (unused). No removal. | hand-written `PlanDefinition_4to6` / `_6to4`, round trip passes (`action.code` overflow and the dropped `timing[x]` types go to cross-version extensions) |
+| `Library` (CQL, FHIRPath) | `type = logic-library`, `content` | Unchanged. The CQL itself must be re-checked where it reads `dosageInstruction`. | hand-written copies, round trip passes |
+| `CodeSystem`, `ValueSet`, `ConceptMap` | HemOnc fragment, sig-target-type, MII bindings | `ConceptMap` as in the R5 row. Others unchanged. | hand-written, round trip passes |
 | Extensions `day-of-cycle`, `formulary-rank`, `formulary-parameter`, `regimen-modification` | defined in this IG | URLs are version-independent. `day-of-cycle` is the one whose **meaning** has a native R6 home: `DosageInstruction.step.start` as RelativeTime offset from the cycle start. | part of the sig map |
 
 ##### Why the R6 dosage model matters for this IG
@@ -90,10 +100,16 @@ R4 `Dosage` plus extensions:
 | number of cycles (3–6) | `timing.repeat.boundsRange` in cycles | not an element: "It does not say how many cycles are taken" (dosage.html). `renderedInstruction` or PlanDefinition context. Feedback item. |
 
 This is the one place where R6 is a remodel rather than a rename. The
-R4 sig profile of this IG will be constrained so that the mapping is
-deterministic (same `sequence` = one step; `day-of-cycle` = step offset;
-one `period` = `repeatCycle`), and the R6 shape is reported back to the
-Pharmacy WG with worked oncology examples (issue oncology-regimens-pxp).
+R4 sig of this IG is constrained so that the mapping is deterministic:
+a sig carries one product, every `Dosage` has a unique `sequence` in
+list order (sequential phases of the same product), concurrency between
+products is expressed by PlanDefinition `relatedAction`
+(`concurrent-with-start`), `day-of-cycle` is the step offset and the one
+`timing.repeat.period` is the `repeatCycle`. The derived R6 sig for
+carboplatin (`repeatCycle` 21 d, `step.start` offset 0 d, `component`
+with the AUC target and the Calvert `dynamicValue` on
+`dosageInstruction.step[0].component[0].doseAndRate[0].doseQuantity.value`)
+is the worked example for the Pharmacy WG (issue oncology-regimens-pxp).
 
 ##### MedicationKnowledge → this IG
 
@@ -147,3 +163,6 @@ representation `$apply` and CDS Hooks consume.
 | 2026-11-10 | No cross-version extensions in use; `hl7.fhir.uv.xver-r5.r4` is the designated package if one becomes necessary | this page |
 | 2026-11-10 | Protocol formularies stay `PlanDefinition`; `FormularyItem` is the R6 target for drug- and sig-level program constraints only | phx-incubator FormularyItem 0.1.0 |
 | 2026-11-10 | One R4 source, derived R5/R6 views by FML maps at build time, round-trip as acceptance test; generated maps where correct, hand-written for Medication (canonical elements) and the sig (DosageInstruction) | Health Samurai FHIR Camp 2026 write-up; generated maps from ballot5; R6 snapshot1 |
+| 2026-11-12 | All seven artifact types get hand-written, self-contained R4↔R6 maps, executed by the HL7 validator in CI with R6 validation and round-trip check; the R6 target is the CI build, not the registry snapshot | `maps/xver/README.md`, `scripts/xver/xver.py`, workflow `xver-roundtrip` |
+| 2026-11-12 | Sig profile rule for the R6 remodel: one product per sig, unique ordered `sequence`, concurrency only via PlanDefinition `relatedAction`; `day-of-cycle` defined as an extension of this IG (`Dosage`, `PlanDefinition.action`) | `ActivityDefinition_4to6.fml`, `selection-layer.fsh` |
+| 2026-11-12 | `medication-classification-type` codes use the system `http://hl7.org/fhir/medication-classification-type` (as defined in `hl7.fhir.uv.extensions`), not a `CodeSystem/` URL; `Medication.meta.source` is a URI into the HemOnc Dataverse | R6 validation of the derived resources |

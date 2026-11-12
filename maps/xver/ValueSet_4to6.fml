@@ -1,0 +1,44 @@
+// European SACT Regimen Catalog: ValueSet, R4 -> R6. The elements used by this IG
+// are identical in both versions and are copied; nested content (concepts,
+// designations, compose) is copied as a whole. Executed by scripts/xver/xver.py.
+
+map "http://hemonc.org/fhir/StructureMap/ValueSet4to6" = "ESRCValueSet4to6"
+
+uses "http://hl7.org/fhir/4.0/StructureDefinition/ValueSet" alias ValueSetR4 as source
+uses "http://hl7.org/fhir/6.0/StructureDefinition/ValueSet" alias ValueSetR6 as target
+
+group ValueSet(source src : ValueSetR4, target tgt : ValueSetR6) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.immutable as v -> tgt.immutable = v "immutable";
+  src.compose as v -> tgt.compose = v "compose";
+  src.expansion as v -> tgt.expansion = v "expansion";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

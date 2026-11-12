@@ -126,6 +126,24 @@ npm install -g fsh-sushi        # einmalig
 ./_genonce.sh                   # baut den IG → output/index.html
 ```
 
+### Cross-Version-Check (R4 → R6 → R4)
+
+Der IG ist R4. Die R6-Sicht wird nicht gepflegt, sondern aus R4 abgeleitet:
+FML-Maps in `maps/xver/` (ein Paar pro Artefakttyp), ausgeführt mit dem
+HL7-Validator. Der Round-Trip R4 → R6 → R4 muss das Original unverändert
+ergeben, sonst schlägt der Lauf fehl (CI-Workflow `xver-roundtrip`).
+
+```bash
+sushi .                               # fsh-generated/ aktualisieren
+python3 scripts/xver/xver.py          # repräsentative Auswahl
+python3 scripts/xver/xver.py --all    # alles
+```
+
+Beim ersten Lauf lädt das Skript Validator, R4-Paket und den R6-CI-Build
+nach `.xver/` (git-ignoriert). Abgeleitete R6-Ressourcen liegen danach in
+`.xver/out/r6/`. Hintergrund und die Validator-Eigenheiten, die das Skript
+umgeht: `maps/xver/README.md`; Modellentscheidungen: IG-Seite "FHIR Versions".
+
 ### Phase-0-Spike lokal ausführen (empfohlener erster Lauf)
 ```bash
 cd phase0

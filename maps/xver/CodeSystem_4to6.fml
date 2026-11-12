@@ -1,0 +1,52 @@
+// European SACT Regimen Catalog: CodeSystem, R4 -> R6. The elements used by this IG
+// are identical in both versions and are copied; nested content (concepts,
+// designations, compose) is copied as a whole. Executed by scripts/xver/xver.py.
+
+map "http://hemonc.org/fhir/StructureMap/CodeSystem4to6" = "ESRCCodeSystem4to6"
+
+uses "http://hl7.org/fhir/4.0/StructureDefinition/CodeSystem" alias CodeSystemR4 as source
+uses "http://hl7.org/fhir/6.0/StructureDefinition/CodeSystem" alias CodeSystemR6 as target
+
+group CodeSystem(source src : CodeSystemR4, target tgt : CodeSystemR6) <<type+>> {
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.url as v -> tgt.url = v "url";
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.version as v -> tgt.version = v "version";
+  src.name as v -> tgt.name = v "name";
+  src.title as v -> tgt.title = v "title";
+  src.status as v -> tgt.status = v "status";
+  src.experimental as v -> tgt.experimental = v "experimental";
+  src.date as v -> tgt.date = v "date";
+  src.publisher as v -> tgt.publisher = v "publisher";
+  src.contact as v -> tgt.contact = v "contact";
+  src.description as v -> tgt.description = v "description";
+  src.useContext as v -> tgt.useContext = v "useContext";
+  src.jurisdiction as v -> tgt.jurisdiction = v "jurisdiction";
+  src.purpose as v -> tgt.purpose = v "purpose";
+  src.copyright as v -> tgt.copyright = v "copyright";
+  src.caseSensitive as v -> tgt.caseSensitive = v "caseSensitive";
+  src.valueSet as v -> tgt.valueSet = v "valueSet";
+  src.hierarchyMeaning as v -> tgt.hierarchyMeaning = v "hierarchyMeaning";
+  src.compositional as v -> tgt.compositional = v "compositional";
+  src.versionNeeded as v -> tgt.versionNeeded = v "versionNeeded";
+  src.content as v -> tgt.content = v "content";
+  src.supplements as v -> tgt.supplements = v "supplements";
+  src.count as v -> tgt.count = v "count";
+  src.filter as v -> tgt.filter = v "filter";
+  src.property as v -> tgt.property = v "property";
+  src.concept as v -> tgt.concept = v "concept";
+}
+
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
+}

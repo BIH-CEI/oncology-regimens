@@ -1,16 +1,21 @@
-/// url = 'http://hemonc.org/fhir/StructureMap/Medication4to6'
-/// name = 'ESRCMedication4to6'
-/// title = 'European SACT Regimen Catalog: catalog Medication, R4 to R6'
-/// status = 'draft'
-/// description = 'Converts the catalog (kind-of-drug) Medication of this IG from R4 to R6 (6.0.0-snapshot1, Medication as canonical resource per FHIR-57813). The artifact-* extensions become native canonical elements; medication-classification stays an extension until FHIR-59521 is applied; status is translated to PublicationStatus (FHIR-59543) and the original R4 code is kept in a cross-version extension on the primitive. NOT EXECUTED YET - see README.'
+// European SACT Regimen Catalog: catalog (kind-of-drug) Medication, R4 -> R6.
+//
+// R6 target: the R6 CI build (build.fhir.org, package label 6.0.0-snapshot1,
+// built 2026-11-10), where Medication is a canonical resource (FHIR-57813).
+// The published 6.0.0-snapshot1 package of 2026-09-10 does not have these
+// elements yet. The artifact-* extensions of this IG become native canonical
+// elements; medication-classification stays an extension (FHIR-59521 is not
+// applied); status is translated to PublicationStatus (FHIR-59543) and the
+// original R4 code is kept in a cross-version extension on the primitive
+// when the translation is lossy.
+//
+// Executed by scripts/xver/xver.py with the HL7 validator (see README.md).
+// Syntax: the validator's loader accepts the "map ... = ..." header only,
+// and the grammar order map, conceptmap, uses, imports, group.
 
-uses "http://hl7.org/fhir/4.0/StructureDefinition/Medication" alias MedicationR4 as source
-uses "http://hl7.org/fhir/6.0/StructureDefinition/Medication" alias MedicationR6 as target
+map "http://hemonc.org/fhir/StructureMap/Medication4to6" = "ESRCMedication4to6"
 
-imports "http://hl7.org/fhir/uv/xver/StructureMap/*4to6"
-
-// R4 Medication status (active | inactive | entered-in-error) -> R6 PublicationStatus.
-// FHIR-59543: inactive and entered-in-error become retired; active is unchanged.
+// R4 medication-status (active | inactive | entered-in-error) -> R6 PublicationStatus.
 conceptmap "MedicationStatus4to6" {
   prefix s = "http://hl7.org/fhir/CodeSystem/medication-status"
   prefix t = "http://hl7.org/fhir/publication-status"
@@ -20,56 +25,84 @@ conceptmap "MedicationStatus4to6" {
   s:"entered-in-error" - t:retired
 }
 
+uses "http://hl7.org/fhir/4.0/StructureDefinition/Medication" alias MedicationR4 as source
+uses "http://hl7.org/fhir/6.0/StructureDefinition/Medication" alias MedicationR6 as target
+
 group Medication(source src : MedicationR4, target tgt : MedicationR6) <<type+>> {
-  // Resource / DomainResource parts, copied explicitly so that the artifact-*
-  // extensions are NOT duplicated as extensions on the R6 side.
-  src.id -> tgt.id;
-  src.meta -> tgt.meta;
-  src.implicitRules -> tgt.implicitRules;
-  src.language -> tgt.language;
-  src.text -> tgt.text;
-  src.contained -> tgt.contained;
-  src.modifierExtension -> tgt.modifierExtension;
+  // Resource / DomainResource, copied explicitly so that the artifact-*
+  // extensions are not duplicated on the R6 side.
+  src.id as v -> tgt.id = v "id";
+  src.meta as v -> tgt.meta = v "meta";
+  src.implicitRules as v -> tgt.implicitRules = v "implicitRules";
+  src.language as v -> tgt.language = v "language";
+  src.text as v -> tgt.text = v "text";
+  src.contained as v -> tgt.contained = v "contained";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
 
   // Canonical metadata: pre-adopted in R4 as artifact-* extensions -> native in R6.
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-url') -> tgt.url = (e.value) "artifactUrl";
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-version') -> tgt.version = (e.value) "artifactVersion";
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-name') -> tgt.name = (e.value) "artifactName";
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-title') -> tgt.title = (e.value) "artifactTitle";
-  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-publisher') -> tgt.publisher = (e.value) "artifactPublisher";
-  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-description') -> tgt.description = (e.value) "artifactDescription";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-experimental') -> tgt.experimental = (e.value) "artifactExperimental";
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-date') -> tgt.date = (e.value) "artifactDate";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-publisher') -> tgt.publisher = (e.value) "artifactPublisher";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-contact') -> tgt.contact = (e.value) "artifactContact";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-description') -> tgt.description = (e.value) "artifactDescription";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-useContext') -> tgt.useContext = (e.value) "artifactUseContext";
   src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-jurisdiction') -> tgt.jurisdiction = (e.value) "artifactJurisdiction";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-purpose') -> tgt.purpose = (e.value) "artifactPurpose";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-copyright') -> tgt.copyright = (e.value) "artifactCopyright";
+  src.extension as e where (url = 'http://hl7.org/fhir/StructureDefinition/artifact-copyrightLabel') -> tgt.copyrightLabel = (e.value) "artifactCopyrightLabel";
 
-  // Every other extension is carried over unchanged. This includes
-  // medication-classification (no native Medication.classification in
-  // 6.0.0-snapshot1; FHIR-59521 pending) and medication-type.
+  // Every other extension is carried over unchanged: medication-classification
+  // (no native Medication.classification yet, FHIR-59521), medication-type, IG extensions.
   src.extension as e where (url.startsWith('http://hl7.org/fhir/StructureDefinition/artifact-').not()) -> tgt.extension as t then Extension(e, t) "otherExtensions";
 
-  src.identifier -> tgt.identifier;
-  src.code -> tgt.code;
+  src.identifier as v -> tgt.identifier = v "identifier";
+  src.code as v -> tgt.code = v "code";
 
-  // status: translate, and keep the original R4 code on the primitive so that
-  // 6to4 can restore inactive vs entered-in-error (both become retired).
-  src.status as v -> tgt.status = translate(v, '#MedicationStatus4to6', 'code') as ts,
+  // status: active is lossless; inactive and entered-in-error both become
+  // retired, so the original R4 code is kept on the primitive for 6to4.
+  src.status as v where ($this = 'active') -> tgt.status = translate(v, '#MedicationStatus4to6', 'code') "statusLossless";
+  src.status as v where ($this != 'active') -> tgt.status = translate(v, '#MedicationStatus4to6', 'code') as ts,
     ts.extension as x,
     x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Medication.status',
-    x.value = v "statusWithOriginal";
+    x.value = v "statusLossy";
 
-  src.manufacturer -> tgt.marketingAuthorizationHolder; // renamed in R5
-  src.form -> tgt.doseForm;                              // renamed in R5
-  src.ingredient as s -> tgt.ingredient as t then MedicationIngredient(s, t);
-  src.batch as s -> tgt.instance as t then MedicationBatch(s, t);   // renamed in R6
-  // src.amount (R4 Ratio) has no R6 element; not used by this IG.
+  src.manufacturer as v -> tgt.marketingAuthorizationHolder = v "manufacturer";  // renamed in R5
+  src.form as v -> tgt.doseForm = v "form";                                      // renamed in R5
+  src.ingredient as s -> tgt.ingredient as t then MedicationIngredient(s, t) "ingredient";
+  src.batch as s -> tgt.instance as t then MedicationBatch(s, t) "batch";       // renamed in R6
+  // src.amount (R4 Ratio) has no R6 element and is not used by this IG; it is
+  // kept as a cross-version extension so that nothing is lost.
+  src.amount as v -> tgt.extension as x, x.url = 'http://hl7.org/fhir/4.0/StructureDefinition/extension-Medication.amount', x.value = v "amount";
 }
 
-group MedicationIngredient(source src, target tgt) extends BackboneElement {
-  src.item -> tgt.item;
-  src.isActive -> tgt.isActive;
-  src.strength -> tgt.strength;
+group MedicationIngredient(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  // R4 item[x] CodeableConcept | Reference -> R6 CodeableReference
+  src.item : CodeableConcept as v -> tgt.item as cr, cr.concept = v "itemConcept";
+  src.item : Reference as v -> tgt.item as cr, cr.reference = v "itemReference";
+  src.isActive as v -> tgt.isActive = v "isActive";
+  src.strength as v -> tgt.strength = v "strength";
 }
 
-group MedicationBatch(source src, target tgt) extends BackboneElement {
-  src.lotNumber -> tgt.lotNumber;
-  src.expirationDate -> tgt.expirationDate;
+group MedicationBatch(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "extension";
+  src.modifierExtension as e -> tgt.modifierExtension as t then Extension(e, t) "modifierExtension";
+  src.lotNumber as v -> tgt.lotNumber = v "lotNumber";
+  src.expirationDate as v -> tgt.expirationDate = v "expirationDate";
+}
+
+// Extensions are copied element by element (url, value[x], nested extensions)
+// so that complex extensions such as medication-classification survive.
+group Extension(source src, target tgt) {
+  src.id as v -> tgt.id = v "id";
+  src.url as v -> tgt.url = v "url";
+  src.value as v -> tgt.value = v "value";
+  src.extension as e -> tgt.extension as t then Extension(e, t) "nested";
 }
