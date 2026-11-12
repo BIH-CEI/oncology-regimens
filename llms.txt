@@ -28,6 +28,7 @@
 
 ### Extensions
 
+* [Day of Cycle](StructureDefinition-day-of-cycle.md)
 * [Formulary Parameter](StructureDefinition-formulary-parameter.md)
 * [Formulary Rank](StructureDefinition-formulary-rank.md)
 * [Regimen Modification](StructureDefinition-regimen-modification.md)

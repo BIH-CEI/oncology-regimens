@@ -76,6 +76,13 @@
   "name" : "SRLmFOLFOX6HighFANoBolus"
 },
 {
+  "id" : "day-of-cycle",
+  "type" : "StructureDefinition",
+  "url" : "http://hemonc.org/fhir/StructureDefinition/day-of-cycle",
+  "version" : "2026-03-12-0.1.0",
+  "name" : "DayOfCycle"
+},
+{
   "id" : "formulary-parameter",
   "type" : "StructureDefinition",
   "url" : "http://hemonc.org/fhir/StructureDefinition/formulary-parameter",

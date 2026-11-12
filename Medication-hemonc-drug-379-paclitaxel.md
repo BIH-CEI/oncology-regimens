@@ -6,7 +6,7 @@
 
 ## Medication: Paclitaxel
 
-Information Source: [HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12)
+Information Source: [https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=379;snapshot=2026-03-12](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=379;snapshot=2026-03-12)
 
 **Artifact URL**: [http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel](https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&canonical=http://hemonc.org/fhir/Medication/hemonc-drug-379-paclitaxel)
 
@@ -36,7 +36,7 @@ Information Source: [HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12](h
   "resourceType" : "Medication",
   "id" : "hemonc-drug-379-paclitaxel",
   "meta" : {
-    "source" : "HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12"
+    "source" : "https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=379;snapshot=2026-03-12"
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/artifact-url",
@@ -59,7 +59,7 @@ Information Source: [HemOncKB drugs.csv row drug_CUI=379, snapshot 2026-03-12](h
       "url" : "type",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+          "system" : "http://hl7.org/fhir/medication-classification-type",
           "code" : "pharmacologic",
           "display" : "Pharmacologic Class"
         }],

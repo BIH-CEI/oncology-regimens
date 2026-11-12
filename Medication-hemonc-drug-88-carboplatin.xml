@@ -3,10 +3,10 @@
 <Medication xmlns="http://hl7.org/fhir">
   <id value="hemonc-drug-88-carboplatin"/>
   <meta>
-    <source value="HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12"/>
+    <source value="https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=88;snapshot=2026-03-12"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Medication hemonc-drug-88-carboplatin</b></p><a name="hemonc-drug-88-carboplatin"> </a><a name="hchemonc-drug-88-carboplatin"> </a><div style="display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Information Source: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://fhir.org/packages/de.medizininformatikinitiative.kerndatensatz.onkologie/HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12">HemOncKB drugs.csv row drug_CUI=88, snapshot 2026-03-12</a></p></div><p><b>Artifact URL</b>: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin">http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Carboplatin</p><p><b>Artifact Publisher</b>: HemOnc.org</p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type pharmacologic}">HemOnc main class</span></li><li>classification: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc PlatinumAgent}">Platinum agent</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/CodeSystem/medication-classification-type moa}">CanMED major class</span></li><li>classification: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc AlkylatingAgent}">Alkylating agent</span></li><li>source: HemOncKB drugs.csv CanMED_major_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/88 (use: official)</p><p><b>code</b>: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 88}, {http://www.nlm.nih.gov/research/umls/rxnorm 40048}, {http://www.whocc.no/atc L01XA02}">Carboplatin</span></p><p><b>status</b>: Active</p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Medication hemonc-drug-88-carboplatin</b></p><a name="hemonc-drug-88-carboplatin"> </a><a name="hchemonc-drug-88-carboplatin"> </a><div style="display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Information Source: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=88;snapshot=2026-03-12">https://dataverse.harvard.edu/dataverse/hemonc#drugs.csv;drug_CUI=88;snapshot=2026-03-12</a></p></div><p><b>Artifact URL</b>: <a href="https://simplifier.net/resolve?scope=de.medizininformatikinitiative.kerndatensatz.onkologie@2026.0.3&amp;canonical=http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin">http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin</a></p><p><b>ArtifactVersion</b>: 2026-03-12</p><p><b>ArtifactName</b>: Carboplatin</p><p><b>Artifact Publisher</b>: HemOnc.org</p><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/medication-classification-type pharmacologic}">HemOnc main class</span></li><li>classification: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc PlatinumAgent}">Platinum agent</span></li><li>source: HemOncKB drugs.csv main_class, snapshot 2026-03-12</li></ul></blockquote><blockquote><p><b>Medication Classification</b></p><ul><li>type: <span title="Codes:{http://hl7.org/fhir/medication-classification-type moa}">CanMED major class</span></li><li>classification: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc AlkylatingAgent}">Alkylating agent</span></li><li>source: HemOncKB drugs.csv CanMED_major_class, snapshot 2026-03-12</li></ul></blockquote><p><b>identifier</b>: <code>http://hemonc.org/cui</code>/88 (use: official)</p><p><b>code</b>: <span title="Codes:{http://hemonc.org/fhir/CodeSystem/hemonc 88}, {http://www.nlm.nih.gov/research/umls/rxnorm 40048}, {http://www.whocc.no/atc L01XA02}">Carboplatin</span></p><p><b>status</b>: Active</p></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/artifact-url">
     <valueUri value="http://hemonc.org/fhir/Medication/hemonc-drug-88-carboplatin"/>
@@ -24,7 +24,7 @@
     <extension url="type">
       <valueCodeableConcept>
         <coding>
-          <system value="http://hl7.org/fhir/CodeSystem/medication-classification-type"/>
+          <system value="http://hl7.org/fhir/medication-classification-type"/>
           <code value="pharmacologic"/>
           <display value="Pharmacologic Class"/>
         </coding>
@@ -48,7 +48,7 @@
     <extension url="type">
       <valueCodeableConcept>
         <coding>
-          <system value="http://hl7.org/fhir/CodeSystem/medication-classification-type"/>
+          <system value="http://hl7.org/fhir/medication-classification-type"/>
           <code value="moa"/>
           <display value="Mechanism of Action"/>
         </coding>

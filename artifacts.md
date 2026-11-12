@@ -38,6 +38,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 
 | | |
 | :--- | :--- |
+| [Day of Cycle](StructureDefinition-day-of-cycle.md) | Day within a treatment cycle on which a sig or a plan action is given. Day 1 is the first day of the cycle. |
 | [Formulary Parameter](StructureDefinition-formulary-parameter.md) | A parameter value a formulary entry pins on the referenced (parameterised) variant PlanDefinition. Forwarded by the CDS layer in the nested `parameters` of $apply. |
 | [Formulary Rank](StructureDefinition-formulary-rank.md) | Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked. |
 | [Regimen Modification](StructureDefinition-regimen-modification.md) | One delta between a derived (L2) PlanDefinition and the HemOnc variant it is derived from. Provenance only: the derived PlanDefinition SHALL be complete on its own (Rule D-1). |

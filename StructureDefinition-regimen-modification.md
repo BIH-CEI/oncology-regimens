@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/StructureDefinition/regimen-modification | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-10 | *Computable Name*:RegimenModification |
+| Draft as of 2026-11-12 | *Computable Name*:RegimenModification |
 
 One delta between a derived (L2) PlanDefinition and the HemOnc variant it is derived from. Provenance only: the derived PlanDefinition SHALL be complete on its own (Rule D-1).
 
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-regimen-modification
   "title" : "Regimen Modification",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T21:38:12+00:00",
+  "date" : "2026-11-12T17:59:01+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

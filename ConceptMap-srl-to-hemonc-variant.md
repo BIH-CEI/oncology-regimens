@@ -45,8 +45,6 @@ Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant eac
       "display" : "Germany"
     }]
   }],
-  "sourceUri" : "https://srl.org.nz/regimens",
-  "targetUri" : "http://hemonc.org/fhir/CodeSystem/hemonc",
   "group" : [{
     "source" : "https://srl.org.nz/regimens",
     "target" : "http://hemonc.org/fhir/CodeSystem/hemonc",

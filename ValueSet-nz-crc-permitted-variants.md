@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ValueSet/nz-crc-permitted-variants | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-10 | *Computable Name*:NZCRCPermittedVariants |
+| Draft as of 2026-11-12 | *Computable Name*:NZCRCPermittedVariants |
 
  
 Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6). 
@@ -53,7 +53,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "NZ colorectal permitted mFOLFOX6 variants (example)",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T21:38:12+00:00",
+  "date" : "2026-11-12T17:59:01+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

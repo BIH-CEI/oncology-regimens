@@ -5,6 +5,13 @@
   "jurisdiction": "DE",
   "extensions": [
     {
+      "url": "http://hemonc.org/fhir/StructureDefinition/day-of-cycle",
+      "title": "Day of Cycle",
+      "types": [
+        "integer"
+      ]
+    },
+    {
       "url": "http://hemonc.org/fhir/StructureDefinition/formulary-parameter",
       "title": "Formulary Parameter",
       "types": [

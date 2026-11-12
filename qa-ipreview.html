@@ -35,7 +35,7 @@
     <ul>
       <li>
 
-          IG &copy; 2026+ European SACT Regimen Catalog Working Group.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on FHIR 4.0.1. Generated 2026-11-10
+          IG &copy; 2026+ European SACT Regimen Catalog Working Group.  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on FHIR 4.0.1. Generated 2026-11-12
           
           
                       Links: Table of Contents |
@@ -107,7 +107,7 @@ Chemotherapy Order Templates&trade;, or AWMF S3-Leitlinien (        <a href="coo
 
           IG &copy; 2026+           <a style="color:var(--footer-hyperlink-text-color)" href="https://github.com/thome/oncology-regimens">European SACT Regimen Catalog Working Group</a>
 .  Package hemonc-fhir-regimen-catalog#2026-03-12-0.1.0 based on           <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>
-. Generated           <span title="Tue, Nov 10, 2026 21:38+0000">2026-11-10</span>
+. Generated           <span title="Thu, Nov 12, 2026 17:59+0000">2026-11-12</span>
 
                     <br/>
 
@@ -167,14 +167,26 @@ downstream incorporation, in line with CC BY 4.0 &sect;3.
           <a href="https://github.com/thome/oncology-regimens/tree/main/maps/xver">github.com</a>
         </td>
         <td>
-          <strong>Maps are the generated cross-version maps where they are correct,
-hand-written where this IG's modelling needs more</strong>
- (see
+          <strong>Maps are hand-written and self-contained</strong>
+, one pair per artifact
+type (see
           <a href="https://github.com/thome/oncology-regimens/tree/main/maps/xver">
 <code class="language-plaintext highlighter-rouge">maps/xver/</code>          </a>
 
-in the repository). The generated maps are the 164 R4→R6 and 63 R6→R4
-maps from the FHIRPath Lab executor used in that experiment.
+in the repository):           <code class="language-plaintext highlighter-rouge">Medication</code>
+,           <code class="language-plaintext highlighter-rouge">ActivityDefinition</code>
+,           <code class="language-plaintext highlighter-rouge">PlanDefinition</code>
+,
+          <code class="language-plaintext highlighter-rouge">Library</code>
+,           <code class="language-plaintext highlighter-rouge">CodeSystem</code>
+,           <code class="language-plaintext highlighter-rouge">ValueSet</code>
+,           <code class="language-plaintext highlighter-rouge">ConceptMap</code>
+, each R4→R6 and R6→R4.
+The generated maps of the FHIR Camp experiment (164 R4→R6, 63 R6→R4)
+were used to find the differences, not imported: they predate the
+canonical           <code class="language-plaintext highlighter-rouge">Medication</code>
+ and put every           <code class="language-plaintext highlighter-rouge">Dosage</code>
+ into its own step.
         </td>
       </tr>
       <tr>

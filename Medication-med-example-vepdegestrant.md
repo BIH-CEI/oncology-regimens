@@ -62,7 +62,7 @@
       "url" : "type",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://hl7.org/fhir/CodeSystem/medication-classification-type",
+          "system" : "http://hl7.org/fhir/medication-classification-type",
           "code" : "moa",
           "display" : "Mechanism of Action"
         }],

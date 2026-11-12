@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ValueSet/regimen-modification-kind-vs | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-10 | *Computable Name*:RegimenModificationKindVS |
+| Draft as of 2026-11-12 | *Computable Name*:RegimenModificationKindVS |
 
  
 All kinds of regimen modification. 
@@ -51,7 +51,7 @@ All kinds of regimen modification.
   "title" : "Regimen Modification Kind ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T21:38:12+00:00",
+  "date" : "2026-11-12T17:59:01+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

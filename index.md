@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-10 | *Computable Name*:EuropeanSACTRegimenCatalog |
+| Draft as of 2026-11-12 | *Computable Name*:EuropeanSACTRegimenCatalog |
 
 ### European SACT Regimen Catalog
 
@@ -49,7 +49,7 @@ The artifacts in this distribution are reference content, not a medical device o
   "title" : "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T21:38:12+00:00",
+  "date" : "2026-11-12T17:59:01+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",
@@ -58,7 +58,7 @@ The artifacts in this distribution are reference content, not a medical device o
       "value" : "https://github.com/thome/oncology-regimens"
     }]
   }],
-  "description" : "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n",
+  "description" : "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, Medication, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -456,6 +456,22 @@ The artifacts in this distribution are reference content, not a medical device o
       "name" : "CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)",
       "description" : "Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-day-of-cycle.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/day-of-cycle"
+      },
+      "name" : "Day of Cycle",
+      "description" : "Day within a treatment cycle on which a sig or a plan action is given. Day 1 is the first day of the cycle.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

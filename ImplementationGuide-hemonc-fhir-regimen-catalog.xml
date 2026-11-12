@@ -5,7 +5,7 @@
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hemonc-fhir-regimen-catalog</b></p><a name="hemonc-fhir-regimen-catalog"> </a><a name="hchemonc-fhir-regimen-catalog"> </a><h2>EuropeanSACTRegimenCatalog</h2><p>The official URL for this implementation guide is: </p><pre>http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog</pre><div><p>FHIR R4 Implementation Guide that represents systemic anti-cancer therapy
 (SACT) regimens as executable knowledge artifacts (PlanDefinition,
-ActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).
+ActivityDefinition, Medication, Library, CodeSystem, ConceptMap).
 Catalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and
 the German MII Onkologie module. First content source: the HemOnc Knowledge
 Base (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,
@@ -18,7 +18,7 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
   <title value="European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens"/>
   <status value="draft"/>
   <experimental value="true"/>
-  <date value="2026-11-10T21:38:12+00:00"/>
+  <date value="2026-11-12T17:59:01+00:00"/>
   <publisher value="European SACT Regimen Catalog Working Group"/>
   <contact>
     <name value="European SACT Regimen Catalog Working Group"/>
@@ -27,7 +27,7 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
       <value value="https://github.com/thome/oncology-regimens"/>
     </telecom>
   </contact>
-  <description value="FHIR R4 Implementation Guide that represents systemic anti-cancer therapy&#xA;(SACT) regimens as executable knowledge artifacts (PlanDefinition,&#xA;ActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).&#xA;Catalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and&#xA;the German MII Onkologie module. First content source: the HemOnc Knowledge&#xA;Base (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,&#xA;OHDSI Oncology and MII Onkologie. CC BY 4.0.&#xA;"/>
+  <description value="FHIR R4 Implementation Guide that represents systemic anti-cancer therapy&#xA;(SACT) regimens as executable knowledge artifacts (PlanDefinition,&#xA;ActivityDefinition, Medication, Library, CodeSystem, ConceptMap).&#xA;Catalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and&#xA;the German MII Onkologie module. First content source: the HemOnc Knowledge&#xA;Base (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,&#xA;OHDSI Oncology and MII Onkologie. CC BY 4.0.&#xA;"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -319,6 +319,17 @@ OHDSI Oncology and MII Onkologie. CC BY 4.0.</p>
       <name value="CRC Metastatic – mFOLFOX6 [high dose folinic acid], no fluorouracil bolus (SRL 588251000210108 v1.0.0)"/>
       <description value="Derived (L2) protocol: HemOnc mFOLFOX6 Variant #06 (cui 133145) with the fluorouracil 400 mg/m² bolus omitted, as published by the NZ SACT Regimen Library on 2026-07-01 following the NZ Society for Oncology Gastrointestinal Cancers Special Interest Group recommendation. Oxaliplatin 85 mg/m² IV over 120 min day 1; folinic acid 400 mg/m² IV over 120 min day 1; fluorouracil 2400 mg/m² IV over 46 h day 1; 14-day cycle. Supportive care (antiemetics, loperamide) as per SRL, not reproduced here."/>
       <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/day-of-cycle"/>
+      </reference>
+      <name value="Day of Cycle"/>
+      <description value="Day within a treatment cycle on which a sig or a plan action is given. Day 1 is the first day of the cycle."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

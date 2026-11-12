@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://hemonc.org/fhir/CodeSystem/regimen-modification-kind | *Version*:2026-03-12-0.1.0 |
-| Draft as of 2026-11-10 | *Computable Name*:RegimenModificationKind |
+| Draft as of 2026-11-12 | *Computable Name*:RegimenModificationKind |
 
  
 Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant. 
@@ -32,7 +32,7 @@ Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc v
   "title" : "Regimen Modification Kind",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-11-10T21:38:12+00:00",
+  "date" : "2026-11-12T17:59:01+00:00",
   "publisher" : "European SACT Regimen Catalog Working Group",
   "contact" : [{
     "name" : "European SACT Regimen Catalog Working Group",

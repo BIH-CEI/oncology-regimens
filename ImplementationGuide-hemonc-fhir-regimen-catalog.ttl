@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "hemonc-fhir-regimen-catalog"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hemonc-fhir-regimen-catalog</b></p><a name=\"hemonc-fhir-regimen-catalog\"> </a><a name=\"hchemonc-fhir-regimen-catalog\"> </a><h2>EuropeanSACTRegimenCatalog</h2><p>The official URL for this implementation guide is: </p><pre>http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog</pre><div><p>FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.</p>\n</div></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hemonc-fhir-regimen-catalog</b></p><a name=\"hemonc-fhir-regimen-catalog\"> </a><a name=\"hchemonc-fhir-regimen-catalog\"> </a><h2>EuropeanSACTRegimenCatalog</h2><p>The official URL for this implementation guide is: </p><pre>http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog</pre><div><p>FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, Medication, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.</p>\n</div></div>"
   ] ;
   fhir:ImplementationGuide.url [ fhir:value "http://hemonc.org/fhir/ImplementationGuide/hemonc-fhir-regimen-catalog"] ;
   fhir:ImplementationGuide.version [ fhir:value "2026-03-12-0.1.0"] ;
@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "European SACT Regimen Catalog — Executable Knowledge Layer for Systemic Anti-Cancer Therapy Regimens"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
   fhir:ImplementationGuide.experimental [ fhir:value "true"^^xsd:boolean] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-11-10T21:38:12+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-11-12T17:59:01+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "European SACT Regimen Catalog Working Group"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -29,7 +29,7 @@
        fhir:ContactPoint.value [ fhir:value "https://github.com/thome/oncology-regimens" ]
      ]
   ] ;
-  fhir:ImplementationGuide.description [ fhir:value "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, MedicationKnowledge, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n"] ;
+  fhir:ImplementationGuide.description [ fhir:value "FHIR R4 Implementation Guide that represents systemic anti-cancer therapy\n(SACT) regimens as executable knowledge artifacts (PlanDefinition,\nActivityDefinition, Medication, Library, CodeSystem, ConceptMap).\nCatalog-layer companion to the HL7 Europe Cancer Common Model (PHOENIX) and\nthe German MII Onkologie module. First content source: the HemOnc Knowledge\nBase (HemOncKB). Developed in cooperation with HL7 Europe PHOENIX, HemOnc.org,\nOHDSI Oncology and MII Onkologie. CC BY 4.0.\n"] ;
   fhir:ImplementationGuide.jurisdiction [
      fhir:index 0 ;
      fhir:CodeableConcept.coding [
@@ -472,6 +472,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hemonc.org/fhir/StructureDefinition/day-of-cycle> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/day-of-cycle" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Day of Cycle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Day within a treatment cycle on which a sig or a plan action is given. Day 1 is the first day of the cycle." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://hemonc.org/fhir/StructureDefinition/formulary-parameter> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/formulary-parameter" ]
        ] ;
@@ -479,7 +493,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A parameter value a formulary entry pins on the referenced (parameterised) variant PlanDefinition. Forwarded by the CDS layer in the nested `parameters` of $apply." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5 ;
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -493,7 +507,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Optional rank of an entry within a formulary PlanDefinition. 1 = first choice. Absence means unranked." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 6 ;
+       fhir:index 7 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -507,7 +521,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "CQL library providing BSA (Mosteller/Du Bois/Haycock), Cockcroft-Gault GFR, Calvert carboplatin formula, and per-sig dose helpers referenced by ActivityDefinition.dynamicValue. Phase 0 spike — covers paclitaxel and carboplatin only. Institution policy (BSA formula, BSA cap, GFR formula, GFR cap) is set via $apply Parameters." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 7 ;
+       fhir:index 8 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -521,7 +535,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Fragment of the HemOnc ontology, sufficient to support the Carboplatin + Paclitaxel Variant #83 example used in the Phase 0 spike, plus the mFOLFOX6 concepts referenced by the Selection Layer example. The full CodeSystem will be emitted as content=complete from the OMOP concept_stage table in a later phase." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 8 ;
+       fhir:index 9 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -535,7 +549,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Small code system distinguishing the *target* expressed by a Sig's doseQuantity from the *computed* mg dose. Used as ActivityDefinition.dosage.doseAndRate.type. A target requires a CQL helper to convert into an administered mg quantity at $apply time." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 9 ;
+       fhir:index 10 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -548,7 +562,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Paclitaxel" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 10 ;
+       fhir:index 11 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -561,7 +575,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Carboplatin" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 11 ;
+       fhir:index 12 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -575,7 +589,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example formulary (selection layer, §3 of the Selection Layer page). Lists the three mFOLFOX6 specifications the NZ SACT Regimen Library publishes for colorectal cancer and maps each to its HemOnc basis. Restriction: the other 19 HemOnc mFOLFOX6 variants are not offered. Extension: two entries have no HemOnc variant and are expressed as a parameter set and a derived protocol respectively." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 12 ;
+       fhir:index 13 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -589,7 +603,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Terminology twin of PlanDefinition/nz-crc-mfolfox6-formulary: the HemOnc variant CUIs and SRL-derived protocol ids a consumer may offer. SHALL stay equivalent to the formulary's definitionCanonical targets (Rule in §6)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 13 ;
+       fhir:index 14 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -603,7 +617,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "One sig from HemOnc Regimen 2554 ('Carboplatin and Paclitaxel (CP)') Variant #83 (cui 144842). Paclitaxel as primary systemic component, 175 mg/m² IV over 3 hours, administered on day 1 of a 21-day cycle, for 3–6 cycles. Declared dose is per-m²; the dynamicValue invokes the HemOnc dose helper Library to compute the patient-specific mg at $apply time." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 14 ;
+       fhir:index 15 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -617,7 +631,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "One delta between a derived (L2) PlanDefinition and the HemOnc variant it is derived from. Provenance only: the derived PlanDefinition SHALL be complete on its own (Rule D-1)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 15 ;
+       fhir:index 16 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -631,7 +645,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kinds of delta a derived (L2) PlanDefinition applies against its parent HemOnc variant." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 16 ;
+       fhir:index 17 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -645,7 +659,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "All kinds of regimen modification." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 17 ;
+       fhir:index 18 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -659,7 +673,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bridge ConceptMap from NZ SACT Regimen Library entries to the HemOnc variant each is based on. equivalent = dose-for-dose match; relatedto = derived with a documented modification. Not a redistribution of SRL content." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 18 ;
+       fhir:index 19 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
