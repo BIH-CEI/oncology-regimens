@@ -30,3 +30,7 @@ hemonckb-raw/additional_tables/
 
 # Cross-version harness (scripts/xver/xver.py): tools, packages, derived output
 /.xver
+
+# Python
+__pycache__/
+*.pyc
